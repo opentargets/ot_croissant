@@ -1,0 +1,136 @@
+[
+  {
+    "id": "target",
+    "nice_name": "Target",
+    "description": "Core annotation for targets"
+  },
+  {
+    "id": "disease",
+    "nice_name": "Disease/Phenotype",
+    "description": "Core annotation for diseases and phenotypes"
+  },
+  {
+    "id": "drug_molecule",
+    "nice_name": "Drug",
+    "description": "Core annotation for drug molecules"
+  },
+  {
+    "id": "evidence",
+    "nice_name": "Target - Disease evidence",
+    "description": "Integrated list of target - disease evidence from all datasources"
+  },
+  {
+    "id": "associationByOverallDirect",
+    "nice_name": "Associations - direct (overall score)",
+    "description": "Overall metrics for direct target-disease associations"
+  },
+  {
+    "id": "associationByOverallIndirect",
+    "nice_name": "Associations - indirect (overall score)",
+    "description": "Overall metrics for indirect target-disease associations"
+  },
+  {
+    "id": "associationByDatasourceDirect",
+    "nice_name": "Associations - direct (by data source)",
+    "description": "Data-source metrics for direct target-disease associations"
+  },
+  {
+    "id": "associationByDatasourceIndirect",
+    "nice_name": "Associations - indrect (by data source)",
+    "description": "Data-source metrics for indirect target-disease associations"
+  },
+  {
+    "id": "associationByDatatypeDirect",
+    "nice_name": "Associations - direct (by data type)",
+    "description": "Data-type metrics for direct target-disease associations"
+  },
+  {
+    "id": "associationByDatatypeIndirect",
+    "nice_name": "Associations - indirect (by data type)",
+    "description": "Data-type metrics for indirect target-disease associations"
+  },
+  {
+    "id": "interaction",
+    "nice_name": "Target - molecular interactions",
+    "description": "Target pair-wise molecular interactions"
+  },
+  {
+    "id": "interaction_evidence",
+    "nice_name": "Target - evidence of molecular interactions",
+    "description": "Supporting evidence for target pair-wise molecular interactions"
+  },
+  {
+    "id": "expression",
+    "nice_name": "Target - baseline expression",
+    "description": "Baseline RNA and protein expression data for targets"
+  },
+  {
+    "id": "go",
+    "nice_name": "Target - gene ontology",
+    "description": "Gene ontology annotations for targets"
+  },
+  {
+    "id": "mousePhenotypes",
+    "nice_name": "Target - mouse phenotypes",
+    "description": "Mouse phenotype data for targets"
+  },
+  {
+    "id": "disease_phenotype",
+    "nice_name": "Disease/Phenotype - clinical signs and symptoms",
+    "description": "Clinical signs and symptoms linked to diseases and phenotypes"
+  },
+  {
+    "id": "disease_hpo",
+    "nice_name": "Human Phenotype Ontology",
+    "description": "Human Phenotype Ontology subset of information included in the Platform"
+  },
+  {
+    "id": "drug_mechanism_of_action",
+    "nice_name": "Drug - mechanism of action",
+    "description": "Mechanisms of action for drug molecules"
+  },
+  {
+    "id": "drug_indication",
+    "nice_name": "Drug - indications",
+    "description": "Approved and investigational indications for drug molecules"
+  },
+  {
+    "id": "drug_warning",
+    "nice_name": "Drug - withdrawn and black box warnings",
+    "description": "Blackbox and withdrawn information for drug molecules"
+  },
+  {
+    "id": "pharmacogenomics",
+    "nice_name": "Drug/Target - pharmacogenetics",
+    "description": "Genetic variants influencing individual drug responses"
+  },
+  {
+    "id": "knownDrugsAggregated",
+    "description": "Aggregated drug ChEMBL evidence used for Known Drugs and Clinical Precedence sections"
+  },
+  {
+    "id": "reactome",
+    "nice_name": "Target - Reactome pathway information",
+    "description": "Reactome pathway data used to annotate targets"
+  },
+  {
+    "id": "target_validation",
+    "nice_name": "Target - Prioritisation",
+    "description": "List of target-specific attributes from the Target Engine project"
+  },
+  {
+    "id": "target_essentiality",
+    "nice_name": "Target - DepMap essentiality",
+    "description": "Target essentiality assessments from DepMap Portal"
+  },
+  {
+    "id": "openfda_significant_adverse_target_reactions",
+    "nice_name": "Pharmacovigilance (by target)",
+    "description": "Significant adverse events for target analysis"
+  },
+  {
+    "id": "openfda_significant_adverse_drug_reactions",
+    "nice_name": "Pharmacovigilance (by drug)",
+    "description": "Significant adverse events for drug analysis"
+  }
+]

@@ -1,0 +1,10 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "*.jsonld",
+            ],
+            "url": "https://json.schemastore.org/jsonld.json"
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Open Targets Platform",
+  "description": "The Open Targets Platform contains data to assist the target identification and prioritisation of drug targets.",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "citeAs": "Open Targets",
+  "url": "https://platform.opentargets.org",
+  "distribution": [
+    {
+      "@type": "cr:FileSet",
+      "@id": "disease-fileset",
+      "name": "Disease/Phenotype",
+      "description": "Core annotation for diseases and phenotypes",
+      "encodingFormat": "application/vnd.apache.parquet",
+      "includes": "disease/*.parquet"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "biosample-fileset",
+      "name": "Automatic nice_name of the file set/object 'biosample'.",
+      "description": "Automatic description of the file set/object 'biosample'.",
+      "encodingFormat": "application/vnd.apache.parquet",
+      "includes": "biosample/*.parquet"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "drug_molecule-fileset",
+      "name": "Drug",
+      "description": "Core annotation for drug molecules",
+      "encodingFormat": "application/vnd.apache.parquet",
+      "includes": "drug_molecule/*.parquet"
+    }
+  ]
+}
