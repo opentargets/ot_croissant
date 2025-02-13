@@ -30,7 +30,7 @@ class PlatformOutputMetadata(Metadata):
                 .add_assets_from_paths(paths=self.FILESET)
                 .get_metadata()
             ),
-            # record_sets=PlatformOutputRecordSets()
-            # .add_assets_from_paths(paths=self.FILESET)
-            # .get_metadata(),
+            record_sets=PlatformOutputRecordSets()
+            .add_assets_from_paths(paths=self.FILESET)
+            .get_metadata(),
         )

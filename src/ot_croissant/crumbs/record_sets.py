@@ -31,6 +31,7 @@ class PlatformOutputRecordSets:
         id = path.split("/")[-1]
         print(id)
         return mlc.RecordSet(id=id, name=id, fields=self.get_fileset_fields(path))
+        # return mlc.RecordSet(id=id, name=id)
 
     @staticmethod
     def subfield_parser(fileset_id: str, field: pa.Field) -> list[mlc.Field]:
@@ -50,38 +51,40 @@ class PlatformOutputRecordSets:
         return subfields
 
     @staticmethod
-    def column_parser(fileset_id: str, field: pa.Field) -> mlc.Field:
+    def column_parser(distribution_id: str, field: pa.Field) -> mlc.Field:
         """Parse the column name and data type to create a field."""
         # print(type(pa_dtype) == pa.ListType)
-        print(field.type.num_fields)
+        # print(field.type.num_fields)
         # if pa_dtype not in typeDict:
         #     print("Skipping")
         #     continue
-
         if field.type.num_fields == 0:
+            print("[ADDED]")
             return mlc.Field(
-                id=fileset_id + "/" + field.name,
+                id=distribution_id + "/" + field.name,
                 name=field.name,
                 description=f"PLACEHOLDER for {field.name} description",
                 data_types=mlc.DataType.TEXT,
                 source=mlc.Source(
-                    file_set=fileset_id + "-fileset",
+                    file_set=distribution_id + "-fileset",
                     extract=mlc.Extract(column=field.name),
                 ),
             )
         else:
-            return mlc.Field(
-                id=fileset_id + "/" + field.name,
-                name=field.name,
-                description=f"PLACEHOLDER for {field.name} description",
-                source=mlc.Source(
-                    file_set=fileset_id + "-fileset",
-                    extract=mlc.Extract(column=field.name),
-                ),
-                sub_fields=PlatformOutputRecordSets.subfield_parser(
-                    fileset_id=fileset_id, field=field
-                ),
-            )
+            PlatformOutputRecordSets.column_parser()
+            pass
+            # if type(field.type) is pa.ListType:
+            #     print(f"Num fields: {field.type.num_fields}")
+            #     return mlc.Field(
+            #         id=distribution_id + "/" + field.name,
+            #         name=field.name,
+            #         repeated=True,
+            #         description=f"PLACEHOLDER for {field.name} description",
+            #         source=mlc.Source(
+            #             file_set=distribution_id + "-fileset",
+            #             extract=mlc.Extract(column=field.name),
+            #         ),
+            #     )
 
     @staticmethod
     def get_fileset_fields(path: str) -> list[mlc.Field]:
@@ -91,10 +94,15 @@ class PlatformOutputRecordSets:
         # schema = scan_parquet(path).collect_schema().to_python()
         schema = pq.ParquetDataset(path).schema
         for field in schema:
-            print(id + "/" + field.name + " " + str(field.type))
-            fields.append(
-                PlatformOutputRecordSets.column_parser(fileset_id=id, field=field)
+            print(
+                f"ID: {id}/{field.name} Type: {str(field.type)} NumFields: {field.type.num_fields}"
             )
+            if field.type.num_fields == 0:
+                fields.append(
+                    PlatformOutputRecordSets.column_parser(
+                        distribution_id=id, field=field
+                    )
+                )
         return fields
 
     #     mlc.RecordSet(
