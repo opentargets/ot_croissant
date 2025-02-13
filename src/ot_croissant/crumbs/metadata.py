@@ -13,6 +13,7 @@ class PlatformOutputMetadata(Metadata):
     CITE_AS = "Open Targets"
     URL = "https://platform.opentargets.org"
 
+    LICENCE = "https://creativecommons.org/publicdomain/zero/1.0/"
     FILESET = [
         "/Users/ochoa/Datasets/disease",
         "/Users/ochoa/Datasets/biosample",
@@ -25,6 +26,7 @@ class PlatformOutputMetadata(Metadata):
             description=self.DESCRIPTION,
             cite_as=self.CITE_AS,
             url=self.URL,
+            license=self.LICENCE,
             distribution=(
                 PlatformOutputDistribution()
                 .add_assets_from_paths(paths=self.FILESET)
