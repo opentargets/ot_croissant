@@ -141,5 +141,40 @@
     "nice_name": "Pharmacovigilance (by drug)",
     "key": ["chembl_id", "event"],
     "description": "Significant adverse drug reactions (ADRs) associated with drugs. This dataset is based on the FDA's Adverse Event Reporting System (FAERS) reporting post-marketing surveillance data and it's filtered to include only reports submitted by health professionals. The significance of a given drug-ADR is estimated using a Likelihood Ratio Test (LRT) using all reports associated with the given drug."
+  },
+  {
+    "id": "biosample",
+    "nice_name": "Biosample core annotation",
+    "description": "Integration of biosample metadata about tissues or cell types derived from multiple ontologies including EFO, UBERON, CL, GO and others."
+  },
+  {
+    "id": "colocalisation",
+    "nice_name": "Colocalisation",
+    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation."
+  },
+  {
+    "id": "credible_set",
+    "nice_name": "Credible set",
+    "description": "95% credible sets for GWAS and molQTL studies. Credible sets include all variants in the credible set as well as the fine-mapping method and statistics used to estimate the credible set."
+  },
+  {
+    "id": "variant",
+    "nice_name": "Variant",
+    "description": "Core variant information for all variants in the Platform. Variants are included if any phenotypic information is available for the variant, including GWAS or molQTL credible sets, ClinVar, Uniprot or PharmGKB. The dataset includes variant metadata as well as variant effects derived from Ensembl VEP."
+  },
+  {
+    "id": "l2g_feature_matrix",
+    "nice_name": "Locus2gene feature matrix",
+    "description": "Feature matrix used to train and predict Locus2gene gene assignment model. The dataset contains all the features used in the model for every combination of credible set and genes in the region."
+  },
+  {
+    "id": "l2g_prediction",
+    "nice_name": "Locus2gene prediction",
+    "description": "Predictions from Locus2gene gene assignment model. The dataset contains all predictions for every combination of credible set and genes in the region as well as statistics to explain the model interpretation of the predictions."
+  },
+  {
+    "id": "study",
+    "nice_name": "GWAS Study",
+    "description": "Metadata for all complex trait and molecular QTL GWAS studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are splitted by the affected gene, tissue or cell type and condition, potentially leading to many studies in the same publication."
   }
 ]
