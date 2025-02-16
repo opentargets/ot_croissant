@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "mlcroissant>=1.0.12",
-    "pyarrow>=19.0.0",
+    "pyspark>=3.5.4",
 ]
 
 [build-system]
