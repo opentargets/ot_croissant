@@ -14,9 +14,7 @@ class PlatformOutputMetadata(Metadata):
     URL = "https://platform.opentargets.org"
 
     FILESET = [
-        "/Users/ochoa/Datasets/disease",
-        "/Users/ochoa/Datasets/biosample",
-        "/Users/ochoa/Datasets/drug_molecule",
+        "/Users/dsuveges/project_data/gentropy/disease",
     ]
 
     def __init__(self):
@@ -25,12 +23,13 @@ class PlatformOutputMetadata(Metadata):
             description=self.DESCRIPTION,
             cite_as=self.CITE_AS,
             url=self.URL,
+            license=self.LICENCE,
             distribution=(
                 PlatformOutputDistribution()
-                .add_assets_from_paths(paths=self.FILESET)
+                .add_assets_from_paths(paths=datasets)
                 .get_metadata()
             ),
             record_sets=PlatformOutputRecordSets()
-            .add_assets_from_paths(paths=self.FILESET)
+            .add_assets_from_paths(paths=datasets)
             .get_metadata(),
         )
