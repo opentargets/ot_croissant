@@ -5,23 +5,33 @@ from ot_croissant.crumbs.metadata import PlatformOutputMetadata
 import argparse
 
 parser = argparse.ArgumentParser()
+# Output file path
 parser.add_argument(
     "--output",
     type=str,
     help="Output file path",
     required=True,
 )
+# List of datasets to include
+parser.add_argument(
+    "-d",
+    "--dataset",
+    action="append",
+    type=str,
+    help="Dataset to include",
+    required=True,
+)
 
 
-def app(output: str):
+def main():
     """CLI for mlcroissant."""
-    metadata = PlatformOutputMetadata()
-    with open(output, "w") as f:
+    metadata = PlatformOutputMetadata(datasets=parser.parse_args().dataset)
+    with open(parser.parse_args().output, "w") as f:
         content = metadata.to_json()
         content = json.dumps(content, indent=2)
         f.write(content)
-        f.write("\n")  # Terminate file with newline
+        f.write("\n")
 
 
 if __name__ == "__main__":
-    app(parser.parse_args().output)
+    main()
