@@ -30,7 +30,8 @@ class PlatformOutputRecordSets:
 
             # Print the recordset as json:
             print(json.dumps(record_set.to_json(), indent=2))
-
+            print(f"record_set -> {type(record_set)}")
+            print(f"record_set.fields -> {type(record_set.fields)}")
             # Append the recordset to the record sets list:
             self.record_sets.append(record_set)
             

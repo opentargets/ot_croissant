@@ -176,5 +176,10 @@
     "id": "study",
     "nice_name": "GWAS Study",
     "description": "Metadata for all complex trait and molecular QTL GWAS studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are splitted by the affected gene, tissue or cell type and condition, potentially leading to many studies in the same publication."
+  },
+  {
+    "id": "record_set",
+    "nice_name": "Test record set",
+    "description": "Test record set for croissant metadata generation."
   }
 ]
