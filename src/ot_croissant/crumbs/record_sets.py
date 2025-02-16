@@ -4,12 +4,14 @@ from __future__ import annotations
 from pyspark.sql import SparkSession, types as t
 import mlcroissant as mlc
 from ot_croissant.constants import typeDict
-
+import json 
 
 class PlatformOutputRecordSets:
     """Class to  in the Open Targets Platform data."""
 
     record_sets: list[mlc.RecordSet]
+    DISTRIBUTION_ID: str
+    spark: SparkSession
 
     def __init__(self:PlatformOutputRecordSets)->None:
         self.record_sets = []
@@ -23,12 +25,15 @@ class PlatformOutputRecordSets:
     def add_assets_from_paths(self:PlatformOutputRecordSets, paths: list[str]):
         """Add files from a list to the distribution."""
         for path in paths:
-            print(f"Adding {path} to the recordset.")
             self.DISTRIBUTION_ID = path.split("/")[-1]
-            self.record_sets.append(self.get_fileset_recordset(path))
-            print('done')
-            import json 
-            print(json.dumps(self.record_sets[0].to_json(), indent=2))
+            record_set = self.get_fileset_recordset(path)
+
+            # Print the recordset as json:
+            print(json.dumps(record_set.to_json(), indent=2))
+
+            # Append the recordset to the record sets list:
+            self.record_sets.append(record_set)
+            
         return self
 
     def get_fileset_recordset(self:PlatformOutputRecordSets, path: str) -> mlc.RecordSet:

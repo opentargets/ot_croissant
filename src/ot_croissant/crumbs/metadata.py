@@ -62,11 +62,10 @@ class PlatformOutputMetadata(Metadata):
     """
     URL = "https://platform.opentargets.org"
 
-    FILESET = [
-        "/Users/dsuveges/project_data/gentropy/disease",
-    ]
+    LICENCE = "https://creativecommons.org/publicdomain/zero/1.0/"
 
-    def __init__(self):
+    def __init__(self, datasets: list[str]):
+        """Initialize the metadata."""
         super().__init__(
             name=self.NAME,
             description=self.DESCRIPTION,
