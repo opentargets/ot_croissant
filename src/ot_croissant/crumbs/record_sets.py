@@ -4,7 +4,6 @@ from __future__ import annotations
 from pyspark.sql import SparkSession, types as t
 import mlcroissant as mlc
 from ot_croissant.constants import typeDict
-import json 
 
 class PlatformOutputRecordSets:
     """Class to  in the Open Targets Platform data."""
@@ -28,10 +27,6 @@ class PlatformOutputRecordSets:
             self.DISTRIBUTION_ID = path.split("/")[-1]
             record_set = self.get_fileset_recordset(path)
 
-            # Print the recordset as json:
-            print(json.dumps(record_set.to_json(), indent=2))
-            print(f"record_set -> {type(record_set)}")
-            print(f"record_set.fields -> {type(record_set.fields)}")
             # Append the recordset to the record sets list:
             self.record_sets.append(record_set)
             
@@ -43,13 +38,6 @@ class PlatformOutputRecordSets:
         schema = self.spark.read.parquet(path).schema
 
         # Create and return the recordset:
-        return mlc.RecordSet(
-            id=self.DISTRIBUTION_ID, 
-            name=self.DISTRIBUTION_ID, 
-            fields=self.parse_spark_schema(schema)
-        )
-
-    def parse_spark_schema(self:PlatformOutputRecordSets, schema:t.StructType) -> mlc.RecordSet:
         return mlc.RecordSet(
             id=self.DISTRIBUTION_ID, 
             name=self.DISTRIBUTION_ID, 
