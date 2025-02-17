@@ -2,61 +2,83 @@
   {
     "id": "target",
     "nice_name": "Target",
-    "key": ["id"],
+    "key": ["target/id"],
     "description": "Core annotation for drug targets (gene/proteins). Targets are defined based on EMBL-EBI Ensembl database and uses the Ensembl gene ID as the  primary identifier. An Ensembl gene ID is considered potential drug target if included in the canonical assembly or if present alternative assemblies but encoding for a reviewed protein product according to the UniProt database."
   },
   {
     "id": "disease",
     "nice_name": "Disease/Phenotype",
-    "key": ["id"],
+    "key": ["disease/id"],
     "description": "Core annotation for diseases or phenotypes. A disease or phenotype in the Platform is understood as any disease, phenotype, biological process or measurement that might have any type of causality relationship with a human target. The EMBL-EBI Experimental Factor Ontology (EFO) (slim version) is used as scaffold for the disease or phenotype entity."
   },
   {
     "id": "drug_molecule",
     "nice_name": "Drug/Clinical candidates",
-    "key": ["id"],
+    "key": ["drug_molecule/id"],
     "description": "Core annotation for drug or clinical candidate molecules. A drug in the platform is understood as any bioactive molecule with drug-like properties included in the EMBL-EBI ChEMBL database. All ChEMBL molecules fullfilling any of the next criteria are included in the database: a) Molecules with a known indication. b) Molecules with a known mechanism of action c) ChEMBL molecules included in the DrugBank database d) Molecules that are acknowledged as chemical probes"
   },
   {
     "id": "evidence",
     "nice_name": "Target - Disease evidence",
-    "key": ["id"],
+    "key": ["evidence/id"],
     "description": "Target - disease evidence from all data sources. Every piece of evidence supporting an association between a target (gene or protein) and a disease or phenotype is reported and scored according to the confidence we have in the association. Multiple target-disease evidence from the same source can be reported in this dataset. The dataset is partitioned by data source, therefore evidence for individual sources can be retrieved separately. The dataset schema is a superset of all the schemas for all sources."
   },
   {
     "id": "associationByOverallDirect",
     "nice_name": "Associations - direct (overall score)",
-    "key": ["targetId", "diseaseId"],
+    "key": [
+      "associationByOverallDirect/targetId",
+      "associationByOverallDirect/diseaseId"
+    ],
     "description": "Overall metrics for direct target-disease associations. Dataset contains the 'overall' association score for the aggregation of all evidence supporting any given target-disease. This dataset only contains 'direct' associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology."
   },
   {
     "id": "associationByOverallIndirect",
     "nice_name": "Associations - indirect (overall score)",
-    "key": ["targetId", "diseaseId"],
+    "key": [
+      "associationByOverallIndirect/targetId",
+      "associationByOverallIndirect/diseaseId"
+    ],
     "description": "Overall metrics for direct target-disease associations. Dataset contains the 'overall' association score for the aggregation of all evidence supporting any given target-disease. This dataset contains 'indirect' associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology."
   },
   {
     "id": "associationByDatasourceDirect",
     "nice_name": "Associations - direct (by data source)",
-    "key": ["targetId", "diseaseId", "datasourceId"],
+    "key": [
+      "associationByDatasourceDirect/targetId",
+      "associationByDatasourceDirect/diseaseId",
+      "associationByDatasourceDirect/datasourceId"
+    ],
     "description": "Data source-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains 'direct' associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology."
   },
   {
     "id": "associationByDatasourceIndirect",
     "nice_name": "Associations - indirect (by data source)",
-    "key": ["targetId", "diseaseId", "datasourceId"],
+    "key": [
+      "associationByDatasourceIndirect/targetId",
+      "associationByDatasourceIndirect/diseaseId",
+      "associationByDatasourceIndirect/datasourceId"
+    ],
     "description": "Data source-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains 'indirect' associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology."
   },
   {
     "id": "associationByDatatypeDirect",
     "nice_name": "Associations - direct (by data type)",
-    "key": ["targetId", "diseaseId", "datatypeId"],
+    "key": [
+      "associationByDatatypeDirect/targetId",
+      "associationByDatatypeDirect/diseaseId",
+      "associationByDatatypeDirect/datatypeId"
+    ],
     "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains 'direct' associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology."
   },
   {
     "id": "associationByDatatypeIndirect",
     "nice_name": "Associations - indirect (by data type)",
-    "key": ["targetId", "diseaseId", "datatypeId"],
+    "key": [
+      "associationByDatatypeIndirect/targetId",
+      "associationByDatatypeIndirect/diseaseId",
+      "associationByDatatypeIndirect/datatypeId"
+    ],
     "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains 'direct' associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology."
   },
   {
@@ -72,13 +94,13 @@
   {
     "id": "expression",
     "nice_name": "Baseline expression",
-    "key": ["id"],
+    "key": ["expression/id"],
     "description": "Baseline RNA and protein expression data across tissues. This data does not contain raw expression values, instead to shows how targets are selectively expressed across different tissues. This dataset combines expression values from multiple sources including Expression Atlas and Human Protein Atlas."
   },
   {
     "id": "go",
     "nice_name": "Target - gene ontology",
-    "key": ["id"],
+    "key": ["go/id"],
     "description": "This dataset contains the mapping between gene ontology identifiers and terms."
   },
   {
@@ -89,7 +111,7 @@
   {
     "id": "disease_phenotype",
     "nice_name": "Disease/Phenotype - clinical signs and symptoms",
-    "key": ["disease", "phenotype"],
+    "key": ["disease_phenotype/disease", "disease_phenotype/phenotype"],
     "description": "Clinical signs and symptoms observed in diseases or phenotypes. Signs and symptoms are integrated from multiple sources including EFO, MONDO and HPO."
   },
   {
@@ -100,7 +122,7 @@
   {
     "id": "drug_indication",
     "nice_name": "Drug - indications",
-    "key": ["id"],
+    "key": ["drug_indication/id"],
     "description": "Approved and investigational indications for drug or clinical candidate molecules. Indications are integrated by the ChEMBL database from a diverse range of sources including DailyMed, FDA and EMA."
   },
   {
@@ -116,19 +138,19 @@
   {
     "id": "reactome",
     "nice_name": "Target - Reactome pathway information",
-    "key": ["id"],
+    "key": ["reactome/id"],
     "description": "Pathway metadata from Reactome pathway database."
   },
   {
     "id": "target_validation",
     "nice_name": "Target - Prioritisation",
-    "key": ["targetId"],
+    "key": ["target_validation/targetId"],
     "description": "Target-specific properties used to prioritise targets for further prioritisation (prioritisation view). All prioritisation factors included in the dataset range from -1 (unfavourable) to 1 (favourable). The prioritisation factors cover several areas around the clinical precedence, tractability, do-ability and safety of a target."
   },
   {
     "id": "target_essentiality",
     "nice_name": "Target - DepMap essentiality",
-    "key": ["id"],
+    "key": ["target_essentiality/id"],
     "description": "Target essentiality assessments based on dependencies exhibited when knocking-out genes in cancer cellular models using CRISPR screenings as reported in by the Cancer DepMap Project. Gene effects below -1 can be considered dependencies."
   },
   {
@@ -139,7 +161,10 @@
   {
     "id": "openfda_significant_adverse_drug_reactions",
     "nice_name": "Pharmacovigilance (by drug)",
-    "key": ["chembl_id", "event"],
+    "key": [
+      "openfda_significant_adverse_drug_reactions/chembl_id",
+      "openfda_significant_adverse_drug_reactions/event"
+    ],
     "description": "Significant adverse drug reactions (ADRs) associated with drugs. This dataset is based on the FDA's Adverse Event Reporting System (FAERS) reporting post-marketing surveillance data and it's filtered to include only reports submitted by health professionals. The significance of a given drug-ADR is estimated using a Likelihood Ratio Test (LRT) using all reports associated with the given drug."
   },
   {
