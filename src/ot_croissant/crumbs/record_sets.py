@@ -5,6 +5,7 @@ from __future__ import annotations
 from pyspark.sql import SparkSession, types as t
 import mlcroissant as mlc
 from ot_croissant.constants import typeDict
+from ot_croissant.curation import DistributionCuration
 import logging
 
 
@@ -42,12 +43,19 @@ class PlatformOutputRecordSets:
         # Get the schema from the recordset:
         schema = self.spark.read.parquet(path).schema
 
-        # Create and return the recordset:
-        return mlc.RecordSet(
+        record_set = mlc.RecordSet(
             id=self.DISTRIBUTION_ID,
             name=self.DISTRIBUTION_ID,
             fields=[self.parse_spark_field(field) for field in schema],
         )
+        # Add primary key to recordset, if available:
+        primary_key = DistributionCuration().get_curation(
+            distribution_id=self.DISTRIBUTION_ID, key="key"
+        )
+        if primary_key:
+            record_set.key = primary_key
+        # Return record set
+        return record_set
 
     def parse_spark_field(
         self: PlatformOutputRecordSets, field: t.StructField, parent: str | None = None

@@ -1,6 +1,7 @@
 """Class to create the croissant distribution metadata for the Open Targets Platform."""
 
 from mlcroissant import FileSet, FileObject
+from ot_croissant.curation import DistributionCuration
 import logging
 
 
@@ -18,29 +19,15 @@ class PlatformOutputDistribution:
         return self.distribution
 
     @staticmethod
-    def get_curations():
-        """Returns dictionary of file set/objects curations (incl. nice_name and description)."""
-        import json
-
-        with open("src/ot_croissant/curation/distribution.json", "r") as f:
-            data_list = json.load(f)
-
-        data_dict = {item["id"]: item for item in data_list}
-        return data_dict
-
-    @staticmethod
     def get_distribution_curation(id: str, key: str) -> str:
         """Returns the curation value of the distribution."""
-        value = f"Automatic {key} of the file set/object '{id}'."
-        curations = PlatformOutputDistribution.get_curations()
-        curation_entry = curations.get(id)
-        if curation_entry and key in curation_entry:
-            value = curation_entry[key]
+        curation_entry = DistributionCuration().get_curation(
+            distribution_id=id, key=key
+        )
+        if curation_entry:
+            return curation_entry
         else:
-            logging.warning(
-                f"[Distribution]: ID '{id}' not found in curation/distribution or has no {key}."
-            )
-        return value
+            return f"Automatic {key} of the file set/object '{id}'."
 
     def add_assets_from_paths(self, paths: list[str]):
         """Add files from a list to the distribution."""
