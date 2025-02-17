@@ -90,73 +90,30 @@ class PlatformOutputRecordSets:
         field_type: str = field.dataType.typeName()
         column_description: str = get_field_description(parent, field)
         # Initialise field:
-        croissant_field: mlc.Field
-
+        croissant_field = mlc.Field(
+            id=get_field_id(parent, field),
+            name=field.name,
+            description=column_description,
+            data_types=typeDict.get(field_type, mlc.DataType.TEXT),
+            source=mlc.Source(
+                file_set=self.DISTRIBUTION_ID + "-fileset",
+                extract=mlc.Extract(column=get_field_id(parent, field, False)),
+            ),
+        )
         # Test if the field is a list:
         if field_type == "array":
-
+            croissant_field.repeated = True
             # A list of struct:
             if field.dataType.elementType.typeName() == "struct":
-                croissant_field = mlc.Field(
-                    id=get_field_id(parent, field),
-                    name=field.name,
-                    description=column_description,
-                    data_types=typeDict.get(field_type, mlc.DataType.TEXT),
-                    source=mlc.Source(
-                        file_set=self.DISTRIBUTION_ID + "-fileset",
-                        extract=mlc.Extract(column=get_field_id(parent, field, False)),
-                    ),
-                    repeated=True,
-                    sub_fields=[
-                        self.parse_spark_field(
-                            subfield, get_field_id(parent, field, False)
-                        )
-                        for subfield in field.dataType.elementType
-                    ],
-                )
-
-            # A list of atomics:
-            else:
-                croissant_field = mlc.Field(
-                    id=get_field_id(parent, field),
-                    name=field.name,
-                    description=column_description,
-                    data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
-                    source=mlc.Source(
-                        file_set=self.DISTRIBUTION_ID + "-fileset",
-                        extract=mlc.Extract(column=get_field_id(parent, field, False)),
-                    ),
-                    repeated=True,
-                )
-
+                croissant_field.sub_fields = [
+                    self.parse_spark_field(subfield, get_field_id(parent, field, False))
+                    for subfield in field.dataType.elementType
+                ]
         # Test if the field is a struct:
         elif field_type == "struct":
-            croissant_field = mlc.Field(
-                id=get_field_id(parent, field),
-                name=field.name,
-                description=column_description,
-                data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
-                source=mlc.Source(
-                    file_set=self.DISTRIBUTION_ID + "-fileset",
-                    extract=mlc.Extract(column=get_field_id(parent, field)),
-                ),
-                sub_fields=[
-                    self.parse_spark_field(subfield, get_field_id(parent, field, False))
-                    for subfield in field.dataType
-                ],
-            )
-
-        # If a field is not a list or a struct, it must be atomic:
-        else:
-            croissant_field = mlc.Field(
-                id=get_field_id(parent, field),
-                name=field.name,
-                description=column_description,
-                data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
-                source=mlc.Source(
-                    file_set=self.DISTRIBUTION_ID + "-fileset",
-                    extract=mlc.Extract(column=get_field_id(parent, field, False)),
-                ),
-            )
+            croissant_field.sub_fields = [
+                self.parse_spark_field(subfield, get_field_id(parent, field, False))
+                for subfield in field.dataType
+            ]
 
         return croissant_field
