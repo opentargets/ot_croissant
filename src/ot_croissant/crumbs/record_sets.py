@@ -5,6 +5,7 @@ from __future__ import annotations
 from pyspark.sql import SparkSession, types as t
 import mlcroissant as mlc
 from ot_croissant.constants import typeDict
+import logging
 
 
 class PlatformOutputRecordSets:
@@ -48,37 +49,38 @@ class PlatformOutputRecordSets:
             fields=[self.parse_spark_field(field) for field in schema],
         )
 
-    def get_field_description(
-        self: PlatformOutputRecordSets, field: t.StructField
-    ) -> str:
-        metadata: dict[str, str] | None = field.metadata
-
-        if metadata and "description" in metadata:
-            return metadata["description"]
-        else:
-            return f"PLACEHOLDER for {field.name} description"
-
     def parse_spark_field(
         self: PlatformOutputRecordSets, field: t.StructField, parent: str | None = None
     ) -> mlc.Field:
 
-        field_type: str = field.dataType.typeName()
-        field_name: str = field.name
-        column_description: str = self.get_field_description(field)
+        def get_field_description(parent: str | None, field: t.StructField) -> str:
+            metadata: dict[str, str] | None = field.metadata
+
+            if metadata and "description" in metadata:
+                return metadata["description"]
+            else:
+                logging.warning(
+                    f"[RecordSets]: Field {get_field_id(parent, field)} has no description."
+                )
+                return f"PLACEHOLDER for {field.name} description"
 
         def get_field_id(
-            parent: str | None, field_name: str, include_distribution_id: bool = True
+            parent: str | None,
+            field: t.StructField,
+            include_distribution_id: bool = True,
         ) -> str:
             """Get the field id."""
             column_id: str
             if parent:
-                column_id = f"{parent}/{field_name}"
+                column_id = f"{parent}/{field.name}"
             else:
-                column_id = field_name
+                column_id = field.name
             if include_distribution_id:
                 column_id = f"{self.DISTRIBUTION_ID}/{column_id}"
             return column_id
 
+        field_type: str = field.dataType.typeName()
+        column_description: str = get_field_description(parent, field)
         # Initialise field:
         croissant_field: mlc.Field
 
@@ -88,20 +90,18 @@ class PlatformOutputRecordSets:
             # A list of struct:
             if field.dataType.elementType.typeName() == "struct":
                 croissant_field = mlc.Field(
-                    id=get_field_id(parent, field_name),
-                    name=field_name,
+                    id=get_field_id(parent, field),
+                    name=field.name,
                     description=column_description,
                     data_types=typeDict.get(field_type, mlc.DataType.TEXT),
                     source=mlc.Source(
                         file_set=self.DISTRIBUTION_ID + "-fileset",
-                        extract=mlc.Extract(
-                            column=get_field_id(parent, field_name, False)
-                        ),
+                        extract=mlc.Extract(column=get_field_id(parent, field, False)),
                     ),
                     repeated=True,
                     sub_fields=[
                         self.parse_spark_field(
-                            subfield, get_field_id(parent, field_name, False)
+                            subfield, get_field_id(parent, field, False)
                         )
                         for subfield in field.dataType.elementType
                     ],
@@ -110,15 +110,13 @@ class PlatformOutputRecordSets:
             # A list of atomics:
             else:
                 croissant_field = mlc.Field(
-                    id=get_field_id(parent, field_name),
-                    name=field_name,
+                    id=get_field_id(parent, field),
+                    name=field.name,
                     description=column_description,
                     data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
                     source=mlc.Source(
                         file_set=self.DISTRIBUTION_ID + "-fileset",
-                        extract=mlc.Extract(
-                            column=get_field_id(parent, field_name, False)
-                        ),
+                        extract=mlc.Extract(column=get_field_id(parent, field, False)),
                     ),
                     repeated=True,
                 )
@@ -126,18 +124,16 @@ class PlatformOutputRecordSets:
         # Test if the field is a struct:
         elif field_type == "struct":
             croissant_field = mlc.Field(
-                id=get_field_id(parent, field_name),
-                name=field_name,
+                id=get_field_id(parent, field),
+                name=field.name,
                 description=column_description,
                 data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
                 source=mlc.Source(
                     file_set=self.DISTRIBUTION_ID + "-fileset",
-                    extract=mlc.Extract(column=get_field_id(parent, field_name)),
+                    extract=mlc.Extract(column=get_field_id(parent, field)),
                 ),
                 sub_fields=[
-                    self.parse_spark_field(
-                        subfield, get_field_id(parent, field_name, False)
-                    )
+                    self.parse_spark_field(subfield, get_field_id(parent, field, False))
                     for subfield in field.dataType
                 ],
             )
@@ -145,13 +141,13 @@ class PlatformOutputRecordSets:
         # If a field is not a list or a struct, it must be atomic:
         else:
             croissant_field = mlc.Field(
-                id=get_field_id(parent, field_name),
-                name=field_name,
+                id=get_field_id(parent, field),
+                name=field.name,
                 description=column_description,
                 data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
                 source=mlc.Source(
                     file_set=self.DISTRIBUTION_ID + "-fileset",
-                    extract=mlc.Extract(column=get_field_id(parent, field_name, False)),
+                    extract=mlc.Extract(column=get_field_id(parent, field, False)),
                 ),
             )
 
