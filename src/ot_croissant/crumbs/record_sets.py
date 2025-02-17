@@ -1,154 +1,158 @@
 """Class to create the croissant recordset metadata for the Open Targets Platform."""
 
+from __future__ import annotations
+
+from pyspark.sql import SparkSession, types as t
 import mlcroissant as mlc
 from ot_croissant.constants import typeDict
-import pyarrow.parquet as pq
-from pyarrow.lib import DataType
-import pyarrow as pa
 
 
 class PlatformOutputRecordSets:
     """Class to  in the Open Targets Platform data."""
 
     record_sets: list[mlc.RecordSet]
+    DISTRIBUTION_ID: str
+    spark: SparkSession
 
-    def __init__(self):
+    def __init__(self: PlatformOutputRecordSets) -> None:
         self.record_sets = []
-        super().__init__()
+        self.spark = SparkSession.builder.getOrCreate()
+        super().__init__()  # <- What is the parent class here?
 
-    def get_metadata(self) -> list[mlc.RecordSet]:
+    def get_metadata(self: PlatformOutputRecordSets) -> list[mlc.RecordSet]:
         """Return the distribution metadata."""
         return self.record_sets
 
-    def add_assets_from_paths(self, paths: list[str]):
+    def add_assets_from_paths(self: PlatformOutputRecordSets, paths: list[str]):
         """Add files from a list to the distribution."""
         for path in paths:
-            self.record_sets.append(self.get_fileset_recordset(path))
+            self.DISTRIBUTION_ID = path.split("/")[-1]
+            record_set = self.get_fileset_recordset(path)
+
+            # Append the recordset to the record sets list:
+            self.record_sets.append(record_set)
+
         return self
 
-    def get_fileset_recordset(self, path: str) -> mlc.RecordSet:
+    def get_fileset_recordset(
+        self: PlatformOutputRecordSets, path: str
+    ) -> mlc.RecordSet:
         """Returns the recordset for a fileset."""
-        id = path.split("/")[-1]
-        print(id)
-        return mlc.RecordSet(id=id, name=id, fields=self.get_fileset_fields(path))
-        # return mlc.RecordSet(id=id, name=id)
+        # Get the schema from the recordset:
+        schema = self.spark.read.parquet(path).schema
 
-    @staticmethod
-    def subfield_parser(fileset_id: str, field: pa.Field) -> list[mlc.Field]:
-        subfields = []
-        for i in range(field.type.num_fields):
-            subfield = field.type.field(i)
-            print(subfield.name)
-            if field.type.num_fields == 0:
-                subfields.append(
-                    mlc.Field(
-                        id=fileset_id + "/" + field.name + "/" + subfield.name,
-                        name=subfield.name,
-                        description=f"PLACEHOLDER for {field.name} description",
-                        data_types=mlc.DataType.TEXT,
-                    )
+        # Create and return the recordset:
+        return mlc.RecordSet(
+            id=self.DISTRIBUTION_ID,
+            name=self.DISTRIBUTION_ID,
+            fields=[self.parse_spark_field(field) for field in schema],
+        )
+
+    def get_field_description(
+        self: PlatformOutputRecordSets, field: t.StructField
+    ) -> str:
+        metadata: dict[str, str] | None = field.metadata
+
+        if metadata and "description" in metadata:
+            return metadata["description"]
+        else:
+            return f"PLACEHOLDER for {field.name} description"
+
+    def parse_spark_field(
+        self: PlatformOutputRecordSets, field: t.StructField, parent: str | None = None
+    ) -> mlc.Field:
+
+        field_type: str = field.dataType.typeName()
+        field_name: str = field.name
+        column_description: str = self.get_field_description(field)
+
+        def get_field_id(
+            parent: str | None, field_name: str, include_distribution_id: bool = True
+        ) -> str:
+            """Get the field id."""
+            column_id: str
+            if parent:
+                column_id = f"{parent}/{field_name}"
+            else:
+                column_id = field_name
+            if include_distribution_id:
+                column_id = f"{self.DISTRIBUTION_ID}/{column_id}"
+            return column_id
+
+        # Initialise field:
+        croissant_field: mlc.Field
+
+        # Test if the field is a list:
+        if field_type == "array":
+
+            # A list of struct:
+            if field.dataType.elementType.typeName() == "struct":
+                croissant_field = mlc.Field(
+                    id=get_field_id(parent, field_name),
+                    name=field_name,
+                    description=column_description,
+                    data_types=typeDict.get(field_type, mlc.DataType.TEXT),
+                    source=mlc.Source(
+                        file_set=self.DISTRIBUTION_ID + "-fileset",
+                        extract=mlc.Extract(
+                            column=get_field_id(parent, field_name, False)
+                        ),
+                    ),
+                    repeated=True,
+                    sub_fields=[
+                        self.parse_spark_field(
+                            subfield, get_field_id(parent, field_name, False)
+                        )
+                        for subfield in field.dataType.elementType
+                    ],
                 )
-        return subfields
 
-    @staticmethod
-    def column_parser(distribution_id: str, field: pa.Field) -> mlc.Field:
-        """Parse the column name and data type to create a field."""
-        # print(type(pa_dtype) == pa.ListType)
-        # print(field.type.num_fields)
-        # if pa_dtype not in typeDict:
-        #     print("Skipping")
-        #     continue
-        if field.type.num_fields == 0:
-            print("[ADDED]")
-            return mlc.Field(
-                id=distribution_id + "/" + field.name,
-                name=field.name,
-                description=f"PLACEHOLDER for {field.name} description",
-                data_types=mlc.DataType.TEXT,
+            # A list of atomics:
+            else:
+                croissant_field = mlc.Field(
+                    id=get_field_id(parent, field_name),
+                    name=field_name,
+                    description=column_description,
+                    data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
+                    source=mlc.Source(
+                        file_set=self.DISTRIBUTION_ID + "-fileset",
+                        extract=mlc.Extract(
+                            column=get_field_id(parent, field_name, False)
+                        ),
+                    ),
+                    repeated=True,
+                )
+
+        # Test if the field is a struct:
+        elif field_type == "struct":
+            croissant_field = mlc.Field(
+                id=get_field_id(parent, field_name),
+                name=field_name,
+                description=column_description,
+                data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
                 source=mlc.Source(
-                    file_set=distribution_id + "-fileset",
-                    extract=mlc.Extract(column=field.name),
+                    file_set=self.DISTRIBUTION_ID + "-fileset",
+                    extract=mlc.Extract(column=get_field_id(parent, field_name)),
+                ),
+                sub_fields=[
+                    self.parse_spark_field(
+                        subfield, get_field_id(parent, field_name, False)
+                    )
+                    for subfield in field.dataType
+                ],
+            )
+
+        # If a field is not a list or a struct, it must be atomic:
+        else:
+            croissant_field = mlc.Field(
+                id=get_field_id(parent, field_name),
+                name=field_name,
+                description=column_description,
+                data_types=typeDict.get(str(field_type), mlc.DataType.TEXT),
+                source=mlc.Source(
+                    file_set=self.DISTRIBUTION_ID + "-fileset",
+                    extract=mlc.Extract(column=get_field_id(parent, field_name, False)),
                 ),
             )
-        else:
-            PlatformOutputRecordSets.column_parser()
-            pass
-            # if type(field.type) is pa.ListType:
-            #     print(f"Num fields: {field.type.num_fields}")
-            #     return mlc.Field(
-            #         id=distribution_id + "/" + field.name,
-            #         name=field.name,
-            #         repeated=True,
-            #         description=f"PLACEHOLDER for {field.name} description",
-            #         source=mlc.Source(
-            #             file_set=distribution_id + "-fileset",
-            #             extract=mlc.Extract(column=field.name),
-            #         ),
-            #     )
 
-    @staticmethod
-    def get_fileset_fields(path: str) -> list[mlc.Field]:
-        """Returns the fields for a fileset."""
-        fields = []
-        id = path.split("/")[-1]
-        # schema = scan_parquet(path).collect_schema().to_python()
-        schema = pq.ParquetDataset(path).schema
-        for field in schema:
-            print(
-                f"ID: {id}/{field.name} Type: {str(field.type)} NumFields: {field.type.num_fields}"
-            )
-            if field.type.num_fields == 0:
-                fields.append(
-                    PlatformOutputRecordSets.column_parser(
-                        distribution_id=id, field=field
-                    )
-                )
-        return fields
-
-    #     mlc.RecordSet(
-    #         id="jsonl",
-    #         name="jsonl",
-    #         # Each record has one or many fields...
-    #         fields=[
-    #             # Fields can be extracted from the FileObjects/FileSets.
-    #             mlc.Field(
-    #                 id="jsonl/context",
-    #                 name="context",
-    #                 description="",
-    #                 data_types=mlc.DataType.TEXT,
-    #                 source=mlc.Source(
-    #                     file_set="jsonl-files",
-    #                     # Extract the field from the column of a FileObject/FileSet:
-    #                     extract=mlc.Extract(column="context"),
-    #                 ),
-    #             ),
-    #             mlc.Field(
-    #                 id="jsonl/completion",
-    #                 name="completion",
-    #                 description="The expected completion of the promt.",
-    #                 data_types=mlc.DataType.TEXT,
-    #                 source=mlc.Source(
-    #                     file_set="jsonl-files",
-    #                     extract=mlc.Extract(column="completion"),
-    #                 ),
-    #             ),
-    #             mlc.Field(
-    #                 id="jsonl/task",
-    #                 name="task",
-    #                 description=(
-    #                     "The machine learning task appearing as the name of the"
-    #                     " file."
-    #                 ),
-    #                 data_types=mlc.DataType.TEXT,
-    #                 source=mlc.Source(
-    #                     file_set="jsonl-files",
-    #                     extract=mlc.Extract(
-    #                         file_property=mlc._src.structure_graph.nodes.source.FileProperty.filename
-    #                     ),
-    #                     # Extract the field from a regex on the filename:
-    #                     transforms=[mlc.Transform(regex="^(.*)\.jsonl$")],
-    #                 ),
-    #             ),
-    #         ],
-    #     )
-    # ]
+        return croissant_field

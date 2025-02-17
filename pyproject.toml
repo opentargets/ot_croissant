@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "mlcroissant>=1.0.12",
-    "pyarrow>=19.0.0",
+    "pyspark>=3.5.4",
 ]
 
 [build-system]
@@ -21,6 +21,7 @@ ot_croissant = "app:main"
 
 [dependency-groups]
 dev = [
+    "ipykernel>=6.29.5",
     "ipython>=8.32.0",
     "ruff>=0.9.3",
 ]
