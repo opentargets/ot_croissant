@@ -64,7 +64,14 @@ class PlatformOutputMetadata(Metadata):
 
     LICENCE = "https://creativecommons.org/publicdomain/zero/1.0/"
 
-    def __init__(self, datasets: list[str]):
+    def __init__(
+        self,
+        datasets: list[str],
+        ftp_location: str,
+        gcp_location: str,
+        version: str,
+        date_published: str,
+    ):
         """Initialize the metadata."""
         super().__init__(
             name=self.NAME,
@@ -72,8 +79,12 @@ class PlatformOutputMetadata(Metadata):
             cite_as=self.CITE_AS,
             url=self.URL,
             license=self.LICENCE,
+            version=version,
+            date_published=date_published,
             distribution=(
                 PlatformOutputDistribution()
+                .add_ftp_location(ftp_location)
+                .add_gcp_location(gcp_location)
                 .add_assets_from_paths(paths=datasets)
                 .get_metadata()
             ),
