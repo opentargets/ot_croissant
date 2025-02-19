@@ -2,7 +2,6 @@
 
 from mlcroissant import FileSet, FileObject
 from ot_croissant.curation import DistributionCuration
-import logging
 
 
 class PlatformOutputDistribution:
