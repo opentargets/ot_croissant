@@ -22,6 +22,7 @@ class PlatformOutputMetadata(Metadata):
         gcp_location: str,
         version: str,
         date_published: str,
+        data_integrity_hash: str,
     ):
         """Initialize the metadata."""
         super().__init__(
@@ -34,8 +35,8 @@ class PlatformOutputMetadata(Metadata):
             date_published=date_published,
             distribution=(
                 PlatformOutputDistribution()
-                .add_ftp_location(ftp_location)
-                .add_gcp_location(gcp_location)
+                .add_ftp_location(ftp_location, data_integrity_hash)
+                .add_gcp_location(gcp_location, data_integrity_hash)
                 .add_assets_from_paths(paths=datasets)
                 .get_metadata()
             ),

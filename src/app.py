@@ -50,6 +50,13 @@ parser.add_argument(
     required=True,
 )
 
+parser.add_argument(
+    "--data_integrity_hash",
+    type=str,
+    help="Data integrity hash using sha256",
+    required=True,
+)
+
 
 def datetime_serializer(obj):
     if isinstance(obj, datetime):
@@ -65,6 +72,7 @@ def main():
         version=parser.parse_args().version,
         date_published=datetime.fromisoformat(parser.parse_args().date_published),
         gcp_location=parser.parse_args().gcp_location,
+        data_integrity_hash=parser.parse_args().data_integrity_hash,
     )
     with open(parser.parse_args().output, "w") as f:
         content = metadata.to_json()

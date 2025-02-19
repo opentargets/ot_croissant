@@ -30,7 +30,7 @@ class PlatformOutputDistribution:
         else:
             return f"Automatic {key} of the file set/object '{id}'."
 
-    def add_ftp_location(self, ftp_location: str):
+    def add_ftp_location(self, ftp_location: str, data_integrity_hash: str):
         """Add the FTP location of the distribution."""
         self.distribution.append(
             FileObject(
@@ -39,13 +39,13 @@ class PlatformOutputDistribution:
                 description="FTP location of the Open Targets Platform data.",
                 encoding_format="https",
                 content_url=ftp_location,
-                sha256="https://github.com/mlcommons/croissant/issues/80",
+                sha256=data_integrity_hash,
             )
         )
         self.contained_in.append("ftp-location")
         return self
 
-    def add_gcp_location(self, gcp_location: str):
+    def add_gcp_location(self, gcp_location: str, data_integrity_hash: str):
         """Add the GCP location of the distribution."""
         self.distribution.append(
             FileObject(
@@ -54,7 +54,7 @@ class PlatformOutputDistribution:
                 description="Location of the Open Targets Platform data in Google Cloud Storage.",
                 encoding_format="https",
                 content_url=gcp_location,
-                sha256="https://github.com/mlcommons/croissant/issues/80",
+                sha256=data_integrity_hash,
             )
         )
         self.contained_in.append("gcp-location")
