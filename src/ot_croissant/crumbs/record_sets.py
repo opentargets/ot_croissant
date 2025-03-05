@@ -87,7 +87,7 @@ class PlatformOutputRecordSets:
                 column_id = f"{self.DISTRIBUTION_ID}/{column_id}"
             return column_id
 
-        field_type: str = field.dataType.typeName()
+        field_type: str = field.dataType.typeName() # <- This might be a map. Not yet supported by croissant.
         column_description: str = get_field_description(parent, field)
         # Initialise field:
         croissant_field = mlc.Field(
@@ -115,5 +115,26 @@ class PlatformOutputRecordSets:
                 self.parse_spark_field(subfield, get_field_id(parent, field, False))
                 for subfield in field.dataType
             ]
+        elif field_type == 'map':
+            logging.warning(f"Field {field.name} is of type map. This is not yet supported by croissant.")
+            
+            # Extracting keys/values:
+            key_type = field.dataType.keyType
+            value_type = field.dataType.valueType
 
+            # Constructing an artifical struct:
+            struct = t.StructType([
+                t.StructField('key', key_type),
+                t.StructField('value', value_type)
+            ])
+
+            # Modelling maps as arrays:
+            croissant_field.repeated = True
+
+            # Adding key/value fields:
+            croissant_field.sub_fields = [
+                self.parse_spark_field(subfield, get_field_id(parent, field, False))
+                for subfield in struct
+            ]
+            
         return croissant_field
