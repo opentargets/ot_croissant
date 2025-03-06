@@ -185,6 +185,7 @@
   {
     "id": "variant",
     "nice_name": "Variant",
+    "key": ["variant/variantId"],
     "description": "Core variant information for all variants in the Platform. Variants are included if any phenotypic information is available for the variant, including GWAS or molQTL credible sets, ClinVar, Uniprot or PharmGKB. The dataset includes variant metadata as well as variant effects derived from Ensembl VEP."
   },
   {
