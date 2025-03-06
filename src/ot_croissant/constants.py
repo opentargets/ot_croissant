@@ -9,4 +9,5 @@ typeDict = {
     "long": mlc.DataType.FLOAT,
     "double": mlc.DataType.FLOAT,
     "integer": mlc.DataType.INTEGER,
+    "float": mlc.DataType.FLOAT,
 }

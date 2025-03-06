@@ -54,6 +54,14 @@ class PlatformOutputRecordSets:
         )
         if primary_key:
             record_set.key = primary_key
+
+        # Extract description of dataset:
+        description = DistributionCuration().get_curation(
+            distribution_id=self.DISTRIBUTION_ID, key="description"
+        )
+        if description:
+            record_set.description = description
+
         # Return record set
         return record_set
 
