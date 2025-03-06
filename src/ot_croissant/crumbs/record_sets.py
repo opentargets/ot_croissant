@@ -89,26 +89,34 @@ class PlatformOutputRecordSets:
 
         field_type: str = field.dataType.typeName() # <- This might be a map. Not yet supported by croissant.
         column_description: str = get_field_description(parent, field)
+
         # Initialise field:
         croissant_field = mlc.Field(
             id=get_field_id(parent, field),
             name=field.name,
             description=column_description,
-            data_types=typeDict.get(field_type, mlc.DataType.TEXT),
             source=mlc.Source(
                 file_set=self.DISTRIBUTION_ID + "-fileset",
                 extract=mlc.Extract(column=get_field_id(parent, field, False)),
             ),
         )
+
+        if field_type in typeDict.keys():
+            croissant_field.data_types.append(typeDict.get(field_type))
+
         # Test if the field is a list:
         if field_type == "array":
+            element_type = field.dataType.elementType
             croissant_field.repeated = True
             # A list of struct:
-            if field.dataType.elementType.typeName() == "struct":
+            if element_type.typeName() == "struct":
                 croissant_field.sub_fields = [
                     self.parse_spark_field(subfield, get_field_id(parent, field, False))
-                    for subfield in field.dataType.elementType
+                    for subfield in element_type
                 ]
+            elif element_type.typeName() in typeDict.keys():
+                # Append data type of the primitive type
+                croissant_field.data_types.append(typeDict.get(element_type.typeName()))
         # Test if the field is a struct:
         elif field_type == "struct":
             croissant_field.sub_fields = [

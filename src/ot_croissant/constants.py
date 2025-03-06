@@ -1,9 +1,12 @@
 import mlcroissant as mlc
 
+# This Python code snippet defines a dictionary called `typeDict` that maps certain string keys to
+# corresponding values from the `DataType` enumeration in the `mlcroissant` module. Here's what each
+# key-value pair represents:
 typeDict = {
-    "large_string": mlc.DataType.TEXT,
     "string": mlc.DataType.TEXT,
-    "bool": mlc.DataType.BOOL,
+    "boolean": mlc.DataType.BOOL,
+    "long": mlc.DataType.FLOAT,
     "double": mlc.DataType.FLOAT,
-    "int64": mlc.DataType.INTEGER,
+    "integer": mlc.DataType.INTEGER,
 }
