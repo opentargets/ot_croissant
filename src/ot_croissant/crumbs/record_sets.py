@@ -116,15 +116,25 @@ class PlatformOutputRecordSets:
         if field_type == "array":
             element_type = field.dataType.elementType
             croissant_field.repeated = True
+            
             # A list of struct:
             if element_type.typeName() == "struct":
                 croissant_field.sub_fields = [
                     self.parse_spark_field(subfield, get_field_id(parent, field, False))
                     for subfield in element_type
                 ]
+            
+            # If element type is a primitive type:
             elif element_type.typeName() in typeDict.keys():
                 # Append data type of the primitive type
                 croissant_field.data_types.append(typeDict.get(element_type.typeName()))
+            
+            # If the element type is an other array, we flatten it
+            if element_type.typeName() == "array":
+                logging.warning(f"Field {field.name} is of type array of array. This is not yet supported by croissant. Flattening.")
+                sub_element_type = element_type.elementType
+                croissant_field.data_types.append(typeDict.get(sub_element_type.typeName()))
+
         # Test if the field is a struct:
         elif field_type == "struct":
             croissant_field.sub_fields = [
