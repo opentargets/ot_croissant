@@ -115,12 +115,12 @@
     "description": "Integration of biosample metadata about tissues or cell types derived from multiple ontologies including EFO, UBERON, CL, GO and others."
   },
   {
-    "id": "coloc",
+    "id": "colocalisation_coloc",
     "nice_name": "Colocalisation with coloc",
     "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using coloc method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation."
   },
   {
-    "id": "ecaviar",
+    "id": "colocalisation_ecaviar",
     "nice_name": "Colocalisation with eCAVIAR",
     "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using eCAVIAR method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation."
   },
