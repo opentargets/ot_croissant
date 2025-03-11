@@ -231,8 +231,26 @@
     "description": "For any approved or clinical candidate drug, includes information on the target gene product and indication. It is derived from the ChEMBL target/disease evidence."
   },
   {
-    "id": "record_set",
-    "nice_name": "Test record set",
-    "description": "Test record set for croissant metadata generation."
+    "id": "mouse_phenotypes",
+    "nice_name": "Mouse phenotypes",
+    "description": "Phenotypes of mouse models mapped to human targets."
+  },
+  {
+    "id": "literature",
+    "nice_name": "Literature",
+    "description": "Unique list of entities identified for each literature entry.",
+    "key": [
+      "literature/pmid",
+      "literature/pmcid",
+      "literature/keywordId"
+    ]
+  },
+  {
+    "id": "literature_vector",
+    "nice_name": "Literature vector",
+    "description": "Word to Vector representation of entity matches in literature.",
+    "key": [
+      "literature_vector/word"
+    ]
   }
 ]
