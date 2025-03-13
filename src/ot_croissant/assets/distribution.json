@@ -231,8 +231,8 @@
     "description": "For any approved or clinical candidate drug, includes information on the target gene product and indication. It is derived from the ChEMBL target/disease evidence."
   },
   {
-    "id": "mouse_phenotypes",
-    "nice_name": "Mouse phenotypes",
+    "id": "mouse_phenotype",
+    "nice_name": "Mouse phenotype",
     "description": "Phenotypes of mouse models mapped to human targets."
   },
   {

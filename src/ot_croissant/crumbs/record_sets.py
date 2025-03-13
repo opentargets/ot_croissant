@@ -9,6 +9,8 @@ from ot_croissant.curation import DistributionCuration
 import logging
 
 
+logger = logging.getLogger(__name__)
+
 class PlatformOutputRecordSets:
     """Class to  in the Open Targets Platform data."""
 
@@ -75,7 +77,7 @@ class PlatformOutputRecordSets:
             if metadata and "description" in metadata:
                 return metadata["description"]
             else:
-                logging.warning(
+                logger.debug(
                     f"[RecordSets]: Field {get_field_id(parent, field)} has no description."
                 )
                 return f"PLACEHOLDER for {field.name} description"
@@ -131,7 +133,7 @@ class PlatformOutputRecordSets:
             
             # If the element type is an other array, we flatten it
             if element_type.typeName() == "array":
-                logging.warning(f"Field {field.name} is of type array of array. This is not yet supported by croissant. Flattening.")
+                logger.warning(f"Field {field.name} is of type array of array. This is not yet supported by croissant. Flattening.")
                 sub_element_type = element_type.elementType
                 croissant_field.data_types.append(typeDict.get(sub_element_type.typeName()))
 
@@ -142,7 +144,7 @@ class PlatformOutputRecordSets:
                 for subfield in field.dataType
             ]
         elif field_type == 'map':
-            logging.warning(f"Field {field.name} is of type map. This is not yet supported by croissant.")
+            logger.warning(f"Field {field.name} is of type map. This is not yet supported by croissant.")
             
             # Extracting keys/values:
             key_type = field.dataType.keyType
