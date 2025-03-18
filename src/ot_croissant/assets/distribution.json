@@ -46,11 +46,6 @@
     "description": "This dataset contains the mapping between gene ontology identifiers and terms."
   },
   {
-    "id": "mousePhenotypes",
-    "nice_name": "Target - mouse phenotypes",
-    "description": "Phenotypes observed when knocking-out targets (genes) in mice models as reported by IMPC"
-  },
-  {
     "id": "disease_phenotype",
     "nice_name": "Disease/Phenotype - clinical signs and symptoms",
     "key": ["disease_phenotype/disease", "disease_phenotype/phenotype"],
@@ -252,5 +247,10 @@
     "key": [
       "literature_vector/word"
     ]
+  },
+  {
+    "id": "otar",
+    "nice_name": "Open Targets Projects",
+    "description": "Open Targets projects grouped by studied disease or phenotype."
   }
 ]

@@ -31,18 +31,28 @@ class PlatformOutputDistribution:
             return f"Automatic {key} of the file set/object '{id}'."
 
     def add_ftp_location(self, ftp_location: str, data_integrity_hash: str):
-        """Add the FTP location of the distribution."""
-        self.distribution.append(
-            FileObject(
-                id="ftp-location",
-                name="FTP location",
-                description="FTP location of the Open Targets Platform data.",
-                encoding_format="https",
-                content_url=ftp_location,
-                sha256=data_integrity_hash,
+        """Add the FTP location of the distribution IF ftp location is not None.
+        
+        Args:
+            ftp_location: The FTP location of the distribution.
+            data_integrity_hash: The data integrity hash of the distribution.
+        
+        Returns:
+            The PlatformOutputDistribution object.
+        """
+        if ftp_location:
+            self.distribution.append(
+                FileObject(
+                    id="ftp-location",
+                    name="FTP location",
+                    description="FTP location of the Open Targets Platform data.",
+                    encoding_format="https",
+                    content_url=ftp_location,
+                    sha256=data_integrity_hash,
+                )
             )
-        )
-        self.contained_in.append("ftp-location")
+            self.contained_in.append("ftp-location")
+
         return self
 
     def add_gcp_location(self, gcp_location: str, data_integrity_hash: str):

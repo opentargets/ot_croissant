@@ -18,7 +18,7 @@ parser.add_argument(
     "--ftp_location",
     type=str,
     help="FTP location",
-    required=True,
+    required=False,
 )
 parser.add_argument(
     "--gcp_location",

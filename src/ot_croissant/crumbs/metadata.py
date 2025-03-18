@@ -18,7 +18,7 @@ class PlatformOutputMetadata(Metadata):
     def __init__(
         self,
         datasets: list[str],
-        ftp_location: str,
+        ftp_location: str | None,
         gcp_location: str,
         version: str,
         date_published: str,
