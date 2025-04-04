@@ -33,7 +33,15 @@ parser.add_argument(
     action="append",
     type=str,
     help="Dataset to include",
-    required=True,
+    required=False,
+)
+# Add a folder with dataset to include
+parser.add_argument(
+    "-f",
+    "--dataset_folder",
+    type=str,
+    help="Folder with datasets to include",
+    required=False,
 )
 # Data release version
 parser.add_argument(
@@ -69,6 +77,7 @@ def main():
     metadata = PlatformOutputMetadata(
         ftp_location=parser.parse_args().ftp_location,
         datasets=parser.parse_args().dataset,
+        dataset_folder=parser.parse_args().dataset_folder,
         version=parser.parse_args().version,
         date_published=datetime.fromisoformat(parser.parse_args().date_published),
         gcp_location=parser.parse_args().gcp_location,
