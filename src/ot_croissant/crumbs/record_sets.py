@@ -164,7 +164,7 @@ class PlatformOutputRecordSets:
                 for subfield in field.dataType
             ]
         elif field_type == 'map':
-            logger.warning(f"Field {field.name} is of type map. This is not yet supported by croissant.")
+            logger.warning(f"Field {self.DISTRIBUTION_ID}/{field.name} is of type map. This is not yet supported by croissant.")
             
             # Extracting keys/values:
             key_type = field.dataType.keyType
