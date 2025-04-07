@@ -1,8 +1,9 @@
 """Class to create the croissant distribution metadata for the Open Targets Platform."""
-
+import logging
 from mlcroissant import FileSet, FileObject
 from ot_croissant.curation import DistributionCuration
 
+logger = logging.getLogger(__name__)
 
 class PlatformOutputDistribution:
     """Class to store the list of FileSets or FileObjects in the Open Targets Platform data."""
