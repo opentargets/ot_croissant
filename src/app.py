@@ -4,6 +4,7 @@ import json
 from ot_croissant.crumbs.metadata import PlatformOutputMetadata
 import argparse
 from datetime import datetime
+import logging
 
 parser = argparse.ArgumentParser()
 # Output file path
@@ -82,4 +83,9 @@ def main():
 
 
 if __name__ == "__main__":
+    # Initialize logger:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    )
     main()

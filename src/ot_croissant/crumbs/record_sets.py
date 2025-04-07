@@ -5,7 +5,7 @@ from __future__ import annotations
 from pyspark.sql import SparkSession, types as t
 import mlcroissant as mlc
 from ot_croissant.constants import typeDict
-from ot_croissant.curation import DistributionCuration
+from ot_croissant.curation import DistributionCuration, RecordsetCuration
 import logging
 
 
@@ -39,7 +39,7 @@ class PlatformOutputRecordSets:
         return self
 
     def get_fileset_recordset(
-        self: PlatformOutputRecordSets, path: str
+        self: PlatformOutputRecordSets, path: str, 
     ) -> mlc.RecordSet:
         """Returns the recordset for a fileset."""
         # Get the schema from the recordset:
@@ -70,17 +70,35 @@ class PlatformOutputRecordSets:
     def parse_spark_field(
         self: PlatformOutputRecordSets, field: t.StructField, parent: str | None = None
     ) -> mlc.Field:
+        
+        def get_field_description(field: t.StructField, field_id: str) -> str:
+            """Get the field description."""
+            # Get the description from the data:
+            description = get_field_description_from_data(field)
+            if description:
+                return description
+            
+            # If no description is found in the data, get it from the curation:
+            description = get_field_description_from_curation(field_id)
+            if description:
+                return description
+            
+            # No description found, return a placeholder:
+            return f"PLACEHOLDER for {field.name} description"
+            
+        def get_field_description_from_curation(field_id: str) -> str | None:
+            """Get the field description from the curation."""
+            return RecordsetCuration().get_curation(
+                distribution_id=field_id, key="description"
+            )
 
-        def get_field_description(parent: str | None, field: t.StructField) -> str:
+        def get_field_description_from_data(field: t.StructField) -> str | None:
             metadata: dict[str, str] | None = field.metadata
 
             if metadata and "description" in metadata:
                 return metadata["description"]
             else:
-                logger.debug(
-                    f"[RecordSets]: Field {get_field_id(parent, field)} has no description."
-                )
-                return f"PLACEHOLDER for {field.name} description"
+                return None
 
         def get_field_id(
             parent: str | None,
@@ -98,7 +116,9 @@ class PlatformOutputRecordSets:
             return column_id
 
         field_type: str = field.dataType.typeName() # <- This might be a map. Not yet supported by croissant.
-        column_description: str = get_field_description(parent, field)
+
+        # Get the field description from the data:
+        column_description: str = get_field_description(field, get_field_id(parent, field))
 
         # Initialise field:
         croissant_field = mlc.Field(
