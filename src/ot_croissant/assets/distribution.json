@@ -26,12 +26,34 @@
   {
     "id": "interaction",
     "nice_name": "Molecular interactions",
+    "key": [
+      "interaction/targetA",
+      "interaction/targetB",
+      "interaction/intA",
+      "interaction/intB",
+      "interaction/sourceDatabase",
+      "interaction/intABiologicalRole",
+      "interaction/intBBiologicalRole"
+    ],
     "description": "Integration of molecular interactions reporting experimental or functional interactions between molecules represented as Platform targets. This dataset contains pair-wise interactions deposited in several databases capturing: physical interactions (e.g. IntAct), directional interactions (e.g. Signor), pathway relationships (e.g. Reactome) or functional interactions (e.g. STRINGdb)."
   },
   {
     "id": "interaction_evidence",
     "nice_name": "Molecular interactions evidence",
-    "description": "Experimental evidence supporting molecular interactions ('interaction') dataset."
+    "description": "Experimental evidence supporting molecular interactions ('interaction') dataset.",
+    "key": [
+      "interaction_evidence/targetA",
+      "interaction_evidence/targetB",
+      "interaction_evidence/intA",
+      "interaction_evidence/intB",
+      "interaction_evidence/intABiologicalRole",
+      "interaction_evidence/intBBiologicalRole",
+      "interaction_evidence/interactionResources",
+      "interaction_evidence/interactionIdentifier",
+      "interaction_evidence/interactionDetectionMethodMiIdentifier",
+      "interaction_evidence/expansionMethodMiIdentifier",
+      "interaction_evidence/evidenceScore"
+    ]
   },
   {
     "id": "expression",
@@ -54,7 +76,12 @@
   {
     "id": "drug_mechanism_of_action",
     "nice_name": "Drug - mechanism of action",
-    "description": "Mechanisms of action for drug or clinical candidate molecules included in ChEMBL database. The mechanism of action includes information about the pharmacological target of the drug, the mode of action and the drug modality."
+    "description": "Mechanisms of action for drug or clinical candidate molecules included in ChEMBL database. The mechanism of action includes information about the pharmacological target of the drug, the mode of action and the drug modality.",
+    "key": [
+      "drug_mechanism_of_action/chemblIds",
+      "drug_mechanism_of_action/mechanismOfAction",
+      "drug_mechanism_of_action/targets"
+    ]
   },
   {
     "id": "drug_indication",
@@ -65,12 +92,26 @@
   {
     "id": "drug_warning",
     "nice_name": "Drug - withdrawn and black box warnings",
-    "description": "Blackbox and withdrawn information for drugs molecules included in ChEMBL database."
+    "description": "Blackbox and withdrawn information for drugs molecules included in ChEMBL database.",
+    "key": ["drug_warning/id"]
   },
   {
     "id": "pharmacogenomics",
     "nice_name": "Drug/Target - pharmacogenetics",
-    "description": "Genetic variants influencing individual drug responses. Pharmacogenetics data is integrated from sources including Pharmacogenomics Knowledgebase (PharmGKB)."
+    "description": "Genetic variants influencing individual drug responses. Pharmacogenetics data is integrated from sources including Pharmacogenomics Knowledgebase (PharmGKB).",
+    "key": [
+      "pharmacogenomics/datasourceId",
+      "pharmacogenomics/genotypeAnnotationText",
+      "pharmacogenomics/haplotypeId",
+      "pharmacogenomics/phenotypeText",
+      "pharmacogenomics/phenotypeFromSourceId",
+      "pharmacogenomics/studyId",
+      "pharmacogenomics/targetFromSourceId",
+      "pharmacogenomics/drugs",
+      "pharmacogenomics/pgxCategory",
+      "pharmacogenomics/variantId",
+      "pharmacogenomics/variantFunctionalConsequenceId"
+    ]
   },
   {
     "id": "reactome",
@@ -93,7 +134,11 @@
   {
     "id": "openfda_significant_adverse_target_reactions",
     "nice_name": "Pharmacovigilance (by target)",
-    "description": "Significant adverse events associated with drugs sharing the same pharmacological target. This dataset is based on the FDA's Adverse Event Reporting System (FAERS) reporting post-marketing surveillance data and it's filtered to include only reports submitted by health professionals. The significance of a given target-ADR is estimated using a Likelihood Ratio Test (LRT) using all reports associated with the drugs with the same target."
+    "description": "Significant adverse events associated with drugs sharing the same pharmacological target. This dataset is based on the FDA's Adverse Event Reporting System (FAERS) reporting post-marketing surveillance data and it's filtered to include only reports submitted by health professionals. The significance of a given target-ADR is estimated using a Likelihood Ratio Test (LRT) using all reports associated with the drugs with the same target.",
+    "key": [
+      "openfda_significant_adverse_target_reactions/targetId",
+      "openfda_significant_adverse_target_reactions/event"
+    ]
   },
   {
     "id": "openfda_significant_adverse_drug_reactions",
@@ -107,22 +152,32 @@
   {
     "id": "biosample",
     "nice_name": "Biosample core annotation",
-    "description": "Integration of biosample metadata about tissues or cell types derived from multiple ontologies including EFO, UBERON, CL, GO and others."
+    "description": "Integration of biosample metadata about tissues or cell types derived from multiple ontologies including EFO, UBERON, CL, GO and others.",
+    "key": ["biosample/biosampleId"]
   },
   {
     "id": "colocalisation_coloc",
     "nice_name": "Colocalisation with coloc",
-    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using coloc method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation."
+    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using coloc method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation.",
+    "key": [
+      "colocalisation_coloc/leftStudyLocusId",
+      "colocalisation_coloc/rightStudyLocusId"
+    ]
   },
   {
     "id": "colocalisation_ecaviar",
     "nice_name": "Colocalisation with eCAVIAR",
-    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using eCAVIAR method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation."
+    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using eCAVIAR method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation.",
+    "key": [
+      "colocalisation_ecaviar/leftStudyLocusId",
+      "colocalisation_ecaviar/rightStudyLocusId"
+    ]
   },
   {
     "id": "credible_set",
     "nice_name": "Credible set",
-    "description": "95% credible sets for GWAS and molQTL studies. Credible sets include all variants in the credible set as well as the fine-mapping method and statistics used to estimate the credible set."
+    "description": "95% credible sets for GWAS and molQTL studies. Credible sets include all variants in the credible set as well as the fine-mapping method and statistics used to estimate the credible set.",
+    "key": ["credible_set/studyLocusId"]
   },
   {
     "id": "variant",
@@ -131,24 +186,22 @@
     "description": "Core variant information for all variants in the Platform. Variants are included if any phenotypic information is available for the variant, including GWAS or molQTL credible sets, ClinVar, Uniprot or PharmGKB. The dataset includes variant metadata as well as variant effects derived from Ensembl VEP."
   },
   {
-    "id": "l2g_feature_matrix",
-    "nice_name": "Locus2gene feature matrix",
-    "description": "Feature matrix used to train and predict Locus2gene gene assignment model. The dataset contains all the features used in the model for every combination of credible set and genes in the region."
-  },
-  {
     "id": "l2g_prediction",
     "nice_name": "Locus2gene prediction",
-    "description": "Predictions from Locus2gene gene assignment model. The dataset contains all predictions for every combination of credible set and genes in the region as well as statistics to explain the model interpretation of the predictions."
+    "description": "Predictions from Locus2gene gene assignment model. The dataset contains all predictions for every combination of credible set and genes in the region as well as statistics to explain the model interpretation of the predictions.",
+    "key": ["l2g_prediction/studyLocusId", "l2g_prediction/geneId"]
   },
   {
     "id": "study",
     "nice_name": "GWAS Study",
-    "description": "Metadata for all complex trait and molecular QTL GWAS studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are splitted by the affected gene, tissue or cell type and condition, potentially leading to many studies in the same publication."
+    "description": "Metadata for all complex trait and molecular QTL GWAS studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are splitted by the affected gene, tissue or cell type and condition, potentially leading to many studies in the same publication.",
+    "key": ["study/studyId"]
   },
   {
     "id": "disease_hpo",
     "nice_name": "Human Phenotype Ontology",
-    "description": "Human Phenotype Ontology subset of information included in the Platform."
+    "description": "Human Phenotype Ontology subset of information included in the Platform.",
+    "key": ["disease_hpo/id"]
   },
   {
     "id": "so",
@@ -223,34 +276,35 @@
   {
     "id": "known_drug",
     "nice_name": "Known drug",
-    "description": "For any approved or clinical candidate drug, includes information on the target gene product and indication. It is derived from the ChEMBL target/disease evidence."
+    "description": "For any approved or clinical candidate drug, includes information on the target gene product and indication. It is derived from the ChEMBL target/disease evidence.",
+    "key": [
+      "known_drug/drugId",
+      "known_drug/targetId",
+      "known_drug/diseaseId",
+      "known_drug/phase",
+      "known_drug/status"
+    ]
   },
   {
     "id": "mouse_phenotype",
     "nice_name": "Mouse phenotype",
-    "description": "Phenotypes of mouse models mapped to human targets."
+    "description": "Phenotypes of mouse models mapped to human targets.",
+    "key": [
+      "mouse_phenotype/modelPhenotypeId",
+      "mouse_phenotype/targetFromSourceId",
+      "mouse_phenotype/targetInModelMgiId"
+    ]
   },
   {
     "id": "literature",
     "nice_name": "Literature",
     "description": "Unique list of entities identified for each literature entry.",
-    "key": [
-      "literature/pmid",
-      "literature/pmcid",
-      "literature/keywordId"
-    ]
-  },
-  {
-    "id": "literature_vector",
-    "nice_name": "Literature vector",
-    "description": "Word to Vector representation of entity matches in literature.",
-    "key": [
-      "literature_vector/word"
-    ]
+    "key": ["literature/pmid", "literature/pmcid", "literature/keywordId"]
   },
   {
     "id": "otar",
     "nice_name": "Open Targets Projects",
-    "description": "Open Targets projects grouped by studied disease or phenotype."
+    "description": "Open Targets projects grouped by studied disease or phenotype.",
+    "key": ["otar/efo_id"]
   }
 ]
