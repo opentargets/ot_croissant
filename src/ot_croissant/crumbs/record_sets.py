@@ -115,11 +115,26 @@ class PlatformOutputRecordSets:
                 column_id = f"{self.DISTRIBUTION_ID}/{column_id}"
             return column_id
 
+        def get_foreign_key(field: t.StructField, field_id: str) -> str | None:
+            """Get the foreign key from the curation."""
+            metadata: dict[str, str] | None = field.metadata
+
+            # If the data contains a foreign key, use it:
+            if metadata and "foreign_key" in metadata:
+                return metadata["foreign_key"]
+            
+            # If the data does not contain a foreign key, get it from the curation:
+            return RecordsetCuration().get_curation(
+                distribution_id=field_id, key="foreign_key"
+            )
+
         field_type: str = field.dataType.typeName() # <- This might be a map. Not yet supported by croissant.
 
         # Get the field description from the data:
         column_description: str = get_field_description(field, get_field_id(parent, field))
 
+        # Get foreign key from the data:
+        
         # Initialise field:
         croissant_field = mlc.Field(
             id=get_field_id(parent, field),
@@ -130,6 +145,11 @@ class PlatformOutputRecordSets:
                 extract=mlc.Extract(column=get_field_id(parent, field, False)),
             ),
         )
+
+        # if foreign_key := get_foreign_key(field, get_field_id(parent, field)):
+        #     croissant_field.references = mlc.Source(
+        #         field = mlc.Extract(column=foreign_key),
+        #     )
 
         if field_type in typeDict.keys():
             croissant_field.data_types.append(typeDict.get(field_type))

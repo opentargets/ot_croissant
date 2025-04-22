@@ -59,7 +59,7 @@
   },
   {
     "id": "disease_phenotype/evidence/references",
-    "description": "References or citations supporting the evidence."
+    "description": "References or citations supporting the evidence. [bioregistry:pubmed]"
   },
   {
     "id": "disease_phenotype/evidence/sex",
@@ -83,11 +83,11 @@
   },
   {
     "id": "mouse_phenotype/biologicalModels/id",
-    "description": "Unique identifier for the biological model."
+    "description": "Unique identifier for the biological model. [bioregistry:mgi]"
   },
   {
     "id": "mouse_phenotype/biologicalModels/literature",
-    "description": "References related to the mouse model."
+    "description": "References related to the mouse model. [bioregistry:pubmed]"
   },
   {
     "id": "mouse_phenotype/modelPhenotypeClasses",
@@ -95,7 +95,7 @@
   },
   {
     "id": "mouse_phenotype/modelPhenotypeClasses/id",
-    "description": "Unique identifier for the phenotype class."
+    "description": "Unique identifier for the phenotype class. [bioregistry:mp]"
   },
   {
     "id": "mouse_phenotype/modelPhenotypeClasses/label",
@@ -103,7 +103,7 @@
   },
   {
     "id": "mouse_phenotype/modelPhenotypeId",
-    "description": "Identifier for the specific phenotype observed in the model."
+    "description": "Identifier for the specific phenotype observed in the model. [bioregistry:mp]"
   },
   {
     "id": "mouse_phenotype/modelPhenotypeLabel",
@@ -120,11 +120,11 @@
   },
   {
     "id": "mouse_phenotype/targetInModelEnsemblId",
-    "description": "Ensembl identifier for the target gene in the mouse model."
+    "description": "Ensembl identifier for the target gene in the mouse model. [bioregistry:ensembl]"
   },
   {
     "id": "mouse_phenotype/targetInModelMgiId",
-    "description": "MGI (Mouse Genome Informatics) identifier for the target gene in the model."
+    "description": "MGI (Mouse Genome Informatics) identifier for the target gene in the model. [bioregistry:mgi]"
   },
   {
     "id": "colocalisation_ecaviar/leftStudyLocusId",
@@ -200,7 +200,7 @@
   },
   {
     "id": "reactome/id",
-    "description": "Unique identifier for the Reactome pathway"
+    "description": "Unique identifier for the Reactome pathway [bioregistry:reactome]"
   },
   {
     "id": "reactome/label",
@@ -228,7 +228,7 @@
   },
   {
     "id": "expression/id",
-    "description": "Ensembl human gene identifier for the expressed gene"
+    "description": "Ensembl human gene identifier for the expressed gene [bioregistry:ensembl]"
   },
   {
     "id": "expression/tissues",
@@ -236,7 +236,7 @@
   },
   {
     "id": "expression/tissues/efo_code",
-    "description": "Ontology ID of the biosample the expression data is from",
+    "description": "Ontology ID of the biosample the expression data is from [bioregistry:uberon]",
     "foreign_key": "biosample/id"
   },
   {
@@ -265,7 +265,7 @@
   },
   {
     "id": "expression/tissues/rna/level",
-    "description": "Level of RNAe xpression normalised to 0-5 or -1 if absent"
+    "description": "Level of RNA expression normalised to 0-5 or -1 if absent"
   },
   {
     "id": "expression/tissues/rna/unit",
@@ -327,7 +327,7 @@
   },
   {
     "id": "target/id",
-    "description": "Unique identifier for the target"
+    "description": "Unique identifier for the target [bioregistry:ensembl]"
   },
   {
     "id": "target/approvedSymbol",
@@ -403,7 +403,7 @@
   },
   {
     "id": "target/go/id",
-    "description": "GO identifier for the annotation",
+    "description": "GO identifier for the annotation [bioregistry:go]",
     "foreign_key": "go/id"
   },
   {
@@ -420,11 +420,11 @@
   },
   {
     "id": "target/go/geneProduct",
-    "description": "Gene product associated with the GO annotation"
+    "description": "Gene product associated with the GO annotation [bioregistry:uniprot]"
   },
   {
     "id": "target/go/ecoId",
-    "description": "Evidence & Conclusion Ontology (ECO) identifier for the GO annotation"
+    "description": "Evidence & Conclusion Ontology (ECO) identifier for the GO annotation [bioregistry:eco]"
   },
   {
     "id": "target/hallmarks",
@@ -436,7 +436,7 @@
   },
   {
     "id": "target/hallmarks/attributes/pmid",
-    "description": "PubMed ID of the supporting literature for the hallmark attribute"
+    "description": "PubMed ID of the supporting literature for the hallmark attribute [bioregistry:pubmed]"
   },
   {
     "id": "target/hallmarks/attributes/description",
@@ -452,7 +452,7 @@
   },
   {
     "id": "target/hallmarks/cancerHallmarks/pmid",
-    "description": "PubMed ID of the supporting literature for the cancer hallmark"
+    "description": "PubMed ID of the supporting literature for the cancer hallmark [bioregistry:pubmed]"
   },
   {
     "id": "target/hallmarks/cancerHallmarks/description",
@@ -520,7 +520,7 @@
   },
   {
     "id": "target/subcellularLocations/termSL",
-    "description": "Subcellular location term identifier from SwissProt"
+    "description": "Subcellular location term identifier from SwissProt [bioregistry:sl]"
   },
   {
     "id": "target/subcellularLocations/labelSL",
@@ -1332,7 +1332,7 @@
   },
   {
     "id": "go/id",
-    "description": "Gene ontology term identifier"
+    "description": "Gene ontology term identifier [bioregistry:go]"
   },
   {
     "id": "go/name",
@@ -1340,7 +1340,7 @@
   },
   {
     "id": "so/id",
-    "description": "Sequence ontology term identifier"
+    "description": "Sequence ontology term identifier [bioregistry:so]"
   },
   {
     "id": "so/label",
@@ -1417,7 +1417,7 @@
   },
   {
     "id": "biosample/biosampleId",
-    "description": "Unique identifier for the biosample"
+    "description": "Unique identifier for the biosample [bioregistry:uberon]"
   },
   {
     "id": "biosample/biosampleName",
@@ -1590,7 +1590,7 @@
   },
   {
     "id": "evidence/ancestryId",
-    "description": "Identifier of the ancestry in the HANCESTRO ontology"
+    "description": "Identifier of the ancestry in the HANCESTRO ontology [bioregistry:hancestro]"
   },
   {
     "id": "evidence/assays",
@@ -1662,7 +1662,7 @@
   },
   {
     "id": "evidence/biomarkers/geneExpression/id",
-    "description": "Gene Ontology (GO) identifiers of regulation or background expression processes"
+    "description": "Gene Ontology (GO) identifiers of regulation or background expression processes [bioregistry:go]"
   },
   {
     "id": "evidence/biomarkers/geneExpression/name",
@@ -1674,7 +1674,7 @@
   },
   {
     "id": "evidence/biomarkers/geneticVariation/functionalConsequenceId",
-    "description": "Functional consequene identifier of the variant biomarker",
+    "description": "Functional consequene identifier of the variant biomarker [bioregistry:so]",
     "foreign_key": "so/id"
   },
   {
@@ -1761,7 +1761,7 @@
   },
   {
     "id": "evidence/diseaseCellLines/tissueId",
-    "description": "Anatomical identifier of the sampled organ/tissue",
+    "description": "Anatomical identifier of the sampled organ/tissue [bioregistry:uberon]",
     "foreign_key": "biosample/biosampleId"
   },
   {
@@ -1782,7 +1782,7 @@
   },
   {
     "id": "evidence/diseaseModelAssociatedHumanPhenotypes/id",
-    "description": "Human phenotype ontology identifier",
+    "description": "Human phenotype ontology identifier [bioregistry:hp]",
     "foreign_key": "disease_hpo/id"
   },
   {
@@ -1795,7 +1795,7 @@
   },
   {
     "id": "evidence/diseaseModelAssociatedModelPhenotypes/id",
-    "description": "Mouse phenotype ontology identifier",
+    "description": "Mouse phenotype ontology identifier [bioregistry:mp]",
     "foreign_key": "mouse_phenotype/modelPhenotypeId"
   },
   {
@@ -1808,7 +1808,7 @@
   },
   {
     "id": "evidence/drugId",
-    "description": "Open Targets drug identifier",
+    "description": "Open Targets drug identifier [bioregistry:chembl]",
     "foreign_key": "drug_molecule/id"
   },
   {
@@ -1857,7 +1857,7 @@
   },
   {
     "id": "evidence/mutatedSamples/functionalConsequenceId",
-    "description": "Functional consequene identifier of the pooled mutations",
+    "description": "Functional consequene identifier of the pooled mutations [bioregistry:so]",
     "foreign_key": "so/id"
   },
   {
@@ -1898,7 +1898,7 @@
   },
   {
     "id": "evidence/pathways/id",
-    "description": "Reactome pathway identifier",
+    "description": "Reactome pathway identifier [bioregistry:reactome]",
     "foreign_key": "reactome/id"
   },
   {
@@ -2019,11 +2019,11 @@
   },
   {
     "id": "evidence/targetInModelEnsemblId",
-    "description": "Target Ensembl ID in animal model"
+    "description": "Target Ensembl ID in animal model [bioregistry:ensembl]"
   },
   {
     "id": "evidence/targetInModelMgiId",
-    "description": "Target MGI ID in animal model"
+    "description": "Target MGI ID in animal model [bioregistry:mgi]"
   },
   {
     "id": "evidence/targetModulation",
@@ -2055,7 +2055,7 @@
   },
   {
     "id": "evidence/variantFunctionalConsequenceId",
-    "description": "Sequence ontology (SO) identifier of the functional consequence of the variant",
+    "description": "Sequence ontology (SO) identifier of the functional consequence of the variant [bioregistry:so]",
     "foreign_key": "so/id"
   },
   {
@@ -2170,6 +2170,14 @@
     "description": "Identifier for the specific genetic variant combination (e.g. 1_1500_A_A,T)"
   },
   {
+    "id": "pharmacogenomics/haplotypeFromSourceId",
+    "description": "Haplotype ID in the PharmKGB dataset"
+  },
+  {
+    "id": "pharmacogenomics/haplotypeId",
+    "description": "Combination of genetic variants that constitute a particular allele of a gene (e.g. CYP2C9*3)"
+  },
+  {
     "id": "pharmacogenomics/literature",
     "description": "PubMed identifier (PMID) of the literature entry"
   },
@@ -2178,8 +2186,26 @@
     "description": "Classification of the drug response type (e.g. Toxicity)"
   },
   {
+    "id": "pharmacogenomics/phenotypeFromSourceId",
+    "description": "Open Targets disease identifier result of mapping phenotypeText",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "pharmacogenomics/phenotypeText",
+    "description": "Drug response influenced by the variation"
+  },
+  {
+    "id": "pharmacogenomics/studyId",
+    "description": "Clinical Annotation ID in the PharmKGB dataset"
+  },
+  {
+    "id": "pharmacogenomics/targetFromSourceId",
+    "description": "Open Targets target identifier as provided by the data source",
+    "foreign_key": "target/id"
+  },
+  {
     "id": "pharmacogenomics/variantFunctionalConsequenceId",
-    "description": "The sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript",
+    "description": "The sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript [bioregistry:so]",
     "foreign_key": "so/id"
   },
   {
@@ -2210,7 +2236,7 @@
   },
   {
     "id": "target_essentiality/id",
-    "description": "Target identifier the essentiality was measured on",
+    "description": "Target identifier the essentiality was measured on [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -2255,7 +2281,7 @@
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/tissueId",
-    "description": "Identifier of the tissue from where the cells were sample for assay",
+    "description": "Identifier of the tissue from where the cells were sample for assay [bioregistry:uberon]",
     "foreign_key": "biosample/id"
   },
   {
@@ -2410,7 +2436,7 @@
   },
   {
     "id": "interaction_evidence/targetB",
-    "description": "Open Targets target identifier of the second molecule (target B) in the interaction",
+    "description": "Open Targets target identifier of the second molecule (target B) in the interaction [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -2423,7 +2449,7 @@
   },
   {
     "id": "interaction_evidence/participantDetectionMethodB/miIdentifier",
-    "description": "Molecular Interactions (MI) identifier for participant B\u2019s detection method"
+    "description": "Molecular Interactions (MI) identifier for participant B\u2019s detection method [bioregistry:mi]"
   },
   {
     "id": "interaction_evidence/participantDetectionMethodB/shortName",
@@ -2459,11 +2485,11 @@
   },
   {
     "id": "interaction_evidence/interactionTypeMiIdentifier",
-    "description": "Molecular Interactions (MI) identifier for the type of interaction"
+    "description": "Molecular Interactions (MI) identifier for the type of interaction [bioregistry:mi]"
   },
   {
     "id": "interaction_evidence/expansionMethodMiIdentifier",
-    "description": "Molecular Interactions (MI) identifier for the expansion method used"
+    "description": "Molecular Interactions (MI) identifier for the expansion method used [bioregistry:mi]"
   },
   {
     "id": "interaction_evidence/speciesB",
@@ -2539,7 +2565,7 @@
   },
   {
     "id": "interaction_evidence/participantDetectionMethodA/miIdentifier",
-    "description": "Molecular Interactions (MI) identifier for participant A\u2019s detection method"
+    "description": "Molecular Interactions (MI) identifier for participant A\u2019s detection method [bioregistry:mi]"
   },
   {
     "id": "interaction_evidence/participantDetectionMethodA/shortName",
@@ -2555,12 +2581,12 @@
   },
   {
     "id": "interaction_evidence/targetA",
-    "description": "Open Targets target identifier of the second molecule (target A) in the interaction",
+    "description": "Open Targets target identifier of the second molecule (target A) in the interaction [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
     "id": "interaction_evidence/interactionDetectionMethodMiIdentifier",
-    "description": "Molecular Interactions (MI) identifier for the interaction detection method"
+    "description": "Molecular Interactions (MI) identifier for the interaction detection method [bioregistry:mi]"
   },
   {
     "id": "association_by_datasource_direct/datatypeId",
@@ -2630,7 +2656,7 @@
   },
   {
     "id": "variant/variantEffect/targetId",
-    "description": "The target identifier on which the variant effect is interpreted",
+    "description": "The target identifier on which the variant effect is interpreted [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -2639,7 +2665,7 @@
   },
   {
     "id": "variant/mostSevereConsequenceId",
-    "description": "The sequence ontology identifier of the most severe consequence of the variant based on Ensembl VEP",
+    "description": "The sequence ontology identifier of the most severe consequence of the variant based on Ensembl VEP [bioregistry:so]",
     "foreign_key": "so/id"
   },
   {
@@ -2648,7 +2674,7 @@
   },
   {
     "id": "variant/transcriptConsequences/variantFunctionalConsequenceIds",
-    "description": "The sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript",
+    "description": "The sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript [bioregistry:so]",
     "foreign_key": "so/id"
   },
   {
@@ -2657,7 +2683,7 @@
   },
   {
     "id": "variant/transcriptConsequences/uniprotAccessions",
-    "description": "List of Uniprot identifiers of the gene product"
+    "description": "List of Uniprot identifiers of the gene product [bioregistry:uniprot]"
   },
   {
     "id": "variant/transcriptConsequences/isEnsemblCanonical",
@@ -2685,7 +2711,7 @@
   },
   {
     "id": "variant/transcriptConsequences/targetId",
-    "description": "Open Target target identifier of the transcript",
+    "description": "Open Target target identifier of the transcript [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -2722,7 +2748,7 @@
   },
   {
     "id": "variant/transcriptConsequences/transcriptId",
-    "description": "The Ensembl transcript identifier"
+    "description": "The Ensembl transcript identifier [bioregistry:ensembl]"
   },
   {
     "id": "variant/rsIds",
@@ -2766,7 +2792,7 @@
   },
   {
     "id": "interaction/targetA",
-    "description": "Open Targets target identifier of the first molecule (target A) in the interaction.",
+    "description": "Open Targets target identifier of the first molecule (target A) in the interaction. [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -2779,7 +2805,7 @@
   },
   {
     "id": "interaction/targetB",
-    "description": "Open Targets target identifier of the second molecule (target B) in the interaction.",
+    "description": "Open Targets target identifier of the second molecule (target B) in the interaction. [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -2836,7 +2862,7 @@
   },
   {
     "id": "study/geneId",
-    "description": "Ensembl identifier of the gene representing a specific gene whose molecular is being analysed in molQTL study.",
+    "description": "Ensembl identifier of the gene representing a specific gene whose molecular is being analysed in molQTL study. [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -2861,7 +2887,7 @@
   },
   {
     "id": "study/pubmedId",
-    "description": "PubMed identifier of the publication hat references the study.",
+    "description": "PubMed identifier of the publication hat references the study. [bioregistry:pubmed]",
     "foreign_key": "literature/pmid"
   },
   {
@@ -2979,7 +3005,7 @@
   },
   {
     "id": "study/biosampleId",
-    "description": "Biosample identifier that maps to the biosample reported by study.",
+    "description": "Biosample identifier that maps to the biosample reported by study. [bioregistry:uberon]",
     "foreign_key": "biosample/id"
   },
   {
