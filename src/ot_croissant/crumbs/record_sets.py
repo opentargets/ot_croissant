@@ -125,7 +125,7 @@ class PlatformOutputRecordSets:
             
             # If the data does not contain a foreign key, get it from the curation:
             return RecordsetCuration().get_curation(
-                distribution_id=field_id, key="foreign_key"
+                distribution_id=field_id, key="foreign_key", log_level=logging.DEBUG
             )
 
         field_type: str = field.dataType.typeName() # <- This might be a map. Not yet supported by croissant.
@@ -143,13 +143,11 @@ class PlatformOutputRecordSets:
             source=mlc.Source(
                 file_set=self.DISTRIBUTION_ID + "-fileset",
                 extract=mlc.Extract(column=get_field_id(parent, field, False)),
-            ),
+            ),  
         )
 
-        # if foreign_key := get_foreign_key(field, get_field_id(parent, field)):
-        #     croissant_field.references = mlc.Source(
-        #         field = mlc.Extract(column=foreign_key),
-        #     )
+        if foreign_key := get_foreign_key(field, get_field_id(parent, field)):
+            croissant_field.references = mlc.Source(field=foreign_key)
 
         if field_type in typeDict.keys():
             croissant_field.data_types.append(typeDict.get(field_type))

@@ -237,7 +237,7 @@
   {
     "id": "expression/tissues/efo_code",
     "description": "Ontology ID of the biosample the expression data is from [bioregistry:uberon]",
-    "foreign_key": "biosample/id"
+    "foreign_key": "biosample/biosampleId"
   },
   {
     "id": "expression/tissues/label",
@@ -281,7 +281,11 @@
   },
   {
     "id": "expression/tissues/protein/cell_type",
-    "description": "Array of structs..."
+    "description": "List of cell types were protein levels were measured"
+  },
+  {
+    "id": "expression/tissues/protein/cell_type/name",
+    "description": "Cell type name"
   },
   {
     "id": "drug_mechanism_of_action/actionType",
@@ -294,7 +298,7 @@
   {
     "id": "drug_mechanism_of_action/chemblIds",
     "description": "List of Open Targets molecule identifiers",
-    "foreign_key": "molecule/id"
+    "foreign_key": "drug_molecule/id"
   },
   {
     "id": "drug_mechanism_of_action/targetName",
@@ -958,7 +962,7 @@
   {
     "id": "drug_warning/chemblIds",
     "description": "List of Open Targets molecule identifiers",
-    "foreign_key": "molecule/id"
+    "foreign_key": "drug_molecule/id"
   },
   {
     "id": "drug_warning/toxicityClass",
@@ -1067,7 +1071,7 @@
   {
     "id": "known_drug/drugId",
     "description": "Open Targets molecule identifier",
-    "foreign_key": "molecule/id"
+    "foreign_key": "drug_molecule/id"
   },
   {
     "id": "known_drug/targetId",
@@ -1504,7 +1508,7 @@
   {
     "id": "drug_molecule/parentId",
     "description": "Open Targets molecule identifier of the parent molecule for derivative compounds",
-    "foreign_key": "molecule/id"
+    "foreign_key": "drug_molecule/id"
   },
   {
     "id": "drug_molecule/hasBeenWithdrawn",
@@ -1537,7 +1541,7 @@
   {
     "id": "drug_molecule/childChemblIds",
     "description": "List of Open Targets molecule identifiers of derivative compounds",
-    "foreign_key": "molecule/id"
+    "foreign_key": "drug_molecule/id"
   },
   {
     "id": "drug_molecule/linkedDiseases",
@@ -2232,7 +2236,7 @@
   {
     "id": "pharmacogenomics/drugs/drugId",
     "description": "List of Open Targets drug identifiers",
-    "foreign_key": "molecule/id"
+    "foreign_key": "drug_molecule/id"
   },
   {
     "id": "target_essentiality/id",
@@ -2282,7 +2286,7 @@
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/tissueId",
     "description": "Identifier of the tissue from where the cells were sample for assay [bioregistry:uberon]",
-    "foreign_key": "biosample/id"
+    "foreign_key": "biosample/biosampleId"
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/tissueName",
@@ -2923,6 +2927,10 @@
     "description": "The number of controls in this broad ancestry group."
   },
   {
+    "id": "study/nSamples",
+    "description": "The number of samples tested in GWAS analysis"
+  },
+  {
     "id": "study/cohorts",
     "description": "List of cohort(s) represented in the discovery sample."
   },
@@ -3006,7 +3014,7 @@
   {
     "id": "study/biosampleId",
     "description": "Biosample identifier that maps to the biosample reported by study. [bioregistry:uberon]",
-    "foreign_key": "biosample/id"
+    "foreign_key": "biosample/biosampleId"
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/chembl_id",
@@ -3101,7 +3109,7 @@
   {
     "id": "drug_indication/id",
     "description": "Open Targets molecule identifier ",
-    "foreign_key": "molecule/id"
+    "foreign_key": "drug_molecule/id"
   },
   {
     "id": "drug_indication/indications",

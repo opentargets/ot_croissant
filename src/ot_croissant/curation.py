@@ -47,7 +47,7 @@ class BaseCuration(ABC):
         
         self.curation = {item["id"]: item for item in data_list}
 
-    def get_curation(self: BaseCuration, distribution_id: str, key: str) -> str | None:
+    def get_curation(self: BaseCuration, distribution_id: str, key: str, log_level: int=logging.WARNING) -> str | None:
         """Get curation entry for a given distribution ID and key.
 
         Args:
@@ -61,7 +61,7 @@ class BaseCuration(ABC):
         if curation_entry and key in curation_entry:
             return curation_entry[key]
         else:
-            logger.warning(self.get_warning_message(distribution_id, key))
+            logger.log(log_level,self.get_warning_message(distribution_id, key))
             return None
 
 
