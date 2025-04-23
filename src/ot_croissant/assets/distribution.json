@@ -302,6 +302,14 @@
     "key": ["literature/pmid", "literature/pmcid", "literature/keywordId"]
   },
   {
+    "id": "literature_vector",
+    "nice_name": "Literature vector",
+    "description": "Word to Vector representation of entity matches in literature.",
+    "key": [
+      "literature_vector/word"
+    ]
+  },
+  {
     "id": "otar",
     "nice_name": "Open Targets Projects",
     "description": "Open Targets projects grouped by studied disease or phenotype.",
