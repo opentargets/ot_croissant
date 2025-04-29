@@ -23,5 +23,7 @@ ot_croissant = "app:main"
 dev = [
     "ipykernel>=6.29.5",
     "ipython>=8.32.0",
+    "mypy>=1.15.0",
+    "pylance>=0.26.0",
     "ruff>=0.9.3",
 ]

@@ -14,22 +14,33 @@ class PlatformOutputDistribution:
     def __init__(self):
         self.distribution = []
         self.contained_in = []
+        self.curation = DistributionCuration()
         super().__init__()
 
     def get_metadata(self):
         """Return the distribution metadata."""
         return self.distribution
 
-    @staticmethod
-    def get_distribution_curation(id: str, key: str) -> str:
-        """Returns the curation value of the distribution."""
-        curation_entry = DistributionCuration().get_curation(
-            distribution_id=id, key=key
+    def generate_distribution_description(self, id: str) -> str:
+        """Generate the description of the distribution."""
+        description = self.curation.get_curation(id, "description")
+
+        # Return basic description if curation is not available:
+        if description is None:
+            return f"Description of the distribution '{id}' is not available."
+
+        # Extract tags:
+        tags = self.curation.get_curation(
+            distribution_id=id, key='tags', log_level=logging.DEBUG
         )
-        if curation_entry:
-            return curation_entry
-        else:
-            return f"Automatic {key} of the file set/object '{id}'."
+
+        # Return description if tags are not available:
+        if tags is None:
+            return description
+
+        # Format tags:
+        return f"{description} [{', '.join(tags)}]"
+
 
     def add_ftp_location(self, ftp_location: str, data_integrity_hash: str):
         """Add the FTP location of the distribution IF ftp location is not None.
@@ -77,8 +88,8 @@ class PlatformOutputDistribution:
         for id in ids:
             fileset = FileSet(
                 id=id + "-fileset",
-                name=self.get_distribution_curation(id, "nice_name"),
-                description=self.get_distribution_curation(id, "description"),
+                name=self.curation.get_curation(id, "nice_name") if self.curation.get_curation(id, "nice_name") else f"Automatic nice_name of the file set/object '{id}'.",
+                description=self.generate_distribution_description(id),
                 encoding_format="application/x-parquet",
                 includes=f"{id}/*.parquet",
             )
