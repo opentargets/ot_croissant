@@ -16,6 +16,14 @@ class BaseCuration(ABC):
 
     curation: dict = field(default_factory=dict)
 
+    def __post_init__(self: BaseCuration) -> None:
+        """Load curation data from the specified JSON file."""
+        
+        with open(self.curation_path, "r") as f:
+            data_list = json.load(f)
+        
+        self.curation = {item["id"]: item for item in data_list}
+
     @property
     @abstractmethod
     def curation_path(self: BaseCuration) -> Path:
@@ -38,14 +46,6 @@ class BaseCuration(ABC):
             Warning message string.
         """
         pass
-
-    def __post_init__(self: BaseCuration) -> None:
-        """Load curation data from the specified JSON file."""
-        
-        with open(self.curation_path, "r") as f:
-            data_list = json.load(f)
-        
-        self.curation = {item["id"]: item for item in data_list}
 
     def get_curation(self: BaseCuration, distribution_id: str, key: str, log_level: int=logging.WARNING) -> str | None:
         """Get curation entry for a given distribution ID and key.
