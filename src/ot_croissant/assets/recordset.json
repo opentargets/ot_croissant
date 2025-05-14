@@ -1110,18 +1110,15 @@
   },
   {
     "id": "known_drug/label",
-    "description": "Disease label for the condition being treated",
-    "foreign_key": "disease/name"
+    "description": "Disease label for the condition being treated"
   },
   {
     "id": "known_drug/approvedSymbol",
-    "description": "Approved gene symbol of the target modulated by the drug",
-    "foreign_key": "target/approvedSymbol"
+    "description": "Approved gene symbol of the target modulated by the drug"
   },
   {
     "id": "known_drug/approvedName",
-    "description": "Approved full name of the gene or gene product modulated by the drug",
-    "foreign_key": "target/approvedName"
+    "description": "Approved full name of the gene or gene product modulated by the drug"
   },
   {
     "id": "known_drug/targetClass",
@@ -1190,13 +1187,11 @@
   },
   {
     "id": "credible_set/chromosome",
-    "description": "Chromosome which the credible set is located. ",
-    "foreign_key": "variant/chromosome"
+    "description": "Chromosome which the credible set is located. "
   },
   {
     "id": "credible_set/position",
-    "description": "Position of the lead variant for the credible set (GRCh38).",
-    "foreign_key": "variant/position"
+    "description": "Position of the lead variant for the credible set (GRCh38)."
   },
   {
     "id": "credible_set/region",
@@ -3122,8 +3117,7 @@
   },
   {
     "id": "drug_indication/indications/efoName",
-    "description": "List of disease labels",
-    "foreign_key": "disease/name"
+    "description": "List of disease labels"
   },
   {
     "id": "drug_indication/indications/references",
