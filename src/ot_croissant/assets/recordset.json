@@ -2990,11 +2990,11 @@
     "description": "Mapping of quality control flags."
   },
   {
-    "id": "study/sumstatQCValues/key",
+    "id": "study/sumstatQCValues/QCCheckName",
     "description": "Quality control metric identifier."
   },
   {
-    "id": "study/sumstatQCValues/value",
+    "id": "study/sumstatQCValues/QCCheckValue",
     "description": "Quality control metric value."
   },
   {
