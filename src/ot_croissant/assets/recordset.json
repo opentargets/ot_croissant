@@ -1526,11 +1526,11 @@
     "description": "List of identifiers in other databases"
   },
   {
-    "id": "drug_molecule/crossReferences/key",
-    "description": "List of database source name"
+    "id": "drug_molecule/crossReferences/source",
+    "description": "Database source name"
   },
   {
-    "id": "drug_molecule/crossReferences/value",
+    "id": "drug_molecule/crossReferences/ids",
     "description": "List of identifiers in other databases"
   },
   {
