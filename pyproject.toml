@@ -5,7 +5,7 @@ description = "Open Targets Croissant exporter"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "mlcroissant>=1.0.12",
+    "mlcroissant>=1.0.17",
     "pyspark>=3.5.4",
 ]
 
