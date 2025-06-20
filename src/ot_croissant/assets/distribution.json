@@ -138,7 +138,7 @@
     "nice_name": "Target - Prioritisation",
     "key": ["target_validation/targetId"],
     "description": "Target-specific properties used to prioritise targets for further prioritisation (prioritisation view). All prioritisation factors included in the dataset range from -1 (unfavourable) to 1 (favourable). The prioritisation factors cover several areas around the clinical precedence, tractability, do-ability and safety of a target.",
-    "tags": NaN
+    "tags": null
   },
   {
     "id": "target_essentiality",
@@ -350,6 +350,6 @@
     "nice_name": "Open Targets Projects",
     "key": ["otar/efo_id"],
     "description": "Open Targets projects grouped by studied disease or phenotype.",
-    "tags": NaN
+    "tags": null
   }
 ]

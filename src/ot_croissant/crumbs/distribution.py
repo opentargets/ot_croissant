@@ -37,7 +37,7 @@ class PlatformOutputDistribution:
         )
 
         # Return description if tags are not available:
-        if tags is None:
+        if not isinstance(tags, list):
             return description
 
         # Format tags:
@@ -96,7 +96,6 @@ class PlatformOutputDistribution:
                 ),
                 description=self.generate_distribution_description(id),
                 encoding_formats="application/x-parquet",
-                includes=f"{id}/*.parquet",
             )
 
             if len(self.contained_in) > 0:
