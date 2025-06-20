@@ -96,6 +96,7 @@ class PlatformOutputDistribution:
                 ),
                 description=self.generate_distribution_description(id),
                 encoding_formats="application/x-parquet",
+                includes=f"{id}/*.parquet"
             )
 
             if len(self.contained_in) > 0:
