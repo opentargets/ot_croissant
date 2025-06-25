@@ -96,3 +96,14 @@ class RecordsetCuration(BaseCuration):
 
     def get_warning_message(self, distribution_id: str, key: str) -> str:
         return f"[Recordset]: Field '{key}' not found in curation table for '{distribution_id}'."
+    
+
+class InstanceCuration(BaseCuration):
+    """Curation logic for Platform instances."""
+
+    @property
+    def curation_path(self) -> Path:
+        return Path(__file__).parent / "assets/instance.json"
+
+    def get_warning_message(self, distribution_id: str, key: str) -> str:
+        return f"[Instance]: Field '{key}' not found in curation table for '{distribution_id}'."
