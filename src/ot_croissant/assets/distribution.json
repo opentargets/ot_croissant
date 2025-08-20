@@ -479,10 +479,10 @@
     "tags": null
   },
   {
-    "id": "interval_index",
-    "nice_name": "Interval index",
+    "id": "interval",
+    "nice_name": "Genomic intervals",
     "key": [
-      "interval_index/intervalId"
+      "interval/intervalId"
     ],
     "description": "Genomic regions (intervals) associated with genes based on epigenetics evidence.",
     "tags": [
