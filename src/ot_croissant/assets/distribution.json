@@ -190,7 +190,7 @@
       "target_validation/targetId"
     ],
     "description": "Target-specific properties used to prioritise targets for further prioritisation (prioritisation view). All prioritisation factors included in the dataset range from -1 (unfavourable) to 1 (favourable). The prioritisation factors cover several areas around the clinical precedence, tractability, do-ability and safety of a target.",
-    "tags": NaN
+    "tags": null
   },
   {
     "id": "target_essentiality",
@@ -476,6 +476,18 @@
       "otar/efo_id"
     ],
     "description": "Open Targets projects grouped by studied disease or phenotype.",
-    "tags": NaN
+    "tags": null
+  },
+  {
+    "id": "interval_index",
+    "nice_name": "Interval index",
+    "key": [
+      "interval_index/intervalId"
+    ],
+    "description": "Genomic regions (intervals) associated with genes based on epigenetics evidence.",
+    "tags": [
+      "Target",
+      "Genetics"
+    ]
   }
 ]
