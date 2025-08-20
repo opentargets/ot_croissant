@@ -1404,6 +1404,14 @@
     "description": "Identifer of the evidence source"
   },
   {
+    "id": "evidence/publicationDate",
+    "description": "Date of the earliest publication supporting the evidence"
+  },
+  {
+    "id": "evidence/evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
     "id": "expression/id",
     "description": "Ensembl human gene identifier for the expressed gene [bioregistry:ensembl]"
   },
@@ -3137,53 +3145,53 @@
     "description": "Short summary of the variant effect"
   },
   {
-    "id": "interval_index/chromosome",
+    "id": "interval/chromosome",
     "description": "The chromosome the interval is located on"
   },
   {
-    "id": "interval_index/start",
+    "id": "interval/start",
     "description": "The basepair position of the interval start"
   },
   {
-    "id": "interval_index/end",
+    "id": "interval/end",
     "description": "The basepair position of the interval end"
   },
   {
-    "id": "interval_index/geneId",
+    "id": "interval/geneId",
     "description": "The Ensembl gene identifier of the target the interval is linked with [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
-    "id": "interval_index/biosampleName",
+    "id": "interval/biosampleName",
     "description": "The name of the cell type/anatomical unit the interval was identified in"
   },
   {
-    "id": "interval_index/intervalType",
+    "id": "interval/intervalType",
     "description": "The type of the interval"
   },
   {
-    "id": "interval_index/distanceToTss",
+    "id": "interval/distanceToTss",
     "description": "The distance of the interval from the transcription start site of the gene"
   },
   {
-    "id": "interval_index/datasourceId",
+    "id": "interval/datasourceId",
     "description": "The identifier of the interval datasource"
   },
   {
-    "id": "interval_index/pmid",
+    "id": "interval/pmid",
     "description": "The Pubmed identifier of the publication that reported the interval data"
   },
   {
-    "id": "interval_index/studyId",
+    "id": "interval/studyId",
     "description": "Identifier of the interval study"
   },
   {
-    "id": "interval_index/biosampleId",
+    "id": "interval/biosampleId",
     "description": "Identifier of the biosample where the interval was discovered in",
     "foreign_key": "biosample/biosampleId"
   },
   {
-    "id": "interval_index/intervalId",
+    "id": "interval/intervalId",
     "description": "Identifier of the interval"
   }
 ]
