@@ -59,7 +59,7 @@ class PlatformOutputDistribution:
                     id="ftp-location",
                     name="FTP location",
                     description="FTP location of the Open Targets Platform data.",
-                    encoding_formats="https",
+                    encoding_formats="application/vnd.apache.parquet",
                     content_url=ftp_location,
                     sha256=data_integrity_hash,
                 )
@@ -75,7 +75,7 @@ class PlatformOutputDistribution:
                 id="gcp-location",
                 name="GCP location",
                 description="Location of the Open Targets Platform data in Google Cloud Storage.",
-                encoding_formats="https",
+                encoding_formats="application/vnd.apache.parquet",
                 content_url=gcp_location,
                 sha256=data_integrity_hash,
             )
@@ -95,7 +95,7 @@ class PlatformOutputDistribution:
                     else f"Automatic nice_name of the file set/object '{id}'."
                 ),
                 description=self.generate_distribution_description(id),
-                encoding_formats="application/x-parquet",
+                encoding_formats="application/vnd.apache.parquet",
                 includes=f"{id}/*.parquet"
             )
 
