@@ -3,8 +3,10 @@
 import logging
 from mlcroissant import FileSet, FileObject
 from ot_croissant.curation import DistributionCuration
-
+from pyspark.sql import SparkSession, types as t
 logger = logging.getLogger(__name__)
+
+
 
 
 class PlatformOutputDistribution:
@@ -17,6 +19,10 @@ class PlatformOutputDistribution:
         self.distribution = []
         self.contained_in = []
         self.curation = DistributionCuration()
+        
+        self.spark = SparkSession.builder.getOrCreate()
+        self.spark_context = self.spark.sparkContext
+
         super().__init__()
 
     def get_metadata(self):
@@ -59,7 +65,7 @@ class PlatformOutputDistribution:
                     id="ftp-location",
                     name="FTP location",
                     description="FTP location of the Open Targets Platform data.",
-                    encoding_formats="application/vnd.apache.parquet",
+                    encoding_formats="application/x-ftp-directory",
                     content_url=ftp_location,
                     sha256=data_integrity_hash,
                 )
@@ -75,7 +81,7 @@ class PlatformOutputDistribution:
                 id="gcp-location",
                 name="GCP location",
                 description="Location of the Open Targets Platform data in Google Cloud Storage.",
-                encoding_formats="application/vnd.apache.parquet",
+                encoding_formats="application/x-gcp-directory",
                 content_url=gcp_location,
                 sha256=data_integrity_hash,
             )
@@ -85,8 +91,15 @@ class PlatformOutputDistribution:
 
     def add_assets_from_paths(self, paths: list[str]):
         """Add files from a list to the distribution."""
-        ids = [path.split("/")[-1] for path in paths]
-        for id in ids:
+        for path in paths:
+
+            # Extracting dataset name:
+            id = path.split("/")[-1]
+            
+            # The includes depends on if the dataset has hyve partition:
+            includes = f"{id}/**/*.parquet" if self._has_hyve_partition(path) else f"{id}/*.parquet"
+
+            # Generating fileset description:
             fileset = FileSet(
                 id=id + "-fileset",
                 name=(
@@ -96,7 +109,7 @@ class PlatformOutputDistribution:
                 ),
                 description=self.generate_distribution_description(id),
                 encoding_formats="application/vnd.apache.parquet",
-                includes=f"{id}/*.parquet"
+                includes=includes
             )
 
             if len(self.contained_in) > 0:
@@ -104,3 +117,28 @@ class PlatformOutputDistribution:
 
             self.distribution.append(fileset)
         return self
+
+
+    def _has_hyve_partition(self, path: str) -> bool:
+        """Checking if the dataset has hyve partition via interacting with spark context.
+        
+        Args:
+            path (str): path to the dataset
+
+        Returns:
+            bool: True if the dataset has hyve partitions otherwise False
+        """
+        # List all files and folders in the path
+        fs = self.spark_context._jvm.org.apache.hadoop.fs.FileSystem.get(self.spark_context._jsc.hadoopConfiguration())
+        p = self.spark_context._jvm.org.apache.hadoop.fs.Path(path)
+        statuses = fs.listStatus(p)
+
+        # Find folders with '=' in their name (Hive partition folders)
+        partition_cols = []
+        for status in statuses:
+            name = status.getPath().getName()
+            if status.isDirectory() and '=' in name:
+                col = name.split('=')[0]
+                partition_cols.append(col)
+        
+        return True if len(set(partition_cols)) > 0 else False
