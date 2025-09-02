@@ -876,7 +876,7 @@
   },
   {
     "id": "evidence/assessments",
-    "description": "Assessment of a study. In the context of Validation Lab, this is the assessment of the validation gene in a given cellular context"
+    "description": "Short name of the assay"
   },
   {
     "id": "evidence/beta",
@@ -2053,15 +2053,11 @@
   },
   {
     "id": "pharmacogenomics/haplotypeFromSourceId",
-    "description": "Haplotype ID in the PharmKGB dataset"
+    "description": "Haplotype ID in the ClinPGX dataset"
   },
   {
     "id": "pharmacogenomics/haplotypeId",
     "description": "Combination of genetic variants that constitute a particular allele of a gene (e.g. CYP2C9*3)"
-  },
-  {
-    "id": "pharmacogenomics/literature",
-    "description": "PubMed identifier (PMID) of the literature entry"
   },
   {
     "id": "pharmacogenomics/pgxCategory",
@@ -2075,6 +2071,46 @@
   {
     "id": "pharmacogenomics/phenotypeText",
     "description": "Drug response influenced by the variation"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation",
+    "description": "Metadata on the underlying variation"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/baseAlleleOrGenotype",
+    "description": "Reference allele or genotype in comparison"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/comparisonAlleleOrGenotype",
+    "description": "Allele or genotype the variant effect is interpreted on"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/directionality",
+    "description": "Direction of effect of the allele or genotype"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/effect",
+    "description": "Pharmacogenomic effect of the variation"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/effectDescription",
+    "description": "Summary of the impact of the allele on the drug response"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/effectType",
+    "description": "Type of effect (eg. functional, drug or phenotype)"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/entity",
+    "description": "Entity affected by the effect"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/id",
+    "description": "Identifier of the variant annotation at source"
+  },
+  {
+    "id": "pharmacogenomics/variantAnnotation/literature",
+    "description": "Literature reference of the variant annotation supporting the evidence"
   },
   {
     "id": "pharmacogenomics/studyId",
@@ -2104,8 +2140,12 @@
     "description": "Flag indicating whether the target overlapping the variation is directly targeted by the drug"
   },
   {
+    "id": "pharmacogenomics/literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
     "id": "pharmacogenomics/drugs",
-    "description": "List of drugs affected by this genetic variation"
+    "description": "List of drug references"
   },
   {
     "id": "pharmacogenomics/drugs/drugFromSource",
@@ -2113,7 +2153,7 @@
   },
   {
     "id": "pharmacogenomics/drugs/drugId",
-    "description": "List of Open Targets drug identifiers",
+    "description": "List of Open Targets drug identifiers [bioregistry:chembl]",
     "foreign_key": "drug_molecule/id"
   },
   {
@@ -3172,6 +3212,22 @@
   {
     "id": "interval/distanceToTss",
     "description": "The distance of the interval from the transcription start site of the gene"
+  },
+  {
+    "id": "interval/score",
+    "description": "Interval evidence score from the datasource, higher values indicate stronger support linking the interval to its target gene."
+  },
+  {
+    "id": "interval/resourceScore",
+    "description": "List of contributing score components"
+  },
+  {
+    "id": "interval/resourceScore/name",
+    "description": "Individual components which contributes to the interval score (e.g., DNase, HiC_contacts)."
+  },
+  {
+    "id": "interval/resourceScore/value",
+    "description": "The raw signal value from the resourceScore(s)."
   },
   {
     "id": "interval/datasourceId",

@@ -95,9 +95,19 @@ class PlatformOutputDistribution:
 
             # Extracting dataset name:
             id = path.split("/")[-1]
+
+            # Get columns the dataset is partitioned by:
+            partitioned_by = self._partitioned_by(path)
             
             # The includes depends on if the dataset has hyve partition:
-            includes = f"{id}/**/*.parquet" if self._has_hyve_partition(path) else f"{id}/*.parquet"
+            includes = f"{id}/**/*.parquet" if len(partitioned_by) > 0 else f"{id}/*.parquet"
+
+            # Description:
+            description = f"Files containing all partitions of the {id} dataset" 
+            
+            # If the dataset is partitioned by any field, add to description:
+            if len(partitioned_by) > 0:
+                description += f" partitioned by {','.join(partitioned_by)}"
 
             # Generating fileset description:
             fileset = FileSet(
@@ -107,7 +117,7 @@ class PlatformOutputDistribution:
                     if self.curation.get_curation(id, "nice_name")
                     else f"Automatic nice_name of the file set/object '{id}'."
                 ),
-                description=self.generate_distribution_description(id),
+                description=description,
                 encoding_formats="application/vnd.apache.parquet",
                 includes=includes
             )
@@ -119,14 +129,14 @@ class PlatformOutputDistribution:
         return self
 
 
-    def _has_hyve_partition(self, path: str) -> bool:
+    def _partitioned_by(self, path: str) -> list[str]:
         """Checking if the dataset has hyve partition via interacting with spark context.
         
         Args:
             path (str): path to the dataset
 
         Returns:
-            bool: True if the dataset has hyve partitions otherwise False
+            list[str]: List of columns the dataset is partitioned by
         """
         # List all files and folders in the path
         fs = self.spark_context._jvm.org.apache.hadoop.fs.FileSystem.get(self.spark_context._jsc.hadoopConfiguration())
@@ -141,4 +151,4 @@ class PlatformOutputDistribution:
                 col = name.split('=')[0]
                 partition_cols.append(col)
         
-        return True if len(set(partition_cols)) > 0 else False
+        return list(set(partition_cols))
