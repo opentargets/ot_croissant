@@ -2198,7 +2198,7 @@
   },
   {
     "id": "study/geneId",
-    "description": "Ensembl identifier of the gene representing a specific gene whose molecular is being analysed in molQTL study [bioregistry:ensembl]",
+    "description": "Ensembl identifier of the gene analysed in this molQTL study [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
