@@ -1833,7 +1833,7 @@
   },
   {
     "id": "literature/pmid",
-    "description": "PubMed identifier (PMID) of the literature entry"
+    "description": "Europe PubMed Central identifier (EPMCID) of the literature entry"
   },
   {
     "id": "literature/pmcid",
