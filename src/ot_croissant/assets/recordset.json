@@ -9,12 +9,12 @@
   },
   {
     "id": "association_by_datasource_direct/diseaseId",
-    "description": "Identifier for the disease in the association.",
+    "description": "Identifier for the disease in the association",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_datasource_direct/targetId",
-    "description": "Identifier for the target in the association.",
+    "description": "Identifier for the target in the association",
     "foreign_key": "target/id"
   },
   {
@@ -23,7 +23,7 @@
   },
   {
     "id": "association_by_datasource_direct/evidenceCount",
-    "description": "Number of evidence items supporting the association."
+    "description": "Number of evidence items supporting the association"
   },
   {
     "id": "association_by_datasource_indirect/datatypeId",
@@ -35,92 +35,92 @@
   },
   {
     "id": "association_by_datasource_indirect/diseaseId",
-    "description": "Identifier for the disease in the association.",
+    "description": "Identifier for the disease in the association",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_datasource_indirect/targetId",
-    "description": "Identifier for the target in the association.",
+    "description": "Identifier for the target in the association",
     "foreign_key": "target/id"
   },
   {
     "id": "association_by_datasource_indirect/score",
-    "description": "Association score calculated independently for each data source considering ontology propagation of evidence"
+    "description": "Association score calculated independently for each data source with ontology propagation of evidence"
   },
   {
     "id": "association_by_datasource_indirect/evidenceCount",
-    "description": "Number of evidence items supporting the association."
+    "description": "Number of evidence items supporting the association"
   },
   {
     "id": "association_by_datatype_direct/diseaseId",
-    "description": "Identifier for the disease in the association.",
+    "description": "Identifier for the disease in the association",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_datatype_direct/targetId",
-    "description": "Identifier for the target in the association.",
+    "description": "Identifier for the target in the association",
     "foreign_key": "target/id"
   },
   {
     "id": "association_by_datatype_direct/datatypeId",
-    "description": "Identifier for the data type used to calculate the association score."
+    "description": "Identifier for the data type used to calculate the association score"
   },
   {
     "id": "association_by_datatype_direct/score",
-    "description": "Association score calculated independently for each data type without additional ontology propagation."
+    "description": "Association score calculated independently for each data type without ontology propagation of evidence"
   },
   {
     "id": "association_by_datatype_direct/evidenceCount",
-    "description": "Number of evidence items supporting the association."
+    "description": "Number of evidence items supporting the association"
   },
   {
     "id": "association_by_datatype_indirect/diseaseId",
-    "description": "Identifier for the disease in the association.",
+    "description": "Identifier for the disease in the association",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_datatype_indirect/targetId",
-    "description": "Identifier for the target in the association.",
+    "description": "Identifier for the target in the association",
     "foreign_key": "target/id"
   },
   {
     "id": "association_by_datatype_indirect/datatypeId",
-    "description": "Identifier for the data type used to calculate the association score."
+    "description": "Identifier for the data type used to calculate the association score"
   },
   {
     "id": "association_by_datatype_indirect/score",
-    "description": "Association score calculated independently for each data type, considering ontology propagation of evidence"
+    "description": "Association score calculated independently for each data type, with ontology propagation of evidence"
   },
   {
     "id": "association_by_datatype_indirect/evidenceCount",
-    "description": "Number of evidence items supporting the association."
+    "description": "Number of evidence items supporting the association"
   },
   {
     "id": "association_by_overall_indirect/diseaseId",
-    "description": "Identifier for the disease in the association.",
+    "description": "Identifier for the disease in the association",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_overall_indirect/targetId",
-    "description": "Identifier for the target in the association.",
+    "description": "Identifier for the target in the association",
     "foreign_key": "target/id"
   },
   {
     "id": "association_by_overall_indirect/score",
-    "description": "Association score calculated across all data sources considering ontology propagation of evidence"
+    "description": "Association score calculated across all data sources with ontology propagation of evidence"
   },
   {
     "id": "association_by_overall_indirect/evidenceCount",
-    "description": "Number of evidence items supporting the association."
+    "description": "Number of evidence items supporting the association"
   },
   {
     "id": "association_overall_direct/diseaseId",
-    "description": "Identifier for the disease in the association.",
+    "description": "Identifier for the disease in the association",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_overall_direct/targetId",
-    "description": "Identifier for the target in the association.",
+    "description": "Identifier for the target in the association",
     "foreign_key": "target/id"
   },
   {
@@ -129,7 +129,7 @@
   },
   {
     "id": "association_overall_direct/evidenceCount",
-    "description": "Number of evidence items supporting the association."
+    "description": "Number of evidence items supporting the association"
   },
   {
     "id": "biosample/biosampleId",
@@ -183,7 +183,7 @@
   },
   {
     "id": "colocalisation_coloc/rightStudyType",
-    "description": "Type of the right-side study (e.g., gwas, eqtl)."
+    "description": "Type of the right-side study (e.g., gwas, eqtl)"
   },
   {
     "id": "colocalisation_coloc/numberColocalisingVariants",
@@ -191,31 +191,31 @@
   },
   {
     "id": "colocalisation_coloc/h0",
-    "description": "Posterior probability that neither trait is associated with the region (H0)."
+    "description": "Posterior probability that neither trait is associated with the region (H0)"
   },
   {
     "id": "colocalisation_coloc/h1",
-    "description": "Posterior probability that only the left study trait is associated (H1)."
+    "description": "Posterior probability that only the left study trait is associated (H1)"
   },
   {
     "id": "colocalisation_coloc/h2",
-    "description": "Posterior probability that only the right study trait is associated (H2)."
+    "description": "Posterior probability that only the right study trait is associated (H2)"
   },
   {
     "id": "colocalisation_coloc/h3",
-    "description": "Posterior probability that both traits are associated, but with different causal variants (H3)."
+    "description": "Posterior probability that both traits are associated, but with different causal variants (H3)"
   },
   {
     "id": "colocalisation_coloc/h4",
-    "description": "Posterior probability that both traits are associated and share a causal variant (H4)."
+    "description": "Posterior probability that both traits are associated and share a causal variant (H4)"
   },
   {
     "id": "colocalisation_coloc/colocalisationMethod",
-    "description": "Method used to estimate colocalisation (e.g., coloc)."
+    "description": "Method used to estimate colocalisation (e.g., coloc)"
   },
   {
     "id": "colocalisation_coloc/betaRatioSignAverage",
-    "description": "Average sign of the beta ratio between colocalised variants."
+    "description": "Average sign of the beta ratio between colocalised variants"
   },
   {
     "id": "colocalisation_ecaviar/leftStudyLocusId",
@@ -229,11 +229,11 @@
   },
   {
     "id": "colocalisation_ecaviar/chromosome",
-    "description": "Chromosome where the colocalisation occurs."
+    "description": "Chromosome where the colocalisation occurs"
   },
   {
     "id": "colocalisation_ecaviar/rightStudyType",
-    "description": "Type of the right-side study (e.g., gwas, eqtl)."
+    "description": "Type of the right-side study (e.g., gwas, eqtl)"
   },
   {
     "id": "colocalisation_ecaviar/numberColocalisingVariants",
@@ -241,65 +241,65 @@
   },
   {
     "id": "colocalisation_ecaviar/clpp",
-    "description": "Colocalisation posterior probability (CLPP) score estimating the probability of shared causal variants."
+    "description": "Colocalisation posterior probability (CLPP) score estimating the probability of shared causal variants"
   },
   {
     "id": "colocalisation_ecaviar/colocalisationMethod",
-    "description": "Method used to estimate colocalisation (e.g., eCAVIAR)."
+    "description": "Method used to estimate colocalisation (e.g., eCAVIAR)"
   },
   {
     "id": "colocalisation_ecaviar/betaRatioSignAverage",
-    "description": "Average sign of the beta ratio between colocalised variants."
+    "description": "Average sign of the beta ratio between colocalised variants"
   },
   {
     "id": "credible_set/studyLocusId",
-    "description": "Study-locus identifier for the credible set."
+    "description": "Study-locus identifier for the credible set"
   },
   {
     "id": "credible_set/studyId",
-    "description": "Identifier for the study which the credible set is derived. ",
+    "description": "Identifier for the study which the credible set is derived",
     "foreign_key": "study/studyId"
   },
   {
     "id": "credible_set/variantId",
-    "description": "The lead variant for the credible set, by posterior probability. ",
+    "description": "The lead variant for the credible set, by posterior probability",
     "foreign_key": "variant/variantId"
   },
   {
     "id": "credible_set/chromosome",
-    "description": "Chromosome which the credible set is located. "
+    "description": "Chromosome in which the credible set is located"
   },
   {
     "id": "credible_set/position",
-    "description": "Position of the lead variant for the credible set (GRCh38)."
+    "description": "Position of the lead variant for the credible set (GRCh38)"
   },
   {
     "id": "credible_set/region",
-    "description": "Start and end positions of the region used for fine-mapping. "
+    "description": "Start and end positions of the region used for fine-mapping"
   },
   {
     "id": "credible_set/beta",
-    "description": "Beta coefficient of the lead variant."
+    "description": "Beta coefficient of the lead variant"
   },
   {
     "id": "credible_set/zScore",
-    "description": "Z-score of the lead variant from the GWAS."
+    "description": "Z-score of the lead variant from the GWAS"
   },
   {
     "id": "credible_set/pValueMantissa",
-    "description": "Mantissa value of the lead variant P-value. "
+    "description": "Mantissa value of the lead variant P-value"
   },
   {
     "id": "credible_set/pValueExponent",
-    "description": "Exponent value of the lead variant P-value. "
+    "description": "Exponent value of the lead variant P-value"
   },
   {
     "id": "credible_set/effectAlleleFrequencyFromSource",
-    "description": "Allele frequency of the lead variant from the GWAS."
+    "description": "Allele frequency of the lead variant from the GWAS"
   },
   {
     "id": "credible_set/standardError",
-    "description": "Standard error of the lead variant. "
+    "description": "Standard error of the lead variant"
   },
   {
     "id": "credible_set/subStudyDescription",
@@ -307,107 +307,107 @@
   },
   {
     "id": "credible_set/qualityControls",
-    "description": "Quality control flags for this credible set."
+    "description": "Quality control flags for this credible set"
   },
   {
     "id": "credible_set/finemappingMethod",
-    "description": "Method used for fine-mapping of credible set."
+    "description": "Method used for fine-mapping of credible set"
   },
   {
     "id": "credible_set/credibleSetIndex",
-    "description": "Integer label for the order of credible sets from study-region."
+    "description": "Integer label for the order of credible sets from study-region"
   },
   {
     "id": "credible_set/credibleSetlog10BF",
-    "description": "Log10 Bayes factor for the entire credible set."
+    "description": "Log10 Bayes factor for the entire credible set"
   },
   {
     "id": "credible_set/purityMeanR2",
-    "description": "Mean R-squared linkage disequilibrium for variants in the credible set."
+    "description": "Mean R-squared linkage disequilibrium for variants in the credible set"
   },
   {
     "id": "credible_set/purityMinR2",
-    "description": "Minimum R-squared linkage disequilibrium for variants in the credible set. "
+    "description": "Minimum R-squared linkage disequilibrium for variants in the credible set"
   },
   {
     "id": "credible_set/locusStart",
-    "description": "Start position of the region that was fine-mapped for this credible set. "
+    "description": "Start position of the region that was fine-mapped for this credible set"
   },
   {
     "id": "credible_set/locusEnd",
-    "description": "End position of the regino that was fine-mapped for this credible set."
+    "description": "End position of the region that was fine-mapped for this credible set"
   },
   {
     "id": "credible_set/sampleSize",
-    "description": "Sample size of the study which this credible set is derived. "
+    "description": "Sample size of the study from which this credible set is derived"
   },
   {
     "id": "credible_set/ldSet",
-    "description": "Array of structs which denote the variants in LD with the credible set lead variant. "
+    "description": "Array of structs which denote the variants in LD with the credible set lead variant"
   },
   {
     "id": "credible_set/ldSet/tagVariantId",
-    "description": "The variant ID for tag variants in LD with the credible set lead variant."
+    "description": "The variant ID for tag variants in LD with the credible set lead variant"
   },
   {
     "id": "credible_set/ldSet/r2Overall",
-    "description": "The R-squared value for the tag variants with the credible set lead variant."
+    "description": "The R-squared value for the tag variants with the credible set lead variant"
   },
   {
     "id": "credible_set/locus",
-    "description": "Array of structs which denote the variants within the credible set."
+    "description": "Array of structs which denote the variants within the credible set"
   },
   {
     "id": "credible_set/locus/is95CredibleSet",
-    "description": "Boolean for if the variant is part of the 95% credible set. "
+    "description": "Boolean for if the variant is part of the 95% credible set"
   },
   {
     "id": "credible_set/locus/is99CredibleSet",
-    "description": "Boolean for if the variant is part of the 99% credible set. "
+    "description": "Boolean for if the variant is part of the 99% credible set"
   },
   {
     "id": "credible_set/locus/logBF",
-    "description": "Log (natural) Bayes factor for the variant from fine-mapping. "
+    "description": "Log (natural) Bayes factor for the variant from fine-mapping"
   },
   {
     "id": "credible_set/locus/posteriorProbability",
-    "description": "Posterior inclusion probability for the variant within this credible set. "
+    "description": "Posterior inclusion probability for the variant within this credible set"
   },
   {
     "id": "credible_set/locus/variantId",
-    "description": "Variant ID for this variant in the credible set. "
+    "description": "Variant ID for this variant in the credible set"
   },
   {
     "id": "credible_set/locus/pValueMantissa",
-    "description": "Mantissa of the P-value for this variant in the credible set. "
+    "description": "Mantissa of the P-value for this variant in the credible set"
   },
   {
     "id": "credible_set/locus/pValueExponent",
-    "description": "Exponent of the P-value for this variant in the credible set. "
+    "description": "Exponent of the P-value for this variant in the credible set"
   },
   {
     "id": "credible_set/locus/beta",
-    "description": "Beta coefficient of this variant in the credible set. "
+    "description": "Beta coefficient of this variant in the credible set"
   },
   {
     "id": "credible_set/locus/standardError",
-    "description": "Standard error of this variant in the credible set. "
+    "description": "Standard error of this variant in the credible set"
   },
   {
     "id": "credible_set/locus/r2Overall",
-    "description": "R-squared (LD) between this credible set variant and the lead variant. "
+    "description": "R-squared (LD) between this credible set variant and the lead variant"
   },
   {
     "id": "credible_set/confidence",
-    "description": "Description of how this credible set was derived in terms of data and fine-mapping method."
+    "description": "Description of how this credible set was derived in terms of data and fine-mapping method"
   },
   {
     "id": "credible_set/studyType",
-    "description": "Descriptor for whether the credible set is derived from GWAS or molecular QTL."
+    "description": "Descriptor for whether the credible set is derived from GWAS or molecular QTL"
   },
   {
     "id": "credible_set/isTransQtl",
-    "description": "Boolean for whether this credible set is a trans-pQTL or not. "
+    "description": "Boolean for whether this credible set is a trans-pQTL or not"
   },
   {
     "id": "disease/id",
@@ -491,7 +491,7 @@
   },
   {
     "id": "disease/ontology/sources",
-    "description": "Source of the "
+    "description": "Source of the ontology"
   },
   {
     "id": "disease/ontology/sources/url",
@@ -531,71 +531,71 @@
   },
   {
     "id": "disease_phenotype/phenotype",
-    "description": "The phenotype linked to the disease."
+    "description": "The phenotype linked to the disease"
   },
   {
     "id": "disease_phenotype/evidence",
-    "description": "A container for all evidence-related attributes supporting the disease-phenotype association."
+    "description": "A container for all evidence-related attributes supporting the disease-phenotype association"
   },
   {
     "id": "disease_phenotype/evidence/aspect",
-    "description": "The category of biological information being provided (e.g., clinical, genetic, etc.)."
+    "description": "The category of biological information being provided (e.g., clinical, genetic, etc.)"
   },
   {
     "id": "disease_phenotype/evidence/bioCuration",
-    "description": "Indicates whether the evidence has been manually curated."
+    "description": "Indicates whether the evidence has been manually curated"
   },
   {
     "id": "disease_phenotype/evidence/diseaseFromSourceId",
-    "description": "Unique identifier for the disease from the original source."
+    "description": "Unique identifier for the disease from the original source"
   },
   {
     "id": "disease_phenotype/evidence/diseaseFromSource",
-    "description": "The disease name as recorded in the original source."
+    "description": "The disease name as recorded in the original source"
   },
   {
     "id": "disease_phenotype/evidence/diseaseName",
-    "description": "Standardized disease name."
+    "description": "Standardised disease name"
   },
   {
     "id": "disease_phenotype/evidence/evidenceType",
-    "description": "The type of evidence supporting the disease-phenotype relationship."
+    "description": "The type of evidence supporting the disease-phenotype relationship"
   },
   {
     "id": "disease_phenotype/evidence/frequency",
-    "description": "The observed frequency of the phenotype in individuals with the disease."
+    "description": "The observed frequency of the phenotype in individuals with the disease"
   },
   {
     "id": "disease_phenotype/evidence/modifiers",
-    "description": "Additional characteristics or modifiers related to the phenotype."
+    "description": "Additional characteristics or modifiers related to the phenotype"
   },
   {
     "id": "disease_phenotype/evidence/onset",
-    "description": "Age or stage of disease onset for the phenotype."
+    "description": "Age or stage of disease onset for the phenotype"
   },
   {
     "id": "disease_phenotype/evidence/qualifier",
-    "description": "Additional qualifiers specifying the phenotype-disease relationship."
+    "description": "Additional qualifiers specifying the phenotype-disease relationship"
   },
   {
     "id": "disease_phenotype/evidence/qualifierNot",
-    "description": "Specifies if a phenotype is not observed in a given disease."
+    "description": "Specifies if a phenotype is not observed in a given disease"
   },
   {
     "id": "disease_phenotype/evidence/references",
-    "description": "References or citations supporting the evidence. [bioregistry:pubmed]"
+    "description": "References or citations supporting the evidence [bioregistry:pubmed]"
   },
   {
     "id": "disease_phenotype/evidence/sex",
-    "description": "Indicates if the association is specific to a biological sex."
+    "description": "Indicates if the association is specific to a biological sex"
   },
   {
     "id": "disease_phenotype/evidence/resource",
-    "description": "The data source from which the evidence was obtained."
+    "description": "The data source from which the evidence was obtained"
   },
   {
     "id": "drug_indication/id",
-    "description": "Open Targets molecule identifier ",
+    "description": "Open Targets molecule identifier",
     "foreign_key": "drug_molecule/id"
   },
   {
@@ -684,7 +684,7 @@
   },
   {
     "id": "drug_molecule/canonicalSmiles",
-    "description": "Standardized chemical structure representation using SMILES notation"
+    "description": "Standardised chemical structure representation using SMILES notation"
   },
   {
     "id": "drug_molecule/inchiKey",
@@ -817,7 +817,7 @@
   },
   {
     "id": "drug_warning/year",
-    "description": "Year when the warning was issues"
+    "description": "Year when the warning was issued"
   },
   {
     "id": "drug_warning/efo_term",
@@ -880,7 +880,7 @@
   },
   {
     "id": "evidence/beta",
-    "description": "Effect size of numberic traits"
+    "description": "Effect size of numeric traits"
   },
   {
     "id": "evidence/betaConfidenceIntervalLower",
@@ -1003,7 +1003,7 @@
   },
   {
     "id": "evidence/crisprScreenLibrary",
-    "description": "The applied screening library in the CRISPR/CAS9 project"
+    "description": "Applied screening library in the CRISPR/Cas9 project"
   },
   {
     "id": "evidence/datatypeId",
@@ -1057,7 +1057,7 @@
   },
   {
     "id": "evidence/diseaseModelAssociatedModelPhenotypes",
-    "description": "Phenotypes observed in genetically-modified animal models"
+    "description": "Phenotypes observed in genetically modified animal models"
   },
   {
     "id": "evidence/diseaseModelAssociatedModelPhenotypes/id",
@@ -1091,7 +1091,7 @@
   },
   {
     "id": "evidence/geneticInteractionPValue",
-    "description": "P-value of the genetic interaction test"
+    "description": "p-value of the genetic interaction test"
   },
   {
     "id": "evidence/geneticInteractionScore",
@@ -1177,11 +1177,11 @@
   },
   {
     "id": "evidence/phenotypicConsequenceLogFoldChange",
-    "description": "Log 2 fold change of the cell survival"
+    "description": "Log2 fold change of the cell survival"
   },
   {
     "id": "evidence/phenotypicConsequencePValue",
-    "description": "P-value of the the cell survival test"
+    "description": "p-value of the the cell survival test"
   },
   {
     "id": "evidence/primaryProjectHit",
@@ -1197,7 +1197,7 @@
   },
   {
     "id": "evidence/projectId",
-    "description": "The identifer of the project that generated the data"
+    "description": "Identifer of the project that generated the data"
   },
   {
     "id": "evidence/reactionId",
@@ -1229,7 +1229,7 @@
   },
   {
     "id": "evidence/statisticalMethod",
-    "description": "The statistical method used to calculate the association"
+    "description": "Statistical method used to calculate the association"
   },
   {
     "id": "evidence/statisticalMethodOverview",
@@ -1482,11 +1482,11 @@
   },
   {
     "id": "interaction/sourceDatabase",
-    "description": "Source database reporting the molecular interaction."
+    "description": "Source database reporting the molecular interaction"
   },
   {
     "id": "interaction/targetA",
-    "description": "Open Targets target identifier of the first molecule (target A) in the interaction. [bioregistry:ensembl]",
+    "description": "Open Targets target identifier of the first molecule (target A) in the interaction [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -1495,11 +1495,11 @@
   },
   {
     "id": "interaction/intABiologicalRole",
-    "description": "Biological role of target A in the interaction."
+    "description": "Biological role of target A in the interaction"
   },
   {
     "id": "interaction/targetB",
-    "description": "Open Targets target identifier of the second molecule (target B) in the interaction. [bioregistry:ensembl]",
+    "description": "Open Targets target identifier of the second molecule (target B) in the interaction [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -1548,7 +1548,7 @@
   },
   {
     "id": "interaction/scoring",
-    "description": "Scoring or confidence value assigned to the interaction."
+    "description": "Scoring or confidence value assigned to the interaction"
   },
   {
     "id": "interaction_evidence/hostOrganismScientificName",
@@ -1661,7 +1661,7 @@
   },
   {
     "id": "interaction_evidence/hostOrganismTissue",
-    "description": "Tissue of the host organism, where the interaction was identified"
+    "description": "Tissue of the host organism where the interaction was identified"
   },
   {
     "id": "interaction_evidence/hostOrganismTissue/fullName",
@@ -1804,20 +1804,20 @@
   },
   {
     "id": "l2g_prediction/geneId",
-    "description": "Identifier of the gene / target",
+    "description": "Identifier of the gene/target",
     "foreign_key": "target/id"
   },
   {
     "id": "l2g_prediction/score",
-    "description": "Locus-to-gene score prediction for the given studyLocusId-geneId pair"
+    "description": "Locus-to-Gene (L2G) score prediction for the given studyLocusId-geneId pair"
   },
   {
     "id": "l2g_prediction/features",
-    "description": "List of Locus to Gene feature values"
+    "description": "List of Locus-to-Gene (L2G) feature values"
   },
   {
     "id": "l2g_prediction/features/name",
-    "description": "Name of the feature used in locus to gene prediction"
+    "description": "Name of the feature used in Locus-to-Gene (L2G) prediction"
   },
   {
     "id": "l2g_prediction/features/value",
@@ -1877,7 +1877,7 @@
   },
   {
     "id": "literature_vector/norm",
-    "description": "Normalized form of the extracted word"
+    "description": "Normalised form of the extracted word"
   },
   {
     "id": "literature_vector/vector",
@@ -1885,60 +1885,60 @@
   },
   {
     "id": "mouse_phenotype/biologicalModels",
-    "description": "Container for all biological model-related attributes."
+    "description": "Container for all biological model-related attributes"
   },
   {
     "id": "mouse_phenotype/biologicalModels/allelicComposition",
-    "description": "The specific allelic composition of the mouse model."
+    "description": "The specific allelic composition of the mouse model"
   },
   {
     "id": "mouse_phenotype/biologicalModels/geneticBackground",
-    "description": "The genetic background strain of the mouse model."
+    "description": "The genetic background strain of the mouse model"
   },
   {
     "id": "mouse_phenotype/biologicalModels/id",
-    "description": "Unique identifier for the biological model. [bioregistry:mgi]"
+    "description": "Unique identifier for the biological model [bioregistry:mgi]"
   },
   {
     "id": "mouse_phenotype/biologicalModels/literature",
-    "description": "References related to the mouse model. [bioregistry:pubmed]"
+    "description": "References related to the mouse model [bioregistry:pubmed]"
   },
   {
     "id": "mouse_phenotype/modelPhenotypeClasses",
-    "description": "Container for phenotype class-related attributes."
+    "description": "Container for phenotype class-related attributes"
   },
   {
     "id": "mouse_phenotype/modelPhenotypeClasses/id",
-    "description": "Unique identifier for the phenotype class. [bioregistry:mp]"
+    "description": "Unique identifier for the phenotype class [bioregistry:mp]"
   },
   {
     "id": "mouse_phenotype/modelPhenotypeClasses/label",
-    "description": "Descriptive label for the phenotype class."
+    "description": "Descriptive label for the phenotype class"
   },
   {
     "id": "mouse_phenotype/modelPhenotypeId",
-    "description": "Identifier for the specific phenotype observed in the model. [bioregistry:mp]"
+    "description": "Identifier for the specific phenotype observed in the model [bioregistry:mp]"
   },
   {
     "id": "mouse_phenotype/modelPhenotypeLabel",
-    "description": "Human-readable label describing the observed phenotype."
+    "description": "Human-readable label describing the observed phenotype"
   },
   {
     "id": "mouse_phenotype/targetFromSourceId",
-    "description": "Identifier for the human target as provided by the data source.",
+    "description": "Identifier for the human target as provided by the data source",
     "foreign_key": "target/id"
   },
   {
     "id": "mouse_phenotype/targetInModel",
-    "description": "Name of the target gene as represented in the mouse model."
+    "description": "Name of the target gene as represented in the mouse model"
   },
   {
     "id": "mouse_phenotype/targetInModelEnsemblId",
-    "description": "Ensembl identifier for the target gene in the mouse model. [bioregistry:ensembl]"
+    "description": "Ensembl identifier for the target gene in the mouse model [bioregistry:ensembl]"
   },
   {
     "id": "mouse_phenotype/targetInModelMgiId",
-    "description": "MGI (Mouse Genome Informatics) identifier for the target gene in the model. [bioregistry:mgi]"
+    "description": "Mouse Genome Informatics (MGI) identifier for the target gene in the model [bioregistry:mgi]"
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/chembl_id",
@@ -1955,15 +1955,15 @@
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/llr",
-    "description": "Log-likelihood ratio (LLR) measuring the strength of the association between the drug and the adverse event."
+    "description": "Log-likelihood ratio (LLR) measuring the strength of the association between the drug and the adverse event"
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/critval",
-    "description": "Critical value used to determine statistical significance of the association."
+    "description": "Critical value used to determine statistical significance of the association"
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/meddraCode",
-    "description": "Medical Dictionary for Regulatory Activities (MedDRA) code for the adverse drug reaction."
+    "description": "Medical Dictionary for Regulatory Activities (MedDRA) code for the adverse drug reaction"
   },
   {
     "id": "openfda_significant_adverse_target_reactions/targetId",
@@ -1972,23 +1972,23 @@
   },
   {
     "id": "openfda_significant_adverse_target_reactions/event",
-    "description": "Reported adverse drug reactions associated with drugs targeting the molecule."
+    "description": "Reported adverse drug reactions associated with drugs targeting the molecule"
   },
   {
     "id": "openfda_significant_adverse_target_reactions/count",
-    "description": "Number of occurrences of adverse events in the dataset when looking at all drugs targeting the same molecule."
+    "description": "Number of occurrences of adverse events in the dataset when looking at all drugs targeting the same molecule"
   },
   {
     "id": "openfda_significant_adverse_target_reactions/llr",
-    "description": "Log-likelihood ratio (LLR) measuring the strength of the association between all drugs targeting the same molecule and the adverse event."
+    "description": "Log-likelihood ratio (LLR) measuring the strength of the association between all drugs targeting the same molecule and the adverse event"
   },
   {
     "id": "openfda_significant_adverse_target_reactions/critval",
-    "description": "Critical value used to determine statistical significance of the association."
+    "description": "Critical value used to determine statistical significance of the association"
   },
   {
     "id": "openfda_significant_adverse_target_reactions/meddraCode",
-    "description": "Medical Dictionary for Regulatory Activities (MedDRA) code for the adverse drug reaction."
+    "description": "Medical Dictionary for Regulatory Activities (MedDRA) code for the adverse drug reaction"
   },
   {
     "id": "otar/efo_id",
@@ -2013,7 +2013,7 @@
   },
   {
     "id": "otar/projects/integrates_data_PPP",
-    "description": "Boolean flag indicating if the project is providing data to the partner preview platform"
+    "description": "Boolean flag indicating if the project is providing data to the Partner Preview Platform"
   },
   {
     "id": "otar/projects/reference",
@@ -2033,7 +2033,7 @@
   },
   {
     "id": "pharmacogenomics/directionality",
-    "description": "Indicates in which direction the genetic variant increases or decreases drug response"
+    "description": "Indicates whether the genetic variant increases or decreases drug response"
   },
   {
     "id": "pharmacogenomics/evidenceLevel",
@@ -2053,7 +2053,7 @@
   },
   {
     "id": "pharmacogenomics/haplotypeFromSourceId",
-    "description": "Haplotype ID in the ClinPGX dataset"
+    "description": "Haplotype ID in the ClinPGx dataset"
   },
   {
     "id": "pharmacogenomics/haplotypeId",
@@ -2114,7 +2114,7 @@
   },
   {
     "id": "pharmacogenomics/studyId",
-    "description": "Clinical Annotation ID in the PharmKGB dataset"
+    "description": "Clinical Annotation ID in the ClinPGx dataset"
   },
   {
     "id": "pharmacogenomics/targetFromSourceId",
@@ -2194,69 +2194,69 @@
   },
   {
     "id": "study/studyId",
-    "description": "Unique identifier of the GWAS or molQTL study."
+    "description": "Unique identifier of the GWAS or molQTL study"
   },
   {
     "id": "study/geneId",
-    "description": "Ensembl identifier of the gene representing a specific gene whose molecular is being analysed in molQTL study. [bioregistry:ensembl]",
+    "description": "Ensembl identifier of the gene analysed in this molQTL study [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
     "id": "study/projectId",
-    "description": "Identifier of the source project collection that the study information is derived from."
+    "description": "Identifier of the source project collection that the study information is derived from"
   },
   {
     "id": "study/studyType",
-    "description": "Field specifying if study contains phenotype/disease or molecular genetic associations."
+    "description": "Field specifying if study contains phenotype/disease or molecular genetic associations"
   },
   {
     "id": "study/traitFromSource",
-    "description": "Molecular or phenotypic trait, derived from source, analysed in the study."
+    "description": "Molecular or phenotypic trait derived from source analysed in the study"
   },
   {
     "id": "study/traitFromSourceMappedIds",
-    "description": "Phenotypic trait ids that map to the analysed trait reported by study."
+    "description": "Phenotypic trait IDs that map to the analysed trait reported by study"
   },
   {
     "id": "study/biosampleFromSourceId",
-    "description": "Identifier of the referenced biological material."
+    "description": "Identifier of the referenced biological material"
   },
   {
     "id": "study/pubmedId",
-    "description": "PubMed identifier of the publication hat references the study. [bioregistry:pubmed]",
+    "description": "PubMed identifier of the publication that references the study [bioregistry:pubmed]",
     "foreign_key": "literature/pmid"
   },
   {
     "id": "study/publicationTitle",
-    "description": "Title of the publication that references the study."
+    "description": "Title of the publication that references the study"
   },
   {
     "id": "study/publicationFirstAuthor",
-    "description": "Last name and initials of the author of the publication that references the study."
+    "description": "Last name and initials of the author of the publication that references the study"
   },
   {
     "id": "study/publicationDate",
-    "description": "Date of the publication that references study."
+    "description": "Date of the publication that references the study"
   },
   {
     "id": "study/publicationJournal",
-    "description": "Abbreviated journal name where the publication referencing study was published."
+    "description": "Abbreviated journal name where the publication referencing study was published"
   },
   {
     "id": "study/backgroundTraitFromSourceMappedIds",
-    "description": "Any background trait(s) shared by all individuals in the study."
+    "description": "Any background trait(s) shared by all individuals in the study"
   },
   {
     "id": "study/initialSampleSize",
-    "description": "Study initial sample size."
+    "description": "Study initial sample size"
   },
   {
     "id": "study/nCases",
-    "description": "The number of cases in this broad ancestry group."
+    "description": "The number of cases in this broad ancestry group"
   },
   {
     "id": "study/nControls",
-    "description": "The number of controls in this broad ancestry group."
+    "description": "The number of controls in this broad ancestry group"
   },
   {
     "id": "study/nSamples",
@@ -2264,51 +2264,51 @@
   },
   {
     "id": "study/cohorts",
-    "description": "List of cohort(s) represented in the discovery sample."
+    "description": "List of cohort(s) represented in the discovery sample"
   },
   {
     "id": "study/ldPopulationStructure",
-    "description": "Collection of populations referenced by the study."
+    "description": "Collection of populations referenced by the study"
   },
   {
     "id": "study/ldPopulationStructure/ldPopulation",
-    "description": "Population identifier."
+    "description": "Population identifier"
   },
   {
     "id": "study/ldPopulationStructure/relativeSampleSize",
-    "description": "Fraction of the total sample represented by the population."
+    "description": "Fraction of the total sample represented by the population"
   },
   {
     "id": "study/discoverySamples",
-    "description": "Collection of ancestries reported by the study discovery phase."
+    "description": "Collection of ancestries reported by the study discovery phase"
   },
   {
     "id": "study/discoverySamples/sampleSize",
-    "description": "Discovery sample size."
+    "description": "Discovery sample size"
   },
   {
     "id": "study/discoverySamples/ancestry",
-    "description": "Discovery sample ancestry name."
+    "description": "Discovery sample ancestry name"
   },
   {
     "id": "study/replicationSamples",
-    "description": "Collection of ancestries reported by the study replication phase."
+    "description": "Collection of ancestries reported by the study replication phase"
   },
   {
     "id": "study/replicationSamples/sampleSize",
-    "description": "Replication sample size."
+    "description": "Replication sample size"
   },
   {
     "id": "study/replicationSamples/ancestry",
-    "description": "Replication sample ancestry name."
+    "description": "Replication sample ancestry name"
   },
   {
     "id": "study/qualityControls",
-    "description": "Control metrics refining study validation."
+    "description": "Control metrics refining study validation"
   },
   {
     "id": "study/analysisFlags",
-    "description": "Collection of flags indicating the type of the analysis conducted in the association study."
+    "description": "Collection of flags indicating the type of the analysis conducted in the association study"
   },
   {
     "id": "study/summarystatsLocation",
@@ -2316,36 +2316,36 @@
   },
   {
     "id": "study/hasSumstats",
-    "description": "Indication whether the summary statistics exist in the source. "
+    "description": "Indication whether the summary statistics exist in the source"
   },
   {
     "id": "study/condition",
-    "description": "Reported sample conditions."
+    "description": "Reported sample conditions"
   },
   {
     "id": "study/sumstatQCValues",
-    "description": "Mapping of quality control flags."
+    "description": "Mapping of quality control flags"
   },
   {
     "id": "study/sumstatQCValues/QCCheckName",
-    "description": "Quality control metric identifier."
+    "description": "Quality control metric identifier"
   },
   {
     "id": "study/sumstatQCValues/QCCheckValue",
-    "description": "Quality control metric value."
+    "description": "Quality control metric value"
   },
   {
     "id": "study/diseaseIds",
-    "description": "Disease identifier associated with a studied trait.",
+    "description": "Disease identifier associated with a studied trait",
     "foreign_key": "disease/id"
   },
   {
     "id": "study/backgroundDiseaseIds",
-    "description": "Any background disease(s) shared by all individuals in the study."
+    "description": "Any background disease(s) shared by all individuals in the study"
   },
   {
     "id": "study/biosampleId",
-    "description": "Biosample identifier that maps to the biosample reported by study. [bioregistry:uberon]",
+    "description": "Biosample identifier that maps to the biosample reported by study [bioregistry:uberon]",
     "foreign_key": "biosample/biosampleId"
   },
   {
@@ -2431,7 +2431,7 @@
   },
   {
     "id": "target/go/source",
-    "description": "Source database and identifer where the ontology term was sourced from"
+    "description": "Source database and identifer from which the ontology term was sourced"
   },
   {
     "id": "target/go/evidence",
@@ -2591,7 +2591,7 @@
   },
   {
     "id": "target/constraint",
-    "description": "Constraint scores for the target gene from GnomAD"
+    "description": "Constraint scores for the target gene from gnomAD"
   },
   {
     "id": "target/constraint/constraintType",
@@ -2811,7 +2811,7 @@
   },
   {
     "id": "target/safetyLiabilities/effects/direction",
-    "description": "Direction of the reported effect (e.g., increase or decrease)"
+    "description": "Direction of the reported effect (e.g. increase or decrease)"
   },
   {
     "id": "target/safetyLiabilities/effects/dosing",
@@ -2879,7 +2879,7 @@
   },
   {
     "id": "target/pathways/topLevelTerm",
-    "description": "Top-level term categorizing the pathway"
+    "description": "Top-level term categorising the pathway"
   },
   {
     "id": "target/tss",
@@ -2896,7 +2896,7 @@
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality",
-    "description": "Essentiality measurements extraced from Depmap, stratified by tissue or anatomical units"
+    "description": "Essentiality measurements extraced from DepMap, stratified by tissue or anatomical units"
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/screens",
@@ -2912,7 +2912,7 @@
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/screens/diseaseCellLineId",
-    "description": "Cell modell passport identifier of a celline modelling a disease"
+    "description": "Cell model passport identifier of a cell line modelling a disease"
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/screens/diseaseFromSource",
@@ -2928,16 +2928,16 @@
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/screens/mutation",
-    "description": "Background mutation the tested cell line have"
+    "description": "Background mutation in the tested cell line"
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/tissueId",
-    "description": "Identifier of the tissue from where the cells were sample for assay [bioregistry:uberon]",
+    "description": "Identifier of the tissue from which the cells were sampled for assay [bioregistry:uberon]",
     "foreign_key": "biosample/biosampleId"
   },
   {
     "id": "target_essentiality/geneEssentiality/depMapEssentiality/tissueName",
-    "description": "Name of the tissue from where the cells were sample for assay"
+    "description": "Name of the tissue from which the cells were sample for assay"
   },
   {
     "id": "target_essentiality/geneEssentiality/isEssential",
@@ -2945,100 +2945,100 @@
   },
   {
     "id": "target_prioritisation/targetId",
-    "description": "Unique identifier for the target, typically an Ensembl gene ID.",
+    "description": "Unique identifier for the target, typically an Ensembl gene ID",
     "foreign_key": "target/id"
   },
   {
     "id": "target_prioritisation/isInMembrane",
-    "description": "Indicates if the target protein is located in the cell or plasma membrane."
+    "description": "Indicates if the target protein is located in the cell or plasma membrane"
   },
   {
     "id": "target_prioritisation/isSecreted",
-    "description": "Indicates if the target protein is secreted or predicted to be secreted."
+    "description": "Indicates if the target protein is secreted or predicted to be secreted"
   },
   {
     "id": "target_prioritisation/hasSafetyEvent",
-    "description": "Indicates if there are known safety events associated with the target."
+    "description": "Indicates if there are known safety events associated with the target"
   },
   {
     "id": "target_prioritisation/hasPocket",
-    "description": "Indicates if the target has predicted binding pockets suitable for small molecule binding."
+    "description": "Indicates if the target has predicted binding pockets suitable for small molecule binding"
   },
   {
     "id": "target_prioritisation/hasLigand",
-    "description": "Indicates if the target binds at least one high-quality ligand."
+    "description": "Indicates if the target binds at least one high-quality ligand"
   },
   {
     "id": "target_prioritisation/hasSmallMoleculeBinder",
-    "description": "Indicates if the target has at least one small molecule binder."
+    "description": "Indicates if the target has at least one small molecule binder"
   },
   {
     "id": "target_prioritisation/geneticConstraint",
-    "description": "Represents the genetic constraint of the target, indicating how intolerant it is to genetic variation."
+    "description": "Represents the genetic constraint of the target, indicating how intolerant it is to genetic variation"
   },
   {
     "id": "target_prioritisation/paralogMaxIdentityPercentage",
-    "description": "Maximum percentage identity among the target's paralogous genes."
+    "description": "Maximum percentage identity among the target's paralogues"
   },
   {
     "id": "target_prioritisation/mouseOrthologMaxIdentityPercentage",
-    "description": "Maximum percentage identity between the target and its mouse ortholog."
+    "description": "Maximum percentage identity between the target and its mouse ortholog"
   },
   {
     "id": "target_prioritisation/isCancerDriverGene",
-    "description": "Indicates if the target is identified as a cancer driver gene."
+    "description": "Indicates if the target is identified as a cancer driver gene"
   },
   {
     "id": "target_prioritisation/hasTEP",
-    "description": "Indicates if a Target Enabling Package (TEP) is available for the target."
+    "description": "Indicates if a Target Enabling Package (TEP) is available for the target"
   },
   {
     "id": "target_prioritisation/mouseKOScore",
-    "description": "Represents the phenotypic score from mouse knockout models for the target."
+    "description": "Represents the phenotypic score from mouse knockout models for the target"
   },
   {
     "id": "target_prioritisation/hasHighQualityChemicalProbes",
-    "description": "Indicates if there are high-quality chemical probes available for the target."
+    "description": "Indicates if there are high-quality chemical probes available for the target"
   },
   {
     "id": "target_prioritisation/maxClinicalTrialPhase",
-    "description": "Highest clinical trial phase that the target has reached for any indication."
+    "description": "Highest clinical trial phase that the target has reached for any indication"
   },
   {
     "id": "target_prioritisation/tissueSpecificity",
-    "description": "Describes the specificity of the target's expression across different tissues."
+    "description": "Describes the specificity of the target's expression across different tissues"
   },
   {
     "id": "target_prioritisation/tissueDistribution",
-    "description": "Describes the distribution pattern of the target's expression in various tissues."
+    "description": "Describes the distribution pattern of the target's expression in various tissues"
   },
   {
     "id": "variant/variantId",
-    "description": "The unique identifier for the variant following schema: {chromosome}-{position}-{referenceAllele}-{alternateAllele}"
+    "description": "Unique identifier for the variant following schema: {chromosome}-{position}-{referenceAllele}-{alternateAllele}"
   },
   {
     "id": "variant/chromosome",
-    "description": "The chromosome on which the variant is located"
+    "description": "Chromosome on which the variant is located"
   },
   {
     "id": "variant/position",
-    "description": "The position on the chromosome of the variant"
+    "description": "Variant's position on the chromosome"
   },
   {
     "id": "variant/referenceAllele",
-    "description": "The reference allele for the variant"
+    "description": "Reference allele for the variant"
   },
   {
     "id": "variant/alternateAllele",
-    "description": "The alternate allele for the variant"
+    "description": "Alternate allele for the variant"
   },
   {
     "id": "variant/variantEffect",
-    "description": "List predicted or measured effect of the variant based on various methods"
+    "description": "Predicted or measured effect of the variant based on various methods"
   },
   {
     "id": "variant/variantEffect/method",
-    "description": "The method name used to predict the effect of the variant"
+    "description": "Method name used to predict the effect of the variant"
   },
   {
     "id": "variant/variantEffect/assessment",
@@ -3046,7 +3046,7 @@
   },
   {
     "id": "variant/variantEffect/score",
-    "description": "The score of the variant effect"
+    "description": "Score of the variant effect"
   },
   {
     "id": "variant/variantEffect/assessmentFlag",
@@ -3054,7 +3054,7 @@
   },
   {
     "id": "variant/variantEffect/targetId",
-    "description": "The target identifier on which the variant effect is interpreted [bioregistry:ensembl]",
+    "description": "Target identifier on which the variant effect is interpreted [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -3063,7 +3063,7 @@
   },
   {
     "id": "variant/mostSevereConsequenceId",
-    "description": "The sequence ontology identifier of the most severe consequence of the variant based on Ensembl VEP [bioregistry:so]",
+    "description": "Sequence ontology identifier of the most severe consequence of the variant based on Ensembl VEP [bioregistry:so]",
     "foreign_key": "so/id"
   },
   {
@@ -3072,16 +3072,16 @@
   },
   {
     "id": "variant/transcriptConsequences/variantFunctionalConsequenceIds",
-    "description": "The sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript [bioregistry:so]",
+    "description": "Sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript [bioregistry:so]",
     "foreign_key": "so/id"
   },
   {
     "id": "variant/transcriptConsequences/aminoAcidChange",
-    "description": "The amino acide change caused by this variant on this gene"
+    "description": "Amino acid change caused by this variant on this gene"
   },
   {
     "id": "variant/transcriptConsequences/uniprotAccessions",
-    "description": "List of Uniprot identifiers of the gene product [bioregistry:uniprot]"
+    "description": "Uniprot identifiers of the gene product [bioregistry:uniprot]"
   },
   {
     "id": "variant/transcriptConsequences/isEnsemblCanonical",
@@ -3089,19 +3089,19 @@
   },
   {
     "id": "variant/transcriptConsequences/codons",
-    "description": "The affected codon in the transcript"
+    "description": "Affected codon in the transcript"
   },
   {
     "id": "variant/transcriptConsequences/distanceFromFootprint",
-    "description": "The distance of the variant from the transcript"
+    "description": "Distance of the variant from the transcript"
   },
   {
     "id": "variant/transcriptConsequences/distanceFromTss",
-    "description": "The distance of the variant from the transcription start site"
+    "description": "Distance of the variant from the transcription start site"
   },
   {
     "id": "variant/transcriptConsequences/appris",
-    "description": "The appris annotation of the transcript"
+    "description": "Appris annotation of the transcript"
   },
   {
     "id": "variant/transcriptConsequences/maneSelect",
@@ -3109,7 +3109,7 @@
   },
   {
     "id": "variant/transcriptConsequences/targetId",
-    "description": "Open Target target identifier of the transcript [bioregistry:ensembl]",
+    "description": "Open Targets target identifier of the transcript [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
@@ -3118,7 +3118,7 @@
   },
   {
     "id": "variant/transcriptConsequences/lofteePrediction",
-    "description": "Loss of function prediction based on LOFTEE"
+    "description": "Loss-of-function prediction based on LOFTEE"
   },
   {
     "id": "variant/transcriptConsequences/siftPrediction",
@@ -3134,11 +3134,11 @@
   },
   {
     "id": "variant/transcriptConsequences/transcriptIndex",
-    "description": "The index of the transcript in the list of transcripts around the gene"
+    "description": "Index of the transcript in the list of transcripts around the gene"
   },
   {
     "id": "variant/transcriptConsequences/approvedSymbol",
-    "description": "The HGNC gene symbol of the gene"
+    "description": "HGNC gene symbol"
   },
   {
     "id": "variant/transcriptConsequences/biotype",
@@ -3146,11 +3146,11 @@
   },
   {
     "id": "variant/transcriptConsequences/transcriptId",
-    "description": "The Ensembl transcript identifier [bioregistry:ensembl]"
+    "description": "Ensembl transcript identifier [bioregistry:ensembl]"
   },
   {
     "id": "variant/rsIds",
-    "description": "The list of rsIds for the variant"
+    "description": "rsIds for the variant"
   },
   {
     "id": "variant/hgvsId",
@@ -3158,7 +3158,7 @@
   },
   {
     "id": "variant/alleleFrequencies",
-    "description": "The allele frequencies of the variant in different populations"
+    "description": "Allele frequencies of the variant in different populations"
   },
   {
     "id": "variant/alleleFrequencies/populationName",
@@ -3166,11 +3166,11 @@
   },
   {
     "id": "variant/alleleFrequencies/alleleFrequency",
-    "description": "The frequency of the alternate allele in the population"
+    "description": "Frequency of the alternate allele in the population"
   },
   {
     "id": "variant/dbXrefs",
-    "description": "The list of cross-references for the variant in different databases"
+    "description": "Cross-references for the variant in different databases"
   },
   {
     "id": "variant/dbXrefs/id",
@@ -3186,36 +3186,36 @@
   },
   {
     "id": "interval/chromosome",
-    "description": "The chromosome the interval is located on"
+    "description": "Chromosome the interval is located on"
   },
   {
     "id": "interval/start",
-    "description": "The basepair position of the interval start"
+    "description": "Basepair position of the interval start"
   },
   {
     "id": "interval/end",
-    "description": "The basepair position of the interval end"
+    "description": "Basepair position of the interval end"
   },
   {
     "id": "interval/geneId",
-    "description": "The Ensembl gene identifier of the target the interval is linked with [bioregistry:ensembl]",
+    "description": "Ensembl gene identifier of the target the interval is linked with [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
     "id": "interval/biosampleName",
-    "description": "The name of the cell type/anatomical unit the interval was identified in"
+    "description": "Name of the cell type/anatomical unit the interval was identified in"
   },
   {
     "id": "interval/intervalType",
-    "description": "The type of the interval"
+    "description": "Type of the interval"
   },
   {
     "id": "interval/distanceToTss",
-    "description": "The distance of the interval from the transcription start site of the gene"
+    "description": "Distance of the interval from the transcription start site of the gene"
   },
   {
     "id": "interval/score",
-    "description": "Interval evidence score from the datasource, higher values indicate stronger support linking the interval to its target gene."
+    "description": "Interval evidence score from the datasource, higher values indicate stronger support linking the interval to its target gene"
   },
   {
     "id": "interval/resourceScore",
@@ -3223,19 +3223,19 @@
   },
   {
     "id": "interval/resourceScore/name",
-    "description": "Individual components which contributes to the interval score (e.g., DNase, HiC_contacts)."
+    "description": "Individual components which contribute to the interval score (e.g., DNase, HiC_contacts)."
   },
   {
     "id": "interval/resourceScore/value",
-    "description": "The raw signal value from the resourceScore(s)."
+    "description": "Raw signal value from the resourceScore(s)."
   },
   {
     "id": "interval/datasourceId",
-    "description": "The identifier of the interval datasource"
+    "description": "Identifier of the interval datasource"
   },
   {
     "id": "interval/pmid",
-    "description": "The Pubmed identifier of the publication that reported the interval data"
+    "description": "Pubmed identifier of the publication that reported the interval data"
   },
   {
     "id": "interval/studyId",
@@ -3243,7 +3243,7 @@
   },
   {
     "id": "interval/biosampleId",
-    "description": "Identifier of the biosample where the interval was discovered in",
+    "description": "Identifier of the biosample in which the interval was discovered",
     "foreign_key": "biosample/biosampleId"
   },
   {

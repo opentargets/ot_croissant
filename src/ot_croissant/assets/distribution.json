@@ -27,18 +27,18 @@
     "key": [
       "drug_molecule/id"
     ],
-    "description": "Core annotation for drug or clinical candidate molecules. A drug in the platform is understood as any bioactive molecule with drug-like properties included in the EMBL-EBI ChEMBL database. All ChEMBL molecules fullfilling any of the next criteria are included in the database: a) Molecules with a known indication. b) Molecules with a known mechanism of action c) ChEMBL molecules included in the DrugBank database d) Molecules that are acknowledged as chemical probes",
+    "description": "Core annotation for drug or clinical candidate molecules. A drug in the Platform is understood as any bioactive molecule with drug-like properties included in the EMBL-EBI ChEMBL database. All ChEMBL molecules fullfilling any of the next criteria are included in the database: a) molecules with a known indication, b) molecules with a known mechanism of action, c) ChEMBL molecules included in the DrugBank database, d) Molecules that are acknowledged as chemical probes.",
     "tags": [
       "Drug"
     ]
   },
   {
     "id": "evidence",
-    "nice_name": "Target - Disease evidence",
+    "nice_name": "Target-Disease evidence",
     "key": [
       "evidence/id"
     ],
-    "description": "Target - disease evidence from all data sources. Every piece of evidence supporting an association between a target (gene or protein) and a disease or phenotype is reported and scored according to the confidence we have in the association. Multiple target-disease evidence from the same source can be reported in this dataset. The dataset is partitioned by data source, therefore evidence for individual sources can be retrieved separately. The dataset schema is a superset of all the schemas for all sources.",
+    "description": "Target-disease evidence from all data sources. Every piece of evidence supporting an association between a target (gene or protein) and a disease or phenotype is reported and scored according to the confidence we have in the association. Multiple target-disease evidence from the same source can be reported in this dataset. The dataset is partitioned by data source, therefore evidence for individual sources can be retrieved separately. The dataset schema is a superset of all the schemas for all sources.",
     "tags": [
       "Target-Disease"
     ]
@@ -55,7 +55,7 @@
       "interaction/intABiologicalRole",
       "interaction/intBBiologicalRole"
     ],
-    "description": "Integration of molecular interactions reporting experimental or functional interactions between molecules represented as Platform targets. This dataset contains pair-wise interactions deposited in several databases capturing: physical interactions (e.g. IntAct), directional interactions (e.g. Signor), pathway relationships (e.g. Reactome) or functional interactions (e.g. STRINGdb).",
+    "description": "Integration of molecular interactions reporting experimental or functional interactions between molecules represented as Platform targets. This dataset contains pairwise interactions deposited in several databases capturing: physical interactions (e.g. IntAct), directional interactions (e.g. Signor), pathway relationships (e.g. Reactome) or functional interactions (e.g. STRINGdb).",
     "tags": [
       "Target"
     ]
@@ -87,7 +87,7 @@
     "key": [
       "expression/id"
     ],
-    "description": "Baseline RNA and protein expression data across tissues. This data does not contain raw expression values, instead to shows how targets are selectively expressed across different tissues. This dataset combines expression values from multiple sources including Expression Atlas and Human Protein Atlas.",
+    "description": "Baseline RNA and protein expression data across tissues. This data does not contain raw expression values, instead shows how targets are selectively expressed across different tissues. This dataset combines expression values from multiple sources including Expression Atlas and Human Protein Atlas.",
     "tags": [
       "Target"
     ]
@@ -145,7 +145,7 @@
     "key": [
       "drug_warning/id"
     ],
-    "description": "Blackbox and withdrawn information for drugs molecules included in ChEMBL database.",
+    "description": "Blackbox and withdrawn information for drug molecules included in ChEMBL database.",
     "tags": [
       "Drug"
     ]
@@ -166,7 +166,7 @@
       "pharmacogenomics/variantId",
       "pharmacogenomics/variantFunctionalConsequenceId"
     ],
-    "description": "Genetic variants influencing individual drug responses. Pharmacogenetics data is integrated from sources including Pharmacogenomics Knowledgebase (PharmGKB).",
+    "description": "Genetic variants influencing individual drug responses. Pharmacogenetics data is integrated from sources including ClinPGx.",
     "tags": [
       "Target",
       "Genetics"
@@ -185,11 +185,11 @@
   },
   {
     "id": "target_validation",
-    "nice_name": "Target - Prioritisation",
+    "nice_name": "Target - prioritisation",
     "key": [
       "target_validation/targetId"
     ],
-    "description": "Target-specific properties used to prioritise targets for further prioritisation (prioritisation view). All prioritisation factors included in the dataset range from -1 (unfavourable) to 1 (favourable). The prioritisation factors cover several areas around the clinical precedence, tractability, do-ability and safety of a target.",
+    "description": "Target-specific properties used to prioritise targets for further prioritisation (prioritisation view). All prioritisation factors included in the dataset range from -1 (unfavourable) to 1 (favourable). The prioritisation factors are derived from several sources related to the clinical precedence, tractability, doability and safety of a target.",
     "tags": null
   },
   {
@@ -210,7 +210,7 @@
       "openfda_significant_adverse_target_reactions/targetId",
       "openfda_significant_adverse_target_reactions/event"
     ],
-    "description": "Significant adverse events associated with drugs sharing the same pharmacological target. This dataset is based on the FDA's Adverse Event Reporting System (FAERS) reporting post-marketing surveillance data and it's filtered to include only reports submitted by health professionals. The significance of a given target-ADR is estimated using a Likelihood Ratio Test (LRT) using all reports associated with the drugs with the same target.",
+    "description": "Significant adverse events (adverse drug reactions, ADR) associated with drugs sharing the same pharmacological target. This dataset is based on the FDA's Adverse Event Reporting System (FAERS) of post-marketing surveillance data and is filtered to include only reports submitted by health professionals. The significance of a given target-ADR is estimated using a Likelihood Ratio Test (LRT) using all reports associated with the drugs with the same target.",
     "tags": [
       "Target"
     ]
@@ -279,19 +279,19 @@
     "key": [
       "variant/variantId"
     ],
-    "description": "Core variant information for all variants in the Platform. Variants are included if any phenotypic information is available for the variant, including GWAS or molQTL credible sets, ClinVar, Uniprot or PharmGKB. The dataset includes variant metadata as well as variant effects derived from Ensembl VEP.",
+    "description": "Core variant information for all variants in the Platform. Variants are included if any phenotypic information is available for the variant, including GWAS or molQTL credible sets, ClinVar, Uniprot or ClinPGx. The dataset includes variant metadata as well as variant effects derived from Ensembl VEP.",
     "tags": [
       "Genetics"
     ]
   },
   {
     "id": "l2g_prediction",
-    "nice_name": "Locus2gene prediction",
+    "nice_name": "Locus-to-Gene (L2G) prediction",
     "key": [
       "l2g_prediction/studyLocusId",
       "l2g_prediction/geneId"
     ],
-    "description": "Predictions from Locus2gene gene assignment model. The dataset contains all predictions for every combination of credible set and genes in the region as well as statistics to explain the model interpretation of the predictions.",
+    "description": "Predictions from our Locus-to-Gene (L2G) gene assignment model. The dataset contains all predictions for every combination of credible set and genes in the region as well as statistics to explain the model interpretation of the predictions.",
     "tags": [
       "Genetics"
     ]
@@ -302,7 +302,7 @@
     "key": [
       "study/studyId"
     ],
-    "description": "Metadata for all complex trait and molecular QTL GWAS studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are splitted by the affected gene, tissue or cell type and condition, potentially leading to many studies in the same publication.",
+    "description": "Metadata for all complex trait and molecular QTL GWAS studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are split by the affected gene, tissue or cell type and condition, potentially leading to many studies in the same publication.",
     "tags": [
       "Genetics"
     ]
@@ -347,7 +347,7 @@
       "association_overall_direct/diseaseId",
       "association_overall_direct/targetId"
     ],
-    "description": "Overall metrics for direct target-disease associations. Dataset contains the 'overall' association score for the aggregation of all evidence supporting any given target-disease. This dataset only contains 'direct' associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
+    "description": "Overall metrics for direct target-disease associations. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
     "tags": [
       "Target-Disease"
     ]
@@ -359,7 +359,7 @@
       "association_by_overall_indirect/diseaseId",
       "association_by_overall_indirect/targetId"
     ],
-    "description": "Overall metrics for direct target-disease associations. Dataset contains the 'overall' association score for the aggregation of all evidence supporting any given target-disease. This dataset contains 'indirect' associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
+    "description": "Overall metrics for direct target-disease associations. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
     "tags": [
       "Target-Disease"
     ]
@@ -372,7 +372,7 @@
       "association_by_datatype_direct/targetId",
       "association_by_datatype_direct/datatypeId"
     ],
-    "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains 'direct' associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
+    "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
     "tags": [
       "Target-Disease"
     ]
@@ -385,7 +385,7 @@
       "association_by_datatype_indirect/targetId",
       "association_by_datatype_indirect/datatypeId"
     ],
-    "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains 'indirect' associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
+    "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
     "tags": [
       "Target-Disease"
     ]
@@ -398,7 +398,7 @@
       "association_by_datasource_indirect/targetId",
       "association_by_datasource_indirect/datasourceId"
     ],
-    "description": "Data source-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains 'indirect' associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
+    "description": "Data source-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
     "tags": [
       "Target-Disease"
     ]
@@ -411,7 +411,7 @@
       "association_by_datasource_direct/targetId",
       "association_by_datasource_direct/datasourceId"
     ],
-    "description": "Data source-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains 'direct' associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
+    "description": "Data source-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
     "tags": [
       "Target-Disease"
     ]
@@ -426,7 +426,7 @@
       "known_drug/phase",
       "known_drug/status"
     ],
-    "description": "For any approved or clinical candidate drug, includes information on the target gene product and indication. It is derived from the ChEMBL target/disease evidence.",
+    "description": "Information on the target gene product and indication for any approved or clinical candidate drug. It is derived from the ChEMBL target/disease evidence.",
     "tags": [
       "Target",
       "Drug"
