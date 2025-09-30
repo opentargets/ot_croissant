@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pyspark.sql import SparkSession, types as t
+from pyspark.errors.exceptions.captured import AnalysisException
 import mlcroissant as mlc
 from ot_croissant.constants import typeDict
 from ot_croissant.curation import DistributionCuration, RecordsetCuration
@@ -37,13 +38,37 @@ class PlatformOutputRecordSets:
             self.record_sets.append(record_set)
 
         return self
+    
+    def generate_distribution_description(self: PlatformOutputRecordSets, id: str) -> str:
+        """Generate the description of the distribution."""
+        description = DistributionCuration().get_curation(id, "description")
+
+        # Return basic description if curation is not available:
+        if description is None:
+            return f"Description of the distribution '{id}' is not available."
+
+        # Extract tags:
+        tags = DistributionCuration().get_curation(
+            distribution_id=id, key="tags", log_level=logging.DEBUG
+        )
+
+        # Return description if tags are not available:
+        if not isinstance(tags, list):
+            return description
+
+        # Format tags:
+        return f"{description} [{', '.join(tags)}]"
 
     def get_fileset_recordset(
         self: PlatformOutputRecordSets, path: str, 
     ) -> mlc.RecordSet:
         """Returns the recordset for a fileset."""
         # Get the schema from the recordset:
-        schema = self.spark.read.parquet(path).schema
+        try:
+            schema = self.spark.read.parquet(path).schema
+        except AnalysisException:
+            logger.error(f'Could not read parquet: {path}')
+            raise ValueError(f'Could not read dataset: {path}')
 
         record_set = mlc.RecordSet(
             id=self.DISTRIBUTION_ID,
@@ -58,11 +83,7 @@ class PlatformOutputRecordSets:
             record_set.key = primary_key
 
         # Extract description of dataset:
-        description = DistributionCuration().get_curation(
-            distribution_id=self.DISTRIBUTION_ID, key="description"
-        )
-        if description:
-            record_set.description = description
+        record_set.description = self.generate_distribution_description(self.DISTRIBUTION_ID)
 
         # Return record set
         return record_set

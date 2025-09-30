@@ -29,26 +29,6 @@ class PlatformOutputDistribution:
         """Return the distribution metadata."""
         return self.distribution
 
-    def generate_distribution_description(self, id: str) -> str:
-        """Generate the description of the distribution."""
-        description = self.curation.get_curation(id, "description")
-
-        # Return basic description if curation is not available:
-        if description is None:
-            return f"Description of the distribution '{id}' is not available."
-
-        # Extract tags:
-        tags = self.curation.get_curation(
-            distribution_id=id, key="tags", log_level=logging.DEBUG
-        )
-
-        # Return description if tags are not available:
-        if not isinstance(tags, list):
-            return description
-
-        # Format tags:
-        return f"{description} [{', '.join(tags)}]"
-
     def add_ftp_location(self, ftp_location: str, data_integrity_hash: str):
         """Add the FTP location of the distribution IF ftp location is not None.
 
