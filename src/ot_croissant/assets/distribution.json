@@ -228,25 +228,13 @@
     ]
   },
   {
-    "id": "colocalisation_coloc",
-    "nice_name": "Colocalisation with coloc",
+    "id": "colocalisation",
+    "nice_name": "Colocalisation with colocPIP and eCAVIAR",
     "key": [
-      "colocalisation_coloc/leftStudyLocusId",
-      "colocalisation_coloc/rightStudyLocusId"
+      "colocalisation/leftStudyLocusId",
+      "colocalisation/rightStudyLocusId"
     ],
-    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using coloc method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation.",
-    "tags": [
-      "Genetics"
-    ]
-  },
-  {
-    "id": "colocalisation_ecaviar",
-    "nice_name": "Colocalisation with eCAVIAR",
-    "key": [
-      "colocalisation_ecaviar/leftStudyLocusId",
-      "colocalisation_ecaviar/rightStudyLocusId"
-    ],
-    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using eCAVIAR method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation.",
+    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using colocPIP and eCAVIAR methods. Dataset includes colocalising pairs and the statistics used to estimate the colocalisation.",
     "tags": [
       "Genetics"
     ]
