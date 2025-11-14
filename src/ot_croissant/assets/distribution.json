@@ -342,11 +342,11 @@
     ]
   },
   {
-    "id": "association_by_overall_indirect",
+    "id": "association_overall_indirect",
     "nice_name": "Associations - indirect (overall score)",
     "key": [
-      "association_by_overall_indirect/diseaseId",
-      "association_by_overall_indirect/targetId"
+      "association_overall_indirect/diseaseId",
+      "association_overall_indirect/targetId"
     ],
     "description": "Overall metrics for direct target-disease associations. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
     "tags": [
