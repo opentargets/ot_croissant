@@ -27,6 +27,18 @@ wheels = [
 ]
 
 [[package]]
+name = "astroid"
+version = "4.0.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions", marker = "python_full_version < '3.11'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b7/22/97df040e15d964e592d3a180598ace67e91b7c559d8298bdb3c949dc6e42/astroid-4.0.2.tar.gz", hash = "sha256:ac8fb7ca1c08eb9afec91ccc23edbd8ac73bb22cbdd7da1d488d9fb8d6579070", size = 405714, upload-time = "2025-11-09T21:21:18.373Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/93/ac/a85b4bfb4cf53221513e27f33cc37ad158fce02ac291d18bee6b49ab477d/astroid-4.0.2-py3-none-any.whl", hash = "sha256:d7546c00a12efc32650b19a2bb66a153883185d3179ab0d4868086f807338b9b", size = 276354, upload-time = "2025-11-09T21:21:16.54Z" },
+]
+
+[[package]]
 name = "asttokens"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -218,6 +230,15 @@ wheels = [
 ]
 
 [[package]]
+name = "dill"
+version = "0.4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/12/80/630b4b88364e9a8c8c5797f4602d0f76ef820909ee32f0bacb9f90654042/dill-0.4.0.tar.gz", hash = "sha256:0633f1d2df477324f53a895b02c901fb961bdbf65a17122586ea7019292cbcf0", size = 186976, upload-time = "2025-04-16T00:41:48.867Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/50/3d/9373ad9c56321fdab5b41197068e1d8c25883b3fea29dd361f9b55116869/dill-0.4.0-py3-none-any.whl", hash = "sha256:44f54bf6412c2c8464c14e8243eb163690a9800dbe2c367330883b19c7561049", size = 119668, upload-time = "2025-04-16T00:41:47.671Z" },
+]
+
+[[package]]
 name = "etils"
 version = "1.12.0"
 source = { registry = "https://pypi.org/simple" }
@@ -335,6 +356,15 @@ wheels = [
 ]
 
 [[package]]
+name = "isort"
+version = "7.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/63/53/4f3c058e3bace40282876f9b553343376ee687f3c35a525dc79dbd450f88/isort-7.0.0.tar.gz", hash = "sha256:5513527951aadb3ac4292a41a16cbc50dd1642432f5e8c20057d414bdafb4187", size = 805049, upload-time = "2025-10-11T13:30:59.107Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/ed/e3705d6d02b4f7aea715a353c8ce193efd0b5db13e204df895d38734c244/isort-7.0.0-py3-none-any.whl", hash = "sha256:1bcabac8bc3c36c7fb7b98a76c8abb18e0f841a3ba81decac7691008592499c1", size = 94672, upload-time = "2025-10-11T13:30:57.665Z" },
+]
+
+[[package]]
 name = "jedi"
 version = "0.19.2"
 source = { registry = "https://pypi.org/simple" }
@@ -397,6 +427,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/99/5b/a36a337438a14116b16480db471ad061c36c3694df7c2084a0da7ba538b7/matplotlib_inline-0.1.7.tar.gz", hash = "sha256:8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90", size = 8159, upload-time = "2024-04-15T13:44:44.803Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/8e/9ad090d3553c280a8060fbf6e24dc1c0c29704ee7d1c372f0c174aa59285/matplotlib_inline-0.1.7-py3-none-any.whl", hash = "sha256:df192d39a4ff8f21b1895d72e6a13f5fcc5099f00fa84384e0ea28c2cc0653ca", size = 9899, upload-time = "2024-04-15T13:44:43.265Z" },
+]
+
+[[package]]
+name = "mccabe"
+version = "0.7.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e7/ff/0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8/mccabe-0.7.0.tar.gz", hash = "sha256:348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325", size = 9658, upload-time = "2022-01-24T01:14:51.113Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/27/1a/1f68f9ba0c207934b35b86a8ca3aad8395a3d6dd7921c0686e23853ff5a9/mccabe-0.7.0-py2.py3-none-any.whl", hash = "sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e", size = 7350, upload-time = "2022-01-24T01:14:49.62Z" },
 ]
 
 [[package]]
@@ -563,6 +602,7 @@ dev = [
     { name = "ipython" },
     { name = "mypy" },
     { name = "pylance" },
+    { name = "pylint" },
     { name = "ruff" },
 ]
 
@@ -578,6 +618,7 @@ dev = [
     { name = "ipython", specifier = ">=8.32.0" },
     { name = "mypy", specifier = ">=1.15.0" },
     { name = "pylance", specifier = ">=0.26.0" },
+    { name = "pylint", specifier = ">=4.0.3" },
     { name = "ruff", specifier = ">=0.9.3" },
 ]
 
@@ -820,6 +861,25 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/a8/67/1f1e2fc26e3b55dc555d0a7b4c43f8a2e288328f44b9b559637f0cab58f4/pylance-0.26.0-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:4ae10789240aba553da0bc01cc7b8b3d87eeb148d8ce09c88de782281172126d", size = 34699301, upload-time = "2025-04-24T22:09:22.565Z" },
     { url = "https://files.pythonhosted.org/packages/7a/89/980c1f85b1e9943c06408dca7b16575de69962a075f8bdb70e39c22d0319/pylance-0.26.0-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:615dfd284c2769e10f92e7f497ab3851e7613e872dd654d0826f8510550766f3", size = 37494297, upload-time = "2025-04-24T22:12:17.845Z" },
     { url = "https://files.pythonhosted.org/packages/d2/b5/a4adfb3745609d574ac4f81534fd868240d06033f5f960e3b3eae14a1764/pylance-0.26.0-cp39-abi3-win_amd64.whl", hash = "sha256:6caedee3b5770674f861a1eee543f781039e175442c6128bd2ffaf7654290ce2", size = 36933976, upload-time = "2025-04-24T22:27:33.741Z" },
+]
+
+[[package]]
+name = "pylint"
+version = "4.0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "astroid" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
+    { name = "dill" },
+    { name = "isort" },
+    { name = "mccabe" },
+    { name = "platformdirs" },
+    { name = "tomli", marker = "python_full_version < '3.11'" },
+    { name = "tomlkit" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/dd/9c/0500020a5446031220f487ca0c762713c6f3ddad7231b811aaf1d473f6aa/pylint-4.0.3.tar.gz", hash = "sha256:a427fe76e0e5355e9fb9b604fd106c419cafb395886ba7f3cebebb03f30e081d", size = 1570368, upload-time = "2025-11-13T15:54:41.394Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1f/01/b8acd4087102c774d432a6663bac4857405c64771445c0a3110828bc5c88/pylint-4.0.3-py3-none-any.whl", hash = "sha256:896d09afb0e78bbf2e030cd1f3d8dc92771a51f7e46828cbc3948a89cd03433a", size = 536199, upload-time = "2025-11-13T15:54:39.734Z" },
 ]
 
 [[package]]
@@ -1122,6 +1182,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/5b/b9/1ed31d167be802da0fc95020d04cd27b7d7065cc6fbefdd2f9186f60d7bd/tomli-2.2.1-cp313-cp313-win32.whl", hash = "sha256:d3f5614314d758649ab2ab3a62d4f2004c825922f9e370b29416484086b264ec", size = 98724, upload-time = "2024-11-27T22:38:32.837Z" },
     { url = "https://files.pythonhosted.org/packages/c7/32/b0963458706accd9afcfeb867c0f9175a741bf7b19cd424230714d722198/tomli-2.2.1-cp313-cp313-win_amd64.whl", hash = "sha256:a38aa0308e754b0e3c67e344754dff64999ff9b513e691d0e786265c93583c69", size = 109383, upload-time = "2024-11-27T22:38:34.455Z" },
     { url = "https://files.pythonhosted.org/packages/6e/c2/61d3e0f47e2b74ef40a68b9e6ad5984f6241a942f7cd3bbfbdbd03861ea9/tomli-2.2.1-py3-none-any.whl", hash = "sha256:cb55c73c5f4408779d0cf3eef9f762b9c9f147a77de7b258bef0a5628adc85cc", size = 14257, upload-time = "2024-11-27T22:38:35.385Z" },
+]
+
+[[package]]
+name = "tomlkit"
+version = "0.13.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz", hash = "sha256:430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1", size = 185207, upload-time = "2025-06-05T07:13:44.947Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bd/75/8539d011f6be8e29f339c42e633aae3cb73bffa95dd0f9adec09b9c58e85/tomlkit-0.13.3-py3-none-any.whl", hash = "sha256:c89c649d79ee40629a9fda55f8ace8c6a1b42deb912b2a8fd8d942ddadb606b0", size = 38901, upload-time = "2025-06-05T07:13:43.546Z" },
 ]
 
 [[package]]
