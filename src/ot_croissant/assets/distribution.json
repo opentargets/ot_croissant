@@ -456,12 +456,12 @@
     "tags": null
   },
   {
-    "id": "interval",
-    "nice_name": "Genomic intervals",
+    "id": "enhancer_to_gene",
+    "nice_name": "Enhancer to gene",
     "key": [
-      "interval/intervalId"
+      "enhancer_to_gene/intervalId"
     ],
-    "description": "Genomic regions (intervals) associated with genes based on epigenetics evidence.",
+    "description": "Genomic regions associated with genes based on epigenetics evidence.",
     "tags": [
       "Target",
       "Genetics"
@@ -506,7 +506,7 @@
     "key": [
       "evidence_clingen/id"
     ],
-    "description": "Disease-target evidence from Gene\u2013Disease Validity Curation of ClinGen",
+    "description": "Disease-target evidence from Gene Disease Validity Curation of ClinGen",
     "tags": [
       "Target-Disease"
     ]
@@ -539,7 +539,7 @@
     "key": [
       "evidence_encore/id"
     ],
-    "description": "Disease-target evidence based on somatic variation from ClinVar, provided by the European Variation Archive",
+    "description": "Effects and synergies from knockout CRISPR screening from cancer cell lines.",
     "tags": [
       "Target-Disease"
     ]
@@ -557,7 +557,7 @@
   },
   {
     "id": "evidence_eva",
-    "nice_name": "ClinVar germ-line evidence",
+    "nice_name": "ClinVar germline evidence",
     "key": [
       "evidence_eva/id"
     ],

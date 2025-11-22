@@ -96,24 +96,6 @@
     "foreign_key": "target/id"
   },
   {
-    "id": "association_by_overall_indirect/diseaseId",
-    "description": "Identifier for the disease in the association",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "association_by_overall_indirect/evidenceCount",
-    "description": "Number of evidence items supporting the association"
-  },
-  {
-    "id": "association_by_overall_indirect/score",
-    "description": "Association score calculated across all data sources with ontology propagation of evidence"
-  },
-  {
-    "id": "association_by_overall_indirect/targetId",
-    "description": "Identifier for the target in the association",
-    "foreign_key": "target/id"
-  },
-  {
     "id": "association_overall_direct/diseaseId",
     "description": "Identifier for the disease in the association",
     "foreign_key": "disease/id"
@@ -128,6 +110,24 @@
   },
   {
     "id": "association_overall_direct/targetId",
+    "description": "Identifier for the target in the association",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "association_overall_indirect/diseaseId",
+    "description": "Identifier for the disease in the association",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "association_overall_indirect/evidenceCount",
+    "description": "Number of evidence items supporting the association"
+  },
+  {
+    "id": "association_overall_indirect/score",
+    "description": "Association score calculated across all data sources with ontology propagation of evidence"
+  },
+  {
+    "id": "association_overall_indirect/targetId",
     "description": "Identifier for the target in the association",
     "foreign_key": "target/id"
   },
@@ -168,87 +168,45 @@
     "description": "Cross-reference IDs from other ontologies"
   },
   {
-    "id": "colocalisation_coloc/betaRatioSignAverage",
+    "id": "colocalisation/betaRatioSignAverage",
     "description": "Average sign of the beta ratio between colocalised variants"
   },
   {
-    "id": "colocalisation_coloc/chromosome",
+    "id": "colocalisation/chromosome",
     "description": "Chromosome where the colocalisation occurs"
   },
   {
-    "id": "colocalisation_coloc/colocalisationMethod",
-    "description": "Method used to estimate colocalisation (e.g., coloc)"
-  },
-  {
-    "id": "colocalisation_coloc/h0",
-    "description": "Posterior probability that neither trait is associated with the region (H0)"
-  },
-  {
-    "id": "colocalisation_coloc/h1",
-    "description": "Posterior probability that only the left study trait is associated (H1)"
-  },
-  {
-    "id": "colocalisation_coloc/h2",
-    "description": "Posterior probability that only the right study trait is associated (H2)"
-  },
-  {
-    "id": "colocalisation_coloc/h3",
-    "description": "Posterior probability that both traits are associated, but with different causal variants (H3)"
-  },
-  {
-    "id": "colocalisation_coloc/h4",
-    "description": "Posterior probability that both traits are associated and share a causal variant (H4)"
-  },
-  {
-    "id": "colocalisation_coloc/leftStudyLocusId",
-    "description": "Study-locus identifier for left-side overlapping signal",
-    "foreign_key": "credible_set/studyLocusId"
-  },
-  {
-    "id": "colocalisation_coloc/numberColocalisingVariants",
-    "description": "Number of variants intersecting between two overlapping study-loci"
-  },
-  {
-    "id": "colocalisation_coloc/rightStudyLocusId",
-    "description": "Study-locus identifier for right-side overlapping signal",
-    "foreign_key": "credible_set/studyLocusId"
-  },
-  {
-    "id": "colocalisation_coloc/rightStudyType",
-    "description": "Type of the right-side study (e.g., gwas, eqtl)"
-  },
-  {
-    "id": "colocalisation_ecaviar/betaRatioSignAverage",
-    "description": "Average sign of the beta ratio between colocalised variants"
-  },
-  {
-    "id": "colocalisation_ecaviar/chromosome",
-    "description": "Chromosome where the colocalisation occurs"
-  },
-  {
-    "id": "colocalisation_ecaviar/clpp",
+    "id": "colocalisation/clpp",
     "description": "Colocalisation posterior probability (CLPP) score estimating the probability of shared causal variants"
   },
   {
-    "id": "colocalisation_ecaviar/colocalisationMethod",
-    "description": "Method used to estimate colocalisation (e.g., eCAVIAR)"
+    "id": "colocalisation/colocalisationMethod",
+    "description": "Method used to estimate colocalisation (e.g., coloc)"
   },
   {
-    "id": "colocalisation_ecaviar/leftStudyLocusId",
+    "id": "colocalisation/h3",
+    "description": "Posterior probability that both traits are associated, but with different causal variants (H3)"
+  },
+  {
+    "id": "colocalisation/h4",
+    "description": "Posterior probability that both traits are associated and share a causal variant (H4)"
+  },
+  {
+    "id": "colocalisation/leftStudyLocusId",
     "description": "Study-locus identifier for left-side overlapping signal",
     "foreign_key": "credible_set/studyLocusId"
   },
   {
-    "id": "colocalisation_ecaviar/numberColocalisingVariants",
+    "id": "colocalisation/numberColocalisingVariants",
     "description": "Number of variants intersecting between two overlapping study-loci"
   },
   {
-    "id": "colocalisation_ecaviar/rightStudyLocusId",
+    "id": "colocalisation/rightStudyLocusId",
     "description": "Study-locus identifier for right-side overlapping signal",
     "foreign_key": "credible_set/studyLocusId"
   },
   {
-    "id": "colocalisation_ecaviar/rightStudyType",
+    "id": "colocalisation/rightStudyType",
     "description": "Type of the right-side study (e.g., gwas, eqtl)"
   },
   {
@@ -834,6 +792,72 @@
     "description": "Year when the warning was issued"
   },
   {
+    "id": "enhancer_to_gene/biosampleId",
+    "description": "Identifier of the biosample in where the interval was discovered in",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "enhancer_to_gene/biosampleName",
+    "description": "Name of the cell type/anatomical unit the interval was identified in"
+  },
+  {
+    "id": "enhancer_to_gene/chromosome",
+    "description": "Chromosome the interval is located on"
+  },
+  {
+    "id": "enhancer_to_gene/datasourceId",
+    "description": "Identifier of the interval datasource"
+  },
+  {
+    "id": "enhancer_to_gene/distanceToTss",
+    "description": "Distance of the interval from the transcription start site of the gene"
+  },
+  {
+    "id": "enhancer_to_gene/end",
+    "description": "Basepair position of the interval end"
+  },
+  {
+    "id": "enhancer_to_gene/geneId",
+    "description": "Ensembl gene identifier of the target the interval is linked with [bioregistry:ensembl]",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "enhancer_to_gene/intervalId",
+    "description": "Identifier of the interval"
+  },
+  {
+    "id": "enhancer_to_gene/intervalType",
+    "description": "Type of the interval"
+  },
+  {
+    "id": "enhancer_to_gene/pmid",
+    "description": "Pubmed identifier of the publication that reported the interval data"
+  },
+  {
+    "id": "enhancer_to_gene/resourceScore",
+    "description": "List of contributing score components"
+  },
+  {
+    "id": "enhancer_to_gene/resourceScore/name",
+    "description": "Individual components which contributes to the interval score (e.g., DNase, HiC_contacts)"
+  },
+  {
+    "id": "enhancer_to_gene/resourceScore/value",
+    "description": "Raw signal value from the resourceScore(s)"
+  },
+  {
+    "id": "enhancer_to_gene/score",
+    "description": "Interval evidence score from the datasource, higher values indicate stronger support linking the interval to its target gene"
+  },
+  {
+    "id": "enhancer_to_gene/start",
+    "description": "Basepair position of the interval start"
+  },
+  {
+    "id": "enhancer_to_gene/studyId",
+    "description": "Identifier of the interval study"
+  },
+  {
     "id": "evidence_cancer_biomarkers/biomarkerName",
     "description": "Altered characteristics that influences the disease process"
   },
@@ -964,7 +988,7 @@
   },
   {
     "id": "evidence_cancer_gene_census/directionOnTarget",
-    "description": "Effect of direction on target"
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
   },
   {
     "id": "evidence_cancer_gene_census/directionOnTrait",
@@ -1067,7 +1091,7 @@
   },
   {
     "id": "evidence_chembl/directionOnTarget",
-    "description": "Effect of direction on target"
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
   },
   {
     "id": "evidence_chembl/directionOnTrait",
@@ -1654,7 +1678,7 @@
   },
   {
     "id": "evidence_eva/directionOnTarget",
-    "description": "Effect of direction on target"
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
   },
   {
     "id": "evidence_eva/directionOnTrait",
@@ -2060,7 +2084,7 @@
   },
   {
     "id": "evidence_gene_burden/directionOnTarget",
-    "description": "Effect of direction on target"
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
   },
   {
     "id": "evidence_gene_burden/directionOnTrait",
@@ -2263,6 +2287,10 @@
     "foreign_key": "target/id"
   },
   {
+    "id": "evidence_gwas_credible_sets/curationDate",
+    "description": "Date of the GWAS study curation"
+  },
+  {
     "id": "evidence_gwas_credible_sets/datasourceId",
     "description": "Identifer of the evidence source"
   },
@@ -2322,10 +2350,6 @@
     "foreign_key": "target/id"
   },
   {
-    "id": "evidence_gwas_credible_sets/curationDate",
-    "description": "Date of the GWAS study curation"
-  },
-  {
     "id": "evidence_impc/biologicalModelAllelicComposition",
     "description": "Allelic composition of the model organism"
   },
@@ -2347,7 +2371,7 @@
   },
   {
     "id": "evidence_impc/directionOnTarget",
-    "description": "Effect of direction on target"
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
   },
   {
     "id": "evidence_impc/directionOnTrait",
@@ -2467,7 +2491,7 @@
   },
   {
     "id": "evidence_intogen/directionOnTarget",
-    "description": "Effect of direction on target"
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
   },
   {
     "id": "evidence_intogen/directionOnTrait",
@@ -2562,7 +2586,7 @@
   },
   {
     "id": "evidence_orphanet/directionOnTarget",
-    "description": "Effect of direction on target"
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
   },
   {
     "id": "evidence_orphanet/directionOnTrait",
@@ -3380,72 +3404,6 @@
     "id": "interaction_evidence/targetB",
     "description": "Open Targets target identifier of the second molecule (target B) in the interaction [bioregistry:ensembl]",
     "foreign_key": "target/id"
-  },
-  {
-    "id": "interval/biosampleId",
-    "description": "Identifier of the biosample in where the interval was discovered in",
-    "foreign_key": "biosample/biosampleId"
-  },
-  {
-    "id": "interval/biosampleName",
-    "description": "Name of the cell type/anatomical unit the interval was identified in"
-  },
-  {
-    "id": "interval/chromosome",
-    "description": "Chromosome the interval is located on"
-  },
-  {
-    "id": "interval/datasourceId",
-    "description": "Identifier of the interval datasource"
-  },
-  {
-    "id": "interval/distanceToTss",
-    "description": "Distance of the interval from the transcription start site of the gene"
-  },
-  {
-    "id": "interval/end",
-    "description": "Basepair position of the interval end"
-  },
-  {
-    "id": "interval/geneId",
-    "description": "Ensembl gene identifier of the target the interval is linked with [bioregistry:ensembl]",
-    "foreign_key": "target/id"
-  },
-  {
-    "id": "interval/intervalId",
-    "description": "Identifier of the interval"
-  },
-  {
-    "id": "interval/intervalType",
-    "description": "Type of the interval"
-  },
-  {
-    "id": "interval/pmid",
-    "description": "Pubmed identifier of the publication that reported the interval data"
-  },
-  {
-    "id": "interval/resourceScore",
-    "description": "List of contributing score components"
-  },
-  {
-    "id": "interval/resourceScore/name",
-    "description": "Individual components which contributes to the interval score (e.g., DNase, HiC_contacts)"
-  },
-  {
-    "id": "interval/resourceScore/value",
-    "description": "Raw signal value from the resourceScore(s)"
-  },
-  {
-    "id": "interval/score",
-    "description": "Interval evidence score from the datasource, higher values indicate stronger support linking the interval to its target gene"
-  },
-  {
-    "id": "interval/start",
-    "description": "Basepair position of the interval start"
-  },
-  {
-    "id": "interval/studyId",
-    "description": "Identifier of the interval study"
   },
   {
     "id": "known_drug/ancestors",
