@@ -33,17 +33,6 @@
     ]
   },
   {
-    "id": "evidence",
-    "nice_name": "Target-Disease evidence",
-    "key": [
-      "evidence/id"
-    ],
-    "description": "Target-disease evidence from all data sources. Every piece of evidence supporting an association between a target (gene or protein) and a disease or phenotype is reported and scored according to the confidence we have in the association. Multiple target-disease evidence from the same source can be reported in this dataset. The dataset is partitioned by data source, therefore evidence for individual sources can be retrieved separately. The dataset schema is a superset of all the schemas for all sources.",
-    "tags": [
-      "Target-Disease"
-    ]
-  },
-  {
     "id": "interaction",
     "nice_name": "Molecular interactions",
     "key": [
@@ -239,25 +228,13 @@
     ]
   },
   {
-    "id": "colocalisation_coloc",
-    "nice_name": "Colocalisation with coloc",
+    "id": "colocalisation",
+    "nice_name": "Colocalisation with colocPIP and eCAVIAR",
     "key": [
-      "colocalisation_coloc/leftStudyLocusId",
-      "colocalisation_coloc/rightStudyLocusId"
+      "colocalisation/leftStudyLocusId",
+      "colocalisation/rightStudyLocusId"
     ],
-    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using coloc method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation.",
-    "tags": [
-      "Genetics"
-    ]
-  },
-  {
-    "id": "colocalisation_ecaviar",
-    "nice_name": "Colocalisation with eCAVIAR",
-    "key": [
-      "colocalisation_ecaviar/leftStudyLocusId",
-      "colocalisation_ecaviar/rightStudyLocusId"
-    ],
-    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using eCAVIAR method. Dataset includes colocalising pairs as well as the method and statistics used to estimate the colocalisation.",
+    "description": "GWAS-GWAS and GWAS-molQTL credible set colocalisation results using colocPIP and eCAVIAR methods. Dataset includes colocalising pairs and the statistics used to estimate the colocalisation.",
     "tags": [
       "Genetics"
     ]
@@ -353,11 +330,11 @@
     ]
   },
   {
-    "id": "association_by_overall_indirect",
+    "id": "association_overall_indirect",
     "nice_name": "Associations - indirect (overall score)",
     "key": [
-      "association_by_overall_indirect/diseaseId",
-      "association_by_overall_indirect/targetId"
+      "association_overall_indirect/diseaseId",
+      "association_overall_indirect/targetId"
     ],
     "description": "Overall metrics for direct target-disease associations. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology.",
     "tags": [
@@ -479,15 +456,268 @@
     "tags": null
   },
   {
-    "id": "interval",
-    "nice_name": "Genomic intervals",
+    "id": "enhancer_to_gene",
+    "nice_name": "Enhancer to gene",
     "key": [
-      "interval/intervalId"
+      "enhancer_to_gene/intervalId"
     ],
-    "description": "Genomic regions (intervals) associated with genes based on epigenetics evidence.",
+    "description": "Genomic regions associated with genes based on epigenetics evidence.",
     "tags": [
       "Target",
       "Genetics"
+    ]
+  },
+  {
+    "id": "evidence_cancer_biomarkers",
+    "nice_name": "Cancer biomarker evidence",
+    "key": [
+      "evidence_cancer_biomarkers/id"
+    ],
+    "description": "Disease-target evidence based on cancer biomarkers from the Cancer Genome Interpreter",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_cancer_gene_census",
+    "nice_name": "Cancer Gene Census evidence",
+    "key": [
+      "evidence_cancer_gene_census/id"
+    ],
+    "description": "Disease-target evidence based on Cancer Gene Census provided by COSMIC",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_chembl",
+    "nice_name": "ChEMBL evidence",
+    "key": [
+      "evidence_chembl/id"
+    ],
+    "description": "Disease-target evidence based on drug indications, clinical trials and mechanism of action provided by ChEMBL",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_clingen",
+    "nice_name": "ClinGen evidence",
+    "key": [
+      "evidence_clingen/id"
+    ],
+    "description": "Disease-target evidence from Gene Disease Validity Curation of ClinGen",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_crispr",
+    "nice_name": "ProjectScore evidence",
+    "key": [
+      "evidence_crispr/id"
+    ],
+    "description": "Diease-target evidence from unified analysis of whole-genome CRISPR/Cas9 screens from ProjectScore project",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_crispr_screen",
+    "nice_name": "CRISP screen evidence",
+    "key": [
+      "evidence_crispr_screen/id"
+    ],
+    "description": "Disease-target evidence derived from systematic gene perturation assays of CRISPR knock-out screens",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_encore",
+    "nice_name": "Open Targets - Encore evidence",
+    "key": [
+      "evidence_encore/id"
+    ],
+    "description": "Effects and synergies from knockout CRISPR screening from cancer cell lines.",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_europepmc",
+    "nice_name": "EuropePMC evidence",
+    "key": [
+      "evidence_europepmc/id"
+    ],
+    "description": "Disease-target evidence derived from literature mining provided by Europe PMC",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_eva",
+    "nice_name": "ClinVar germline evidence",
+    "key": [
+      "evidence_eva/id"
+    ],
+    "description": "Disease-target evidence based on germline variation from ClinVar, provided by the European Variation Archive",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_eva_somatic",
+    "nice_name": "ClinVar somatic evidence",
+    "key": [
+      "evidence_eva_somatic/id"
+    ],
+    "description": "Disease-target evidence based on somatic variation from ClinVar, provided by the European Variation Archive",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_expression_atlas",
+    "nice_name": "Differential expression evidence",
+    "key": [
+      "evidence_expression_atlas/id"
+    ],
+    "description": "Disease-target evidence based on differential expression data provided by Expression Atlas",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_gene_burden",
+    "nice_name": "Gene burden evidence",
+    "key": [
+      "evidence_gene_burden/id"
+    ],
+    "description": "Disease-target evidence based on testing aggregated effect of variants, curated from the literature by the Open Targets team",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_gene2phenotype",
+    "nice_name": "Gene2Phenotype evidence",
+    "key": [
+      "evidence_gene2phenotype/id"
+    ],
+    "description": "Disease-target evidence curated by the Gene2Phenotype consortium",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_genomics_england",
+    "nice_name": "Genomics England - PanelApp evidence",
+    "key": [
+      "evidence_genomics_england/id"
+    ],
+    "description": "Curated disease-target evidence provided by Genomics England PanelApp",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_gwas_credible_sets",
+    "nice_name": "GWAS credible-set evidence",
+    "key": [
+      "evidence_gwas_credible_sets/id"
+    ],
+    "description": "Disease-target evidence based on Locus-to-Gene prediction on GWAS credible sets",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_impc",
+    "nice_name": "IMPC evidence",
+    "key": [
+      "evidence_impc/id"
+    ],
+    "description": "Disease-target evidence based on mouse knock-out models, where mouse phenotypes are mapped to human diseases by PhenoDigm algorithm. Data provided by IMPC",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_intogen",
+    "nice_name": "IntOGen evidence",
+    "key": [
+      "evidence_intogen/id"
+    ],
+    "description": "Cancer-driver gene evidence based on the analysis of large-scale mutational data from IntOGen",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_orphanet",
+    "nice_name": "Orphanet evidence",
+    "key": [
+      "evidence_orphanet/id"
+    ],
+    "description": "Curated collection of rare disase-target evidence from Orphanet",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_ot_crispr",
+    "nice_name": "Open Targets - CRISPR screen evidence",
+    "key": [
+      "evidence_ot_crispr/id"
+    ],
+    "description": "Pre-publication CRISPR/Cas9 perturation screens provided by Open Targets experimental projects",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_ot_crispr_validation",
+    "nice_name": "Open Targets - Validation Lab evidence",
+    "key": [
+      "evidence_ot_crispr_validation/id"
+    ],
+    "description": "Disease-target evidence derived from CRISPR/Cas9 perturation screens provided by Open Targets Validation lab",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_reactome",
+    "nice_name": "Reactome evidence",
+    "key": [
+      "evidence_reactome/id"
+    ],
+    "description": "Manually curated disease-target evidence based on reaction pathways sourced from Reactome",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_uniprot_literature",
+    "nice_name": "Uniprot literature evidence",
+    "key": [
+      "evidence_uniprot_literature/id"
+    ],
+    "description": "Protein-disease evidence based on literature curated by the Uniprot team",
+    "tags": [
+      "Target-Disease"
+    ]
+  },
+  {
+    "id": "evidence_uniprot_variants",
+    "nice_name": "Uniprot variants evidence",
+    "key": [
+      "evidence_uniprot_variants/id"
+    ],
+    "description": "Disease-target evidence based on disease causing protein sequence alteration curated by the Uniprot team",
+    "tags": [
+      "Target-Disease"
     ]
   }
 ]
