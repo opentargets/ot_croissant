@@ -36,7 +36,7 @@
     "tags": [
       "Target-Disease"
     ],
-    "description": "association_by_datatype_direct/diseaseId|association_by_datatype_direct/targetId|association_by_datatype_direct/datatypeId"
+    "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
   },
   {
     "id": "association_by_datatype_indirect",
@@ -665,7 +665,7 @@
     "tags": [
       "Genetics"
     ],
-    "description": "study/studyId"
+    "description": "Metadata for all complex trait and molecular QTL GWAS studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are split by the affected gene, tissue or cell type and condition, potentially leading to many studies in the same publication"
   },
   {
     "id": "target",
