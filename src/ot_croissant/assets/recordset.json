@@ -1243,6 +1243,10 @@
     "description": "Reference to linked external resource (e.g. clinical trials, studies, package inserts, reports, etc.)"
   },
   {
+    "id": "evidence_clingen/urls/niceName",
+    "description": "Human readable label of the remote reference"
+  },
+  {
     "id": "evidence_clingen/urls/url",
     "description": "URL to remote resource"
   },
@@ -2538,6 +2542,10 @@
   {
     "id": "evidence_intogen/mutatedSamples/numberSamplesTested",
     "description": "Number of cohort samples tested"
+  },
+  {
+    "id": "evidence_intogen/mutatedSamples/numberSamplesWithMutationType",
+    "description": "Number of cohort samples in which target is mutated with a specific mutation type"
   },
   {
     "id": "evidence_intogen/publicationDate",
