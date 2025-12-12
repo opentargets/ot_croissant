@@ -132,12 +132,85 @@
     "foreign_key": "target/id"
   },
   {
+    "id": "baseline_expression/celltypeBiosampleFromSource",
+    "description": "Tissue reported by study"
+  },
+  {
+    "id": "baseline_expression/celltypeBiosampleId",
+    "description": "Cell type identifier that maps to the cell type reported by study [bioregistry:cell ontology]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "baseline_expression/celltypeBiosampleParentId",
+    "description": "Broad cell type identifier that maps to the cell type reported by study [bioregistry:cell ontology]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "baseline_expression/datasourceId",
+    "description": "Origin of expression data"
+  },
+  {
+    "id": "baseline_expression/datatypeId",
+    "description": "Type of expression data"
+  },
+  {
+    "id": "baseline_expression/distribution_score",
+    "description": "Proportion of biosamples, within the dataset, that display median expression above a threshold"
+  },
+  {
+    "id": "baseline_expression/max",
+    "description": "Maximum value of expression"
+  },
+  {
+    "id": "baseline_expression/median",
+    "description": "Median value of expression"
+  },
+  {
+    "id": "baseline_expression/min",
+    "description": "Minimum value of expression"
+  },
+  {
+    "id": "baseline_expression/q1",
+    "description": "First quantile of expression"
+  },
+  {
+    "id": "baseline_expression/q3",
+    "description": "Third quantile of expression"
+  },
+  {
+    "id": "baseline_expression/specificity_score",
+    "description": "Measure of how specific expression is to a biosample"
+  },
+  {
+    "id": "baseline_expression/targetId",
+    "description": "Unique identifier for the target",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "baseline_expression/tissueBiosampleFromSource",
+    "description": "Cell type reported by study"
+  },
+  {
+    "id": "baseline_expression/tissueBiosampleId",
+    "description": "Tissue identifier that maps to the tissue reported by study [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "baseline_expression/tissueBiosampleParentId",
+    "description": "Broad tissue identifier that maps to the tissue reported by study [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "baseline_expression/unit",
+    "description": "Unit for the target expression"
+  },
+  {
     "id": "biosample/ancestors",
     "description": "List of ancestor biosample IDs in the ontology"
   },
   {
     "id": "biosample/biosampleId",
-    "description": "Unique identifier for the biosample [bioregistry:uberon]"
+    "description": "Unique identifier for the biosample"
   },
   {
     "id": "biosample/biosampleName",
@@ -485,7 +558,8 @@
   },
   {
     "id": "disease_phenotype/disease",
-    "description": "Disease identifier"
+    "description": "Disease identifier",
+    "foreign_key": "disease/id"
   },
   {
     "id": "disease_phenotype/evidence",
