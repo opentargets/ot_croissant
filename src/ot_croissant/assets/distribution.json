@@ -76,6 +76,20 @@
     "description": "Overall metrics for direct target-disease associations. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
   },
   {
+    "id": "baseline_expression",
+    "nice_name": "Baseline expression",
+    "key": [
+      "baseline_expression/targetId",
+      "baseline_expression/datasourceId",
+      "baseline_expression/tissueBiosampleId",
+      "baseline_expression/celltypeBiosampleId"
+    ],
+    "tags": [
+      "Target"
+    ],
+    "description": "Baseline bulk RNA-seq, single-cell RNA-seq and MS proteomic expression data across tissues and cell types. This data contains normalised expression values showing how targets are selectively expressed across different tissues. This dataset combines expression values from multiples sources: Tabula Sapiens, Database of Immune Cell Expression, PRIDE and GTEx."
+  },
+  {
     "id": "biosample",
     "nice_name": "Biosample core annotation",
     "key": [
@@ -456,7 +470,7 @@
   },
   {
     "id": "expression",
-    "nice_name": "Baseline expression",
+    "nice_name": "Baseline expression - legacy",
     "key": [
       "expression/id"
     ],
