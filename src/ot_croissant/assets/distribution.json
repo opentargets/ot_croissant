@@ -606,18 +606,6 @@
     "description": "Significant adverse drug reactions (ADRs) associated with drugs. This dataset is based on the FDA's Adverse Event Reporting System (FAERS) reporting post-marketing surveillance data and it's filtered to include only reports submitted by health professionals. The significance of a given drug-ADR is estimated using a Likelihood Ratio Test (LRT) using all reports associated with the given drug"
   },
   {
-    "id": "openfda_significant_adverse_target_reactions",
-    "nice_name": "Pharmacovigilance (by target)",
-    "key": [
-      "openfda_significant_adverse_target_reactions/targetId",
-      "openfda_significant_adverse_target_reactions/event"
-    ],
-    "tags": [
-      "Target"
-    ],
-    "description": "Significant adverse events (adverse drug reactions, ADR) associated with drugs sharing the same pharmacological target. This dataset is based on the FDA's Adverse Event Reporting System (FAERS) of post-marketing surveillance data and is filtered to include only reports submitted by health professionals. The significance of a given target-ADR is estimated using a Likelihood Ratio Test (LRT) using all reports associated with the drugs with the same target"
-  },
-  {
     "id": "otar",
     "nice_name": "Open Targets Projects",
     "key": [
