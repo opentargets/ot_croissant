@@ -98,7 +98,7 @@
     "tags": [
       "Ontology"
     ],
-    "description": "Integration of biosample metadata about tissues or cell types derived from multiple ontologies including EFO, UBERON, CL, GO and others"
+    "description": "Integration of metadata related to tissues, cell types or cell lines (biosamples) derived from the UBERON, CL and EFO ontologies"
   },
   {
     "id": "colocalisation",
