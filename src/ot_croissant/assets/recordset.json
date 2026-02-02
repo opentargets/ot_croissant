@@ -871,6 +871,10 @@
     "foreign_key": "biosample/biosampleId"
   },
   {
+    "id": "enhancer_to_gene/biosampleFromSourceId",
+    "description": "Original identifier of the cell type/anatomical unit the interval was identified in"
+  },
+  {
     "id": "enhancer_to_gene/biosampleName",
     "description": "Name of the cell type/anatomical unit the interval was identified in"
   },
@@ -918,6 +922,10 @@
   {
     "id": "enhancer_to_gene/resourceScore/value",
     "description": "Raw signal value from the resourceScore(s)"
+  },
+  {
+    "id": "enhancer_to_gene/qualityControls",
+    "description": "Quality control flags for this interval"
   },
   {
     "id": "enhancer_to_gene/score",
