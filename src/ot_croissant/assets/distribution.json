@@ -679,7 +679,7 @@
     "tags": [
       "Genetics"
     ],
-    "description": "Metadata for all complex trait GWAS and molecular QTL studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are split by their target trait (e.g. gene, splice junction, etc), biosample (tissue, cell type or cell line) and condition (e.g. stimulation, time period, etc), potentially leading to tens of thousands of studies derived from the same publication."
+    "description": "Metadata for all complex trait GWAS and molecular QTL studies in the Platform. The dataset includes study metadata, phenotype information, sample sizes, publication information and more. Molecular QTL studies are split by their target trait (e.g. gene, splice junction, etc), biosample (tissue, cell type or cell line) and condition (e.g. stimulation, time period, etc), potentially leading to tens of thousands of studies derived from the same publication"
   },
   {
     "id": "target",

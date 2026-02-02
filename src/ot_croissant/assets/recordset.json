@@ -866,6 +866,10 @@
     "description": "Year when the warning was issued"
   },
   {
+    "id": "enhancer_to_gene/biosampleFromSourceId",
+    "description": "Original identifier of the cell type/anatomical unit the interval was identified in"
+  },
+  {
     "id": "enhancer_to_gene/biosampleId",
     "description": "Identifier of the biosample in where the interval was discovered in",
     "foreign_key": "biosample/biosampleId"
@@ -906,6 +910,10 @@
   {
     "id": "enhancer_to_gene/pmid",
     "description": "Pubmed identifier of the publication that reported the interval data"
+  },
+  {
+    "id": "enhancer_to_gene/qualityControls",
+    "description": "Quality control flags for this interval"
   },
   {
     "id": "enhancer_to_gene/resourceScore",
