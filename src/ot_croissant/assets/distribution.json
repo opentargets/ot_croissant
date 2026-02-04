@@ -10,7 +10,7 @@
     "tags": [
       "Target-Disease"
     ],
-    "description": "Data source-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
+    "description": "Data source-specific metrics for direct target-disease associations and its development over time implying association novelty. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
   },
   {
     "id": "association_by_datasource_indirect",
@@ -23,7 +23,7 @@
     "tags": [
       "Target-Disease"
     ],
-    "description": "Data source-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
+    "description": "Data source-specific metrics for indirect target-disease associations and its development over time implying association novelty. Dataset contains association scores calculated for each data source indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
   },
   {
     "id": "association_by_datatype_direct",
@@ -36,7 +36,7 @@
     "tags": [
       "Target-Disease"
     ],
-    "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
+    "description": "Data type-specific metrics for direct target-disease associations and its development over time implying association novelty. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
   },
   {
     "id": "association_by_datatype_indirect",
@@ -49,7 +49,7 @@
     "tags": [
       "Target-Disease"
     ],
-    "description": "Data type-specific metrics for direct target-disease associations. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
+    "description": "Data type-specific metrics for indirect target-disease associations and its development over time implying association novelty. Dataset contains association scores calculated for each data type indepedently for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
   },
   {
     "id": "association_overall_direct",
@@ -61,7 +61,7 @@
     "tags": [
       "Target-Disease"
     ],
-    "description": "Overall metrics for direct target-disease associations. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
+    "description": "Overall metrics for direct target-disease associations and its development over time implying association novelty. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset only contains direct associations, therefore no evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
   },
   {
     "id": "association_overall_indirect",
@@ -73,7 +73,7 @@
     "tags": [
       "Target-Disease"
     ],
-    "description": "Overall metrics for direct target-disease associations. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
+    "description": "Overall metrics for indirect target-disease associations and its development over time implying association novelty. Dataset contains the overall association score for the aggregation of all evidence supporting any given target-disease. This dataset contains indirect associations, therefore evidence is propagated across the disease or phenotype space using the Experimental Factor Ontology"
   },
   {
     "id": "baseline_expression",
@@ -722,60 +722,6 @@
     ],
     "tags": [],
     "description": "Target-specific properties used to prioritise targets for further prioritisation (prioritisation view). All prioritisation factors included in the dataset range from -1 (unfavourable) to 1 (favourable). The prioritisation factors are derived from several sources related to the clinical precedence, tractability, doability and safety of a target"
-  },
-  {
-    "id": "timeseries_by_datasource_direct",
-    "nice_name": "Timeseries - direct (by data source)",
-    "key": [
-      "timeseries_by_datasource_direct/targetId",
-      "timeseries_by_datasource_direct/diseaseId",
-      "timeseries_by_datasource_direct/year",
-      "timeseries_by_datasource_direct/datasourceId"
-    ],
-    "tags": [
-      "Target-Disease"
-    ],
-    "description": "A dataset capturing the temporal trends for evidence of direct target\u2013disease association, broken down by each Platform datasource.  This allows users to assess novelty of association by examining when evidence first appears and how it evolves over the years"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect",
-    "nice_name": "Timeseries - indirect (by data source)",
-    "key": [
-      "timeseries_by_datasource_indirect/targetId",
-      "timeseries_by_datasource_indirect/diseaseId",
-      "timeseries_by_datasource_indirect/year",
-      "timeseries_by_datasource_indirect/datasourceId"
-    ],
-    "tags": [
-      "Target-Disease"
-    ],
-    "description": "A dataset capturing the temporal trends for evidence of indirect target\u2013disease association, broken down by each Platform datasource.  This allows users to assess novelty of association by examining when evidence first appears and how it evolves over the years"
-  },
-  {
-    "id": "timeseries_overall_direct",
-    "nice_name": "Timeseries - direct (overall)",
-    "key": [
-      "timeseries_overall_direct/targetId",
-      "timeseries_overall_direct/diseaseId",
-      "timeseries_overall_direct/year"
-    ],
-    "tags": [
-      "Target-Disease"
-    ],
-    "description": "A dataset capturing the temporal trends for evidence of direct target\u2013disease association, aggregated from all Platform datasources.  This allows users to assess novelty of association by examining when evidence first appears and how it evolves over the years"
-  },
-  {
-    "id": "timeseries_overall_indirect",
-    "nice_name": "Timeseries - indirect (overall)",
-    "key": [
-      "timeseries_overall_indirect/targetId",
-      "timeseries_overall_indirect/diseaseId",
-      "timeseries_overall_indirect/year"
-    ],
-    "tags": [
-      "Target-Disease"
-    ],
-    "description": "A dataset capturing the temporal trends for evidence of indirect target\u2013disease association, aggregated from all Platform datasources.  This allows users to assess novelty of association by examining when evidence first appears and how it evolves over the years"
   },
   {
     "id": "variant",

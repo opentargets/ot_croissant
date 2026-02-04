@@ -1,135 +1,303 @@
 [
   {
-    "id": "association_by_datasource_direct/datasourceId",
-    "description": "Identifier for the data source used to calculate the association score. (e.g. chembl)"
+    "id": "association_by_datasource_direct/aggregationType",
+    "description": "Evidence column used to aggregate data: datasourceId"
   },
   {
-    "id": "association_by_datasource_direct/datatypeId",
-    "description": "Identifier for the data type used to calculate the association score (e.g. genetic_association)"
+    "id": "association_by_datasource_direct/aggregationValue",
+    "description": "Datasource identifier of the group: eg. gwas_credible_set"
+  },
+  {
+    "id": "association_by_datasource_direct/associationScore",
+    "description": "Current disease/target association score of evidence from the given datasource"
+  },
+  {
+    "id": "association_by_datasource_direct/currentNovelty",
+    "description": "Novelty of the disease/target association"
   },
   {
     "id": "association_by_datasource_direct/diseaseId",
-    "description": "Identifier for the disease in the association",
+    "description": "Open Targets disease identifier",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_datasource_direct/evidenceCount",
-    "description": "Number of evidence items supporting the association"
-  },
-  {
-    "id": "association_by_datasource_direct/score",
-    "description": "Association score calculated independently for each data source without ontology propagation of evidence"
+    "description": "Total number of evidence supporting the disease/target association for a given datasource"
   },
   {
     "id": "association_by_datasource_direct/targetId",
-    "description": "Identifier for the target in the association",
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
-    "id": "association_by_datasource_indirect/datasourceId",
-    "description": "Identifier for the data source used to calculate the association score. (e.g. chembl)"
+    "id": "association_by_datasource_direct/timeseries",
+    "description": "Timeseries describing the evolution of association"
   },
   {
-    "id": "association_by_datasource_indirect/datatypeId",
-    "description": "Identifier for the data type used to calculate the association score (e.g. genetic_association)"
+    "id": "association_by_datasource_direct/timeseries/associationScore",
+    "description": "Association score based on evidence up until a given year"
+  },
+  {
+    "id": "association_by_datasource_direct/timeseries/novelty",
+    "description": "Novelty of the association at the given year"
+  },
+  {
+    "id": "association_by_datasource_direct/timeseries/year",
+    "description": "Year, until evidence is considered"
+  },
+  {
+    "id": "association_by_datasource_direct/timeseries/yearlyEvidenceCount",
+    "description": "Number of evidence reported at a given year"
+  },
+  {
+    "id": "association_by_datasource_indirect/aggregationType",
+    "description": "Evidence column used to aggregate data: datasourceId"
+  },
+  {
+    "id": "association_by_datasource_indirect/aggregationValue",
+    "description": "Datasource identifier of the group: eg. gwas_credible_set"
+  },
+  {
+    "id": "association_by_datasource_indirect/associationScore",
+    "description": "Current disease/target association score of evidence from the given datasource"
+  },
+  {
+    "id": "association_by_datasource_indirect/currentNovelty",
+    "description": "Novelty of the disease/target association"
   },
   {
     "id": "association_by_datasource_indirect/diseaseId",
-    "description": "Identifier for the disease in the association",
+    "description": "Open Targets disease identifier",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_datasource_indirect/evidenceCount",
-    "description": "Number of evidence items supporting the association"
-  },
-  {
-    "id": "association_by_datasource_indirect/score",
-    "description": "Association score calculated independently for each data source with ontology propagation of evidence"
+    "description": "Total number of evidence supporting the disease/target association for a given datasource"
   },
   {
     "id": "association_by_datasource_indirect/targetId",
-    "description": "Identifier for the target in the association",
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
-    "id": "association_by_datatype_direct/datatypeId",
-    "description": "Identifier for the data type used to calculate the association score"
+    "id": "association_by_datasource_indirect/timeseries",
+    "description": "Timeseries describing the evolution of association"
+  },
+  {
+    "id": "association_by_datasource_indirect/timeseries/associationScore",
+    "description": "Association score based on evidence up until a given year"
+  },
+  {
+    "id": "association_by_datasource_indirect/timeseries/novelty",
+    "description": "Novelty of the association at the given year"
+  },
+  {
+    "id": "association_by_datasource_indirect/timeseries/year",
+    "description": "Year, until evidence is considered"
+  },
+  {
+    "id": "association_by_datasource_indirect/timeseries/yearlyEvidenceCount",
+    "description": "Number of evidence reported at a given year"
+  },
+  {
+    "id": "association_by_datatype_direct/aggregationType",
+    "description": "Evidence column used to aggregate data: datatypeId"
+  },
+  {
+    "id": "association_by_datatype_direct/aggregationValue",
+    "description": "Datasource identifier of the group: eg. genetics_literature"
+  },
+  {
+    "id": "association_by_datatype_direct/associationScore",
+    "description": "Current disease/target association score of evidence from the given datatype"
+  },
+  {
+    "id": "association_by_datatype_direct/currentNovelty",
+    "description": "Novelty of the disease/target association"
   },
   {
     "id": "association_by_datatype_direct/diseaseId",
-    "description": "Identifier for the disease in the association",
+    "description": "Open Targets disease identifier",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_datatype_direct/evidenceCount",
-    "description": "Number of evidence items supporting the association"
-  },
-  {
-    "id": "association_by_datatype_direct/score",
-    "description": "Association score calculated independently for each data type without ontology propagation of evidence"
+    "description": "Total number of evidence supporting the disease/target association for a given datatype"
   },
   {
     "id": "association_by_datatype_direct/targetId",
-    "description": "Identifier for the target in the association",
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
-    "id": "association_by_datatype_indirect/datatypeId",
-    "description": "Identifier for the data type used to calculate the association score"
+    "id": "association_by_datatype_direct/timeseries",
+    "description": "Timeseries describing the evolution of association"
+  },
+  {
+    "id": "association_by_datatype_direct/timeseries/associationScore",
+    "description": "Association score based on evidence up until a given year"
+  },
+  {
+    "id": "association_by_datatype_direct/timeseries/novelty",
+    "description": "Novelty of the association at the given year"
+  },
+  {
+    "id": "association_by_datatype_direct/timeseries/year",
+    "description": "Year, until evidence is considered"
+  },
+  {
+    "id": "association_by_datatype_direct/timeseries/yearlyEvidenceCount",
+    "description": "Number of evidence reported at a given year"
+  },
+  {
+    "id": "association_by_datatype_indirect/aggregationType",
+    "description": "Evidence column used to aggregate data: datatypeId"
+  },
+  {
+    "id": "association_by_datatype_indirect/aggregationValue",
+    "description": "Datasource identifier of the group: eg. genetics_literature"
+  },
+  {
+    "id": "association_by_datatype_indirect/associationScore",
+    "description": "Current disease/target association score of evidence from the given datatype"
+  },
+  {
+    "id": "association_by_datatype_indirect/currentNovelty",
+    "description": "Novelty of the disease/target association"
   },
   {
     "id": "association_by_datatype_indirect/diseaseId",
-    "description": "Identifier for the disease in the association",
+    "description": "Open Targets disease identifier",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_by_datatype_indirect/evidenceCount",
-    "description": "Number of evidence items supporting the association"
-  },
-  {
-    "id": "association_by_datatype_indirect/score",
-    "description": "Association score calculated independently for each data type, with ontology propagation of evidence"
+    "description": "Total number of evidence supporting the disease/target association for a given datatype"
   },
   {
     "id": "association_by_datatype_indirect/targetId",
-    "description": "Identifier for the target in the association",
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
+    "id": "association_by_datatype_indirect/timeseries",
+    "description": "Timeseries describing the evolution of association"
+  },
+  {
+    "id": "association_by_datatype_indirect/timeseries/associationScore",
+    "description": "Association score based on evidence up until a given year"
+  },
+  {
+    "id": "association_by_datatype_indirect/timeseries/novelty",
+    "description": "Novelty of the association at the given year"
+  },
+  {
+    "id": "association_by_datatype_indirect/timeseries/year",
+    "description": "Year, until evidence is considered"
+  },
+  {
+    "id": "association_by_datatype_indirect/timeseries/yearlyEvidenceCount",
+    "description": "Number of evidence reported at a given year"
+  },
+  {
+    "id": "association_overall_direct/aggregationType",
+    "description": "How evidence data was aggregated: overall"
+  },
+  {
+    "id": "association_overall_direct/aggregationValue",
+    "description": "For overall association this column is empty"
+  },
+  {
+    "id": "association_overall_direct/associationScore",
+    "description": "Current disease/target association score of evidence from any datasource"
+  },
+  {
+    "id": "association_overall_direct/currentNovelty",
+    "description": "Novelty of the disease/target association"
+  },
+  {
     "id": "association_overall_direct/diseaseId",
-    "description": "Identifier for the disease in the association",
+    "description": "Open Targets disease identifier",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_overall_direct/evidenceCount",
-    "description": "Number of evidence items supporting the association"
-  },
-  {
-    "id": "association_overall_direct/score",
-    "description": "Association score calculated across all data sources without ontology propagation of evidence"
+    "description": "Total number of evidence supporting the disease/target association for any datasource"
   },
   {
     "id": "association_overall_direct/targetId",
-    "description": "Identifier for the target in the association",
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
     "foreign_key": "target/id"
   },
   {
+    "id": "association_overall_direct/timeseries",
+    "description": "Timeseries describing the evolution of association"
+  },
+  {
+    "id": "association_overall_direct/timeseries/associationScore",
+    "description": "Association score based on evidence up until a given year"
+  },
+  {
+    "id": "association_overall_direct/timeseries/novelty",
+    "description": "Novelty of the association at the given year"
+  },
+  {
+    "id": "association_overall_direct/timeseries/year",
+    "description": "Year, until evidence is considered"
+  },
+  {
+    "id": "association_overall_direct/timeseries/yearlyEvidenceCount",
+    "description": "Number of evidence reported at a given year"
+  },
+  {
+    "id": "association_overall_indirect/aggregationType",
+    "description": "How evidence data was aggregated: overall"
+  },
+  {
+    "id": "association_overall_indirect/aggregationValue",
+    "description": "For overall association this column is empty"
+  },
+  {
+    "id": "association_overall_indirect/associationScore",
+    "description": "Current disease/target association score of evidence from any datasource"
+  },
+  {
+    "id": "association_overall_indirect/currentNovelty",
+    "description": "Novelty of the disease/target association"
+  },
+  {
     "id": "association_overall_indirect/diseaseId",
-    "description": "Identifier for the disease in the association",
+    "description": "Open Targets disease identifier",
     "foreign_key": "disease/id"
   },
   {
     "id": "association_overall_indirect/evidenceCount",
-    "description": "Number of evidence items supporting the association"
-  },
-  {
-    "id": "association_overall_indirect/score",
-    "description": "Association score calculated across all data sources with ontology propagation of evidence"
+    "description": "Total number of evidence supporting the disease/target association for any datasource"
   },
   {
     "id": "association_overall_indirect/targetId",
-    "description": "Identifier for the target in the association",
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
     "foreign_key": "target/id"
+  },
+  {
+    "id": "association_overall_indirect/timeseries",
+    "description": "Timeseries describing the evolution of association"
+  },
+  {
+    "id": "association_overall_indirect/timeseries/associationScore",
+    "description": "Association score based on evidence up until a given year"
+  },
+  {
+    "id": "association_overall_indirect/timeseries/novelty",
+    "description": "Novelty of the association at the given year"
+  },
+  {
+    "id": "association_overall_indirect/timeseries/year",
+    "description": "Year, until evidence is considered"
+  },
+  {
+    "id": "association_overall_indirect/timeseries/yearlyEvidenceCount",
+    "description": "Number of evidence reported at a given year"
   },
   {
     "id": "baseline_expression/celltypeBiosampleFromSource",
@@ -4794,190 +4962,6 @@
   {
     "id": "target_prioritisation/tissueSpecificity",
     "description": "Describes the specificity of the target's expression across different tissues"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/aggregationType",
-    "description": "Column used to aggregate evidence"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/aggregationValue",
-    "description": "Value of the aggregated group"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/associationScore",
-    "description": "Association score in the last year"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/currentNovelty",
-    "description": "Novelty of the association in the current year"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/diseaseId",
-    "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/targetId",
-    "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/timeseries",
-    "description": "Collection of yearly novelty and association scores"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/timeseries/novelty",
-    "description": "Novelty of the association at the given year"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/timeseries/year",
-    "description": "Year, until evidence is considered"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/timeseries/yearlyAssociationScore",
-    "description": "Association scorer at the given year"
-  },
-  {
-    "id": "timeseries_by_datasource_direct/timeseries/yearlyEvidenceScores",
-    "description": "Evidence scores until the given year"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/aggregationType",
-    "description": "Column used to aggregate evidence"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/aggregationValue",
-    "description": "Value of the aggregated group"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/associationScore",
-    "description": "Association score in the last year"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/currentNovelty",
-    "description": "Novelty of the association in the current year"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/diseaseId",
-    "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/targetId",
-    "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/timeseries",
-    "description": "Collection of yearly novelty and association scores"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/timeseries/novelty",
-    "description": "Novelty of the association at the given year"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/timeseries/year",
-    "description": "Year, until evidence is considered"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/timeseries/yearlyAssociationScore",
-    "description": "Association scorer at the given year"
-  },
-  {
-    "id": "timeseries_by_datasource_indirect/timeseries/yearlyEvidenceScores",
-    "description": "Evidence scores until the given year"
-  },
-  {
-    "id": "timeseries_overall_direct/aggregationType",
-    "description": "Column used to aggregate evidence"
-  },
-  {
-    "id": "timeseries_overall_direct/aggregationValue",
-    "description": "Value of the aggregated group"
-  },
-  {
-    "id": "timeseries_overall_direct/associationScore",
-    "description": "Association score in the last year"
-  },
-  {
-    "id": "timeseries_overall_direct/currentNovelty",
-    "description": "Novelty of the association in the current year"
-  },
-  {
-    "id": "timeseries_overall_direct/diseaseId",
-    "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "timeseries_overall_direct/targetId",
-    "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
-  },
-  {
-    "id": "timeseries_overall_direct/timeseries",
-    "description": "Collection of yearly novelty and association scores"
-  },
-  {
-    "id": "timeseries_overall_direct/timeseries/novelty",
-    "description": "Novelty of the association at the given year"
-  },
-  {
-    "id": "timeseries_overall_direct/timeseries/year",
-    "description": "Year, until evidence is considered"
-  },
-  {
-    "id": "timeseries_overall_direct/timeseries/yearlyAssociationScore",
-    "description": "Association scorer at the given year"
-  },
-  {
-    "id": "timeseries_overall_direct/timeseries/yearlyEvidenceScores",
-    "description": "Evidence scores until the given year"
-  },
-  {
-    "id": "timeseries_overall_indirect/aggregationType",
-    "description": "Column used to aggregate evidence"
-  },
-  {
-    "id": "timeseries_overall_indirect/aggregationValue",
-    "description": "Value of the aggregated group"
-  },
-  {
-    "id": "timeseries_overall_indirect/associationScore",
-    "description": "Association score in the last year"
-  },
-  {
-    "id": "timeseries_overall_indirect/currentNovelty",
-    "description": "Novelty of the association in the current year"
-  },
-  {
-    "id": "timeseries_overall_indirect/diseaseId",
-    "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "timeseries_overall_indirect/targetId",
-    "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
-  },
-  {
-    "id": "timeseries_overall_indirect/timeseries",
-    "description": "Collection of yearly novelty and association scores"
-  },
-  {
-    "id": "timeseries_overall_indirect/timeseries/novelty",
-    "description": "Novelty of the association at the given year"
-  },
-  {
-    "id": "timeseries_overall_indirect/timeseries/year",
-    "description": "Year, until evidence is considered"
-  },
-  {
-    "id": "timeseries_overall_indirect/timeseries/yearlyAssociationScore",
-    "description": "Association scorer at the given year"
-  },
-  {
-    "id": "timeseries_overall_indirect/timeseries/yearlyEvidenceScores",
-    "description": "Evidence scores until the given year"
   },
   {
     "id": "variant/alleleFrequencies",
