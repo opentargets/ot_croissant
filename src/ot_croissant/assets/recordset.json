@@ -927,30 +927,6 @@
     "description": "Flag indicating whether the drug has received regulatory approval"
   },
   {
-    "id": "drug_molecule/linkedDiseases",
-    "description": "List of Open Targets disease identifiers of conditions associated with the drug"
-  },
-  {
-    "id": "drug_molecule/linkedDiseases/count",
-    "description": "Total number of Open Targets disease identifiers associated with the drug"
-  },
-  {
-    "id": "drug_molecule/linkedDiseases/rows",
-    "description": "List of Open Targets disease identifiers of conditions associated with the drug"
-  },
-  {
-    "id": "drug_molecule/linkedTargets",
-    "description": "List of Open Targets target identifiers associated with the drug"
-  },
-  {
-    "id": "drug_molecule/linkedTargets/count",
-    "description": "Total number of Open Targets target identifiers associated with the drug"
-  },
-  {
-    "id": "drug_molecule/linkedTargets/rows",
-    "description": "List of Open Targets target identifiers associated with the drug"
-  },
-  {
     "id": "drug_molecule/maximumClinicalTrialPhase",
     "description": "Highest clinical trial phase reached by the drug"
   },
@@ -969,10 +945,6 @@
   {
     "id": "drug_molecule/tradeNames",
     "description": "List of brand names for the drug"
-  },
-  {
-    "id": "drug_molecule/yearOfFirstApproval",
-    "description": "Year when the drug received regulatory approval"
   },
   {
     "id": "drug_warning/chemblIds",
@@ -3911,31 +3883,6 @@
   {
     "id": "openfda_significant_adverse_drug_reactions/meddraCode",
     "description": "Medical Dictionary for Regulatory Activities (MedDRA) code for the adverse drug reaction"
-  },
-  {
-    "id": "openfda_significant_adverse_target_reactions/count",
-    "description": "Number of occurrences of adverse events in the dataset when looking at all drugs targeting the same molecule"
-  },
-  {
-    "id": "openfda_significant_adverse_target_reactions/critval",
-    "description": "Critical value used to determine statistical significance of the association"
-  },
-  {
-    "id": "openfda_significant_adverse_target_reactions/event",
-    "description": "Reported adverse drug reactions associated with drugs targeting the molecule"
-  },
-  {
-    "id": "openfda_significant_adverse_target_reactions/llr",
-    "description": "Log-likelihood ratio (LLR) measuring the strength of the association between all drugs targeting the same molecule and the adverse event"
-  },
-  {
-    "id": "openfda_significant_adverse_target_reactions/meddraCode",
-    "description": "Medical Dictionary for Regulatory Activities (MedDRA) code for the adverse drug reaction"
-  },
-  {
-    "id": "openfda_significant_adverse_target_reactions/targetId",
-    "description": "Unique identifier for the drug target",
-    "foreign_key": "target/id"
   },
   {
     "id": "otar/efo_id",
