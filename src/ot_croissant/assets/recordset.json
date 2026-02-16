@@ -3173,8 +3173,7 @@
   },
   {
     "id": "evidence_reactome/pathways/id",
-    "description": "Reactome pathway identifier [bioregistry:reactome]",
-    "foreign_key": "reactome/id"
+    "description": "Reactome pathway identifier [bioregistry:reactome]"
   },
   {
     "id": "evidence_reactome/pathways/name",
@@ -4102,34 +4101,6 @@
   {
     "id": "pharmacogenomics/variantRsId",
     "description": "Variant reference SNP cluster ID (Rsid)"
-  },
-  {
-    "id": "reactome/ancestors",
-    "description": "List of ancestor pathways in the ontology"
-  },
-  {
-    "id": "reactome/children",
-    "description": "Direct child pathways of the current pathway"
-  },
-  {
-    "id": "reactome/descendants",
-    "description": "List of descendant pathways in the ontology"
-  },
-  {
-    "id": "reactome/id",
-    "description": "Unique identifier for the Reactome pathway [bioregistry:reactome]"
-  },
-  {
-    "id": "reactome/label",
-    "description": "Name or label of the pathway"
-  },
-  {
-    "id": "reactome/parents",
-    "description": "Direct parent pathways of the current pathway"
-  },
-  {
-    "id": "reactome/path",
-    "description": "Hierarchical path representing the position of the pathway in Reactome"
   },
   {
     "id": "so/id",

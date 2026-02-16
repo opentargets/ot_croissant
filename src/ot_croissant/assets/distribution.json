@@ -649,17 +649,6 @@
     "description": "Genetic variants influencing individual drug responses. Pharmacogenetics data is integrated from sources including ClinPGx"
   },
   {
-    "id": "reactome",
-    "nice_name": "Target - Reactome pathway information",
-    "key": [
-      "reactome/id"
-    ],
-    "tags": [
-      "Ontology"
-    ],
-    "description": "Pathway metadata from Reactome pathway database"
-  },
-  {
     "id": "so",
     "nice_name": "Sequence Ontology",
     "key": [
