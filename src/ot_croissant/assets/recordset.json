@@ -1116,107 +1116,87 @@
     "foreign_key": "target/id"
   },
   {
-    "id": "evidence_chembl/clinicalPhase",
-    "description": "Phase of the clinical trial"
+    "id": "evidence_clinical_precedence/clinicalReportId",
+    "description": "Identifier of the clinical report"
   },
   {
-    "id": "evidence_chembl/clinicalStatus",
-    "description": "Current stage of a clinical study"
+    "id": "evidence_clinical_precedence/clinicalStage",
+    "description": "Clinical stage of the drug-disease pair"
   },
   {
-    "id": "evidence_chembl/cohortPhenotypes",
-    "description": "Clinical features/phenotypes observed in studied individuals"
-  },
-  {
-    "id": "evidence_chembl/datasourceId",
+    "id": "evidence_clinical_precedence/datasourceId",
     "description": "Identifer of the evidence source"
   },
   {
-    "id": "evidence_chembl/datatypeId",
+    "id": "evidence_clinical_precedence/datatypeId",
     "description": "Type of the evidence"
   },
   {
-    "id": "evidence_chembl/directionOnTarget",
-    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
-  },
-  {
-    "id": "evidence_chembl/directionOnTrait",
+    "id": "evidence_clinical_precedence/directionOnTrait",
     "description": "Predicted direction of effect on the trait"
   },
   {
-    "id": "evidence_chembl/diseaseFromSource",
+    "id": "evidence_clinical_precedence/diseaseFromSource",
     "description": "Disease label from the original source"
   },
   {
-    "id": "evidence_chembl/diseaseFromSourceMappedId",
+    "id": "evidence_clinical_precedence/diseaseFromSourceMappedId",
     "description": "Mapped Open Targets disease identifier"
   },
   {
-    "id": "evidence_chembl/diseaseId",
+    "id": "evidence_clinical_precedence/diseaseId",
     "description": "Open Targets disease identifier",
     "foreign_key": "disease/id"
   },
   {
-    "id": "evidence_chembl/drugId",
+    "id": "evidence_clinical_precedence/drugFromSource",
+    "description": "Drug name/family in resource of origin"
+  },
+  {
+    "id": "evidence_clinical_precedence/drugId",
     "description": "Open Targets drug identifier [bioregistry:chembl]",
     "foreign_key": "drug_molecule/id"
   },
   {
-    "id": "evidence_chembl/evidenceDate",
+    "id": "evidence_clinical_precedence/evidenceDate",
     "description": "Earliest data for the evidence"
   },
   {
-    "id": "evidence_chembl/id",
+    "id": "evidence_clinical_precedence/id",
     "description": "Identifer of the disease/target evidence"
   },
   {
-    "id": "evidence_chembl/qualityControls",
+    "id": "evidence_clinical_precedence/literature",
+    "description": "PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "evidence_clinical_precedence/qualityControls",
     "description": "Evidence quality flags"
   },
   {
-    "id": "evidence_chembl/score",
+    "id": "evidence_clinical_precedence/score",
     "description": "Score of the evidence reflecting the strength of the disease/target relationship"
   },
   {
-    "id": "evidence_chembl/studyId",
-    "description": "Identifier of the study generating the data"
-  },
-  {
-    "id": "evidence_chembl/studyStartDate",
+    "id": "evidence_clinical_precedence/studyStartDate",
     "description": "Start date of study in a YYYY-MM-DD format"
   },
   {
-    "id": "evidence_chembl/studyStopReason",
-    "description": "Reason why a study has been stopped"
-  },
-  {
-    "id": "evidence_chembl/studyStopReasonCategories",
-    "description": "Predicted reason(s) why the study has been stopped based on studyStopReason"
-  },
-  {
-    "id": "evidence_chembl/targetFromSource",
-    "description": "Target name/synonym or non HGNC symbol in resource of origin"
-  },
-  {
-    "id": "evidence_chembl/targetFromSourceId",
+    "id": "evidence_clinical_precedence/targetFromSourceId",
     "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
   },
   {
-    "id": "evidence_chembl/targetId",
+    "id": "evidence_clinical_precedence/targetId",
     "description": "Open Targets target identifier",
     "foreign_key": "target/id"
   },
   {
-    "id": "evidence_chembl/urls",
-    "description": "Reference to linked external resource (e.g. clinical trials, studies, package inserts, reports, etc.)"
+    "id": "evidence_clinical_precedence/trialStopReasonCategories",
+    "description": "Categorised reason(s) why the trial was stopped"
   },
   {
-    "id": "evidence_chembl/urls/niceName",
-    "description": "Human readable label of the remote reference"
-  },
-  {
-    "id": "evidence_chembl/urls/url",
-    "description": "URL to remote resource"
+    "id": "evidence_clinical_precedence/trialWhyStopped",
+    "description": "Reason why the trial was stopped, as reported"
   },
   {
     "id": "evidence_clingen/allelicRequirements",

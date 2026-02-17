@@ -238,15 +238,15 @@
     "description": "Disease-target evidence based on Cancer Gene Census provided by COSMIC"
   },
   {
-    "id": "evidence_chembl",
-    "nice_name": "ChEMBL evidence",
+    "id": "evidence_clinical_precedence",
+    "nice_name": "Clinical Precedence evidence",
     "key": [
-      "evidence_chembl/id"
+      "evidence_clinical_precedence/id"
     ],
     "tags": [
       "Target-Disease"
     ],
-    "description": "Disease-target evidence based on drug indications, clinical trials and mechanism of action provided by ChEMBL"
+    "description": "Disease-target evidence based on clinical trials, drug indications, and mechanism of action"
   },
   {
     "id": "evidence_clingen",
