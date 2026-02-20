@@ -711,10 +711,6 @@
     "foreign_key": "target/id"
   },
   {
-    "id": "drug_molecule/blackBoxWarning",
-    "description": "Flag indicating whether the drug has safety warnings"
-  },
-  {
     "id": "drug_molecule/canonicalSmiles",
     "description": "Standardised chemical structure representation using SMILES notation"
   },
@@ -743,10 +739,6 @@
     "description": "Classification of the molecule's therapeutic category or chemical class (e.g. Antibody)"
   },
   {
-    "id": "drug_molecule/hasBeenWithdrawn",
-    "description": "Flag indicating whether the drug was removed from market"
-  },
-  {
     "id": "drug_molecule/id",
     "description": "Open Targets molecule identifier"
   },
@@ -755,12 +747,8 @@
     "description": "Chemical identifier generated from the molecular structure"
   },
   {
-    "id": "drug_molecule/isApproved",
-    "description": "Flag indicating whether the drug has received regulatory approval"
-  },
-  {
-    "id": "drug_molecule/maximumClinicalTrialPhase",
-    "description": "Highest clinical trial phase reached by the drug"
+    "id": "drug_molecule/maximumClinicalStage",
+    "description": "Display name of the highest clinical stage reached by the drug (e.g. 'approved', 'phase III')"
   },
   {
     "id": "drug_molecule/name",
@@ -4686,8 +4674,8 @@
     "description": "Indicates if the target protein is secreted or predicted to be secreted"
   },
   {
-    "id": "target_prioritisation/maxClinicalTrialPhase",
-    "description": "Highest clinical trial phase that the target has reached for any indication"
+    "id": "target_prioritisation/maxClinicalStage",
+    "description": "Score derived from the highest clinical stage that the target has reached for any indication"
   },
   {
     "id": "target_prioritisation/mouseKOScore",
