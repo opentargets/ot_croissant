@@ -3419,12 +3419,52 @@
     "description": "Expression zscore"
   },
   {
+    "id": "go/altIds",
+    "description": "List of alternative/secondary GO IDs that are synonyms for this term"
+  },
+  {
     "id": "go/id",
     "description": "Gene ontology term identifier [bioregistry:go]"
   },
   {
+    "id": "go/id",
+    "description": "Primary Gene Ontology term identifier"
+  },
+  {
+    "id": "go/isA",
+    "description": "List of parent GO term IDs representing direct 'is a' hierarchical relationships"
+  },
+  {
+    "id": "go/isObsolete",
+    "description": "Boolean flag indicating whether the GO term has been deprecated and is no longer in active use"
+  },
+  {
+    "id": "go/label",
+    "description": "Human-readable name of the GO term"
+  },
+  {
     "id": "go/name",
     "description": "Gene ontology term name"
+  },
+  {
+    "id": "go/namespace",
+    "description": "Ontology branch the term belongs to: biological_process, molecular_function, or cellular_component"
+  },
+  {
+    "id": "go/negativelyRegulates",
+    "description": "List of GO term IDs that this term negatively regulates (inhibitory relationship)"
+  },
+  {
+    "id": "go/partOf",
+    "description": "List of GO term IDs to which this term has a 'part of' relationship"
+  },
+  {
+    "id": "go/positivelyRegulates",
+    "description": "List of GO term IDs that this term positively regulates (activating relationship)"
+  },
+  {
+    "id": "go/regulates",
+    "description": "List of GO term IDs that this term regulates (generic regulatory relationship)"
   },
   {
     "id": "interaction/count",
