@@ -780,17 +780,17 @@
     "description": "Description of the drug adverse effect"
   },
   {
-    "id": "drug_warning/efo_id",
+    "id": "drug_warning/efoId",
     "description": "List of disease identifiers",
     "foreign_key": "disease/id"
   },
   {
-    "id": "drug_warning/efo_id_for_warning_class",
+    "id": "drug_warning/efoIdForWarningClass",
     "description": "Disease identifier categorising the type of warning",
     "foreign_key": "disease/id"
   },
   {
-    "id": "drug_warning/efo_term",
+    "id": "drug_warning/efoTerm",
     "description": "List of disease labels"
   },
   {
@@ -802,15 +802,15 @@
     "description": "List of sources supporting the warning information"
   },
   {
-    "id": "drug_warning/references/ref_id",
+    "id": "drug_warning/references/id",
     "description": "List of identifiers for the reference sources"
   },
   {
-    "id": "drug_warning/references/ref_type",
+    "id": "drug_warning/references/source",
     "description": "List of bodies reporting the warning"
   },
   {
-    "id": "drug_warning/references/ref_url",
+    "id": "drug_warning/references/url",
     "description": "List of web addresses referencing the information"
   },
   {
