@@ -488,7 +488,7 @@
     "tags": [
       "Ontology"
     ],
-    "description": "This dataset contains the mapping between gene ontology identifiers and terms"
+    "description": "This dataset contains the mapping between Gene Ontology (GO) identifiers and their terms, including hierarchy, relationships, and metadata"
   },
   {
     "id": "interaction",
