@@ -12,6 +12,15 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+SNAKE_CASE_WARNING = "Column name '{field_name}' appears to be snake_case. camelCase is expected."
+
+
+def _warn_if_snake_case(field_name: str) -> None:
+    """Warn if a field name uses snake_case instead of camelCase."""
+    if "_" in field_name:
+        logger.warning(SNAKE_CASE_WARNING.format(field_name=field_name))
+
+
 class PlatformOutputRecordSets:
     """Class to  in the Open Targets Platform data."""
 
@@ -148,6 +157,8 @@ class PlatformOutputRecordSets:
             return RecordsetCuration().get_curation(
                 distribution_id=field_id, key="foreign_key", log_level=logging.DEBUG
             )
+
+        _warn_if_snake_case(field.name)
 
         field_type: str = field.dataType.typeName() # <- This might be a map. Not yet supported by croissant.
 
