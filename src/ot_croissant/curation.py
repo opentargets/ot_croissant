@@ -5,9 +5,8 @@ from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 import json
 from pathlib import Path
-import logging
+from loguru import logger
 
-logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -35,7 +34,7 @@ class BaseCuration(ABC):
         pass
 
     @abstractmethod
-    def get_warning_message(self: BaseCuration, distribution_id: str, key: str) -> str:
+    def get_warning_message(self: BaseCuration, distribution_id: str, key: str, log_level: str = 'WARNING') -> str:
         """Generate a warning message for missing curation.
         
         Args:
@@ -47,7 +46,7 @@ class BaseCuration(ABC):
         """
         pass
 
-    def get_curation(self: BaseCuration, distribution_id: str, key: str, log_level: int=logging.WARNING) -> str | None:
+    def get_curation(self: BaseCuration, distribution_id: str, key: str, log_level:str='WARNING') -> str | None:
         """Get curation entry for a given distribution ID and key.
 
         Args:
@@ -61,7 +60,7 @@ class BaseCuration(ABC):
         if curation_entry and key in curation_entry:
             return curation_entry[key]
         else:
-            logger.log(log_level,self.get_warning_message(distribution_id, key))
+            logger.log(log_level, self.get_warning_message(distribution_id, key))
             return None
 
 

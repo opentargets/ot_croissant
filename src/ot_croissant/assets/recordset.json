@@ -613,6 +613,10 @@
     "description": "List of all ancestral disease terms"
   },
   {
+    "id": "disease/broadSynonyms",
+    "description": "List of broadly related sysnonyms"
+  },
+  {
     "id": "disease/children",
     "description": "List of children disease terms"
   },
@@ -633,12 +637,20 @@
     "description": "Description of the disease"
   },
   {
+    "id": "disease/exactSynonyms",
+    "description": "List of exact synonyms"
+  },
+  {
     "id": "disease/id",
     "description": "Open Targets disease identifier"
   },
   {
     "id": "disease/name",
     "description": "Name of the disease"
+  },
+  {
+    "id": "disease/narrowSynonyms",
+    "description": "List of closely related sysnonyms"
   },
   {
     "id": "disease/obsoleteTerms",
@@ -675,6 +687,10 @@
   {
     "id": "disease/parents",
     "description": "List of parent disease terms"
+  },
+  {
+    "id": "disease/relatedSynonyms",
+    "description": "List of related synonyms"
   },
   {
     "id": "disease/synonyms",
@@ -3336,6 +3352,10 @@
     "description": "Score of the evidence reflecting the strength of the disease/target relationship"
   },
   {
+    "id": "evidence_uniprot_variants/score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
     "id": "evidence_uniprot_variants/targetFromSourceId",
     "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
   },
@@ -3503,11 +3523,11 @@
     "description": "Short mnemonic name of the species associated with target A"
   },
   {
-    "id": "interaction/speciesA/scientific_name",
+    "id": "interaction/speciesA/scientificName",
     "description": "Scientific name of the species associated with target A"
   },
   {
-    "id": "interaction/speciesA/taxon_id",
+    "id": "interaction/speciesA/taxonId",
     "description": "NCBI taxon ID of the species associated with target A"
   },
   {
@@ -3519,11 +3539,11 @@
     "description": "Short mnemonic name of the species associated with target B"
   },
   {
-    "id": "interaction/speciesB/scientific_name",
+    "id": "interaction/speciesB/scientificName",
     "description": "Scientific name of the species associated with target B"
   },
   {
-    "id": "interaction/speciesB/taxon_id",
+    "id": "interaction/speciesB/taxonId",
     "description": "NCBI taxon ID of the species associated with target B"
   },
   {
@@ -4842,6 +4862,42 @@
   {
     "id": "target/transcriptIds",
     "description": "List of Ensembl transcript identifiers associated with the target"
+  },
+  {
+    "id": "target/transcripts",
+    "description": "List of transcripts of the target Extracted from Ensembl"
+  },
+  {
+    "id": "target/transcripts/alphafoldId",
+    "description": "Alphafold identifier of the predicted structure"
+  },
+  {
+    "id": "target/transcripts/biotype",
+    "description": "Biotype classification of the given transcript"
+  },
+  {
+    "id": "target/transcripts/isEnsemblCanonical",
+    "description": "Flag indicating if the transcript is Ensembl canonical"
+  },
+  {
+    "id": "target/transcripts/isUniprotReviewed",
+    "description": "Flag indicating the translated protein is reviewed and part of UniprotKB"
+  },
+  {
+    "id": "target/transcripts/transcriptId",
+    "description": "Ensembl identifier of the transcript (ENST###) [bioregistry:ensembl]"
+  },
+  {
+    "id": "target/transcripts/translationId",
+    "description": "Ensembl translation identifier (ENSP###)"
+  },
+  {
+    "id": "target/transcripts/uniprotId",
+    "description": "Uniprot identifier of the translated protein"
+  },
+  {
+    "id": "target/transcripts/uniprotIsoformId",
+    "description": "Uniprot isoform identifier when available"
   },
   {
     "id": "target/tss",

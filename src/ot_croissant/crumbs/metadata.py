@@ -1,11 +1,10 @@
 """Classes for overall OT Platform metadata."""
-import logging
+from loguru import logger
 from mlcroissant import Metadata
 from ot_croissant.crumbs.distribution import PlatformOutputDistribution
 from ot_croissant.crumbs.record_sets import PlatformOutputRecordSets
 from ot_croissant.curation import InstanceCuration
 
-logger = logging.getLogger(__name__)
 
 class PlatformOutputMetadata(Metadata):
     """Class extending the Metadata class from MLCroissant to define the OT Platform metadata."""
