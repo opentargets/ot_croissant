@@ -4,7 +4,14 @@ import json
 from ot_croissant.crumbs.metadata import PlatformOutputMetadata
 import argparse
 from datetime import datetime
-import logging
+from loguru import logger
+import sys
+
+# Remove default handler
+logger.remove()
+
+# Add a new handler with INFO as minimum level
+logger.add(sys.stderr, level="INFO")
 
 def list_folders_in_directory(user_path: str) -> list[str]:
     """Generate a list of folders within the given directory with absolute paths.
@@ -128,9 +135,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # Initialize logger:
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    )
     main()
