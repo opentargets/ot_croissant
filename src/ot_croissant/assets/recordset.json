@@ -409,6 +409,192 @@
     "description": "Cross-reference IDs from other ontologies"
   },
   {
+    "id": "clinical_indication/clinicalReportIds",
+    "description": "List of clinical report identifiers associated with this indication",
+    "foreign_key": "clinical_report/id"
+  },
+  {
+    "id": "clinical_indication/diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "clinical_indication/drugId",
+    "description": "Open Targets molecule identifier",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "clinical_indication/id",
+    "description": "Unique identifier for the clinical indication"
+  },
+  {
+    "id": "clinical_indication/maxClinicalStage",
+    "description": "Maximum clinical stage reached for this drug-disease indication"
+  },
+  {
+    "id": "clinical_report/clinicalStage",
+    "description": "Clinical stage of the report"
+  },
+  {
+    "id": "clinical_report/countries",
+    "description": "Countries associated with the clinical report"
+  },
+  {
+    "id": "clinical_report/diseases",
+    "description": "Diseases associated with the clinical report"
+  },
+  {
+    "id": "clinical_report/diseases/diseaseFromSource",
+    "description": "Disease name as reported in the source"
+  },
+  {
+    "id": "clinical_report/diseases/diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "clinical_report/drugs",
+    "description": "Drugs associated with the clinical report"
+  },
+  {
+    "id": "clinical_report/drugs/drugFromSource",
+    "description": "Drug name as reported in the source"
+  },
+  {
+    "id": "clinical_report/drugs/drugId",
+    "description": "Open Targets molecule identifier",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "clinical_report/hasExpertReview",
+    "description": "Flag indicating whether the clinical report has undergone expert review"
+  },
+  {
+    "id": "clinical_report/id",
+    "description": "Unique identifier for the clinical report"
+  },
+  {
+    "id": "clinical_report/phaseFromSource",
+    "description": "Clinical phase as reported in the source"
+  },
+  {
+    "id": "clinical_report/qualityControls",
+    "description": "Quality control flags or notes for the clinical report"
+  },
+  {
+    "id": "clinical_report/sideEffects",
+    "description": "Side effects or adverse events associated with the clinical report"
+  },
+  {
+    "id": "clinical_report/sideEffects/diseaseFromSource",
+    "description": "Side effect disease name as reported in the source"
+  },
+  {
+    "id": "clinical_report/sideEffects/diseaseId",
+    "description": "Open Targets disease identifier for the side effect",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "clinical_report/source",
+    "description": "Source database or registry from which the clinical report was obtained"
+  },
+  {
+    "id": "clinical_report/title",
+    "description": "Title of the clinical report"
+  },
+  {
+    "id": "clinical_report/trialDescription",
+    "description": "Brief description of the clinical trial"
+  },
+  {
+    "id": "clinical_report/trialLiterature",
+    "description": "Literature references associated with the clinical trial"
+  },
+  {
+    "id": "clinical_report/trialNumberOfArms",
+    "description": "Number of arms in the clinical trial"
+  },
+  {
+    "id": "clinical_report/trialOfficialTitle",
+    "description": "Official title of the clinical trial as registered"
+  },
+  {
+    "id": "clinical_report/trialOverallStatus",
+    "description": "Overall status of the clinical trial (e.g. Completed, Terminated)"
+  },
+  {
+    "id": "clinical_report/trialPhase",
+    "description": "Phase of the clinical trial"
+  },
+  {
+    "id": "clinical_report/trialPrimaryPurpose",
+    "description": "Primary purpose of the clinical trial (e.g. Treatment, Prevention)"
+  },
+  {
+    "id": "clinical_report/trialStartDate",
+    "description": "Start date of the clinical trial"
+  },
+  {
+    "id": "clinical_report/trialStopReasonCategories",
+    "description": "Categories describing reasons why the trial was stopped"
+  },
+  {
+    "id": "clinical_report/trialStudyType",
+    "description": "Type of clinical study (e.g. Interventional, Observational)"
+  },
+  {
+    "id": "clinical_report/trialWhyStopped",
+    "description": "Reason provided for stopping the clinical trial"
+  },
+  {
+    "id": "clinical_report/type",
+    "description": "Type classification of the clinical report"
+  },
+  {
+    "id": "clinical_report/url",
+    "description": "URL linking to the source record"
+  },
+  {
+    "id": "clinical_report/year",
+    "description": "Year the report was registered or published"
+  },
+  {
+    "id": "clinical_target/clinicalReportIds",
+    "description": "List of clinical report identifiers associated with this target-drug pair",
+    "foreign_key": "clinical_report/id"
+  },
+  {
+    "id": "clinical_target/diseases",
+    "description": "Diseases associated with this target-drug clinical pair"
+  },
+  {
+    "id": "clinical_target/diseases/diseaseFromSource",
+    "description": "Disease name as reported in the source"
+  },
+  {
+    "id": "clinical_target/diseases/diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "clinical_target/drugId",
+    "description": "Open Targets molecule identifier",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "clinical_target/id",
+    "description": "Unique identifier for the clinical target-drug association"
+  },
+  {
+    "id": "clinical_target/maxClinicalStage",
+    "description": "Maximum clinical stage reached for this target-drug pair"
+  },
+  {
+    "id": "clinical_target/targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  },
+  {
     "id": "colocalisation/betaRatioSignAverage",
     "description": "Average sign of the beta ratio between colocalised variants"
   },
@@ -808,49 +994,6 @@
   {
     "id": "disease_phenotype/phenotype",
     "description": "The phenotype linked to the disease."
-  },
-  {
-    "id": "drug_indication/approvedIndications",
-    "description": "List of disease identifiers for a drug approved indications",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "drug_indication/id",
-    "description": "Open Targets molecule identifier",
-    "foreign_key": "drug_molecule/id"
-  },
-  {
-    "id": "drug_indication/indicationCount",
-    "description": "Total number of indications for a drug"
-  },
-  {
-    "id": "drug_indication/indications",
-    "description": "List of approved and investigational indications for which a drug can be used"
-  },
-  {
-    "id": "drug_indication/indications/disease",
-    "description": "List of disease identifiers",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "drug_indication/indications/efoName",
-    "description": "List of disease labels"
-  },
-  {
-    "id": "drug_indication/indications/maxPhaseForIndication",
-    "description": "Highest clinical trial phase reached for a specific indication"
-  },
-  {
-    "id": "drug_indication/indications/references",
-    "description": "List of sources supporting the drug-indication relationship"
-  },
-  {
-    "id": "drug_indication/indications/references/ids",
-    "description": "List of identification codes for the reference sources"
-  },
-  {
-    "id": "drug_indication/indications/references/source",
-    "description": "List of source names"
   },
   {
     "id": "drug_mechanism_of_action/actionType",
@@ -1297,7 +1440,8 @@
   },
   {
     "id": "evidence_clinical_precedence/clinicalReportId",
-    "description": "Identifier of the clinical report"
+    "description": "Identifier of the clinical report",
+    "foreign_key": "clinical_report/id"
   },
   {
     "id": "evidence_clinical_precedence/clinicalStage",
@@ -3403,10 +3547,6 @@
     "description": "Human-readable name of the GO term"
   },
   {
-    "id": "go/name",
-    "description": "Gene ontology term name"
-  },
-  {
     "id": "go/namespace",
     "description": "Ontology branch the term belongs to: biological_process, molecular_function, or cellular_component"
   },
@@ -3661,87 +3801,6 @@
     "id": "interaction_evidence/targetB",
     "description": "Open Targets target identifier of the second molecule (target B) in the interaction [bioregistry:ensembl]",
     "foreign_key": "target/id"
-  },
-  {
-    "id": "known_drug/ancestors",
-    "description": "List of parent disease terms of the condition being treated",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "known_drug/approvedName",
-    "description": "Approved full name of the gene or gene product modulated by the drug"
-  },
-  {
-    "id": "known_drug/approvedSymbol",
-    "description": "Approved gene symbol of the target modulated by the drug"
-  },
-  {
-    "id": "known_drug/diseaseId",
-    "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
-  },
-  {
-    "id": "known_drug/drugId",
-    "description": "Open Targets molecule identifier",
-    "foreign_key": "drug_molecule/id"
-  },
-  {
-    "id": "known_drug/drugType",
-    "description": "Classification of the modality of the drug (e.g. Small molecule)"
-  },
-  {
-    "id": "known_drug/label",
-    "description": "Disease label for the condition being treated"
-  },
-  {
-    "id": "known_drug/mechanismOfAction",
-    "description": "Drug pharmacological action",
-    "foreign_key": "drug_mechanism_of_action/mechanismOfAction"
-  },
-  {
-    "id": "known_drug/phase",
-    "description": "Clinical development stage of the drug"
-  },
-  {
-    "id": "known_drug/prefName",
-    "description": "Commonly used name for the drug"
-  },
-  {
-    "id": "known_drug/status",
-    "description": "Clinical trial status for the drug/indication pair"
-  },
-  {
-    "id": "known_drug/synonyms",
-    "description": "List of alternative names to refer to the drug"
-  },
-  {
-    "id": "known_drug/targetClass",
-    "description": "Classification category of the drug's biological target (e.g. Enzyme)"
-  },
-  {
-    "id": "known_drug/targetId",
-    "description": "Open Targets target identifier",
-    "foreign_key": "target/id"
-  },
-  {
-    "id": "known_drug/targetName",
-    "description": "Full name of the gene or gene product modulated by the drug, as referred by ChEMBL"
-  },
-  {
-    "id": "known_drug/tradeNames",
-    "description": "List of brand names for the drug"
-  },
-  {
-    "id": "known_drug/urls",
-    "description": "List of web addresses that support the drug/indication pair"
-  },
-  {
-    "id": "known_drug/urls/niceName",
-    "description": "List of human readable names for the reference source"
-  },
-  {
-    "id": "known_drug/urls/url",
-    "description": "List of web addresses that support the drug/indication pair"
   },
   {
     "id": "l2g_prediction/features",
@@ -4294,6 +4353,10 @@
     "description": "Whether the chemical probe serves as a control"
   },
   {
+    "id": "target/chemicalProbes/drugFromSourceId",
+    "description": "Drug identifier from the source for the chemical probe"
+  },
+  {
     "id": "target/chemicalProbes/drugId",
     "description": "Drug ID associated with the chemical probe"
   },
@@ -4463,7 +4526,7 @@
     "description": "Attributes of the hallmark annotation"
   },
   {
-    "id": "target/hallmarks/attributes/attribute_name",
+    "id": "target/hallmarks/attributes/name",
     "description": "Name of the hallmark attribute"
   },
   {

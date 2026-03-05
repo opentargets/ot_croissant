@@ -101,6 +101,42 @@
     "description": "Integration of metadata related to tissues, cell types or cell lines (biosamples) derived from the UBERON, CL and EFO ontologies"
   },
   {
+    "id": "clinical_indication",
+    "nice_name": "Clinical indication",
+    "key": [
+      "clinical_indication/id"
+    ],
+    "tags": [
+      "Drug",
+      "Disease"
+    ],
+    "description": "Approved and investigational indications for drug molecules, capturing the maximum clinical stage reached for each drug-disease pair"
+  },
+  {
+    "id": "clinical_report",
+    "nice_name": "Clinical report",
+    "key": [
+      "clinical_report/id"
+    ],
+    "tags": [
+      "Drug",
+      "Disease"
+    ],
+    "description": "Clinical trial and regulatory reports from multiple sources, capturing trial metadata, associated drugs, diseases, side effects, and trial outcomes"
+  },
+  {
+    "id": "clinical_target",
+    "nice_name": "Clinical target",
+    "key": [
+      "clinical_target/id"
+    ],
+    "tags": [
+      "Drug",
+      "Target"
+    ],
+    "description": "Target-drug associations derived from clinical reports, capturing the maximum clinical stage and associated diseases for each target-drug pair"
+  },
+  {
     "id": "colocalisation",
     "nice_name": "Colocalisation with colocPIP and eCAVIAR",
     "key": [
@@ -156,17 +192,6 @@
       "Disease"
     ],
     "description": "Clinical signs and symptoms observed in diseases or phenotypes. Signs and symptoms are integrated from multiple sources including EFO, MONDO and HPO"
-  },
-  {
-    "id": "drug_indication",
-    "nice_name": "Drug - indications",
-    "key": [
-      "drug_indication/id"
-    ],
-    "tags": [
-      "Drug"
-    ],
-    "description": "Approved and investigational indications for drug or clinical candidate molecules. Indications are integrated by the ChEMBL database from a diverse range of sources including DailyMed, FDA and EMA"
   },
   {
     "id": "drug_mechanism_of_action",
@@ -527,22 +552,6 @@
       "Target"
     ],
     "description": "Experimental evidence supporting molecular interactions ('interaction') dataset"
-  },
-  {
-    "id": "known_drug",
-    "nice_name": "Known drug",
-    "key": [
-      "known_drug/drugId",
-      "known_drug/targetId",
-      "known_drug/diseaseId",
-      "known_drug/phase",
-      "known_drug/status"
-    ],
-    "tags": [
-      "Target",
-      "Drug"
-    ],
-    "description": "Information on the target gene product and indication for any approved or clinical candidate drug. It is derived from the ChEMBL target/disease evidence"
   },
   {
     "id": "l2g_prediction",
