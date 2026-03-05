@@ -7,10 +7,8 @@ from pyspark.errors.exceptions.captured import AnalysisException
 import mlcroissant as mlc
 from ot_croissant.constants import typeDict
 from ot_croissant.curation import DistributionCuration, RecordsetCuration
-import logging
+from loguru import logger
 
-
-logger = logging.getLogger(__name__)
 
 SNAKE_CASE_WARNING = "Column name '{field_name}' appears to be snake_case. camelCase is expected."
 
@@ -58,7 +56,7 @@ class PlatformOutputRecordSets:
 
         # Extract tags:
         tags = DistributionCuration().get_curation(
-            distribution_id=id, key="tags", log_level=logging.DEBUG
+            distribution_id=id, key="tags", log_level='DEBUG'
         )
 
         # Return description if tags are not available:
@@ -73,8 +71,9 @@ class PlatformOutputRecordSets:
     ) -> mlc.RecordSet:
         """Returns the recordset for a fileset."""
         # Get the schema from the recordset:
+        logger.info(f"Processing '{self.DISTRIBUTION_ID}'")
         try:
-            schema = self.spark.read.parquet(path).schema
+            schema = self.spark.read.parquet(path, recursiveFileLookup=True).schema
         except AnalysisException:
             logger.error(f'Could not read parquet: {path}')
             raise ValueError(f'Could not read dataset: {path}')
@@ -155,7 +154,7 @@ class PlatformOutputRecordSets:
             
             # If the data does not contain a foreign key, get it from the curation:
             return RecordsetCuration().get_curation(
-                distribution_id=field_id, key="foreign_key", log_level=logging.DEBUG
+                distribution_id=field_id, key="foreign_key", log_level='DEBUG'
             )
 
         _warn_if_snake_case(field.name)

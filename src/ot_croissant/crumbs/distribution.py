@@ -1,12 +1,9 @@
 """Class to create the croissant distribution metadata for the Open Targets Platform."""
 
-import logging
 from mlcroissant import FileSet, FileObject
 from ot_croissant.curation import DistributionCuration
 from pyspark.sql import SparkSession, types as t
-logger = logging.getLogger(__name__)
-
-
+from loguru import logger
 
 
 class PlatformOutputDistribution:
