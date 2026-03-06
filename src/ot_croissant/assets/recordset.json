@@ -1494,6 +1494,10 @@
     "description": "PubMed or preprint reference identifiers"
   },
   {
+    "id": "evidence_clinical_precedence/publicationDate",
+    "description": "Publication date of the literature reference"
+  },
+  {
     "id": "evidence_clinical_precedence/qualityControls",
     "description": "Evidence quality flags"
   },
