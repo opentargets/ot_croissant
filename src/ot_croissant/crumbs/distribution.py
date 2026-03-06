@@ -3,7 +3,6 @@
 from mlcroissant import FileSet, FileObject
 from ot_croissant.curation import DistributionCuration
 from pyspark.sql import SparkSession, types as t
-from loguru import logger
 
 
 class PlatformOutputDistribution:
@@ -64,6 +63,31 @@ class PlatformOutputDistribution:
             )
         )
         self.contained_in.append("gcp-location")
+        return self
+
+    def add_aws_location(self, aws_location: str | None, data_integrity_hash: str):
+        """Add the AWS location of the distribution IF aws_location is not None.
+
+        Args:
+            aws_location: The AWS location of the distribution.
+            data_integrity_hash: The data integrity hash of the distribution.
+
+        Returns:
+            The PlatformOutputDistribution object.
+        """
+        if aws_location:
+            self.distribution.append(
+                FileObject(
+                    id="aws-location",
+                    name="AWS location",
+                    description="Location of the Open Targets Platform data in Amazon Web Services.",
+                    encoding_formats="application/x-aws-directory",
+                    content_url=aws_location,
+                    sha256=data_integrity_hash,
+                )
+            )
+            self.contained_in.append("aws-location")
+
         return self
 
     def add_assets_from_paths(self, paths: list[str]):

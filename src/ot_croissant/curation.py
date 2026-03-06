@@ -34,7 +34,7 @@ class BaseCuration(ABC):
         pass
 
     @abstractmethod
-    def get_warning_message(self: BaseCuration, distribution_id: str, key: str, log_level: str = 'WARNING') -> str:
+    def get_warning_message(self: BaseCuration, distribution_id: str, key: str) -> str:
         """Generate a warning message for missing curation.
         
         Args:
