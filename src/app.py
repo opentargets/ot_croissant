@@ -54,6 +54,12 @@ parser.add_argument(
     help="GCP location",
     required=True,
 )
+parser.add_argument(
+    "--aws_location",
+    type=str,
+    help="AWS location",
+    required=False,
+)
 # List of datasets to include
 parser.add_argument(
     "-d",
@@ -124,6 +130,7 @@ def main():
         version=parser.parse_args().version,
         date_published=datetime.fromisoformat(parser.parse_args().date_published),
         gcp_location=parser.parse_args().gcp_location,
+        aws_location=parser.parse_args().aws_location,
         data_integrity_hash=parser.parse_args().data_integrity_hash,
         instance=parser.parse_args().instance
     )

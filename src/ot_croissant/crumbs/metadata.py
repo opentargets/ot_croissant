@@ -17,6 +17,7 @@ class PlatformOutputMetadata(Metadata):
         datasets: list[str],
         ftp_location: str | None,
         gcp_location: str,
+        aws_location: str | None,
         version: str,
         date_published: str,
         data_integrity_hash: str,
@@ -42,6 +43,7 @@ class PlatformOutputMetadata(Metadata):
                 PlatformOutputDistribution()
                 .add_ftp_location(ftp_location, data_integrity_hash)
                 .add_gcp_location(gcp_location, data_integrity_hash)
+                .add_aws_location(aws_location, data_integrity_hash)
                 .add_assets_from_paths(paths=datasets)
                 .get_metadata()
             ),
