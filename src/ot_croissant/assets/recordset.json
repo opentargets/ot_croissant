@@ -1456,6 +1456,10 @@
     "description": "Type of the evidence"
   },
   {
+    "id": "evidence_clinical_precedence/directionOnTarget",
+    "description": "Gain or loss of function effect of the evidence on the target based on the type of drug mechanism of action"
+  },
+  {
     "id": "evidence_clinical_precedence/directionOnTrait",
     "description": "Predicted direction of effect on the trait"
   },
