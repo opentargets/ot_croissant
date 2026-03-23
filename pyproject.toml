@@ -1,6 +1,6 @@
 [project]
 name = "ot-croissant"
-version = "26.03.0-dev3"
+version = "26.03.0"
 description = "Open Targets Croissant exporter"
 readme = "README.md"
 requires-python = ">=3.10"
