@@ -78,14 +78,24 @@ class PlatformOutputRecordSets:
             logger.error(f'Could not read parquet: {path}')
             raise ValueError(f'Could not read dataset: {path}')
 
+        fields = [self.parse_spark_field(field) for field in schema]
+
+        # Collect primary key field IDs from recordset curation:
+        recordset_curation = RecordsetCuration()
+        primary_key = [
+            f"{self.DISTRIBUTION_ID}/{field.name}"
+            for field in schema
+            if recordset_curation.get_curation(
+                distribution_id=f"{self.DISTRIBUTION_ID}/{field.name}",
+                key="isPrimaryKey",
+                log_level="DEBUG",
+            )
+        ]
+
         record_set = mlc.RecordSet(
             id=self.DISTRIBUTION_ID,
             name=self.DISTRIBUTION_ID,
-            fields=[self.parse_spark_field(field) for field in schema],
-        )
-        # Add primary key to recordset, if available:
-        primary_key = DistributionCuration().get_curation(
-            distribution_id=self.DISTRIBUTION_ID, key="key"
+            fields=fields,
         )
         if primary_key:
             record_set.key = primary_key
