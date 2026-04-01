@@ -5,7 +5,7 @@
     "key": [
       "association_by_datasource_direct/diseaseId",
       "association_by_datasource_direct/targetId",
-      "association_by_datasource_direct/datasourceId"
+      "association_by_datasource_direct/aggregationValue"
     ],
     "tags": [
       "Target-Disease"
@@ -18,7 +18,7 @@
     "key": [
       "association_by_datasource_indirect/diseaseId",
       "association_by_datasource_indirect/targetId",
-      "association_by_datasource_indirect/datasourceId"
+      "association_by_datasource_indirect/aggregationValue"
     ],
     "tags": [
       "Target-Disease"
@@ -31,7 +31,7 @@
     "key": [
       "association_by_datatype_direct/diseaseId",
       "association_by_datatype_direct/targetId",
-      "association_by_datatype_direct/datatypeId"
+      "association_by_datatype_direct/aggregationValue"
     ],
     "tags": [
       "Target-Disease"
@@ -44,7 +44,7 @@
     "key": [
       "association_by_datatype_indirect/diseaseId",
       "association_by_datatype_indirect/targetId",
-      "association_by_datatype_indirect/datatypeId"
+      "association_by_datatype_indirect/aggregationValue"
     ],
     "tags": [
       "Target-Disease"
