@@ -2,11 +2,6 @@
   {
     "id": "association_by_datasource_direct",
     "nice_name": "Associations - direct (by data source)",
-    "key": [
-      "association_by_datasource_direct/diseaseId",
-      "association_by_datasource_direct/targetId",
-      "association_by_datasource_direct/datasourceId"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -15,11 +10,6 @@
   {
     "id": "association_by_datasource_indirect",
     "nice_name": "Associations - indirect (by data source)",
-    "key": [
-      "association_by_datasource_indirect/diseaseId",
-      "association_by_datasource_indirect/targetId",
-      "association_by_datasource_indirect/datasourceId"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -28,11 +18,6 @@
   {
     "id": "association_by_datatype_direct",
     "nice_name": "Associations - direct (by data type)",
-    "key": [
-      "association_by_datatype_direct/diseaseId",
-      "association_by_datatype_direct/targetId",
-      "association_by_datatype_direct/datatypeId"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -41,11 +26,6 @@
   {
     "id": "association_by_datatype_indirect",
     "nice_name": "Associations - indirect (by data type)",
-    "key": [
-      "association_by_datatype_indirect/diseaseId",
-      "association_by_datatype_indirect/targetId",
-      "association_by_datatype_indirect/datatypeId"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -54,10 +34,6 @@
   {
     "id": "association_overall_direct",
     "nice_name": "Associations - direct (overall score)",
-    "key": [
-      "association_overall_direct/diseaseId",
-      "association_overall_direct/targetId"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -66,10 +42,6 @@
   {
     "id": "association_overall_indirect",
     "nice_name": "Associations - indirect (overall score)",
-    "key": [
-      "association_overall_indirect/diseaseId",
-      "association_overall_indirect/targetId"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -78,12 +50,6 @@
   {
     "id": "baseline_expression",
     "nice_name": "Baseline expression",
-    "key": [
-      "baseline_expression/targetId",
-      "baseline_expression/datasourceId",
-      "baseline_expression/tissueBiosampleId",
-      "baseline_expression/celltypeBiosampleId"
-    ],
     "tags": [
       "Target"
     ],
@@ -92,9 +58,6 @@
   {
     "id": "biosample",
     "nice_name": "Biosample core annotation",
-    "key": [
-      "biosample/biosampleId"
-    ],
     "tags": [
       "Ontology"
     ],
@@ -103,9 +66,6 @@
   {
     "id": "clinical_indication",
     "nice_name": "Clinical indication",
-    "key": [
-      "clinical_indication/id"
-    ],
     "tags": [
       "Drug",
       "Disease"
@@ -115,9 +75,6 @@
   {
     "id": "clinical_report",
     "nice_name": "Clinical report",
-    "key": [
-      "clinical_report/id"
-    ],
     "tags": [
       "Drug",
       "Disease"
@@ -127,9 +84,6 @@
   {
     "id": "clinical_target",
     "nice_name": "Clinical target",
-    "key": [
-      "clinical_target/id"
-    ],
     "tags": [
       "Drug",
       "Target"
@@ -139,10 +93,6 @@
   {
     "id": "colocalisation",
     "nice_name": "Colocalisation with colocPIP and eCAVIAR",
-    "key": [
-      "colocalisation/leftStudyLocusId",
-      "colocalisation/rightStudyLocusId"
-    ],
     "tags": [
       "Genetics"
     ],
@@ -151,9 +101,6 @@
   {
     "id": "credible_set",
     "nice_name": "Credible set",
-    "key": [
-      "credible_set/studyLocusId"
-    ],
     "tags": [
       "Genetics"
     ],
@@ -162,9 +109,6 @@
   {
     "id": "disease",
     "nice_name": "Disease/Phenotype",
-    "key": [
-      "disease/id"
-    ],
     "tags": [
       "Disease"
     ],
@@ -173,9 +117,6 @@
   {
     "id": "disease_hpo",
     "nice_name": "Human Phenotype Ontology",
-    "key": [
-      "disease_hpo/id"
-    ],
     "tags": [
       "Ontology"
     ],
@@ -184,10 +125,6 @@
   {
     "id": "disease_phenotype",
     "nice_name": "Disease/Phenotype - clinical signs and symptoms",
-    "key": [
-      "disease_phenotype/disease",
-      "disease_phenotype/phenotype"
-    ],
     "tags": [
       "Disease"
     ],
@@ -196,11 +133,6 @@
   {
     "id": "drug_mechanism_of_action",
     "nice_name": "Drug - mechanism of action",
-    "key": [
-      "drug_mechanism_of_action/chemblIds",
-      "drug_mechanism_of_action/mechanismOfAction",
-      "drug_mechanism_of_action/targets"
-    ],
     "tags": [
       "Drug"
     ],
@@ -209,9 +141,6 @@
   {
     "id": "drug_molecule",
     "nice_name": "Drug/Clinical candidates",
-    "key": [
-      "drug_molecule/id"
-    ],
     "tags": [
       "Drug"
     ],
@@ -220,9 +149,6 @@
   {
     "id": "drug_warning",
     "nice_name": "Drug - withdrawn and black box warnings",
-    "key": [
-      "drug_warning/id"
-    ],
     "tags": [
       "Drug"
     ],
@@ -231,9 +157,6 @@
   {
     "id": "enhancer_to_gene",
     "nice_name": "Enhancer to gene",
-    "key": [
-      "enhancer_to_gene/intervalId"
-    ],
     "tags": [
       "Target",
       "Genetics"
@@ -243,9 +166,6 @@
   {
     "id": "evidence_cancer_biomarkers",
     "nice_name": "Cancer biomarker evidence",
-    "key": [
-      "evidence_cancer_biomarkers/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -254,9 +174,6 @@
   {
     "id": "evidence_cancer_gene_census",
     "nice_name": "Cancer Gene Census evidence",
-    "key": [
-      "evidence_cancer_gene_census/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -265,9 +182,6 @@
   {
     "id": "evidence_clinical_precedence",
     "nice_name": "Clinical Precedence evidence",
-    "key": [
-      "evidence_clinical_precedence/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -276,9 +190,6 @@
   {
     "id": "evidence_clingen",
     "nice_name": "ClinGen evidence",
-    "key": [
-      "evidence_clingen/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -287,9 +198,6 @@
   {
     "id": "evidence_crispr",
     "nice_name": "ProjectScore evidence",
-    "key": [
-      "evidence_crispr/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -298,9 +206,6 @@
   {
     "id": "evidence_crispr_screen",
     "nice_name": "CRISPR screen evidence",
-    "key": [
-      "evidence_crispr_screen/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -309,9 +214,6 @@
   {
     "id": "evidence_encore",
     "nice_name": "Open Targets - Encore evidence",
-    "key": [
-      "evidence_encore/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -320,9 +222,6 @@
   {
     "id": "evidence_europepmc",
     "nice_name": "EuropePMC evidence",
-    "key": [
-      "evidence_europepmc/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -331,9 +230,6 @@
   {
     "id": "evidence_eva",
     "nice_name": "ClinVar germline evidence",
-    "key": [
-      "evidence_eva/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -342,9 +238,6 @@
   {
     "id": "evidence_eva_somatic",
     "nice_name": "ClinVar somatic evidence",
-    "key": [
-      "evidence_eva_somatic/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -353,9 +246,6 @@
   {
     "id": "evidence_expression_atlas",
     "nice_name": "Differential expression evidence",
-    "key": [
-      "evidence_expression_atlas/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -364,9 +254,6 @@
   {
     "id": "evidence_gene2phenotype",
     "nice_name": "Gene2Phenotype evidence",
-    "key": [
-      "evidence_gene2phenotype/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -375,9 +262,6 @@
   {
     "id": "evidence_gene_burden",
     "nice_name": "Gene burden evidence",
-    "key": [
-      "evidence_gene_burden/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -386,9 +270,6 @@
   {
     "id": "evidence_genomics_england",
     "nice_name": "Genomics England - PanelApp evidence",
-    "key": [
-      "evidence_genomics_england/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -397,9 +278,6 @@
   {
     "id": "evidence_gwas_credible_sets",
     "nice_name": "GWAS credible-set evidence",
-    "key": [
-      "evidence_gwas_credible_sets/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -408,9 +286,6 @@
   {
     "id": "evidence_impc",
     "nice_name": "IMPC evidence",
-    "key": [
-      "evidence_impc/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -419,9 +294,6 @@
   {
     "id": "evidence_intogen",
     "nice_name": "IntOGen evidence",
-    "key": [
-      "evidence_intogen/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -430,9 +302,6 @@
   {
     "id": "evidence_orphanet",
     "nice_name": "Orphanet evidence",
-    "key": [
-      "evidence_orphanet/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -441,9 +310,6 @@
   {
     "id": "evidence_ot_crispr",
     "nice_name": "Open Targets - CRISPR screen evidence",
-    "key": [
-      "evidence_ot_crispr/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -452,9 +318,6 @@
   {
     "id": "evidence_ot_crispr_validation",
     "nice_name": "Open Targets - Validation Lab evidence",
-    "key": [
-      "evidence_ot_crispr_validation/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -463,9 +326,6 @@
   {
     "id": "evidence_reactome",
     "nice_name": "Reactome evidence",
-    "key": [
-      "evidence_reactome/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -474,9 +334,6 @@
   {
     "id": "evidence_uniprot_literature",
     "nice_name": "Uniprot literature evidence",
-    "key": [
-      "evidence_uniprot_literature/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -485,9 +342,6 @@
   {
     "id": "evidence_uniprot_variants",
     "nice_name": "Uniprot variants evidence",
-    "key": [
-      "evidence_uniprot_variants/id"
-    ],
     "tags": [
       "Target-Disease"
     ],
@@ -496,9 +350,6 @@
   {
     "id": "expression",
     "nice_name": "Baseline expression - legacy",
-    "key": [
-      "expression/id"
-    ],
     "tags": [
       "Target"
     ],
@@ -507,9 +358,6 @@
   {
     "id": "go",
     "nice_name": "Target - gene ontology",
-    "key": [
-      "go/id"
-    ],
     "tags": [
       "Ontology"
     ],
@@ -518,15 +366,6 @@
   {
     "id": "interaction",
     "nice_name": "Molecular interactions",
-    "key": [
-      "interaction/targetA",
-      "interaction/targetB",
-      "interaction/intA",
-      "interaction/intB",
-      "interaction/sourceDatabase",
-      "interaction/intABiologicalRole",
-      "interaction/intBBiologicalRole"
-    ],
     "tags": [
       "Target"
     ],
@@ -535,19 +374,6 @@
   {
     "id": "interaction_evidence",
     "nice_name": "Molecular interactions evidence",
-    "key": [
-      "interaction_evidence/targetA",
-      "interaction_evidence/targetB",
-      "interaction_evidence/intA",
-      "interaction_evidence/intB",
-      "interaction_evidence/intABiologicalRole",
-      "interaction_evidence/intBBiologicalRole",
-      "interaction_evidence/interactionResources",
-      "interaction_evidence/interactionIdentifier",
-      "interaction_evidence/interactionDetectionMethodMiIdentifier",
-      "interaction_evidence/expansionMethodMiIdentifier",
-      "interaction_evidence/evidenceScore"
-    ],
     "tags": [
       "Target"
     ],
@@ -556,10 +382,6 @@
   {
     "id": "l2g_prediction",
     "nice_name": "Locus-to-Gene (L2G) prediction",
-    "key": [
-      "l2g_prediction/studyLocusId",
-      "l2g_prediction/geneId"
-    ],
     "tags": [
       "Genetics"
     ],
@@ -568,11 +390,6 @@
   {
     "id": "literature",
     "nice_name": "Literature",
-    "key": [
-      "literature/pmid",
-      "literature/pmcid",
-      "literature/keywordId"
-    ],
     "tags": [
       "Literature"
     ],
@@ -581,9 +398,6 @@
   {
     "id": "literature_vector",
     "nice_name": "Literature vector",
-    "key": [
-      "literature_vector/word"
-    ],
     "tags": [
       "Literature"
     ],
@@ -592,11 +406,6 @@
   {
     "id": "mouse_phenotype",
     "nice_name": "Mouse phenotype",
-    "key": [
-      "mouse_phenotype/modelPhenotypeId",
-      "mouse_phenotype/targetFromSourceId",
-      "mouse_phenotype/targetInModelMgiId"
-    ],
     "tags": [
       "Target"
     ],
@@ -605,10 +414,6 @@
   {
     "id": "openfda_significant_adverse_drug_reactions",
     "nice_name": "Pharmacovigilance (by drug)",
-    "key": [
-      "openfda_significant_adverse_drug_reactions/chembl_id",
-      "openfda_significant_adverse_drug_reactions/event"
-    ],
     "tags": [
       "Drug"
     ],
@@ -617,28 +422,12 @@
   {
     "id": "otar",
     "nice_name": "Open Targets Projects",
-    "key": [
-      "otar/efo_id"
-    ],
     "tags": [],
     "description": "Open Targets projects grouped by studied disease or phenotype"
   },
   {
     "id": "pharmacogenomics",
     "nice_name": "Drug/Target - pharmacogenetics",
-    "key": [
-      "pharmacogenomics/datasourceId",
-      "pharmacogenomics/genotypeAnnotationText",
-      "pharmacogenomics/haplotypeId",
-      "pharmacogenomics/phenotypeText",
-      "pharmacogenomics/phenotypeFromSourceId",
-      "pharmacogenomics/studyId",
-      "pharmacogenomics/targetFromSourceId",
-      "pharmacogenomics/drugs",
-      "pharmacogenomics/pgxCategory",
-      "pharmacogenomics/variantId",
-      "pharmacogenomics/variantFunctionalConsequenceId"
-    ],
     "tags": [
       "Target",
       "Genetics"
@@ -648,9 +437,6 @@
   {
     "id": "so",
     "nice_name": "Sequence Ontology",
-    "key": [
-      "so/id"
-    ],
     "tags": [
       "Ontology"
     ],
@@ -659,9 +445,6 @@
   {
     "id": "study",
     "nice_name": "GWAS/QTL Study",
-    "key": [
-      "study/studyId"
-    ],
     "tags": [
       "Genetics"
     ],
@@ -670,9 +453,6 @@
   {
     "id": "target",
     "nice_name": "Target",
-    "key": [
-      "target/id"
-    ],
     "tags": [
       "Target"
     ],
@@ -681,9 +461,6 @@
   {
     "id": "target_essentiality",
     "nice_name": "Target - DepMap essentiality",
-    "key": [
-      "target_essentiality/id"
-    ],
     "tags": [
       "Target"
     ],
@@ -692,9 +469,6 @@
   {
     "id": "target_prioritisation",
     "nice_name": "Target Prioritisation",
-    "key": [
-      "target_prioritisation/targetId"
-    ],
     "tags": [
       "Target"
     ],
@@ -703,18 +477,12 @@
   {
     "id": "target_validation",
     "nice_name": "Target - prioritisation",
-    "key": [
-      "target_validation/targetId"
-    ],
     "tags": [],
     "description": "Target-specific properties used to prioritise targets for further prioritisation (prioritisation view). All prioritisation factors included in the dataset range from -1 (unfavourable) to 1 (favourable). The prioritisation factors are derived from several sources related to the clinical precedence, tractability, doability and safety of a target"
   },
   {
     "id": "variant",
     "nice_name": "Variant",
-    "key": [
-      "variant/variantId"
-    ],
     "tags": [
       "Genetics"
     ],

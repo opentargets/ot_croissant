@@ -5,7 +5,8 @@
   },
   {
     "id": "association_by_datasource_direct/aggregationValue",
-    "description": "Datasource identifier of the group: eg. gwas_credible_set"
+    "description": "Datasource identifier of the group: eg. gwas_credible_set",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datasource_direct/associationScore",
@@ -18,7 +19,8 @@
   {
     "id": "association_by_datasource_direct/diseaseId",
     "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datasource_direct/evidenceCount",
@@ -27,7 +29,8 @@
   {
     "id": "association_by_datasource_direct/targetId",
     "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datasource_direct/timeseries",
@@ -55,7 +58,8 @@
   },
   {
     "id": "association_by_datasource_indirect/aggregationValue",
-    "description": "Datasource identifier of the group: eg. gwas_credible_set"
+    "description": "Datasource identifier of the group: eg. gwas_credible_set",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datasource_indirect/associationScore",
@@ -68,7 +72,8 @@
   {
     "id": "association_by_datasource_indirect/diseaseId",
     "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datasource_indirect/evidenceCount",
@@ -77,7 +82,8 @@
   {
     "id": "association_by_datasource_indirect/targetId",
     "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datasource_indirect/timeseries",
@@ -105,7 +111,8 @@
   },
   {
     "id": "association_by_datatype_direct/aggregationValue",
-    "description": "Datasource identifier of the group: eg. genetics_literature"
+    "description": "Datasource identifier of the group: eg. genetics_literature",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datatype_direct/associationScore",
@@ -118,7 +125,8 @@
   {
     "id": "association_by_datatype_direct/diseaseId",
     "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datatype_direct/evidenceCount",
@@ -127,7 +135,8 @@
   {
     "id": "association_by_datatype_direct/targetId",
     "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datatype_direct/timeseries",
@@ -155,7 +164,8 @@
   },
   {
     "id": "association_by_datatype_indirect/aggregationValue",
-    "description": "Datasource identifier of the group: eg. genetics_literature"
+    "description": "Datasource identifier of the group: eg. genetics_literature",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datatype_indirect/associationScore",
@@ -168,7 +178,8 @@
   {
     "id": "association_by_datatype_indirect/diseaseId",
     "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datatype_indirect/evidenceCount",
@@ -177,7 +188,8 @@
   {
     "id": "association_by_datatype_indirect/targetId",
     "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_by_datatype_indirect/timeseries",
@@ -218,7 +230,8 @@
   {
     "id": "association_overall_direct/diseaseId",
     "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_overall_direct/evidenceCount",
@@ -227,7 +240,8 @@
   {
     "id": "association_overall_direct/targetId",
     "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_overall_direct/timeseries",
@@ -268,7 +282,8 @@
   {
     "id": "association_overall_indirect/diseaseId",
     "description": "Open Targets disease identifier",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_overall_indirect/evidenceCount",
@@ -277,7 +292,8 @@
   {
     "id": "association_overall_indirect/targetId",
     "description": "Unique identifier for the target [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "association_overall_indirect/timeseries",
@@ -306,7 +322,8 @@
   {
     "id": "baseline_expression/celltypeBiosampleId",
     "description": "Cell type identifier that maps to the cell type reported by study [bioregistry:cell ontology]",
-    "foreign_key": "biosample/biosampleId"
+    "foreign_key": "biosample/biosampleId",
+    "isPrimaryKey": true
   },
   {
     "id": "baseline_expression/celltypeBiosampleParentId",
@@ -315,7 +332,8 @@
   },
   {
     "id": "baseline_expression/datasourceId",
-    "description": "Origin of expression data"
+    "description": "Origin of expression data",
+    "isPrimaryKey": true
   },
   {
     "id": "baseline_expression/datatypeId",
@@ -352,7 +370,8 @@
   {
     "id": "baseline_expression/targetId",
     "description": "Unique identifier for the target",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "baseline_expression/tissueBiosampleFromSource",
@@ -361,7 +380,8 @@
   {
     "id": "baseline_expression/tissueBiosampleId",
     "description": "Tissue identifier that maps to the tissue reported by study [bioregistry:uberon]",
-    "foreign_key": "biosample/biosampleId"
+    "foreign_key": "biosample/biosampleId",
+    "isPrimaryKey": true
   },
   {
     "id": "baseline_expression/tissueBiosampleParentId",
@@ -378,7 +398,8 @@
   },
   {
     "id": "biosample/biosampleId",
-    "description": "Unique identifier for the biosample"
+    "description": "Unique identifier for the biosample",
+    "isPrimaryKey": true
   },
   {
     "id": "biosample/biosampleName",
@@ -425,7 +446,8 @@
   },
   {
     "id": "clinical_indication/id",
-    "description": "Unique identifier for the clinical indication"
+    "description": "Unique identifier for the clinical indication",
+    "isPrimaryKey": true
   },
   {
     "id": "clinical_indication/maxClinicalStage",
@@ -471,7 +493,8 @@
   },
   {
     "id": "clinical_report/id",
-    "description": "Unique identifier for the clinical report"
+    "description": "Unique identifier for the clinical report",
+    "isPrimaryKey": true
   },
   {
     "id": "clinical_report/phaseFromSource",
@@ -583,7 +606,8 @@
   },
   {
     "id": "clinical_target/id",
-    "description": "Unique identifier for the clinical target-drug association"
+    "description": "Unique identifier for the clinical target-drug association",
+    "isPrimaryKey": true
   },
   {
     "id": "clinical_target/maxClinicalStage",
@@ -621,7 +645,8 @@
   {
     "id": "colocalisation/leftStudyLocusId",
     "description": "Study-locus identifier for left-side overlapping signal",
-    "foreign_key": "credible_set/studyLocusId"
+    "foreign_key": "credible_set/studyLocusId",
+    "isPrimaryKey": true
   },
   {
     "id": "colocalisation/numberColocalisingVariants",
@@ -630,7 +655,8 @@
   {
     "id": "colocalisation/rightStudyLocusId",
     "description": "Study-locus identifier for right-side overlapping signal",
-    "foreign_key": "credible_set/studyLocusId"
+    "foreign_key": "credible_set/studyLocusId",
+    "isPrimaryKey": true
   },
   {
     "id": "colocalisation/rightStudyType",
@@ -775,7 +801,8 @@
   },
   {
     "id": "credible_set/studyLocusId",
-    "description": "Study-locus identifier for the credible set"
+    "description": "Study-locus identifier for the credible set",
+    "isPrimaryKey": true
   },
   {
     "id": "credible_set/studyType",
@@ -828,7 +855,8 @@
   },
   {
     "id": "disease/id",
-    "description": "Open Targets disease identifier"
+    "description": "Open Targets disease identifier",
+    "isPrimaryKey": true
   },
   {
     "id": "disease/name",
@@ -912,7 +940,8 @@
   },
   {
     "id": "disease_hpo/id",
-    "description": "Unique identifier for the disease in the Human Phenotype Ontology (HPO)"
+    "description": "Unique identifier for the disease in the Human Phenotype Ontology (HPO)",
+    "isPrimaryKey": true
   },
   {
     "id": "disease_hpo/name",
@@ -929,7 +958,8 @@
   {
     "id": "disease_phenotype/disease",
     "description": "Disease identifier",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "disease_phenotype/evidence",
@@ -993,7 +1023,8 @@
   },
   {
     "id": "disease_phenotype/phenotype",
-    "description": "The phenotype linked to the disease."
+    "description": "The phenotype linked to the disease.",
+    "isPrimaryKey": true
   },
   {
     "id": "drug_mechanism_of_action/actionType",
@@ -1002,11 +1033,13 @@
   {
     "id": "drug_mechanism_of_action/chemblIds",
     "description": "List of Open Targets molecule identifiers",
-    "foreign_key": "drug_molecule/id"
+    "foreign_key": "drug_molecule/id",
+    "isPrimaryKey": true
   },
   {
     "id": "drug_mechanism_of_action/mechanismOfAction",
-    "description": "Drug pharmacological action"
+    "description": "Drug pharmacological action",
+    "isPrimaryKey": true
   },
   {
     "id": "drug_mechanism_of_action/references",
@@ -1035,7 +1068,8 @@
   {
     "id": "drug_mechanism_of_action/targets",
     "description": "List of Open Targets target identifiers",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "drug_molecule/canonicalSmiles",
@@ -1067,7 +1101,8 @@
   },
   {
     "id": "drug_molecule/id",
-    "description": "Open Targets molecule identifier"
+    "description": "Open Targets molecule identifier",
+    "isPrimaryKey": true
   },
   {
     "id": "drug_molecule/inchiKey",
@@ -1122,7 +1157,8 @@
   },
   {
     "id": "drug_warning/id",
-    "description": "Internal identifier for the drug warning record"
+    "description": "Internal identifier for the drug warning record",
+    "isPrimaryKey": true
   },
   {
     "id": "drug_warning/references",
@@ -1188,7 +1224,8 @@
   },
   {
     "id": "enhancer_to_gene/intervalId",
-    "description": "Identifier of the interval"
+    "description": "Identifier of the interval",
+    "isPrimaryKey": true
   },
   {
     "id": "enhancer_to_gene/intervalType",
@@ -1308,7 +1345,8 @@
   },
   {
     "id": "evidence_cancer_biomarkers/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_cancer_biomarkers/literature",
@@ -1382,7 +1420,8 @@
   },
   {
     "id": "evidence_cancer_gene_census/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_cancer_gene_census/literature",
@@ -1491,7 +1530,8 @@
   },
   {
     "id": "evidence_clinical_precedence/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_clinical_precedence/literature",
@@ -1569,7 +1609,8 @@
   },
   {
     "id": "evidence_clingen/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_clingen/qualityControls",
@@ -1656,7 +1697,8 @@
   },
   {
     "id": "evidence_crispr/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_crispr/literature",
@@ -1734,7 +1776,8 @@
   },
   {
     "id": "evidence_crispr_screen/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_crispr_screen/literature",
@@ -1857,7 +1900,8 @@
   },
   {
     "id": "evidence_encore/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_encore/interactingTargetFromSourceId",
@@ -1943,7 +1987,8 @@
   },
   {
     "id": "evidence_europepmc/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_europepmc/literature",
@@ -2069,7 +2114,8 @@
   },
   {
     "id": "evidence_eva/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_eva/literature",
@@ -2185,7 +2231,8 @@
   },
   {
     "id": "evidence_eva_somatic/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_eva_somatic/literature",
@@ -2278,7 +2325,8 @@
   },
   {
     "id": "evidence_expression_atlas/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_expression_atlas/literature",
@@ -2372,7 +2420,8 @@
   },
   {
     "id": "evidence_gene2phenotype/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_gene2phenotype/literature",
@@ -2475,7 +2524,8 @@
   },
   {
     "id": "evidence_gene_burden/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_gene_burden/literature",
@@ -2613,7 +2663,8 @@
   },
   {
     "id": "evidence_genomics_england/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_genomics_england/literature",
@@ -2675,7 +2726,8 @@
   },
   {
     "id": "evidence_gwas_credible_sets/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_gwas_credible_sets/literature",
@@ -2788,7 +2840,8 @@
   },
   {
     "id": "evidence_impc/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_impc/literature",
@@ -2878,7 +2931,8 @@
   },
   {
     "id": "evidence_intogen/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_intogen/literature",
@@ -2981,7 +3035,8 @@
   },
   {
     "id": "evidence_orphanet/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_orphanet/literature",
@@ -3056,7 +3111,8 @@
   },
   {
     "id": "evidence_ot_crispr/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_ot_crispr/log2FoldChangeValue",
@@ -3191,7 +3247,8 @@
   },
   {
     "id": "evidence_ot_crispr_validation/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_ot_crispr_validation/primaryProjectHit",
@@ -3269,7 +3326,8 @@
   },
   {
     "id": "evidence_reactome/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_reactome/literature",
@@ -3359,7 +3417,8 @@
   },
   {
     "id": "evidence_uniprot_literature/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_uniprot_literature/literature",
@@ -3425,7 +3484,8 @@
   },
   {
     "id": "evidence_uniprot_variants/id",
-    "description": "Identifer of the disease/target evidence"
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "evidence_uniprot_variants/literature",
@@ -3471,7 +3531,8 @@
   },
   {
     "id": "expression/id",
-    "description": "Ensembl human gene identifier for the expressed gene [bioregistry:ensembl]"
+    "description": "Ensembl human gene identifier for the expressed gene [bioregistry:ensembl]",
+    "isPrimaryKey": true
   },
   {
     "id": "expression/tissues",
@@ -3540,7 +3601,8 @@
   },
   {
     "id": "go/id",
-    "description": "Primary Gene Ontology term identifier"
+    "description": "Primary Gene Ontology term identifier",
+    "isPrimaryKey": true
   },
   {
     "id": "go/isA",
@@ -3580,19 +3642,23 @@
   },
   {
     "id": "interaction/intA",
-    "description": "Identifier for target A in source"
+    "description": "Identifier for target A in source",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction/intABiologicalRole",
-    "description": "Biological role of target A in the interaction"
+    "description": "Biological role of target A in the interaction",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction/intB",
-    "description": "Identifier for target B in source"
+    "description": "Identifier for target B in source",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction/intBBiologicalRole",
-    "description": "Biological role of target B in the interaction"
+    "description": "Biological role of target B in the interaction",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction/scoring",
@@ -3600,7 +3666,8 @@
   },
   {
     "id": "interaction/sourceDatabase",
-    "description": "Source database reporting the molecular interaction"
+    "description": "Source database reporting the molecular interaction",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction/speciesA",
@@ -3637,20 +3704,24 @@
   {
     "id": "interaction/targetA",
     "description": "Open Targets target identifier of the first molecule (target A) in the interaction [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction/targetB",
     "description": "Open Targets target identifier of the second molecule (target B) in the interaction [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/evidenceScore",
-    "description": "Score indicating the confidence or strength of the interaction evidence"
+    "description": "Score indicating the confidence or strength of the interaction evidence",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/expansionMethodMiIdentifier",
-    "description": "Molecular Interactions (MI) identifier for the expansion method used [bioregistry:mi]"
+    "description": "Molecular Interactions (MI) identifier for the expansion method used [bioregistry:mi]",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/expansionMethodShortName",
@@ -3682,11 +3753,13 @@
   },
   {
     "id": "interaction_evidence/intA",
-    "description": "Identifier for target A in source"
+    "description": "Identifier for target A in source",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/intABiologicalRole",
-    "description": "Biological role of target A in the interaction"
+    "description": "Biological role of target A in the interaction",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/intASource",
@@ -3694,11 +3767,13 @@
   },
   {
     "id": "interaction_evidence/intB",
-    "description": "Identifier for target B in source"
+    "description": "Identifier for target B in source",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/intBBiologicalRole",
-    "description": "Biological role of target B in the interaction"
+    "description": "Biological role of target B in the interaction",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/intBSource",
@@ -3706,7 +3781,8 @@
   },
   {
     "id": "interaction_evidence/interactionDetectionMethodMiIdentifier",
-    "description": "Molecular Interactions (MI) identifier for the interaction detection method [bioregistry:mi]"
+    "description": "Molecular Interactions (MI) identifier for the interaction detection method [bioregistry:mi]",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/interactionDetectionMethodShortName",
@@ -3714,11 +3790,13 @@
   },
   {
     "id": "interaction_evidence/interactionIdentifier",
-    "description": "Unique identifier for the interaction evidence entry at the source"
+    "description": "Unique identifier for the interaction evidence entry at the source",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/interactionResources",
-    "description": "Databases providing evidence for the interaction"
+    "description": "Databases providing evidence for the interaction",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/interactionResources/databaseVersion",
@@ -3803,12 +3881,14 @@
   {
     "id": "interaction_evidence/targetA",
     "description": "Open Targets target identifier of the second molecule (target A) in the interaction [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "interaction_evidence/targetB",
     "description": "Open Targets target identifier of the second molecule (target B) in the interaction [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "l2g_prediction/features",
@@ -3829,7 +3909,8 @@
   {
     "id": "l2g_prediction/geneId",
     "description": "Identifier of the gene/target",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "l2g_prediction/score",
@@ -3842,7 +3923,8 @@
   {
     "id": "l2g_prediction/studyLocusId",
     "description": "Study-locus identifier for the credible set",
-    "foreign_key": "credible_set/studyLocusId"
+    "foreign_key": "credible_set/studyLocusId",
+    "isPrimaryKey": true
   },
   {
     "id": "literature/date",
@@ -3854,7 +3936,8 @@
   },
   {
     "id": "literature/keywordId",
-    "description": "Unique identifier for the keyword associated with the literature entry"
+    "description": "Unique identifier for the keyword associated with the literature entry",
+    "isPrimaryKey": true
   },
   {
     "id": "literature/keywordType",
@@ -3866,11 +3949,13 @@
   },
   {
     "id": "literature/pmcid",
-    "description": "PubMed Central ID (PMCID) of the literature entry"
+    "description": "PubMed Central ID (PMCID) of the literature entry",
+    "isPrimaryKey": true
   },
   {
     "id": "literature/pmid",
-    "description": "Europe PubMed Central identifier (EPMCID) of the literature entry"
+    "description": "Europe PubMed Central identifier (EPMCID) of the literature entry",
+    "isPrimaryKey": true
   },
   {
     "id": "literature/relevance",
@@ -3894,7 +3979,8 @@
   },
   {
     "id": "literature_vector/word",
-    "description": "Normalised identifier of the matched entity"
+    "description": "Normalised identifier of the matched entity",
+    "isPrimaryKey": true
   },
   {
     "id": "mouse_phenotype/biologicalModels",
@@ -3930,7 +4016,8 @@
   },
   {
     "id": "mouse_phenotype/modelPhenotypeId",
-    "description": "Identifier for the specific phenotype observed in the model [bioregistry:mp]"
+    "description": "Identifier for the specific phenotype observed in the model [bioregistry:mp]",
+    "isPrimaryKey": true
   },
   {
     "id": "mouse_phenotype/modelPhenotypeLabel",
@@ -3939,7 +4026,8 @@
   {
     "id": "mouse_phenotype/targetFromSourceId",
     "description": "Identifier for the human target as provided by the data source",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "mouse_phenotype/targetInModel",
@@ -3951,12 +4039,14 @@
   },
   {
     "id": "mouse_phenotype/targetInModelMgiId",
-    "description": "Mouse Genome Informatics (MGI) identifier for the target gene in the model [bioregistry:mgi]"
+    "description": "Mouse Genome Informatics (MGI) identifier for the target gene in the model [bioregistry:mgi]",
+    "isPrimaryKey": true
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/chembl_id",
     "description": "Unique identifier for the drug or clinical candidate",
-    "foreign_key": "drug_molecule/id"
+    "foreign_key": "drug_molecule/id",
+    "isPrimaryKey": true
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/count",
@@ -3968,7 +4058,8 @@
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/event",
-    "description": "Reported adverse drug reaction associated with the drug"
+    "description": "Reported adverse drug reaction associated with the drug",
+    "isPrimaryKey": true
   },
   {
     "id": "openfda_significant_adverse_drug_reactions/llr",
@@ -3981,7 +4072,8 @@
   {
     "id": "otar/efo_id",
     "description": "Disease identifier studied by a list OTAR projects",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "otar/projects",
@@ -4009,7 +4101,8 @@
   },
   {
     "id": "pharmacogenomics/datasourceId",
-    "description": "Identifier for the data provider"
+    "description": "Identifier for the data provider",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/datasourceVersion",
@@ -4025,7 +4118,8 @@
   },
   {
     "id": "pharmacogenomics/drugs",
-    "description": "List of drug references"
+    "description": "List of drug references",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/drugs/drugFromSource",
@@ -4046,7 +4140,8 @@
   },
   {
     "id": "pharmacogenomics/genotypeAnnotationText",
-    "description": "Explanation of the genotype's clinical significance"
+    "description": "Explanation of the genotype's clinical significance",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/genotypeId",
@@ -4058,7 +4153,8 @@
   },
   {
     "id": "pharmacogenomics/haplotypeId",
-    "description": "Combination of genetic variants that constitute a particular allele of a gene (e.g. CYP2C9*3)"
+    "description": "Combination of genetic variants that constitute a particular allele of a gene (e.g. CYP2C9*3)",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/isDirectTarget",
@@ -4070,25 +4166,30 @@
   },
   {
     "id": "pharmacogenomics/pgxCategory",
-    "description": "Classification of the drug response type (e.g. Toxicity)"
+    "description": "Classification of the drug response type (e.g. Toxicity)",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/phenotypeFromSourceId",
     "description": "Open Targets disease identifier result of mapping phenotypeText",
-    "foreign_key": "disease/id"
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/phenotypeText",
-    "description": "Drug response influenced by the variation"
+    "description": "Drug response influenced by the variation",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/studyId",
-    "description": "Clinical Annotation ID in the ClinPGx dataset"
+    "description": "Clinical Annotation ID in the ClinPGx dataset",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/targetFromSourceId",
     "description": "Open Targets target identifier as provided by the data source",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/variantAnnotation",
@@ -4133,12 +4234,14 @@
   {
     "id": "pharmacogenomics/variantFunctionalConsequenceId",
     "description": "The sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript [bioregistry:so]",
-    "foreign_key": "so/id"
+    "foreign_key": "so/id",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/variantId",
     "description": "The unique identifier for the variant following schema: {chromosome}-{position}-{referenceAllele}-{alternateAllele}",
-    "foreign_key": "variant/variantId"
+    "foreign_key": "variant/variantId",
+    "isPrimaryKey": true
   },
   {
     "id": "pharmacogenomics/variantRsId",
@@ -4146,7 +4249,8 @@
   },
   {
     "id": "so/id",
-    "description": "Sequence ontology term identifier [bioregistry:so]"
+    "description": "Sequence ontology term identifier [bioregistry:so]",
+    "isPrimaryKey": true
   },
   {
     "id": "so/label",
@@ -4278,7 +4382,8 @@
   },
   {
     "id": "study/studyId",
-    "description": "Unique identifier of the GWAS or molQTL study."
+    "description": "Unique identifier of the GWAS or molQTL study.",
+    "isPrimaryKey": true
   },
   {
     "id": "study/studyType",
@@ -4607,7 +4712,8 @@
   },
   {
     "id": "target/id",
-    "description": "Unique identifier for the target [bioregistry:ensembl]"
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
+    "isPrimaryKey": true
   },
   {
     "id": "target/nameSynonyms",
@@ -4945,7 +5051,8 @@
   {
     "id": "target_essentiality/id",
     "description": "Target identifier the essentiality was measured on [bioregistry:ensembl]",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "target_prioritisation/geneticConstraint",
@@ -5006,7 +5113,8 @@
   {
     "id": "target_prioritisation/targetId",
     "description": "Unique identifier for the target, typically an Ensembl gene ID",
-    "foreign_key": "target/id"
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
   },
   {
     "id": "target_prioritisation/tissueDistribution",
@@ -5186,6 +5294,11 @@
   },
   {
     "id": "variant/variantId",
-    "description": "Unique identifier for the variant following schema: {chromosome}-{position}-{referenceAllele}-{alternateAllele}"
+    "description": "Unique identifier for the variant following schema: {chromosome}-{position}-{referenceAllele}-{alternateAllele}",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "target_validation/targetId",
+    "isPrimaryKey": true
   }
 ]
