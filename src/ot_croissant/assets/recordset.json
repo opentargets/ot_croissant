@@ -356,6 +356,10 @@
     "description": "Minimum value of expression"
   },
   {
+    "id": "baseline_expression/qualityControls",
+    "description": "PLACEHOLDER for qualityControls description"
+  },
+  {
     "id": "baseline_expression/q1",
     "description": "First quantile of expression"
   },
@@ -366,6 +370,10 @@
   {
     "id": "baseline_expression/specificity_score",
     "description": "Measure of how specific expression is to a biosample"
+  },
+  {
+    "id": "baseline_expression/targetFromSourceId",
+    "description": "PLACEHOLDER for targetFromSourceId description"
   },
   {
     "id": "baseline_expression/targetId",
@@ -1111,6 +1119,10 @@
   {
     "id": "drug_molecule/maximumClinicalStage",
     "description": "Display name of the highest clinical stage reached by the drug (e.g. 'approved', 'phase III')"
+  },
+  {
+    "id": "drug_molecule/molblock",
+    "description": "PLACEHOLDER for molblock description"
   },
   {
     "id": "drug_molecule/name",
@@ -3383,6 +3395,35 @@
     "description": "Descriptions of variant consequences at protein level"
   },
   {
+    "id": "reactome/id",
+    "description": "Unique identifier for the Reactome pathway [bioregistry:reactome]",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "reactome/label",
+    "description": "Name or label of the pathway"
+  },
+  {
+    "id": "reactome/ancestors",
+    "description": "List of ancestor pathways in the ontology"
+  },
+  {
+    "id": "reactome/descendants",
+    "description": "List of descendant pathways in the ontology"
+  },
+  {
+    "id": "reactome/children",
+    "description": "Direct child pathways of the current pathway"
+  },
+  {
+    "id": "reactome/parents",
+    "description": "Direct parent pathways of the current pathway"
+  },
+  {
+    "id": "reactome/path",
+    "description": "Hierarchical path representing the position of the pathway in Reactome"
+  },
+  {
     "id": "evidence_uniprot_literature/confidence",
     "description": "Confidence qualifier on the reported evidence"
   },
@@ -3590,6 +3631,14 @@
   {
     "id": "expression/tissues/rna/zscore",
     "description": "Expression zscore"
+  },
+  {
+    "id": "go/ancestors",
+    "description": "PLACEHOLDER for ancestors description"
+  },
+  {
+    "id": "go/descendants",
+    "description": "PLACEHOLDER for descendants description"
   },
   {
     "id": "go/altIds",
@@ -3927,42 +3976,42 @@
     "isPrimaryKey": true
   },
   {
-    "id": "literature/date",
+    "id": "literature_entity_lut/date",
     "description": "Date of publication in YYYY-MM-DD format"
   },
   {
-    "id": "literature/day",
+    "id": "literature_entity_lut/day",
     "description": "Day of publication"
   },
   {
-    "id": "literature/keywordId",
+    "id": "literature_entity_lut/keywordId",
     "description": "Unique identifier for the keyword associated with the literature entry",
     "isPrimaryKey": true
   },
   {
-    "id": "literature/keywordType",
+    "id": "literature_entity_lut/keywordType",
     "description": "Type of keyword identified in the literature entry. Values: DS: disease/syndrome, GP: gene/protein, CD: chemical/drug"
   },
   {
-    "id": "literature/month",
+    "id": "literature_entity_lut/month",
     "description": "Month of publication"
   },
   {
-    "id": "literature/pmcid",
+    "id": "literature_entity_lut/pmcid",
     "description": "PubMed Central ID (PMCID) of the literature entry",
     "isPrimaryKey": true
   },
   {
-    "id": "literature/pmid",
+    "id": "literature_entity_lut/pmid",
     "description": "Europe PubMed Central identifier (EPMCID) of the literature entry",
     "isPrimaryKey": true
   },
   {
-    "id": "literature/relevance",
+    "id": "literature_entity_lut/relevance",
     "description": "Relevance score of the keyword within the literature entry"
   },
   {
-    "id": "literature/year",
+    "id": "literature_entity_lut/year",
     "description": "Year of publication"
   },
   {
@@ -4362,7 +4411,7 @@
   {
     "id": "study/pubmedId",
     "description": "PubMed identifier of the publication that references the study [bioregistry:pubmed]",
-    "foreign_key": "literature/pmid"
+    "foreign_key": "literature_entity_lut/pmid"
   },
   {
     "id": "study/qualityControls",
@@ -4872,6 +4921,10 @@
     "description": "Source database for the subcellular location"
   },
   {
+    "id": "target/subcellularLocations/targetModifier",
+    "description": "PLACEHOLDER for targetModifier description"
+  },
+  {
     "id": "target/subcellularLocations/termSL",
     "description": "Subcellular location term identifier from SwissProt [bioregistry:sl]"
   },
@@ -5053,6 +5106,14 @@
     "description": "Target identifier the essentiality was measured on [bioregistry:ensembl]",
     "foreign_key": "target/id",
     "isPrimaryKey": true
+  },
+  {
+    "id": "target_prioritisation/celltypeDistribution",
+    "description": "PLACEHOLDER for celltypeDistribution description"
+  },
+  {
+    "id": "target_prioritisation/celltypeSpecificity",
+    "description": "PLACEHOLDER for celltypeSpecificity description"
   },
   {
     "id": "target_prioritisation/geneticConstraint",
