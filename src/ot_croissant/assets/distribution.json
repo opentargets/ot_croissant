@@ -50,10 +50,11 @@
   {
     "id": "baseline_expression",
     "nice_name": "Baseline expression",
+    "key": ["targetId", "datasourceId", "datatypeId", "tissueBiosampleId", "celltypeBiosampleId"],
     "tags": [
       "Target"
     ],
-    "description": "Baseline bulk RNA-seq, single-cell RNA-seq and MS proteomic expression data across tissues and cell types. This data contains normalised expression values showing how targets are selectively expressed across different tissues. This dataset combines expression values from multiples sources: Tabula Sapiens, Database of Immune Cell Expression, PRIDE and GTEx."
+    "description": "Aggregated expression data generated from RNA-seq and mass spectrometry proteomic data"
   },
   {
     "id": "biosample",
@@ -388,7 +389,7 @@
     "description": "Predictions from our Locus-to-Gene (L2G) gene assignment model. The dataset contains all predictions for every combination of credible set and genes in the region as well as statistics to explain the model interpretation of the predictions"
   },
   {
-    "id": "literature",
+    "id": "literature_entity_lut",
     "nice_name": "Literature",
     "tags": [
       "Literature"
@@ -487,5 +488,14 @@
       "Genetics"
     ],
     "description": "Core variant information for all variants in the Platform. Variants are included if any phenotypic information is available for the variant, including GWAS or molQTL credible sets, ClinVar, Uniprot or ClinPGx. The dataset includes variant metadata as well as variant effects derived from Ensembl VEP"
+  },
+  {
+    "id": "reactome",
+    "nice_name": "Target - Reactome pathway information",
+    "key": "reactome/id",
+    "tags": [
+      "Ontology"
+    ],
+    "description": "Pathway metadata from Reactome pathway database"
   }
 ]
