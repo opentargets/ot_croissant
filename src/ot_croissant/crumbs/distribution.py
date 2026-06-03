@@ -111,13 +111,10 @@ class PlatformOutputDistribution:
                 description += f" partitioned by {','.join(partitioned_by)}"
 
             # Generating fileset description:
+            ann = self.curation.get(id, log_level="DEBUG")
             fileset = FileSet(
                 id=id + "-fileset",
-                name=(
-                    self.curation.get_curation(id, "nice_name")
-                    if self.curation.get_curation(id, "nice_name")
-                    else f"Automatic nice_name of the file set/object '{id}'."
-                ),
+                name=ann.nice_name if ann else f"Automatic nice_name of the file set/object '{id}'.",
                 description=description,
                 encoding_formats="application/vnd.apache.parquet",
                 includes=includes

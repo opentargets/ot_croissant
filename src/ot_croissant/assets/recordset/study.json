@@ -1,0 +1,159 @@
+[
+  {
+    "id": "analysisFlags",
+    "description": "Collection of flags indicating the type of the analysis conducted in the association study"
+  },
+  {
+    "id": "backgroundDiseaseIds",
+    "description": "Any background disease(s) shared by all individuals in the study"
+  },
+  {
+    "id": "backgroundTraitFromSourceMappedIds",
+    "description": "Any background trait(s) shared by all individuals in the study"
+  },
+  {
+    "id": "biosampleFromSourceId",
+    "description": "Identifier of the referenced biological material"
+  },
+  {
+    "id": "biosampleId",
+    "description": "Biosample identifier that maps to the biosample reported by study [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "cohorts",
+    "description": "List of cohort(s) represented in the discovery sample"
+  },
+  {
+    "id": "condition",
+    "description": "Reported sample conditions"
+  },
+  {
+    "id": "discoverySamples",
+    "description": "Collection of ancestries reported by the study discovery phase"
+  },
+  {
+    "id": "discoverySamples/ancestry",
+    "description": "Discovery sample ancestry name"
+  },
+  {
+    "id": "discoverySamples/sampleSize",
+    "description": "Discovery sample size"
+  },
+  {
+    "id": "diseaseIds",
+    "description": "Disease identifier associated with a studied trait",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "geneId",
+    "description": "Ensembl identifier of the gene representing a specific gene whose molecular is being analysed in molQTL study [bioregistry:ensembl]",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "hasSumstats",
+    "description": "Indication whether the summary statistics exist in the source"
+  },
+  {
+    "id": "initialSampleSize",
+    "description": "Study initial sample size"
+  },
+  {
+    "id": "ldPopulationStructure",
+    "description": "Collection of populations referenced by the study"
+  },
+  {
+    "id": "ldPopulationStructure/ldPopulation",
+    "description": "Population identifier"
+  },
+  {
+    "id": "ldPopulationStructure/relativeSampleSize",
+    "description": "Fraction of the total sample represented by the population"
+  },
+  {
+    "id": "nCases",
+    "description": "The number of cases in this broad ancestry group"
+  },
+  {
+    "id": "nControls",
+    "description": "The number of controls in this broad ancestry group"
+  },
+  {
+    "id": "nSamples",
+    "description": "The number of samples tested in GWAS analysis"
+  },
+  {
+    "id": "projectId",
+    "description": "Identifier of the source project collection that the study information is derived from"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Date of the publication that references the study"
+  },
+  {
+    "id": "publicationFirstAuthor",
+    "description": "Last name and initials of the author of the publication that references the study"
+  },
+  {
+    "id": "publicationJournal",
+    "description": "Abbreviated journal name where the publication referencing study was published"
+  },
+  {
+    "id": "publicationTitle",
+    "description": "Title of the publication that references the study"
+  },
+  {
+    "id": "pubmedId",
+    "description": "PubMed identifier of the publication that references the study [bioregistry:pubmed]",
+    "foreign_key": "literature_entity_lut/pmid"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Control metrics refining study validation"
+  },
+  {
+    "id": "replicationSamples",
+    "description": "Collection of ancestries reported by the study replication phase"
+  },
+  {
+    "id": "replicationSamples/ancestry",
+    "description": "Replication sample ancestry name"
+  },
+  {
+    "id": "replicationSamples/sampleSize",
+    "description": "Replication sample size"
+  },
+  {
+    "id": "studyId",
+    "description": "Unique identifier of the GWAS or molQTL study.",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "studyType",
+    "description": "Field specifying if study contains phenotype/disease or molecular genetic associations"
+  },
+  {
+    "id": "summarystatsLocation",
+    "description": "Path to the source study summary statistics (if exists at the source)"
+  },
+  {
+    "id": "sumstatQCValues",
+    "description": "Mapping of quality control flags"
+  },
+  {
+    "id": "sumstatQCValues/QCCheckName",
+    "description": "Quality control metric identifier"
+  },
+  {
+    "id": "sumstatQCValues/QCCheckValue",
+    "description": "Quality control metric value"
+  },
+  {
+    "id": "traitFromSource",
+    "description": "Molecular or phenotypic trait, derived from source, analysed in the study"
+  },
+  {
+    "id": "traitFromSourceMappedIds",
+    "description": "Phenotypic trait IDs that map to the analysed trait reported by study"
+  }
+]

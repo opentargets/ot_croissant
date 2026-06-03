@@ -1,0 +1,138 @@
+[
+  {
+    "id": "biomarkerList",
+    "description": "List of biomarkers associated with the biological model"
+  },
+  {
+    "id": "biomarkerList/description",
+    "description": "One biomarker for the model"
+  },
+  {
+    "id": "biomarkerList/name",
+    "description": "Short name of the biomarker"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "diseaseCellLines",
+    "description": "Cancer cell lines used to generate evidence"
+  },
+  {
+    "id": "diseaseCellLines/id",
+    "description": "Cell type identifier in cell ontology or in cell model database"
+  },
+  {
+    "id": "diseaseCellLines/name",
+    "description": "Name of the cell model"
+  },
+  {
+    "id": "diseaseCellLines/tissue",
+    "description": "Name of the tissue from which the cells were sampled"
+  },
+  {
+    "id": "diseaseCellLines/tissueId",
+    "description": "Anatomical identifier of the sampled organ/tissue [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "diseaseFromSource",
+    "description": "Disease label from the original source"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "geneInteractionType",
+    "description": "Description of the interaction between the two genes"
+  },
+  {
+    "id": "geneticInteractionPValue",
+    "description": "p-value of the genetic interaction test"
+  },
+  {
+    "id": "geneticInteractionScore",
+    "description": "The strength of the genetic interaction. Directionality is captured as well: antagonistics < 0 < cooperative"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "interactingTargetFromSourceId",
+    "description": "Identifer of the interacting target"
+  },
+  {
+    "id": "interactingTargetRole",
+    "description": "Role of a target in the genetic interaction test"
+  },
+  {
+    "id": "phenotypicConsequenceFDR",
+    "description": "False discovery rate of the genetic test"
+  },
+  {
+    "id": "phenotypicConsequenceLogFoldChange",
+    "description": "Log 2 fold change of the cell survival"
+  },
+  {
+    "id": "phenotypicConsequencePValue",
+    "description": "P-value of the the cell survival test"
+  },
+  {
+    "id": "projectDescription",
+    "description": "Description of the project that generated the data"
+  },
+  {
+    "id": "projectId",
+    "description": "The identifer of the project that generated the data"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "releaseDate",
+    "description": "Date of the release of the data in a 'YYYY-MM-DD' format"
+  },
+  {
+    "id": "releaseVersion",
+    "description": "Open Targets data release version"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "statisticalMethod",
+    "description": "Statistical method used to calculate the association"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "targetRole",
+    "description": "Role of a target in the genetic interaction test"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "biosamplesFromSource",
+    "description": "Identifier of the referenced biological material",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "confidence",
+    "description": "Confidence qualifier on the reported evidence"
+  },
+  {
+    "id": "contrast",
+    "description": "Experiment contrast"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "log2FoldChangePercentileRank",
+    "description": "Percentile of top differentially regulated genes (transcripts) within experiment"
+  },
+  {
+    "id": "log2FoldChangeValue",
+    "description": "Log 2 fold expression change in contrast experiment"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Date of the earliest publication supporting the evidence"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "resourceScore",
+    "description": "Score provided by datasource indicating strength of target-disease association"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "studyId",
+    "description": "Identifier of the study generating the data"
+  },
+  {
+    "id": "studyOverview",
+    "description": "Description of the study"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  }
+]

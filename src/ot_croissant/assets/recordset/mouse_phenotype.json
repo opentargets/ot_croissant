@@ -1,0 +1,62 @@
+[
+  {
+    "id": "biologicalModels",
+    "description": "Container for all biological model-related attributes."
+  },
+  {
+    "id": "biologicalModels/allelicComposition",
+    "description": "The specific allelic composition of the mouse model"
+  },
+  {
+    "id": "biologicalModels/geneticBackground",
+    "description": "The genetic background strain of the mouse model"
+  },
+  {
+    "id": "biologicalModels/id",
+    "description": "Unique identifier for the biological model [bioregistry:mgi]"
+  },
+  {
+    "id": "biologicalModels/literature",
+    "description": "References related to the mouse model [bioregistry:pubmed]"
+  },
+  {
+    "id": "modelPhenotypeClasses",
+    "description": "Container for phenotype class-related attributes"
+  },
+  {
+    "id": "modelPhenotypeClasses/id",
+    "description": "Unique identifier for the phenotype class [bioregistry:mp]"
+  },
+  {
+    "id": "modelPhenotypeClasses/label",
+    "description": "Descriptive label for the phenotype class"
+  },
+  {
+    "id": "modelPhenotypeId",
+    "description": "Identifier for the specific phenotype observed in the model [bioregistry:mp]",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "modelPhenotypeLabel",
+    "description": "Human-readable label describing the observed phenotype"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Identifier for the human target as provided by the data source",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "targetInModel",
+    "description": "Name of the target gene as represented in the mouse model"
+  },
+  {
+    "id": "targetInModelEnsemblId",
+    "description": "Ensembl identifier for the target gene in the mouse model [bioregistry:ensembl]"
+  },
+  {
+    "id": "targetInModelMgiId",
+    "description": "Mouse Genome Informatics (MGI) identifier for the target gene in the model [bioregistry:mgi]",
+    "isPrimaryKey": true
+  }
+]

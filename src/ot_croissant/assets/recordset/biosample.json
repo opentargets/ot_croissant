@@ -1,0 +1,39 @@
+[
+  {
+    "id": "ancestors",
+    "description": "List of ancestor biosample IDs in the ontology"
+  },
+  {
+    "id": "biosampleId",
+    "description": "Unique identifier for the biosample",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "biosampleName",
+    "description": "Name of the biosample"
+  },
+  {
+    "id": "children",
+    "description": "Direct child biosample IDs in the ontology"
+  },
+  {
+    "id": "descendants",
+    "description": "List of descendant biosample IDs in the ontology"
+  },
+  {
+    "id": "description",
+    "description": "Description of the biosample"
+  },
+  {
+    "id": "parents",
+    "description": "Direct parent biosample IDs in the ontology"
+  },
+  {
+    "id": "synonyms",
+    "description": "List of synonymous names for the term"
+  },
+  {
+    "id": "xrefs",
+    "description": "Cross-reference IDs from other ontologies"
+  }
+]

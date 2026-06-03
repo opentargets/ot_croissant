@@ -1,0 +1,123 @@
+[
+  {
+    "id": "biologicalModelAllelicComposition",
+    "description": "Allelic composition of the model organism"
+  },
+  {
+    "id": "biologicalModelGeneticBackground",
+    "description": "Genetic background of the model organism"
+  },
+  {
+    "id": "biologicalModelId",
+    "description": "Identifier of the biological model (eg. in MGI)"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "directionOnTarget",
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
+  },
+  {
+    "id": "directionOnTrait",
+    "description": "Predicted direction of effect on the trait"
+  },
+  {
+    "id": "diseaseFromSource",
+    "description": "Disease label from the original source"
+  },
+  {
+    "id": "diseaseFromSourceId",
+    "description": "Disease identifier from the original source"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "diseaseModelAssociatedHumanPhenotypes",
+    "description": "Human phenotypes equivalent to those observed in animal models"
+  },
+  {
+    "id": "diseaseModelAssociatedHumanPhenotypes/id",
+    "description": "Human phenotype ontology identifier [bioregistry:hp]",
+    "foreign_key": "disease_hpo/id"
+  },
+  {
+    "id": "diseaseModelAssociatedHumanPhenotypes/label",
+    "description": "Human phenotype ontology label"
+  },
+  {
+    "id": "diseaseModelAssociatedModelPhenotypes",
+    "description": "Phenotypes observed in genetically modified animal models"
+  },
+  {
+    "id": "diseaseModelAssociatedModelPhenotypes/id",
+    "description": "Mouse phenotype ontology identifier [bioregistry:mp]",
+    "foreign_key": "mouse_phenotype/modelPhenotypeId"
+  },
+  {
+    "id": "diseaseModelAssociatedModelPhenotypes/label",
+    "description": "Mouse phenotype ontology label"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Date of the earliest publication supporting the evidence"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "resourceScore",
+    "description": "Score provided by datasource indicating strength of target-disease association"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "targetInModel",
+    "description": "Target name/synonym in animal model"
+  },
+  {
+    "id": "targetInModelEnsemblId",
+    "description": "Target Ensembl ID in animal model [bioregistry:ensembl]"
+  },
+  {
+    "id": "targetInModelMgiId",
+    "description": "Target MGI ID in animal model [bioregistry:mgi]"
+  }
+]

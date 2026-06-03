@@ -1,0 +1,32 @@
+[
+  {
+    "id": "efo_id",
+    "description": "Disease identifier studied by a list OTAR projects",
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "projects",
+    "description": "List of OTAR projects studying a given disease"
+  },
+  {
+    "id": "projects/integrates_data_PPP",
+    "description": "Boolean flag indicating if the project is providing data to the Partner Preview Platform"
+  },
+  {
+    "id": "projects/otar_code",
+    "description": "OTAR project identifier"
+  },
+  {
+    "id": "projects/project_name",
+    "description": "Name of the project"
+  },
+  {
+    "id": "projects/reference",
+    "description": "URL pointing to the project homepage"
+  },
+  {
+    "id": "projects/status",
+    "description": "Status of the project indicating completeness"
+  }
+]

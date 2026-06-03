@@ -1,0 +1,66 @@
+[
+  {
+    "id": "curationDate",
+    "description": "Date of the GWAS study curation"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Date of the earliest publication supporting the evidence"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "resourceScore",
+    "description": "Score provided by datasource indicating strength of target-disease association"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "studyLocusId",
+    "description": "Identifier of the Open Targets Study Locus",
+    "foreign_key": "credible_set/studyLocusId"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  }
+]

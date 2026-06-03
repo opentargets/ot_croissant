@@ -1,0 +1,64 @@
+[
+  {
+    "id": "id",
+    "description": "Ensembl human gene identifier for the expressed gene [bioregistry:ensembl]",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "tissues",
+    "description": "Array of structs containing expression data relevant to a particular gene"
+  },
+  {
+    "id": "tissues/anatomical_systems",
+    "description": "List of anatomical systems that the biosample can be found in"
+  },
+  {
+    "id": "tissues/efo_code",
+    "description": "Ontology ID of the biosample the expression data is from [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "tissues/label",
+    "description": "Name of the biosample the expression data is from"
+  },
+  {
+    "id": "tissues/organs",
+    "description": "List of organs that the biosample can be found in"
+  },
+  {
+    "id": "tissues/protein",
+    "description": "Struct containing relevant protein expression values for a particular biosample and gene combination"
+  },
+  {
+    "id": "tissues/protein/cell_type",
+    "description": "List of cell types were protein levels were measured"
+  },
+  {
+    "id": "tissues/protein/cell_type/name",
+    "description": "Cell type name"
+  },
+  {
+    "id": "tissues/protein/level",
+    "description": "Level of protein expression normalised to 0-5 or -1 if absent"
+  },
+  {
+    "id": "tissues/rna",
+    "description": "Struct containing relevant RNA expression values for a particular biosample and gene combination"
+  },
+  {
+    "id": "tissues/rna/level",
+    "description": "Level of RNA expression normalised to 0-5 or -1 if absent"
+  },
+  {
+    "id": "tissues/rna/unit",
+    "description": "Unit for the RNA expression"
+  },
+  {
+    "id": "tissues/rna/value",
+    "description": "Expression value"
+  },
+  {
+    "id": "tissues/rna/zscore",
+    "description": "Expression zscore"
+  }
+]

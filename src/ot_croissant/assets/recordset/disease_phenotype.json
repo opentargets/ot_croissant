@@ -1,0 +1,73 @@
+[
+  {
+    "id": "disease",
+    "description": "Disease identifier",
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "evidence",
+    "description": "A container for all evidence-related attributes supporting the disease-phenotype association."
+  },
+  {
+    "id": "evidence/aspect",
+    "description": "The category of biological information being provided (e.g., clinical, genetic, etc.)"
+  },
+  {
+    "id": "evidence/bioCuration",
+    "description": "Indicates whether the evidence has been manually curated"
+  },
+  {
+    "id": "evidence/diseaseFromSource",
+    "description": "The disease name as recorded in the original source"
+  },
+  {
+    "id": "evidence/diseaseFromSourceId",
+    "description": "Unique identifier for the disease from the original source"
+  },
+  {
+    "id": "evidence/diseaseName",
+    "description": "Standardised disease name"
+  },
+  {
+    "id": "evidence/evidenceType",
+    "description": "The type of evidence supporting the disease-phenotype relationship"
+  },
+  {
+    "id": "evidence/frequency",
+    "description": "The observed frequency of the phenotype in individuals with the disease"
+  },
+  {
+    "id": "evidence/modifiers",
+    "description": "Additional characteristics or modifiers related to the phenotype"
+  },
+  {
+    "id": "evidence/onset",
+    "description": "Age or stage of disease onset for the phenotype"
+  },
+  {
+    "id": "evidence/qualifier",
+    "description": "Additional qualifiers specifying the phenotype-disease relationship"
+  },
+  {
+    "id": "evidence/qualifierNot",
+    "description": "Specifies if a phenotype is not observed in a given disease"
+  },
+  {
+    "id": "evidence/references",
+    "description": "References or citations supporting the evidence [bioregistry:pubmed]"
+  },
+  {
+    "id": "evidence/resource",
+    "description": "The data source from which the evidence was obtained"
+  },
+  {
+    "id": "evidence/sex",
+    "description": "Indicates if the association is specific to a biological sex"
+  },
+  {
+    "id": "phenotype",
+    "description": "The phenotype linked to the disease.",
+    "isPrimaryKey": true
+  }
+]

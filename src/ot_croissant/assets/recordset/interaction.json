@@ -1,0 +1,79 @@
+[
+  {
+    "id": "count",
+    "description": "Number of interaction occurrences reported in the source databases"
+  },
+  {
+    "id": "intA",
+    "description": "Identifier for target A in source",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "intABiologicalRole",
+    "description": "Biological role of target A in the interaction",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "intB",
+    "description": "Identifier for target B in source",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "intBBiologicalRole",
+    "description": "Biological role of target B in the interaction",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "scoring",
+    "description": "Scoring or confidence value assigned to the interaction"
+  },
+  {
+    "id": "sourceDatabase",
+    "description": "Source database reporting the molecular interaction",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "speciesA",
+    "description": "Taxonomic annotation of target A"
+  },
+  {
+    "id": "speciesA/mnemonic",
+    "description": "Short mnemonic name of the species associated with target A"
+  },
+  {
+    "id": "speciesA/scientificName",
+    "description": "Scientific name of the species associated with target A"
+  },
+  {
+    "id": "speciesA/taxonId",
+    "description": "NCBI taxon ID of the species associated with target A"
+  },
+  {
+    "id": "speciesB",
+    "description": "Taxonomic annotation of target B"
+  },
+  {
+    "id": "speciesB/mnemonic",
+    "description": "Short mnemonic name of the species associated with target B"
+  },
+  {
+    "id": "speciesB/scientificName",
+    "description": "Scientific name of the species associated with target B"
+  },
+  {
+    "id": "speciesB/taxonId",
+    "description": "NCBI taxon ID of the species associated with target B"
+  },
+  {
+    "id": "targetA",
+    "description": "Open Targets target identifier of the first molecule (target A) in the interaction [bioregistry:ensembl]",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "targetB",
+    "description": "Open Targets target identifier of the second molecule (target B) in the interaction [bioregistry:ensembl]",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  }
+]

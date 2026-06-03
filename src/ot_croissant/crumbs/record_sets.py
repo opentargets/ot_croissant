@@ -48,23 +48,15 @@ class PlatformOutputRecordSets:
     
     def generate_distribution_description(self: PlatformOutputRecordSets, id: str) -> str:
         """Generate the description of the distribution."""
-        description = DistributionCuration().get_curation(id, "description")
+        ann = DistributionCuration().get(id)
 
-        # Return basic description if curation is not available:
-        if description is None:
+        if ann is None:
             return f"Description of the distribution '{id}' is not available."
 
-        # Extract tags:
-        tags = DistributionCuration().get_curation(
-            distribution_id=id, key="tags", log_level='DEBUG'
-        )
+        if not ann.tags:
+            return ann.description
 
-        # Return description if tags are not available:
-        if not isinstance(tags, list):
-            return description
-
-        # Format tags:
-        return f"{description} [{', '.join(tags)}]"
+        return f"{ann.description} [{', '.join(ann.tags)}]"
 
     def get_fileset_recordset(
         self: PlatformOutputRecordSets, path: str, 
@@ -85,11 +77,8 @@ class PlatformOutputRecordSets:
         primary_key = [
             f"{self.DISTRIBUTION_ID}/{field.name}"
             for field in schema
-            if recordset_curation.get_curation(
-                distribution_id=f"{self.DISTRIBUTION_ID}/{field.name}",
-                key="isPrimaryKey",
-                log_level="DEBUG",
-            )
+            if (ann := recordset_curation.get_field(f"{self.DISTRIBUTION_ID}/{field.name}", log_level="DEBUG"))
+            and ann.is_primary_key
         ]
 
         record_set = mlc.RecordSet(
@@ -127,9 +116,8 @@ class PlatformOutputRecordSets:
             
         def get_field_description_from_curation(field_id: str) -> str | None:
             """Get the field description from the curation."""
-            return RecordsetCuration().get_curation(
-                distribution_id=field_id, key="description"
-            )
+            ann = RecordsetCuration().get_field(field_id)
+            return ann.description if ann else None
 
         def get_field_description_from_data(field: t.StructField) -> str | None:
             metadata: dict[str, str] | None = field.metadata
@@ -163,9 +151,8 @@ class PlatformOutputRecordSets:
                 return metadata["foreign_key"]
             
             # If the data does not contain a foreign key, get it from the curation:
-            return RecordsetCuration().get_curation(
-                distribution_id=field_id, key="foreign_key", log_level='DEBUG'
-            )
+            ann = RecordsetCuration().get_field(field_id, log_level="DEBUG")
+            return ann.foreign_key if ann else None
 
         _warn_if_snake_case(field.name)
 

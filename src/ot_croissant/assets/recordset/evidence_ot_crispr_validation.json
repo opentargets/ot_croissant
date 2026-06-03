@@ -1,0 +1,130 @@
+[
+  {
+    "id": "assays",
+    "description": "Assays used in the study"
+  },
+  {
+    "id": "assays/description",
+    "description": "Description of the assay"
+  },
+  {
+    "id": "assays/isHit",
+    "description": "Indicating if the assay was positive or negative for the target"
+  },
+  {
+    "id": "assays/shortName",
+    "description": "Short name of the assay"
+  },
+  {
+    "id": "assessments",
+    "description": "Short name of the assay"
+  },
+  {
+    "id": "biomarkerList",
+    "description": "List of biomarkers associated with the biological model"
+  },
+  {
+    "id": "biomarkerList/description",
+    "description": "One biomarker for the model"
+  },
+  {
+    "id": "biomarkerList/name",
+    "description": "Short name of the biomarker"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "diseaseCellLines",
+    "description": "Cancer cell lines used to generate evidence"
+  },
+  {
+    "id": "diseaseCellLines/id",
+    "description": "Cell type identifier in cell ontology or in cell model database"
+  },
+  {
+    "id": "diseaseCellLines/name",
+    "description": "Name of the cell model"
+  },
+  {
+    "id": "diseaseCellLines/tissue",
+    "description": "Name of the tissue from which the cells were sampled"
+  },
+  {
+    "id": "diseaseCellLines/tissueId",
+    "description": "Anatomical identifier of the sampled organ/tissue [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "diseaseFromSource",
+    "description": "Disease label from the original source"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "primaryProjectHit",
+    "description": "If a given target was found to be a hit in the primary project"
+  },
+  {
+    "id": "primaryProjectId",
+    "description": "Open Targets project identifier of the primary project"
+  },
+  {
+    "id": "projectId",
+    "description": "The identifer of the project that generated the data"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "releaseDate",
+    "description": "Date of the release of the data in a 'YYYY-MM-DD' format"
+  },
+  {
+    "id": "releaseVersion",
+    "description": "Open Targets data release version"
+  },
+  {
+    "id": "resourceScore",
+    "description": "Score provided by datasource indicating strength of target-disease association"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "studyOverview",
+    "description": "Description of the study"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  }
+]

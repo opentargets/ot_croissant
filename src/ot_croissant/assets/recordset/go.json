@@ -1,0 +1,55 @@
+[
+  {
+    "id": "ancestors",
+    "description": "List of ancestor GO terms"
+  },
+  {
+    "id": "descendants",
+    "description": "List of descendant GO terms"
+  },
+  {
+    "id": "altIds",
+    "description": "List of alternative/secondary GO IDs that are synonyms for this term"
+  },
+  {
+    "id": "id",
+    "description": "Gene ontology term identifier [bioregistry:go]"
+  },
+  {
+    "id": "id",
+    "description": "Primary Gene Ontology term identifier",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "isA",
+    "description": "List of parent GO term IDs representing direct 'is a' hierarchical relationships"
+  },
+  {
+    "id": "isObsolete",
+    "description": "Boolean flag indicating whether the GO term has been deprecated and is no longer in active use"
+  },
+  {
+    "id": "label",
+    "description": "Human-readable name of the GO term"
+  },
+  {
+    "id": "namespace",
+    "description": "Ontology branch the term belongs to: biological_process, molecular_function, or cellular_component"
+  },
+  {
+    "id": "negativelyRegulates",
+    "description": "List of GO term IDs that this term negatively regulates (inhibitory relationship)"
+  },
+  {
+    "id": "partOf",
+    "description": "List of GO term IDs to which this term has a 'part of' relationship"
+  },
+  {
+    "id": "positivelyRegulates",
+    "description": "List of GO term IDs that this term positively regulates (activating relationship)"
+  },
+  {
+    "id": "regulates",
+    "description": "List of GO term IDs that this term regulates (generic regulatory relationship)"
+  }
+]

@@ -29,14 +29,14 @@ class PlatformOutputMetadata(Metadata):
             instance = 'public'
 
         logger.info(f'Generating metadata for the {instance} Platform instance.')
-        curation = InstanceCuration()
+        ann = InstanceCuration().get(instance)
 
         super().__init__(
-            name=curation.get_curation(instance, 'name'),
-            description=curation.get_curation(instance, 'description'),
+            name=ann.name if ann else None,
+            description=ann.description if ann else None,
             cite_as=self.CITE_AS,
-            url=curation.get_curation(instance, 'url'),
-            license=curation.get_curation(instance, 'license'),
+            url=ann.url if ann else None,
+            license=ann.license if ann else None,
             version=version,
             date_published=date_published,
             distribution=(

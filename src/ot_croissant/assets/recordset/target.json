@@ -1,0 +1,588 @@
+[
+  {
+    "id": "alternativeGenes",
+    "description": "List of alternative Ensembl gene identifiers mapped to non-canonical chromosomes"
+  },
+  {
+    "id": "approvedName",
+    "description": "Approved full name of the target gene"
+  },
+  {
+    "id": "approvedSymbol",
+    "description": "Approved gene symbol of the target"
+  },
+  {
+    "id": "biotype",
+    "description": "Biotype classification of the target gene, indicating if the gene is protein coding"
+  },
+  {
+    "id": "canonicalExons",
+    "description": "List of canonical exons for the target gene"
+  },
+  {
+    "id": "canonicalTranscript",
+    "description": "The Ensembl canonical transcript of the target gene"
+  },
+  {
+    "id": "canonicalTranscript/chromosome",
+    "description": "Chromosome location of the canonical transcript"
+  },
+  {
+    "id": "canonicalTranscript/end",
+    "description": "Genomic end position of the canonical transcript"
+  },
+  {
+    "id": "canonicalTranscript/id",
+    "description": "The Ensembl transcript identifier for the canonical transcript"
+  },
+  {
+    "id": "canonicalTranscript/start",
+    "description": "Genomic start position of the canonical transcript"
+  },
+  {
+    "id": "canonicalTranscript/strand",
+    "description": "Strand orientation of the canonical transcript"
+  },
+  {
+    "id": "chemicalProbes",
+    "description": "Chemical probes related to the target"
+  },
+  {
+    "id": "chemicalProbes/control",
+    "description": "Whether the chemical probe serves as a control"
+  },
+  {
+    "id": "chemicalProbes/drugFromSourceId",
+    "description": "Drug identifier from the source for the chemical probe"
+  },
+  {
+    "id": "chemicalProbes/drugId",
+    "description": "Drug ID associated with the chemical probe"
+  },
+  {
+    "id": "chemicalProbes/id",
+    "description": "Unique identifier for the chemical probe"
+  },
+  {
+    "id": "chemicalProbes/isHighQuality",
+    "description": "Indicates if the chemical probe is high quality"
+  },
+  {
+    "id": "chemicalProbes/mechanismOfAction",
+    "description": "Mechanism of action of the chemical probe"
+  },
+  {
+    "id": "chemicalProbes/origin",
+    "description": "Origin of the chemical probe"
+  },
+  {
+    "id": "chemicalProbes/probeMinerScore",
+    "description": "Score from ProbeMiner for chemical probe quality"
+  },
+  {
+    "id": "chemicalProbes/probesDrugsScore",
+    "description": "Score for chemical probes related to druggability"
+  },
+  {
+    "id": "chemicalProbes/scoreInCells",
+    "description": "Score indicating chemical probe activity in cells"
+  },
+  {
+    "id": "chemicalProbes/scoreInOrganisms",
+    "description": "Score indicating chemical probe activity in organisms"
+  },
+  {
+    "id": "chemicalProbes/targetFromSourceId",
+    "description": "Ensembl gene ID of the target for the chemical probe"
+  },
+  {
+    "id": "chemicalProbes/urls",
+    "description": "URLs linking to more information about the chemical probe"
+  },
+  {
+    "id": "chemicalProbes/urls/niceName",
+    "description": "Nice name for the linked URL"
+  },
+  {
+    "id": "chemicalProbes/urls/url",
+    "description": "URL providing details about the chemical probe"
+  },
+  {
+    "id": "constraint",
+    "description": "Constraint scores for the target gene from gnomAD"
+  },
+  {
+    "id": "constraint/constraintType",
+    "description": "Type of constraint applied to the target"
+  },
+  {
+    "id": "constraint/exp",
+    "description": "Expected constraint score"
+  },
+  {
+    "id": "constraint/obs",
+    "description": "Observed constraint score"
+  },
+  {
+    "id": "constraint/oe",
+    "description": "Observed/Expected (OE) constraint score"
+  },
+  {
+    "id": "constraint/oeLower",
+    "description": "Lower bound of the OE constraint score"
+  },
+  {
+    "id": "constraint/oeUpper",
+    "description": "Upper bound of the OE constraint score"
+  },
+  {
+    "id": "constraint/score",
+    "description": "Constraint score indicating gene intolerance"
+  },
+  {
+    "id": "constraint/upperBin",
+    "description": "Binned category for the constraint score"
+  },
+  {
+    "id": "constraint/upperBin6",
+    "description": "Six-bin classification of the constraint score"
+  },
+  {
+    "id": "constraint/upperRank",
+    "description": "Rank of the target gene in constraint analysis"
+  },
+  {
+    "id": "dbXrefs",
+    "description": "Database cross-references for the target"
+  },
+  {
+    "id": "dbXrefs/id",
+    "description": "Cross-reference ID for external databases"
+  },
+  {
+    "id": "dbXrefs/source",
+    "description": "Source database for the cross-reference"
+  },
+  {
+    "id": "functionDescriptions",
+    "description": "Functional descriptions of the target gene sourced from UniProt"
+  },
+  {
+    "id": "genomicLocation",
+    "description": "Genomic location information of the target gene"
+  },
+  {
+    "id": "genomicLocation/chromosome",
+    "description": "Chromosome on which the target located"
+  },
+  {
+    "id": "genomicLocation/end",
+    "description": "Genomic end position of the target gene"
+  },
+  {
+    "id": "genomicLocation/start",
+    "description": "Genomic start position of the target gene"
+  },
+  {
+    "id": "genomicLocation/strand",
+    "description": "Strand orientation of the target gene"
+  },
+  {
+    "id": "go",
+    "description": "List of Gene Ontology (GO) annotations related to the target"
+  },
+  {
+    "id": "go/aspect",
+    "description": "Type of the GO annotation: molecular function (F), biological process (P) and cellular localisation (C)"
+  },
+  {
+    "id": "go/ecoId",
+    "description": "Evidence & Conclusion Ontology (ECO) identifier for the GO annotation [bioregistry:eco]"
+  },
+  {
+    "id": "go/evidence",
+    "description": "Evidence supporting the GO annotation"
+  },
+  {
+    "id": "go/geneProduct",
+    "description": "Gene product associated with the GO annotation [bioregistry:uniprot]"
+  },
+  {
+    "id": "go/id",
+    "description": "GO identifier for the annotation [bioregistry:go]",
+    "foreign_key": "go/id"
+  },
+  {
+    "id": "go/source",
+    "description": "Source database and identifer from which the ontology term was sourced"
+  },
+  {
+    "id": "hallmarks",
+    "description": "Hallmarks related to the target gene sourced from COSMIC"
+  },
+  {
+    "id": "hallmarks/attributes",
+    "description": "Attributes of the hallmark annotation"
+  },
+  {
+    "id": "hallmarks/attributes/name",
+    "description": "Name of the hallmark attribute"
+  },
+  {
+    "id": "hallmarks/attributes/description",
+    "description": "Description of the hallmark attribute"
+  },
+  {
+    "id": "hallmarks/attributes/pmid",
+    "description": "PubMed ID of the supporting literature for the hallmark attribute [bioregistry:pubmed]"
+  },
+  {
+    "id": "hallmarks/cancerHallmarks",
+    "description": "Cancer hallmarks associated with the target gene"
+  },
+  {
+    "id": "hallmarks/cancerHallmarks/description",
+    "description": "Description of the cancer hallmark"
+  },
+  {
+    "id": "hallmarks/cancerHallmarks/impact",
+    "description": "Impact of the cancer hallmark on the target"
+  },
+  {
+    "id": "hallmarks/cancerHallmarks/label",
+    "description": "Label associated with the cancer hallmark"
+  },
+  {
+    "id": "hallmarks/cancerHallmarks/pmid",
+    "description": "PubMed ID of the supporting literature for the cancer hallmark [bioregistry:pubmed]"
+  },
+  {
+    "id": "homologues",
+    "description": "Homologues of the target gene in other species"
+  },
+  {
+    "id": "homologues/homologyType",
+    "description": "Type of homology relationship"
+  },
+  {
+    "id": "homologues/isHighConfidence",
+    "description": "Indicates if the homology is high confidence"
+  },
+  {
+    "id": "homologues/priority",
+    "description": "Priority score for the homologue"
+  },
+  {
+    "id": "homologues/queryPercentageIdentity",
+    "description": "Percentage identity of the query gene in the homologue"
+  },
+  {
+    "id": "homologues/speciesId",
+    "description": "Species ID for the homologue"
+  },
+  {
+    "id": "homologues/speciesName",
+    "description": "Species name for the homologue"
+  },
+  {
+    "id": "homologues/targetGeneId",
+    "description": "Target gene ID of the homologue"
+  },
+  {
+    "id": "homologues/targetGeneSymbol",
+    "description": "Gene symbol of the homologous target"
+  },
+  {
+    "id": "homologues/targetPercentageIdentity",
+    "description": "Percentage identity of the homologue in the query gene"
+  },
+  {
+    "id": "id",
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "nameSynonyms",
+    "description": "List of name-based synonyms for the target gene"
+  },
+  {
+    "id": "nameSynonyms/label",
+    "description": "Name synonym label for the target"
+  },
+  {
+    "id": "nameSynonyms/source",
+    "description": "Source of the name synonym"
+  },
+  {
+    "id": "obsoleteNames",
+    "description": "List of obsolete names previously used for the target gene"
+  },
+  {
+    "id": "obsoleteNames/label",
+    "description": "Obsolete name label"
+  },
+  {
+    "id": "obsoleteNames/source",
+    "description": "Source of the obsolete name"
+  },
+  {
+    "id": "obsoleteSymbols",
+    "description": "List of obsolete symbols previously used for the target gene"
+  },
+  {
+    "id": "obsoleteSymbols/label",
+    "description": "Obsolete symbol label"
+  },
+  {
+    "id": "obsoleteSymbols/source",
+    "description": "Source of the obsolete symbol"
+  },
+  {
+    "id": "pathways",
+    "description": "Pathway annotations for the target"
+  },
+  {
+    "id": "pathways/pathway",
+    "description": "Name of the pathway"
+  },
+  {
+    "id": "pathways/pathwayId",
+    "description": "Unique identifier for the pathway"
+  },
+  {
+    "id": "pathways/topLevelTerm",
+    "description": "Top-level term categorising the pathway"
+  },
+  {
+    "id": "proteinIds",
+    "description": "Protein identifiers associated with the target"
+  },
+  {
+    "id": "proteinIds/id",
+    "description": "Protein ID for the target"
+  },
+  {
+    "id": "proteinIds/source",
+    "description": "Source database for the protein ID"
+  },
+  {
+    "id": "safetyLiabilities",
+    "description": "Safety liabilities associated with the target"
+  },
+  {
+    "id": "safetyLiabilities/biosamples",
+    "description": "Biosamples used in safety assessments"
+  },
+  {
+    "id": "safetyLiabilities/biosamples/cellFormat",
+    "description": "Format of the biosample cells"
+  },
+  {
+    "id": "safetyLiabilities/biosamples/cellId",
+    "description": "Cell identifier"
+  },
+  {
+    "id": "safetyLiabilities/biosamples/cellLabel",
+    "description": "Label of the biosample cell"
+  },
+  {
+    "id": "safetyLiabilities/biosamples/tissueId",
+    "description": "Tissue ID for the biosample"
+  },
+  {
+    "id": "safetyLiabilities/biosamples/tissueLabel",
+    "description": "Label of the biosample tissue"
+  },
+  {
+    "id": "safetyLiabilities/datasource",
+    "description": "Data source reporting the safety liability"
+  },
+  {
+    "id": "safetyLiabilities/effects",
+    "description": "Effects reported for the safety event"
+  },
+  {
+    "id": "safetyLiabilities/effects/direction",
+    "description": "Direction of the reported effect (e.g. increase or decrease)"
+  },
+  {
+    "id": "safetyLiabilities/effects/dosing",
+    "description": "Dosing conditions related to the reported effect"
+  },
+  {
+    "id": "safetyLiabilities/event",
+    "description": "Safety event associated with the target"
+  },
+  {
+    "id": "safetyLiabilities/eventId",
+    "description": "Unique identifier for the safety event"
+  },
+  {
+    "id": "safetyLiabilities/literature",
+    "description": "Literature references for the safety liability"
+  },
+  {
+    "id": "safetyLiabilities/studies",
+    "description": "Studies related to safety assessments"
+  },
+  {
+    "id": "safetyLiabilities/studies/description",
+    "description": "Description of the safety study"
+  },
+  {
+    "id": "safetyLiabilities/studies/name",
+    "description": "Name of the safety study"
+  },
+  {
+    "id": "safetyLiabilities/studies/type",
+    "description": "Type of safety study"
+  },
+  {
+    "id": "safetyLiabilities/url",
+    "description": "URL linking to more details on safety liabilities"
+  },
+  {
+    "id": "subcellularLocations",
+    "description": "List of subcellular locations where the target protein is found"
+  },
+  {
+    "id": "subcellularLocations/labelSL",
+    "description": "Subcellular location category from SwissProt"
+  },
+  {
+    "id": "subcellularLocations/location",
+    "description": "Name of the subcellular compartment where the protein was found"
+  },
+  {
+    "id": "subcellularLocations/source",
+    "description": "Source database for the subcellular location"
+  },
+  {
+    "id": "subcellularLocations/targetModifier",
+    "description": "Protein isoform or modification that specific for the given subcellular location"
+  },
+  {
+    "id": "subcellularLocations/termSL",
+    "description": "Subcellular location term identifier from SwissProt [bioregistry:sl]"
+  },
+  {
+    "id": "symbolSynonyms",
+    "description": "List of symbol-based synonyms for the target gene"
+  },
+  {
+    "id": "symbolSynonyms/label",
+    "description": "Symbol synonym label for the target"
+  },
+  {
+    "id": "symbolSynonyms/source",
+    "description": "Source of the symbol synonym"
+  },
+  {
+    "id": "synonyms",
+    "description": "List of synonyms for the target gene"
+  },
+  {
+    "id": "synonyms/label",
+    "description": "Synonym label for the target"
+  },
+  {
+    "id": "synonyms/source",
+    "description": "Source database of the synonym"
+  },
+  {
+    "id": "targetClass",
+    "description": "Target classification categories from ChEMBL"
+  },
+  {
+    "id": "targetClass/id",
+    "description": "Unique identifier for the target class"
+  },
+  {
+    "id": "targetClass/label",
+    "description": "Label for the target class"
+  },
+  {
+    "id": "targetClass/level",
+    "description": "Hierarchical level of the target class"
+  },
+  {
+    "id": "tep",
+    "description": "Target Enabling Package (TEP) information"
+  },
+  {
+    "id": "tep/description",
+    "description": "Description of the TEP target"
+  },
+  {
+    "id": "tep/targetFromSourceId",
+    "description": "Ensembl gene ID for the TEP target"
+  },
+  {
+    "id": "tep/therapeuticArea",
+    "description": "Therapeutic area associated with the TEP target"
+  },
+  {
+    "id": "tep/url",
+    "description": "URL linking to more information on the TEP target"
+  },
+  {
+    "id": "tractability",
+    "description": "Tractability information for the target"
+  },
+  {
+    "id": "tractability/id",
+    "description": "Unique identifier for the tractability category"
+  },
+  {
+    "id": "tractability/modality",
+    "description": "Modality of the tractability assessment"
+  },
+  {
+    "id": "tractability/value",
+    "description": "Tractability value assigned to the target"
+  },
+  {
+    "id": "transcriptIds",
+    "description": "List of Ensembl transcript identifiers associated with the target"
+  },
+  {
+    "id": "transcripts",
+    "description": "List of transcripts of the target Extracted from Ensembl"
+  },
+  {
+    "id": "transcripts/alphafoldId",
+    "description": "Alphafold identifier of the predicted structure"
+  },
+  {
+    "id": "transcripts/biotype",
+    "description": "Biotype classification of the given transcript"
+  },
+  {
+    "id": "transcripts/isEnsemblCanonical",
+    "description": "Flag indicating if the transcript is Ensembl canonical"
+  },
+  {
+    "id": "transcripts/isUniprotReviewed",
+    "description": "Flag indicating the translated protein is reviewed and part of UniprotKB"
+  },
+  {
+    "id": "transcripts/transcriptId",
+    "description": "Ensembl identifier of the transcript (ENST###) [bioregistry:ensembl]"
+  },
+  {
+    "id": "transcripts/translationId",
+    "description": "Ensembl translation identifier (ENSP###)"
+  },
+  {
+    "id": "transcripts/uniprotId",
+    "description": "Uniprot identifier of the translated protein"
+  },
+  {
+    "id": "transcripts/uniprotIsoformId",
+    "description": "Uniprot isoform identifier when available"
+  },
+  {
+    "id": "tss",
+    "description": "Transcription Start Site (TSS) information for the target"
+  }
+]

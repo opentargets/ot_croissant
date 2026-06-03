@@ -1,0 +1,46 @@
+[
+  {
+    "id": "betaRatioSignAverage",
+    "description": "Average sign of the beta ratio between colocalised variants"
+  },
+  {
+    "id": "chromosome",
+    "description": "Chromosome where the colocalisation occurs"
+  },
+  {
+    "id": "clpp",
+    "description": "Colocalisation posterior probability (CLPP) score estimating the probability of shared causal variants"
+  },
+  {
+    "id": "colocalisationMethod",
+    "description": "Method used to estimate colocalisation (e.g., coloc)"
+  },
+  {
+    "id": "h3",
+    "description": "Posterior probability that both traits are associated, but with different causal variants (H3)"
+  },
+  {
+    "id": "h4",
+    "description": "Posterior probability that both traits are associated and share a causal variant (H4)"
+  },
+  {
+    "id": "leftStudyLocusId",
+    "description": "Study-locus identifier for left-side overlapping signal",
+    "foreign_key": "credible_set/studyLocusId",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "numberColocalisingVariants",
+    "description": "Number of variants intersecting between two overlapping study-loci"
+  },
+  {
+    "id": "rightStudyLocusId",
+    "description": "Study-locus identifier for right-side overlapping signal",
+    "foreign_key": "credible_set/studyLocusId",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "rightStudyType",
+    "description": "Type of the right-side study (e.g., gwas, eqtl)"
+  }
+]

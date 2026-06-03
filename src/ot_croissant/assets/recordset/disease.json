@@ -1,0 +1,111 @@
+[
+  {
+    "id": "ancestors",
+    "description": "List of all ancestral disease terms"
+  },
+  {
+    "id": "broadSynonyms",
+    "description": "List of broadly related sysnonyms"
+  },
+  {
+    "id": "children",
+    "description": "List of children disease terms"
+  },
+  {
+    "id": "code",
+    "description": "Disease reference URL"
+  },
+  {
+    "id": "dbXRefs",
+    "description": "Cross-references in other disease ontologies"
+  },
+  {
+    "id": "descendants",
+    "description": "List of all descendant terms"
+  },
+  {
+    "id": "description",
+    "description": "Description of the disease"
+  },
+  {
+    "id": "exactSynonyms",
+    "description": "List of exact synonyms"
+  },
+  {
+    "id": "id",
+    "description": "Open Targets disease identifier",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "name",
+    "description": "Name of the disease"
+  },
+  {
+    "id": "narrowSynonyms",
+    "description": "List of closely related sysnonyms"
+  },
+  {
+    "id": "obsoleteTerms",
+    "description": "List of obsoleted terms"
+  },
+  {
+    "id": "obsoleteXRefs",
+    "description": "List of obsoleted cross references"
+  },
+  {
+    "id": "ontology",
+    "description": "Description of the disease's place in the ontology tree"
+  },
+  {
+    "id": "ontology/isTherapeuticArea",
+    "description": "Boolean column indicating if a disease is root of the ontology tree, a therapeutic area"
+  },
+  {
+    "id": "ontology/leaf",
+    "description": "Boolean column indicating if a disease is a leaf entity in the ontology tree"
+  },
+  {
+    "id": "ontology/sources",
+    "description": "Source of the ontology"
+  },
+  {
+    "id": "ontology/sources/name",
+    "description": "Lable of the term in the ontology"
+  },
+  {
+    "id": "ontology/sources/url",
+    "description": "Disease URL from source"
+  },
+  {
+    "id": "parents",
+    "description": "List of parent disease terms"
+  },
+  {
+    "id": "relatedSynonyms",
+    "description": "List of related synonyms"
+  },
+  {
+    "id": "synonyms",
+    "description": "List of synonymous disease labels"
+  },
+  {
+    "id": "synonyms/hasBroadSynonym",
+    "description": "List of broadly related sysnonyms"
+  },
+  {
+    "id": "synonyms/hasExactSynonym",
+    "description": "List of exact synonyms"
+  },
+  {
+    "id": "synonyms/hasNarrowSynonym",
+    "description": "List of closely related sysnonyms"
+  },
+  {
+    "id": "synonyms/hasRelatedSynonym",
+    "description": "List of related synonyms"
+  },
+  {
+    "id": "therapeuticAreas",
+    "description": "List of major therapeutic areas the disease belongs to"
+  }
+]

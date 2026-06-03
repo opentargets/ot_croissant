@@ -1,0 +1,80 @@
+[
+  {
+    "id": "celltypeDistribution",
+    "description": "Describes the distribution pattern of the target's expression in various cell types"
+  },
+  {
+    "id": "celltypeSpecificity",
+    "description": "Describes the specificity of the target's expression across different cell types"
+  },
+  {
+    "id": "geneticConstraint",
+    "description": "Represents the genetic constraint of the target, indicating how intolerant it is to genetic variation"
+  },
+  {
+    "id": "hasHighQualityChemicalProbes",
+    "description": "Indicates if there are high-quality chemical probes available for the target"
+  },
+  {
+    "id": "hasLigand",
+    "description": "Indicates if the target binds at least one high-quality ligand"
+  },
+  {
+    "id": "hasPocket",
+    "description": "Indicates if the target has predicted binding pockets suitable for small molecule binding"
+  },
+  {
+    "id": "hasSafetyEvent",
+    "description": "Indicates if there are known safety events associated with the target"
+  },
+  {
+    "id": "hasSmallMoleculeBinder",
+    "description": "Indicates if the target has at least one small molecule binder"
+  },
+  {
+    "id": "hasTEP",
+    "description": "Indicates if a Target Enabling Package (TEP) is available for the target"
+  },
+  {
+    "id": "isCancerDriverGene",
+    "description": "Indicates if the target is identified as a cancer driver gene"
+  },
+  {
+    "id": "isInMembrane",
+    "description": "Indicates if the target protein is located in the cell or plasma membrane"
+  },
+  {
+    "id": "isSecreted",
+    "description": "Indicates if the target protein is secreted or predicted to be secreted"
+  },
+  {
+    "id": "maxClinicalStage",
+    "description": "Score derived from the highest clinical stage that the target has reached for any indication"
+  },
+  {
+    "id": "mouseKOScore",
+    "description": "Represents the phenotypic score from mouse knockout models for the target"
+  },
+  {
+    "id": "mouseOrthologMaxIdentityPercentage",
+    "description": "Maximum percentage identity between the target and its mouse ortholog"
+  },
+  {
+    "id": "paralogMaxIdentityPercentage",
+    "description": "Maximum percentage identity among the target's paralogues"
+  },
+  {
+    "id": "targetId",
+    "description": "Unique identifier for the target, typically an Ensembl gene ID",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "tissueDistribution",
+    "description": "Describes the distribution pattern of the target's expression in various tissues"
+  },
+  {
+    "id": "tissueSpecificity",
+    "description": "Describes the specificity of the target's expression across different tissues"
+  }
+]

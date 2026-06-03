@@ -1,0 +1,63 @@
+[
+  {
+    "id": "canonicalSmiles",
+    "description": "Standardised chemical structure representation using SMILES notation"
+  },
+  {
+    "id": "childChemblIds",
+    "description": "List of Open Targets molecule identifiers of derivative compounds"
+  },
+  {
+    "id": "crossReferences",
+    "description": "List of identifiers in other databases"
+  },
+  {
+    "id": "crossReferences/ids",
+    "description": "List of identifiers in other databases"
+  },
+  {
+    "id": "crossReferences/source",
+    "description": "Database source name"
+  },
+  {
+    "id": "description",
+    "description": "Summary of the drug's clinical development"
+  },
+  {
+    "id": "drugType",
+    "description": "Classification of the molecule's therapeutic category or chemical class (e.g. Antibody)"
+  },
+  {
+    "id": "id",
+    "description": "Open Targets molecule identifier",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "inchiKey",
+    "description": "Chemical identifier generated from the molecular structure"
+  },
+  {
+    "id": "maximumClinicalStage",
+    "description": "Display name of the highest clinical stage reached by the drug (e.g. 'approved', 'phase III')"
+  },
+  {
+    "id": "molblock",
+    "description": "Mol Block is a chemical structure file format that serves as a connection table, representing molecules through a list of atoms, bonds, and spatial coordinates"
+  },
+  {
+    "id": "name",
+    "description": "Generic name of the drug molecule"
+  },
+  {
+    "id": "parentId",
+    "description": "Open Targets molecule identifier of the parent molecule for derivative compounds"
+  },
+  {
+    "id": "synonyms",
+    "description": "List of alternative names for the drug"
+  },
+  {
+    "id": "tradeNames",
+    "description": "List of brand names for the drug"
+  }
+]

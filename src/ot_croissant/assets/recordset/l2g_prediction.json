@@ -1,0 +1,38 @@
+[
+  {
+    "id": "features",
+    "description": "List of Locus-to-Gene (L2G) feature values"
+  },
+  {
+    "id": "features/name",
+    "description": "Name of the feature used in Locus-to-Gene (L2G) prediction"
+  },
+  {
+    "id": "features/shapValue",
+    "description": "SHAP value of the feature"
+  },
+  {
+    "id": "features/value",
+    "description": "Value of the feature"
+  },
+  {
+    "id": "geneId",
+    "description": "Identifier of the gene/target",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "score",
+    "description": "Locus-to-Gene (L2G) score prediction for the given studyLocusId-geneId pair"
+  },
+  {
+    "id": "shapBaseValue",
+    "description": "SHAP base value"
+  },
+  {
+    "id": "studyLocusId",
+    "description": "Study-locus identifier for the credible set",
+    "foreign_key": "credible_set/studyLocusId",
+    "isPrimaryKey": true
+  }
+]

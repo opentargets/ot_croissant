@@ -1,0 +1,47 @@
+[
+  {
+    "id": "actionType",
+    "description": "Classification of how the drug interacts with its target (e.g., ACTIVATOR)"
+  },
+  {
+    "id": "chemblIds",
+    "description": "List of Open Targets molecule identifiers",
+    "foreign_key": "drug_molecule/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "mechanismOfAction",
+    "description": "Drug pharmacological action",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "references",
+    "description": "List of sources documenting the mechanism information"
+  },
+  {
+    "id": "references/ids",
+    "description": "List of identification codes for the reference sources"
+  },
+  {
+    "id": "references/source",
+    "description": "List of source names documenting the mechanism information"
+  },
+  {
+    "id": "references/urls",
+    "description": "List of web addresses referencing the mechanism information"
+  },
+  {
+    "id": "targetName",
+    "description": "Specific biological entity on which the drug has an effect"
+  },
+  {
+    "id": "targetType",
+    "description": "Classification of the target's biological category (e.g., protein complex)"
+  },
+  {
+    "id": "targets",
+    "description": "List of Open Targets target identifiers",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  }
+]

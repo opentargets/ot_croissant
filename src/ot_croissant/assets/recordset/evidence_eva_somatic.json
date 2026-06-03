@@ -1,0 +1,119 @@
+[
+  {
+    "id": "alleleOrigins",
+    "description": "Origin of the variant allele"
+  },
+  {
+    "id": "allelicRequirements",
+    "description": "Inheritance patterns"
+  },
+  {
+    "id": "clinicalSignificances",
+    "description": "Standard terms to define clinical significance"
+  },
+  {
+    "id": "cohortPhenotypes",
+    "description": "Clinical features/phenotypes observed in studied individuals"
+  },
+  {
+    "id": "confidence",
+    "description": "Confidence qualifier on the reported evidence"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "directionOnTarget",
+    "description": "Effect of direction on target"
+  },
+  {
+    "id": "directionOnTrait",
+    "description": "Predicted direction of effect on the trait"
+  },
+  {
+    "id": "diseaseFromSource",
+    "description": "Disease label from the original source"
+  },
+  {
+    "id": "diseaseFromSourceId",
+    "description": "Disease identifier from the original source"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Date of the earliest publication supporting the evidence"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "releaseDate",
+    "description": "Date of the release of the data in a 'YYYY-MM-DD' format"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "studyId",
+    "description": "Identifier of the study generating the data"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "variantFromSourceId",
+    "description": "Identifier of the disease-causing variant at source"
+  },
+  {
+    "id": "variantFunctionalConsequenceId",
+    "description": "Sequence ontology (SO) identifier of the functional consequence of the variant [bioregistry:so]",
+    "foreign_key": "so/id"
+  },
+  {
+    "id": "variantHgvsId",
+    "description": "Identifier in HGVS notation of the disease-causing variant"
+  },
+  {
+    "id": "variantId",
+    "description": "Identifier in CHROM_POS_REF_ALT notation of the disease-causing variant",
+    "foreign_key": "variant/variantId"
+  },
+  {
+    "id": "variantRsId",
+    "description": "Variant reference SNP cluster ID (Rsid)"
+  }
+]

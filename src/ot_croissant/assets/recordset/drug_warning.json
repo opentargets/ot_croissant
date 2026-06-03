@@ -1,0 +1,62 @@
+[
+  {
+    "id": "chemblIds",
+    "description": "List of Open Targets molecule identifiers",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "country",
+    "description": "Country where the warning was issued"
+  },
+  {
+    "id": "description",
+    "description": "Description of the drug adverse effect"
+  },
+  {
+    "id": "efoId",
+    "description": "List of disease identifiers",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "efoIdForWarningClass",
+    "description": "Disease identifier categorising the type of warning",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "efoTerm",
+    "description": "List of disease labels"
+  },
+  {
+    "id": "id",
+    "description": "Internal identifier for the drug warning record",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "references",
+    "description": "List of sources supporting the warning information"
+  },
+  {
+    "id": "references/id",
+    "description": "List of identifiers for the reference sources"
+  },
+  {
+    "id": "references/source",
+    "description": "List of bodies reporting the warning"
+  },
+  {
+    "id": "references/url",
+    "description": "List of web addresses referencing the information"
+  },
+  {
+    "id": "toxicityClass",
+    "description": "Classification of toxicity type associated with the drug"
+  },
+  {
+    "id": "warningType",
+    "description": "Classification of action taken (drug is withdrawn or has a black box warning)"
+  },
+  {
+    "id": "year",
+    "description": "Year when the warning was issued"
+  }
+]

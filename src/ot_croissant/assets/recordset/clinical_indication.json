@@ -1,0 +1,26 @@
+[
+  {
+    "id": "clinicalReportIds",
+    "description": "List of clinical report identifiers associated with this indication",
+    "foreign_key": "clinical_report/id"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "drugId",
+    "description": "Open Targets molecule identifier",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "id",
+    "description": "Unique identifier for the clinical indication",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "maxClinicalStage",
+    "description": "Maximum clinical stage reached for this drug-disease indication"
+  }
+]
