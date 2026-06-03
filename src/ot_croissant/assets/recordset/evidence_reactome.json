@@ -1,0 +1,89 @@
+[
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "diseaseFromSource",
+    "description": "Disease label from the original source"
+  },
+  {
+    "id": "diseaseFromSourceId",
+    "description": "Disease identifier from the original source"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "pathways",
+    "description": "List of pooled pathways"
+  },
+  {
+    "id": "pathways/id",
+    "description": "Reactome pathway identifier [bioregistry:reactome]"
+  },
+  {
+    "id": "pathways/name",
+    "description": "Pathway or gene set/pathway name"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Date of the earliest publication supporting the evidence"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "reactionId",
+    "description": "Pathway, gene set or reaction identifier in Reactome"
+  },
+  {
+    "id": "reactionName",
+    "description": "Name of the reaction, patway or gene set in Reactome"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "targetModulation",
+    "description": "Description of target modulation event"
+  },
+  {
+    "id": "variantAminoacidDescriptions",
+    "description": "Descriptions of variant consequences at protein level"
+  }
+]

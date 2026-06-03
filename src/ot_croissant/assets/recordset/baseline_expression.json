@@ -1,0 +1,87 @@
+[
+  {
+    "id": "celltypeBiosampleFromSource",
+    "description": "Tissue or cell type reported by study"
+  },
+  {
+    "id": "celltypeBiosampleId",
+    "description": "Cell type identifier that maps to the cell type reported by study [bioregistry:cell ontology]",
+    "foreign_key": "biosample/biosampleId",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "celltypeBiosampleParentId",
+    "description": "Broad cell type identifier that maps to the cell type reported by study [bioregistry:cell ontology]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Origin of expression data",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of expression data"
+  },
+  {
+    "id": "distribution_score",
+    "description": "Proportion of biosamples, within the dataset, that display median expression above a threshold"
+  },
+  {
+    "id": "max",
+    "description": "Maximum value of expression"
+  },
+  {
+    "id": "median",
+    "description": "Median value of expression"
+  },
+  {
+    "id": "min",
+    "description": "Minimum value of expression"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Quality control flags or notes for baseline expression"
+  },
+  {
+    "id": "q1",
+    "description": "First quantile of expression"
+  },
+  {
+    "id": "q3",
+    "description": "Third quantile of expression"
+  },
+  {
+    "id": "specificity_score",
+    "description": "Measure of how specific expression is to a biosample"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target identifier from the source"
+  },
+  {
+    "id": "targetId",
+    "description": "Unique identifier for the target",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "tissueBiosampleFromSource",
+    "description": "Cell type reported by study"
+  },
+  {
+    "id": "tissueBiosampleId",
+    "description": "Tissue identifier that maps to the tissue reported by study [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "tissueBiosampleParentId",
+    "description": "Broad tissue identifier that maps to the tissue reported by study [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "unit",
+    "description": "Unit for the target expression"
+  }
+]

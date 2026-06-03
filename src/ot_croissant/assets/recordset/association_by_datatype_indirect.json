@@ -1,0 +1,55 @@
+[
+  {
+    "id": "aggregationType",
+    "description": "Evidence column used to aggregate data: datatypeId"
+  },
+  {
+    "id": "aggregationValue",
+    "description": "Datasource identifier of the group: eg. genetics_literature",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "associationScore",
+    "description": "Current disease/target association score of evidence from the given datatype"
+  },
+  {
+    "id": "currentNovelty",
+    "description": "Novelty of the disease/target association"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "evidenceCount",
+    "description": "Total number of evidence supporting the disease/target association for a given datatype"
+  },
+  {
+    "id": "targetId",
+    "description": "Unique identifier for the target [bioregistry:ensembl]",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "timeseries",
+    "description": "Timeseries describing the evolution of association"
+  },
+  {
+    "id": "timeseries/associationScore",
+    "description": "Association score based on evidence up until a given year"
+  },
+  {
+    "id": "timeseries/novelty",
+    "description": "Novelty of the association at the given year"
+  },
+  {
+    "id": "timeseries/year",
+    "description": "Year, until evidence is considered"
+  },
+  {
+    "id": "timeseries/yearlyEvidenceCount",
+    "description": "Number of evidence reported at a given year"
+  }
+]

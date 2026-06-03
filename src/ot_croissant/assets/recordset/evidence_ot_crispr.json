@@ -1,0 +1,97 @@
+[
+  {
+    "id": "cellLineBackground",
+    "description": "Background of the derived cell lines"
+  },
+  {
+    "id": "cellType",
+    "description": "The studied cell type. Preferably the cell line ontology label"
+  },
+  {
+    "id": "contrast",
+    "description": "Experiment contrast"
+  },
+  {
+    "id": "crisprScreenLibrary",
+    "description": "Applied screening library in the CRISPR/Cas9 project"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "log2FoldChangeValue",
+    "description": "Log 2 fold expression change in contrast experiment"
+  },
+  {
+    "id": "projectDescription",
+    "description": "Description of the project that generated the data"
+  },
+  {
+    "id": "projectId",
+    "description": "The identifer of the project that generated the data"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "releaseDate",
+    "description": "Date of the release of the data in a 'YYYY-MM-DD' format"
+  },
+  {
+    "id": "releaseVersion",
+    "description": "Open Targets data release version"
+  },
+  {
+    "id": "resourceScore",
+    "description": "Score provided by datasource indicating strength of target-disease association"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "statisticalTestTail",
+    "description": "End of the distribution the target was picked from"
+  },
+  {
+    "id": "studyId",
+    "description": "Identifier of the study generating the data"
+  },
+  {
+    "id": "studyOverview",
+    "description": "Description of the study"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  }
+]

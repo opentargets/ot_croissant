@@ -1,0 +1,61 @@
+[
+  {
+    "id": "geneEssentiality",
+    "description": "Essentiality measurements of the gene based on CRISPR screening data in different cellular models"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality",
+    "description": "Essentiality measurements extraced from DepMap, stratified by tissue or anatomical units"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/screens",
+    "description": "List of CRISPR screening experiments supporting the essentiality assessment"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/screens/cellLineName",
+    "description": "Name of the cancer cell line in which the gene essentiality was assessed"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/screens/depmapId",
+    "description": "Unique identifier of the assay in DepMap"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/screens/diseaseCellLineId",
+    "description": "Cell model passport identifier of a cell line modelling a disease"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/screens/diseaseFromSource",
+    "description": "Disease associated with the cell line as reported in the source data"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/screens/expression",
+    "description": "Gene expression level in the corresponding cell line"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/screens/geneEffect",
+    "description": "Gene effect score indicating the impact of gene knockout"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/screens/mutation",
+    "description": "Background mutation in the tested cell line"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/tissueId",
+    "description": "Identifier of the tissue from which the cells were sampled for assay [bioregistry:uberon]",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "geneEssentiality/depMapEssentiality/tissueName",
+    "description": "Name of the tissue from which the cells were sample for assay"
+  },
+  {
+    "id": "geneEssentiality/isEssential",
+    "description": "Boolean flag indicating whether the tested gene is considered essential in the given context"
+  },
+  {
+    "id": "id",
+    "description": "Target identifier the essentiality was measured on [bioregistry:ensembl]",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  }
+]

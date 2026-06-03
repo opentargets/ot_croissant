@@ -1,0 +1,165 @@
+[
+  {
+    "id": "allelicRequirements",
+    "description": "Inheritance patterns"
+  },
+  {
+    "id": "ancestry",
+    "description": "Genetic origin of a population"
+  },
+  {
+    "id": "ancestryId",
+    "description": "Identifier of the ancestry in the HANCESTRO ontology [bioregistry:hancestro]"
+  },
+  {
+    "id": "beta",
+    "description": "Effect size of numeric traits"
+  },
+  {
+    "id": "betaConfidenceIntervalLower",
+    "description": "Lower value of the confidence interval"
+  },
+  {
+    "id": "betaConfidenceIntervalUpper",
+    "description": "Upper value of the confidence interval"
+  },
+  {
+    "id": "cohortId",
+    "description": "Identifier of the studied cohort"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "directionOnTarget",
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
+  },
+  {
+    "id": "directionOnTrait",
+    "description": "Predicted direction of effect on the trait"
+  },
+  {
+    "id": "diseaseFromSource",
+    "description": "Disease label from the original source"
+  },
+  {
+    "id": "diseaseFromSourceId",
+    "description": "Disease identifier from the original source"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "oddsRatio",
+    "description": "Size of effect captured as odds ratio"
+  },
+  {
+    "id": "oddsRatioConfidenceIntervalLower",
+    "description": "Lower value of the confidence interval for odds ratio"
+  },
+  {
+    "id": "oddsRatioConfidenceIntervalUpper",
+    "description": "Upper value of the confidence interval for odds ratio"
+  },
+  {
+    "id": "pValueExponent",
+    "description": "Exponent of the p-value"
+  },
+  {
+    "id": "pValueMantissa",
+    "description": "Mantissa of the p-value"
+  },
+  {
+    "id": "projectId",
+    "description": "The identifer of the project that generated the data"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Date of the earliest publication supporting the evidence"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "releaseVersion",
+    "description": "Open Targets data release version"
+  },
+  {
+    "id": "resourceScore",
+    "description": "Score provided by datasource indicating strength of target-disease association"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "sex",
+    "description": "Sex of the samples/population included in the analysis"
+  },
+  {
+    "id": "statisticalMethod",
+    "description": "Statistical method used to calculate the association"
+  },
+  {
+    "id": "statisticalMethodOverview",
+    "description": "Overview of the statistical method used to calculate the association"
+  },
+  {
+    "id": "studyCases",
+    "description": "Number of cases in case-control study"
+  },
+  {
+    "id": "studyCasesWithQualifyingVariants",
+    "description": "Number of cases in case-control study that carry at least one allele of the qualifying variant"
+  },
+  {
+    "id": "studySampleSize",
+    "description": "Sample size of study"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "urls",
+    "description": "Reference to linked external resource (e.g. clinical trials, studies, package inserts, reports, etc.)"
+  },
+  {
+    "id": "urls/niceName",
+    "description": "Human readable label of the remote reference"
+  },
+  {
+    "id": "urls/url",
+    "description": "URL to remote resource"
+  }
+]

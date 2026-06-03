@@ -1,0 +1,31 @@
+[
+  {
+    "id": "id",
+    "description": "Unique identifier for the Reactome pathway [bioregistry:reactome]",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "label",
+    "description": "Name or label of the pathway"
+  },
+  {
+    "id": "ancestors",
+    "description": "List of ancestor pathways in the ontology"
+  },
+  {
+    "id": "descendants",
+    "description": "List of descendant pathways in the ontology"
+  },
+  {
+    "id": "children",
+    "description": "Direct child pathways of the current pathway"
+  },
+  {
+    "id": "parents",
+    "description": "Direct parent pathways of the current pathway"
+  },
+  {
+    "id": "path",
+    "description": "Hierarchical path representing the position of the pathway in Reactome"
+  }
+]

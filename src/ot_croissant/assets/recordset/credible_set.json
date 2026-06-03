@@ -1,0 +1,161 @@
+[
+  {
+    "id": "beta",
+    "description": "Beta coefficient of the lead variant"
+  },
+  {
+    "id": "chromosome",
+    "description": "Chromosome which the credible set is located"
+  },
+  {
+    "id": "confidence",
+    "description": "Description of how this credible set was derived in terms of data and fine-mapping method"
+  },
+  {
+    "id": "credibleSetIndex",
+    "description": "Integer label for the order of credible sets from study-region"
+  },
+  {
+    "id": "credibleSetlog10BF",
+    "description": "Log10 Bayes factor for the entire credible set"
+  },
+  {
+    "id": "effectAlleleFrequencyFromSource",
+    "description": "Allele frequency of the lead variant from the GWAS"
+  },
+  {
+    "id": "finemappingMethod",
+    "description": "Method used for fine-mapping of credible set"
+  },
+  {
+    "id": "isTransQtl",
+    "description": "Boolean for whether this credible set is a trans-pQTL or not"
+  },
+  {
+    "id": "ldSet",
+    "description": "Array of structs which denote the variants in LD with the credible set lead variant"
+  },
+  {
+    "id": "ldSet/r2Overall",
+    "description": "The R-squared value for the tag variants with the credible set lead variant"
+  },
+  {
+    "id": "ldSet/tagVariantId",
+    "description": "The variant ID for tag variants in LD with the credible set lead variant"
+  },
+  {
+    "id": "locus",
+    "description": "Array of structs which denote the variants within the credible set"
+  },
+  {
+    "id": "locus/beta",
+    "description": "Beta coefficient of this variant in the credible set"
+  },
+  {
+    "id": "locus/is95CredibleSet",
+    "description": "Boolean for if the variant is part of the 95% credible set"
+  },
+  {
+    "id": "locus/is99CredibleSet",
+    "description": "Boolean for if the variant is part of the 99% credible set"
+  },
+  {
+    "id": "locus/logBF",
+    "description": "Log (natural) Bayes factor for the variant from fine-mapping"
+  },
+  {
+    "id": "locus/pValueExponent",
+    "description": "Exponent of the P-value for this variant in the credible set"
+  },
+  {
+    "id": "locus/pValueMantissa",
+    "description": "Mantissa of the P-value for this variant in the credible set"
+  },
+  {
+    "id": "locus/posteriorProbability",
+    "description": "Posterior inclusion probability for the variant within this credible set"
+  },
+  {
+    "id": "locus/r2Overall",
+    "description": "R-squared (LD) between this credible set variant and the lead variant"
+  },
+  {
+    "id": "locus/standardError",
+    "description": "Standard error of this variant in the credible set"
+  },
+  {
+    "id": "locus/variantId",
+    "description": "Variant ID for this variant in the credible set"
+  },
+  {
+    "id": "locusEnd",
+    "description": "End position of the region that was fine-mapped for this credible set"
+  },
+  {
+    "id": "locusStart",
+    "description": "Start position of the region that was fine-mapped for this credible set"
+  },
+  {
+    "id": "pValueExponent",
+    "description": "Exponent value of the lead variant P-value"
+  },
+  {
+    "id": "pValueMantissa",
+    "description": "Mantissa value of the lead variant P-value"
+  },
+  {
+    "id": "position",
+    "description": "Position of the lead variant for the credible set (GRCh38)"
+  },
+  {
+    "id": "purityMeanR2",
+    "description": "Mean R-squared linkage disequilibrium for variants in the credible set"
+  },
+  {
+    "id": "purityMinR2",
+    "description": "Minimum R-squared linkage disequilibrium for variants in the credible set"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Quality control flags for this credible set"
+  },
+  {
+    "id": "region",
+    "description": "Start and end positions of the region used for fine-mapping"
+  },
+  {
+    "id": "sampleSize",
+    "description": "Sample size of the study from which this credible set is derived"
+  },
+  {
+    "id": "standardError",
+    "description": "Standard error of the lead variant"
+  },
+  {
+    "id": "studyId",
+    "description": "Identifier for the study which the credible set is derived",
+    "foreign_key": "study/studyId"
+  },
+  {
+    "id": "studyLocusId",
+    "description": "Study-locus identifier for the credible set",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "studyType",
+    "description": "Descriptor for whether the credible set is derived from GWAS or molecular QTL"
+  },
+  {
+    "id": "subStudyDescription",
+    "description": "[Deprecated]"
+  },
+  {
+    "id": "variantId",
+    "description": "The lead variant for the credible set, by posterior probability",
+    "foreign_key": "variant/variantId"
+  },
+  {
+    "id": "zScore",
+    "description": "Z-score of the lead variant from the GWAS"
+  }
+]

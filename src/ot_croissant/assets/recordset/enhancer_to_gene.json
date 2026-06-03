@@ -1,0 +1,77 @@
+[
+  {
+    "id": "biosampleFromSourceId",
+    "description": "Original identifier of the cell type/anatomical unit the interval was identified in"
+  },
+  {
+    "id": "biosampleId",
+    "description": "Identifier of the biosample in where the interval was discovered in",
+    "foreign_key": "biosample/biosampleId"
+  },
+  {
+    "id": "biosampleName",
+    "description": "Name of the cell type/anatomical unit the interval was identified in"
+  },
+  {
+    "id": "chromosome",
+    "description": "Chromosome the interval is located on"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifier of the interval datasource"
+  },
+  {
+    "id": "distanceToTss",
+    "description": "Distance of the interval from the transcription start site of the gene"
+  },
+  {
+    "id": "end",
+    "description": "Basepair position of the interval end"
+  },
+  {
+    "id": "geneId",
+    "description": "Ensembl gene identifier of the target the interval is linked with [bioregistry:ensembl]",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "intervalId",
+    "description": "Identifier of the interval",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "intervalType",
+    "description": "Type of the interval"
+  },
+  {
+    "id": "pmid",
+    "description": "Pubmed identifier of the publication that reported the interval data"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Quality control flags for this interval"
+  },
+  {
+    "id": "resourceScore",
+    "description": "List of contributing score components"
+  },
+  {
+    "id": "resourceScore/name",
+    "description": "Individual components which contributes to the interval score (e.g., DNase, HiC_contacts)"
+  },
+  {
+    "id": "resourceScore/value",
+    "description": "Raw signal value from the resourceScore(s)"
+  },
+  {
+    "id": "score",
+    "description": "Interval evidence score from the datasource, higher values indicate stronger support linking the interval to its target gene"
+  },
+  {
+    "id": "start",
+    "description": "Basepair position of the interval start"
+  },
+  {
+    "id": "studyId",
+    "description": "Identifier of the interval study"
+  }
+]

@@ -1,108 +1,123 @@
 """Manual curation of OT-Croissant datasets."""
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from abc import ABC, abstractmethod
 import json
+from abc import ABC, abstractmethod
 from pathlib import Path
+from typing import Generic, TypeVar
+
 from loguru import logger
+from pydantic import BaseModel
+
+from ot_croissant.models import DistributionAnnotation, InstanceAnnotation, RecordsetFieldAnnotation
+
+T = TypeVar("T", bound=BaseModel)
 
 
+class BaseCuration(ABC, Generic[T]):
+    """Abstract base class for single-file curation tables.
 
-@dataclass
-class BaseCuration(ABC):
-    """Abstract base class for curation logic."""
+    Subclasses declare which file to load (``curation_path``) and which Pydantic
+    model to validate entries against (``_model``). Entries are keyed by their
+    ``id`` field.
+    """
 
-    curation: dict = field(default_factory=dict)
-
-    def __post_init__(self: BaseCuration) -> None:
-        """Load curation data from the specified JSON file."""
-        
-        with open(self.curation_path, "r") as f:
-            data_list = json.load(f)
-        
-        self.curation = {item["id"]: item for item in data_list}
+    def __init__(self) -> None:
+        data = json.loads(self.curation_path.read_text())
+        self._curation: dict[str, T] = {
+            item["id"]: self._model.model_validate(item) for item in data
+        }
 
     @property
     @abstractmethod
-    def curation_path(self: BaseCuration) -> Path:
-        """Path to the curation JSON file.
-        
-        Returns:
-            Path to the curation JSON file.
-        """
-        pass
-
-    @abstractmethod
-    def get_warning_message(self: BaseCuration, distribution_id: str, key: str) -> str:
-        """Generate a warning message for missing curation.
-        
-        Args:
-            distribution_id: The ID of the distribution.
-            key: The key of the curation.
-            
-        Returns:
-            Warning message string.
-        """
-        pass
-
-    def get_curation(self: BaseCuration, distribution_id: str, key: str, log_level:str='WARNING') -> str | None:
-        """Get curation entry for a given distribution ID and key.
-
-        Args:
-            distribution_id: The ID of the distribution.
-            key: The key of the curation.
-
-        Returns:
-            The value of the curation or None if not found.
-        """
-        curation_entry = self.curation.get(distribution_id)
-        if curation_entry and key in curation_entry:
-            return curation_entry[key]
-        else:
-            logger.log(log_level, self.get_warning_message(distribution_id, key))
-            return None
-
-
-class DistributionCuration(BaseCuration):
-    """Curation logic for distribution datasets."""
+    def curation_path(self) -> Path:
+        """Path to the JSON curation file."""
 
     @property
-    def curation_path(self: DistributionCuration) -> Path:
-        """Path to the curation JSON file for distribution datasets.
-        Returns:
-            Path to the curation JSON file.
-        """
-        return Path(__file__).parent / "assets/distribution.json"
+    @abstractmethod
+    def _model(self) -> type[T]:
+        """Pydantic model class used to validate each entry."""
 
-    def get_warning_message(self: DistributionCuration, distribution_id: str, key: str) -> str:
-        """Generate a warning message for missing curation in distribution datasets.
-        Args:
-            distribution_id: The ID of the distribution.
-            key: The key of the curation.
-        Returns:
-            Warning message string.
-        """
-        return f"[Distribution]: Key '{key}' not found in curation table for '{distribution_id}'."
+    def get(self, id: str, log_level: str = "WARNING") -> T | None:
+        """Return the curation entry for *id*, or ``None`` if not found."""
+        entry = self._curation.get(id)
+        if entry is None:
+            logger.log(
+                log_level,
+                f"[{type(self).__name__}]: No curation entry found for '{id}'.",
+            )
+        return entry
 
 
-class RecordsetCuration(BaseCuration):
-    """Curation logic for recordset datasets."""
+class DistributionCuration(BaseCuration[DistributionAnnotation]):
+    """Curation for top-level dataset distributions."""
 
     @property
     def curation_path(self) -> Path:
-        return Path(__file__).parent / "assets/recordset.json"
+        return Path(__file__).parent / "assets/distribution.json"
 
-    def get_warning_message(self, distribution_id: str, key: str) -> str:
-        return f"[Recordset]: Field '{key}' not found in curation table for '{distribution_id}'."
-    
+    @property
+    def _model(self) -> type[DistributionAnnotation]:
+        return DistributionAnnotation
 
-class InstanceCuration(BaseCuration):
-    """Curation logic for Platform instances."""
+
+class InstanceCuration(BaseCuration[InstanceAnnotation]):
+    """Curation for Platform instances (public / ppp)."""
 
     @property
     def curation_path(self) -> Path:
         return Path(__file__).parent / "assets/instance.json"
 
-    def get_warning_message(self, distribution_id: str, key: str) -> str:
-        return f"[Instance]: Field '{key}' not found in curation table for '{distribution_id}'."
+    @property
+    def _model(self) -> type[InstanceAnnotation]:
+        return InstanceAnnotation
+
+
+class RecordsetCuration:
+    """Curation for individual fields within recordset datasets.
+
+    Loads per-dataset JSON files from ``assets/recordset/<dataset>.json`` lazily
+    and caches them at the class level so each file is read at most once per
+    process.
+    """
+
+    _RECORDSET_DIR = Path(__file__).parent / "assets/recordset"
+    _cache: dict[str, dict[str, RecordsetFieldAnnotation]] = {}
+
+    def _load_dataset(self, dataset: str) -> dict[str, RecordsetFieldAnnotation]:
+        if dataset not in self._cache:
+            path = self._RECORDSET_DIR / f"{dataset}.json"
+            if not path.exists():
+                self._cache[dataset] = {}
+                return {}
+            entries = json.loads(path.read_text())
+            self._cache[dataset] = {
+                e["id"]: RecordsetFieldAnnotation.model_validate(e) for e in entries
+            }
+        return self._cache[dataset]
+
+    def get_field(
+        self, distribution_id: str, log_level: str = "WARNING"
+    ) -> RecordsetFieldAnnotation | None:
+        """Return the annotation for a field, or ``None`` if not found.
+
+        Args:
+            distribution_id: Full field path as ``dataset/field`` or
+                ``dataset/parent/field`` for nested fields.
+            log_level: Loguru level used when the entry is missing.
+        """
+        if "/" not in distribution_id:
+            logger.log(
+                log_level,
+                f"[RecordsetCuration]: Unexpected id format '{distribution_id}' — expected 'dataset/field'.",
+            )
+            return None
+
+        dataset, field_path = distribution_id.split("/", 1)
+        entry = self._load_dataset(dataset).get(field_path)
+        if entry is None:
+            logger.log(
+                log_level,
+                f"[RecordsetCuration]: No curation entry found for '{distribution_id}'.",
+            )
+        return entry

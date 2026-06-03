@@ -1,0 +1,175 @@
+[
+  {
+    "id": "alleleFrequencies",
+    "description": "Allele frequencies of the variant in different populations"
+  },
+  {
+    "id": "alleleFrequencies/alleleFrequency",
+    "description": "Frequency of the alternate allele in the population"
+  },
+  {
+    "id": "alleleFrequencies/populationName",
+    "description": "Name of the population"
+  },
+  {
+    "id": "alternateAllele",
+    "description": "Alternate allele for the variant"
+  },
+  {
+    "id": "chromosome",
+    "description": "Chromosome on which the variant is located"
+  },
+  {
+    "id": "dbXrefs",
+    "description": "Cross-references for the variant in different databases"
+  },
+  {
+    "id": "dbXrefs/id",
+    "description": "Identifier of the variant in the given database"
+  },
+  {
+    "id": "dbXrefs/source",
+    "description": "Name of the database the variant is referenced in"
+  },
+  {
+    "id": "hgvsId",
+    "description": "HGVS identifier of the variant"
+  },
+  {
+    "id": "mostSevereConsequenceId",
+    "description": "Sequence ontology identifier of the most severe consequence of the variant based on Ensembl VEP [bioregistry:so]",
+    "foreign_key": "so/id"
+  },
+  {
+    "id": "position",
+    "description": "Variant's position on the chromosome"
+  },
+  {
+    "id": "referenceAllele",
+    "description": "Reference allele for the variant"
+  },
+  {
+    "id": "rsIds",
+    "description": "RsIds for the variant"
+  },
+  {
+    "id": "transcriptConsequences",
+    "description": "Predicted consequences on transcript context"
+  },
+  {
+    "id": "transcriptConsequences/aminoAcidChange",
+    "description": "Amino acid change caused by this variant on this gene"
+  },
+  {
+    "id": "transcriptConsequences/appris",
+    "description": "Appris annotation of the transcript"
+  },
+  {
+    "id": "transcriptConsequences/approvedSymbol",
+    "description": "HGNC gene symbol"
+  },
+  {
+    "id": "transcriptConsequences/biotype",
+    "description": "Biotype of the transcript"
+  },
+  {
+    "id": "transcriptConsequences/codons",
+    "description": "Affected codon in the transcript"
+  },
+  {
+    "id": "transcriptConsequences/consequenceScore",
+    "description": "Score assigned to transcript based on Ensembl VEP consequence"
+  },
+  {
+    "id": "transcriptConsequences/distanceFromFootprint",
+    "description": "Distance of the variant from the transcript"
+  },
+  {
+    "id": "transcriptConsequences/distanceFromTss",
+    "description": "Distance of the variant from the transcription start site"
+  },
+  {
+    "id": "transcriptConsequences/impact",
+    "description": "Ensembl VEP predicted impact of the variant on the transcript"
+  },
+  {
+    "id": "transcriptConsequences/isEnsemblCanonical",
+    "description": "Flagging if the transcript is the canonical transcript for the gene"
+  },
+  {
+    "id": "transcriptConsequences/lofteePrediction",
+    "description": "Loss-of-function prediction based on LOFTEE"
+  },
+  {
+    "id": "transcriptConsequences/maneSelect",
+    "description": "MANE annotation of the transcript"
+  },
+  {
+    "id": "transcriptConsequences/polyphenPrediction",
+    "description": "Polyphen prediction of the variant impact on the transcript"
+  },
+  {
+    "id": "transcriptConsequences/siftPrediction",
+    "description": "SIFT prediction of the variant impact on the transcript"
+  },
+  {
+    "id": "transcriptConsequences/targetId",
+    "description": "Open Target target identifier of the transcript [bioregistry:ensembl]",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "transcriptConsequences/transcriptId",
+    "description": "Ensembl transcript identifier [bioregistry:ensembl]"
+  },
+  {
+    "id": "transcriptConsequences/transcriptIndex",
+    "description": "Index of the transcript in the list of transcripts around the gene"
+  },
+  {
+    "id": "transcriptConsequences/uniprotAccessions",
+    "description": "Uniprot identifiers of the gene product [bioregistry:uniprot]"
+  },
+  {
+    "id": "transcriptConsequences/variantFunctionalConsequenceIds",
+    "description": "The sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript [bioregistry:so]",
+    "foreign_key": "so/id"
+  },
+  {
+    "id": "variantDescription",
+    "description": "Short summary of the variant effect"
+  },
+  {
+    "id": "variantEffect",
+    "description": "Predicted or measured effect of the variant based on various methods"
+  },
+  {
+    "id": "variantEffect/assessment",
+    "description": "Textual assessment of the variant effect"
+  },
+  {
+    "id": "variantEffect/assessmentFlag",
+    "description": "Flagging if the variant effect is considered pathogenic"
+  },
+  {
+    "id": "variantEffect/method",
+    "description": "Method name used to predict the effect of the variant"
+  },
+  {
+    "id": "variantEffect/normalisedScore",
+    "description": "Variant effect normalised between -1 and 1"
+  },
+  {
+    "id": "variantEffect/score",
+    "description": "Score of the variant effect"
+  },
+  {
+    "id": "variantEffect/targetId",
+    "description": "Target identifier on which the variant effect is interpreted [bioregistry:ensembl]",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "variantId",
+    "description": "Unique identifier for the variant following schema: {chromosome}-{position}-{referenceAllele}-{alternateAllele}",
+    "isPrimaryKey": true
+  }
+]

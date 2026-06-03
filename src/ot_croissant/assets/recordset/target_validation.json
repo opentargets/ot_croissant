@@ -1,0 +1,8 @@
+[
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  }
+]

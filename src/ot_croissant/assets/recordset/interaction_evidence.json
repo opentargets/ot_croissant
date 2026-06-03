@@ -1,0 +1,179 @@
+[
+  {
+    "id": "evidenceScore",
+    "description": "Score indicating the confidence or strength of the interaction evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "expansionMethodMiIdentifier",
+    "description": "Molecular Interactions (MI) identifier for the expansion method used [bioregistry:mi]",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "expansionMethodShortName",
+    "description": "Short name of the method used to expand the interaction dataset"
+  },
+  {
+    "id": "hostOrganismScientificName",
+    "description": "Scientific name of the host organism in which the interaction was observed"
+  },
+  {
+    "id": "hostOrganismTaxId",
+    "description": "NCBI taxon ID of the host organism"
+  },
+  {
+    "id": "hostOrganismTissue",
+    "description": "Tissue of the host organism where the interaction was identified"
+  },
+  {
+    "id": "hostOrganismTissue/fullName",
+    "description": "Full name of the tissue"
+  },
+  {
+    "id": "hostOrganismTissue/shortName",
+    "description": "Short name of the tissue"
+  },
+  {
+    "id": "hostOrganismTissue/xrefs",
+    "description": "Cross-references to external databases for the host organism's tissue"
+  },
+  {
+    "id": "intA",
+    "description": "Identifier for target A in source",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "intABiologicalRole",
+    "description": "Biological role of target A in the interaction",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "intASource",
+    "description": "Source where interactor B is identified"
+  },
+  {
+    "id": "intB",
+    "description": "Identifier for target B in source",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "intBBiologicalRole",
+    "description": "Biological role of target B in the interaction",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "intBSource",
+    "description": "Source where interactor B is identified"
+  },
+  {
+    "id": "interactionDetectionMethodMiIdentifier",
+    "description": "Molecular Interactions (MI) identifier for the interaction detection method [bioregistry:mi]",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "interactionDetectionMethodShortName",
+    "description": "Short name of the method used to detect the interaction"
+  },
+  {
+    "id": "interactionIdentifier",
+    "description": "Unique identifier for the interaction evidence entry at the source",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "interactionResources",
+    "description": "Databases providing evidence for the interaction",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "interactionResources/databaseVersion",
+    "description": "Version of the source database providing interaction evidence"
+  },
+  {
+    "id": "interactionResources/sourceDatabase",
+    "description": "Name of the source database reporting the interaction evidence"
+  },
+  {
+    "id": "interactionScore",
+    "description": "Score assigned to the interaction based on supporting evidence"
+  },
+  {
+    "id": "interactionTypeMiIdentifier",
+    "description": "Molecular Interactions (MI) identifier for the type of interaction [bioregistry:mi]"
+  },
+  {
+    "id": "interactionTypeShortName",
+    "description": "Short name of the interaction type"
+  },
+  {
+    "id": "participantDetectionMethodA",
+    "description": "Detection method used to identify participant A in the interaction"
+  },
+  {
+    "id": "participantDetectionMethodA/miIdentifier",
+    "description": "Molecular Interactions (MI) identifier for participant A's detection method [bioregistry:mi]"
+  },
+  {
+    "id": "participantDetectionMethodA/shortName",
+    "description": "Short name of participant A's detection method"
+  },
+  {
+    "id": "participantDetectionMethodB",
+    "description": "Detection method used to identify participant B in the interaction"
+  },
+  {
+    "id": "participantDetectionMethodB/miIdentifier",
+    "description": "Molecular Interactions (MI) identifier for participant B's detection method [bioregistry:mi]"
+  },
+  {
+    "id": "participantDetectionMethodB/shortName",
+    "description": "Short name of participant B's detection method"
+  },
+  {
+    "id": "pubmedId",
+    "description": "PubMed ID of the publication supporting the interaction evidence"
+  },
+  {
+    "id": "speciesA",
+    "description": "Taxonomic annotation of target A"
+  },
+  {
+    "id": "speciesA/mnemonic",
+    "description": "Short mnemonic name of the species associated with target A"
+  },
+  {
+    "id": "speciesA/scientificName",
+    "description": "Scientific name of the species associated with target A"
+  },
+  {
+    "id": "speciesA/taxonId",
+    "description": "NCBI taxon ID of the species associated with target A"
+  },
+  {
+    "id": "speciesB",
+    "description": "Taxonomic annotation of target B"
+  },
+  {
+    "id": "speciesB/mnemonic",
+    "description": "Short mnemonic name of the species associated with target B"
+  },
+  {
+    "id": "speciesB/scientificName",
+    "description": "Scientific name of the species associated with target B"
+  },
+  {
+    "id": "speciesB/taxonId",
+    "description": "NCBI taxon ID of the species associated with target B"
+  },
+  {
+    "id": "targetA",
+    "description": "Open Targets target identifier of the second molecule (target A) in the interaction [bioregistry:ensembl]",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "targetB",
+    "description": "Open Targets target identifier of the second molecule (target B) in the interaction [bioregistry:ensembl]",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  }
+]

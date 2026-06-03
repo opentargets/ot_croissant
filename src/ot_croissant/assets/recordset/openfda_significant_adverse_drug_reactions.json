@@ -1,0 +1,29 @@
+[
+  {
+    "id": "chembl_id",
+    "description": "Unique identifier for the drug or clinical candidate",
+    "foreign_key": "drug_molecule/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "count",
+    "description": "Number of occurrences of the adverse event in the dataset"
+  },
+  {
+    "id": "critval",
+    "description": "Critical value used to determine statistical significance of the association"
+  },
+  {
+    "id": "event",
+    "description": "Reported adverse drug reaction associated with the drug",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "llr",
+    "description": "Log-likelihood ratio (LLR) measuring the strength of the association between the drug and the adverse event"
+  },
+  {
+    "id": "meddraCode",
+    "description": "Medical Dictionary for Regulatory Activities (MedDRA) code for the adverse drug reaction"
+  }
+]

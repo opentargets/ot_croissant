@@ -1,0 +1,150 @@
+[
+  {
+    "id": "datasourceId",
+    "description": "Identifier for the data provider",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "datasourceVersion",
+    "description": "Data provider version number"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Classification of the type of pharmacogenomic data (e.g. clinical_annotation)"
+  },
+  {
+    "id": "directionality",
+    "description": "Indicates wether the genetic variant increases or decreases drug response"
+  },
+  {
+    "id": "drugs",
+    "description": "List of drug references",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "drugs/drugFromSource",
+    "description": "List of drug identifiers from the original data source"
+  },
+  {
+    "id": "drugs/drugId",
+    "description": "List of Open Targets drug identifiers [bioregistry:chembl]",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "evidenceLevel",
+    "description": "Strength of the scientific support for the variant/drug response"
+  },
+  {
+    "id": "genotype",
+    "description": "Genetic variant configuration"
+  },
+  {
+    "id": "genotypeAnnotationText",
+    "description": "Explanation of the genotype's clinical significance",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "genotypeId",
+    "description": "Identifier for the specific genetic variant combination (e.g. 1_1500_A_A,T)"
+  },
+  {
+    "id": "haplotypeFromSourceId",
+    "description": "Haplotype ID in the ClinPGx dataset"
+  },
+  {
+    "id": "haplotypeId",
+    "description": "Combination of genetic variants that constitute a particular allele of a gene (e.g. CYP2C9*3)",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "isDirectTarget",
+    "description": "Flag indicating whether the target overlapping the variation is directly targeted by the drug"
+  },
+  {
+    "id": "literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "pgxCategory",
+    "description": "Classification of the drug response type (e.g. Toxicity)",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "phenotypeFromSourceId",
+    "description": "Open Targets disease identifier result of mapping phenotypeText",
+    "foreign_key": "disease/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "phenotypeText",
+    "description": "Drug response influenced by the variation",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "studyId",
+    "description": "Clinical Annotation ID in the ClinPGx dataset",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Open Targets target identifier as provided by the data source",
+    "foreign_key": "target/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "variantAnnotation",
+    "description": "Metadata on the underlying variation"
+  },
+  {
+    "id": "variantAnnotation/baseAlleleOrGenotype",
+    "description": "Reference allele or genotype in comparison"
+  },
+  {
+    "id": "variantAnnotation/comparisonAlleleOrGenotype",
+    "description": "Allele or genotype the variant effect is interpreted on"
+  },
+  {
+    "id": "variantAnnotation/directionality",
+    "description": "Direction of effect of the allele or genotype"
+  },
+  {
+    "id": "variantAnnotation/effect",
+    "description": "Pharmacogenomic effect of the variation"
+  },
+  {
+    "id": "variantAnnotation/effectDescription",
+    "description": "Summary of the impact of the allele on the drug response"
+  },
+  {
+    "id": "variantAnnotation/effectType",
+    "description": "Type of effect (eg. functional, drug or phenotype)"
+  },
+  {
+    "id": "variantAnnotation/entity",
+    "description": "Entity affected by the effect"
+  },
+  {
+    "id": "variantAnnotation/id",
+    "description": "Identifier of the variant annotation at source"
+  },
+  {
+    "id": "variantAnnotation/literature",
+    "description": "Literature reference of the variant annotation supporting the evidence"
+  },
+  {
+    "id": "variantFunctionalConsequenceId",
+    "description": "The sequence ontology identifier of the consequence of the variant based on Ensembl VEP in the context of the transcript [bioregistry:so]",
+    "foreign_key": "so/id",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "variantId",
+    "description": "The unique identifier for the variant following schema: {chromosome}-{position}-{referenceAllele}-{alternateAllele}",
+    "foreign_key": "variant/variantId",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "variantRsId",
+    "description": "Variant reference SNP cluster ID (Rsid)"
+  }
+]

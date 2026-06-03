@@ -1,0 +1,39 @@
+[
+  {
+    "id": "clinicalReportIds",
+    "description": "List of clinical report identifiers associated with this target-drug pair",
+    "foreign_key": "clinical_report/id"
+  },
+  {
+    "id": "diseases",
+    "description": "Diseases associated with this target-drug clinical pair"
+  },
+  {
+    "id": "diseases/diseaseFromSource",
+    "description": "Disease name as reported in the source"
+  },
+  {
+    "id": "diseases/diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "drugId",
+    "description": "Open Targets molecule identifier",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "id",
+    "description": "Unique identifier for the clinical target-drug association",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "maxClinicalStage",
+    "description": "Maximum clinical stage reached for this target-drug pair"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  }
+]

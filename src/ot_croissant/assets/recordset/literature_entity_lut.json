@@ -1,0 +1,41 @@
+[
+  {
+    "id": "date",
+    "description": "Date of publication in YYYY-MM-DD format"
+  },
+  {
+    "id": "day",
+    "description": "Day of publication"
+  },
+  {
+    "id": "keywordId",
+    "description": "Unique identifier for the keyword associated with the literature entry",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "keywordType",
+    "description": "Type of keyword identified in the literature entry. Values: DS: disease/syndrome, GP: gene/protein, CD: chemical/drug"
+  },
+  {
+    "id": "month",
+    "description": "Month of publication"
+  },
+  {
+    "id": "pmcid",
+    "description": "PubMed Central ID (PMCID) of the literature entry",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "pmid",
+    "description": "Europe PubMed Central identifier (EPMCID) of the literature entry",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "relevance",
+    "description": "Relevance score of the keyword within the literature entry"
+  },
+  {
+    "id": "year",
+    "description": "Year of publication"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "id": "category",
+    "description": "Category of the entity match in the literature. Either target, drug or disease"
+  },
+  {
+    "id": "norm",
+    "description": "Normalised form of the extracted word"
+  },
+  {
+    "id": "vector",
+    "description": "Vector representation of the word based on word embedding"
+  },
+  {
+    "id": "word",
+    "description": "Normalised identifier of the matched entity",
+    "isPrimaryKey": true
+  }
+]

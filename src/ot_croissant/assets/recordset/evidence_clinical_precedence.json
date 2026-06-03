@@ -1,0 +1,95 @@
+[
+  {
+    "id": "clinicalReportId",
+    "description": "Identifier of the clinical report",
+    "foreign_key": "clinical_report/id"
+  },
+  {
+    "id": "clinicalStage",
+    "description": "Clinical stage of the drug-disease pair"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "directionOnTarget",
+    "description": "Gain or loss of function effect of the evidence on the target based on the type of drug mechanism of action"
+  },
+  {
+    "id": "directionOnTrait",
+    "description": "Predicted direction of effect on the trait"
+  },
+  {
+    "id": "diseaseFromSource",
+    "description": "Disease label from the original source"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "drugFromSource",
+    "description": "Drug name/family in resource of origin"
+  },
+  {
+    "id": "drugId",
+    "description": "Open Targets drug identifier [bioregistry:chembl]",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "literature",
+    "description": "PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Publication date of the literature reference"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "studyStartDate",
+    "description": "Start date of study in a YYYY-MM-DD format"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  },
+  {
+    "id": "trialStopReasonCategories",
+    "description": "Categorised reason(s) why the trial was stopped"
+  },
+  {
+    "id": "trialWhyStopped",
+    "description": "Reason why the trial was stopped, as reported"
+  }
+]

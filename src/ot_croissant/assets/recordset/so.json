@@ -1,0 +1,11 @@
+[
+  {
+    "id": "id",
+    "description": "Sequence ontology term identifier [bioregistry:so]",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "label",
+    "description": "Sequence ontology term label"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "cohortDescription",
+    "description": "Description of the studied cohort"
+  },
+  {
+    "id": "cohortId",
+    "description": "Identifier of the studied cohort"
+  },
+  {
+    "id": "cohortShortName",
+    "description": "Short name of the studied cohort"
+  },
+  {
+    "id": "datasourceId",
+    "description": "Identifer of the evidence source"
+  },
+  {
+    "id": "datatypeId",
+    "description": "Type of the evidence"
+  },
+  {
+    "id": "directionOnTarget",
+    "description": "Gain or loss of function effect of the evidence on the target resulting from genetic variants, pharmacological modulation, or other perturbations"
+  },
+  {
+    "id": "directionOnTrait",
+    "description": "Predicted direction of effect on the trait"
+  },
+  {
+    "id": "diseaseFromSource",
+    "description": "Disease label from the original source"
+  },
+  {
+    "id": "diseaseFromSourceMappedId",
+    "description": "Mapped Open Targets disease identifier"
+  },
+  {
+    "id": "diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "evidenceDate",
+    "description": "Earliest data for the evidence"
+  },
+  {
+    "id": "id",
+    "description": "Identifer of the disease/target evidence",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "literature",
+    "description": "List of PubMed or preprint reference identifiers"
+  },
+  {
+    "id": "mutatedSamples",
+    "description": "Samples with a given mutation tested"
+  },
+  {
+    "id": "mutatedSamples/functionalConsequenceId",
+    "description": "Functional consequene identifier of the pooled mutations [bioregistry:so]",
+    "foreign_key": "so/id"
+  },
+  {
+    "id": "mutatedSamples/numberMutatedSamples",
+    "description": "Number of cohort samples in which target is mutated with a mutation of any type"
+  },
+  {
+    "id": "mutatedSamples/numberSamplesTested",
+    "description": "Number of cohort samples tested"
+  },
+  {
+    "id": "mutatedSamples/numberSamplesWithMutationType",
+    "description": "Number of cohort samples in which target is mutated with a specific mutation type"
+  },
+  {
+    "id": "publicationDate",
+    "description": "Date of the earliest publication supporting the evidence"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Evidence quality flags"
+  },
+  {
+    "id": "resourceScore",
+    "description": "Score provided by datasource indicating strength of target-disease association"
+  },
+  {
+    "id": "score",
+    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
+  },
+  {
+    "id": "significantDriverMethods",
+    "description": "Methods to detect cancer driver genes producing significant results"
+  },
+  {
+    "id": "targetFromSourceId",
+    "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
+  },
+  {
+    "id": "targetId",
+    "description": "Open Targets target identifier",
+    "foreign_key": "target/id"
+  }
+]

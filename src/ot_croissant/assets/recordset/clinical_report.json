@@ -1,0 +1,130 @@
+[
+  {
+    "id": "clinicalStage",
+    "description": "Clinical stage of the report"
+  },
+  {
+    "id": "countries",
+    "description": "Countries associated with the clinical report"
+  },
+  {
+    "id": "diseases",
+    "description": "Diseases associated with the clinical report"
+  },
+  {
+    "id": "diseases/diseaseFromSource",
+    "description": "Disease name as reported in the source"
+  },
+  {
+    "id": "diseases/diseaseId",
+    "description": "Open Targets disease identifier",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "drugs",
+    "description": "Drugs associated with the clinical report"
+  },
+  {
+    "id": "drugs/drugFromSource",
+    "description": "Drug name as reported in the source"
+  },
+  {
+    "id": "drugs/drugId",
+    "description": "Open Targets molecule identifier",
+    "foreign_key": "drug_molecule/id"
+  },
+  {
+    "id": "hasExpertReview",
+    "description": "Flag indicating whether the clinical report has undergone expert review"
+  },
+  {
+    "id": "id",
+    "description": "Unique identifier for the clinical report",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "phaseFromSource",
+    "description": "Clinical phase as reported in the source"
+  },
+  {
+    "id": "qualityControls",
+    "description": "Quality control flags or notes for the clinical report"
+  },
+  {
+    "id": "sideEffects",
+    "description": "Side effects or adverse events associated with the clinical report"
+  },
+  {
+    "id": "sideEffects/diseaseFromSource",
+    "description": "Side effect disease name as reported in the source"
+  },
+  {
+    "id": "sideEffects/diseaseId",
+    "description": "Open Targets disease identifier for the side effect",
+    "foreign_key": "disease/id"
+  },
+  {
+    "id": "source",
+    "description": "Source database or registry from which the clinical report was obtained"
+  },
+  {
+    "id": "title",
+    "description": "Title of the clinical report"
+  },
+  {
+    "id": "trialDescription",
+    "description": "Brief description of the clinical trial"
+  },
+  {
+    "id": "trialLiterature",
+    "description": "Literature references associated with the clinical trial"
+  },
+  {
+    "id": "trialNumberOfArms",
+    "description": "Number of arms in the clinical trial"
+  },
+  {
+    "id": "trialOfficialTitle",
+    "description": "Official title of the clinical trial as registered"
+  },
+  {
+    "id": "trialOverallStatus",
+    "description": "Overall status of the clinical trial (e.g. Completed, Terminated)"
+  },
+  {
+    "id": "trialPhase",
+    "description": "Phase of the clinical trial"
+  },
+  {
+    "id": "trialPrimaryPurpose",
+    "description": "Primary purpose of the clinical trial (e.g. Treatment, Prevention)"
+  },
+  {
+    "id": "trialStartDate",
+    "description": "Start date of the clinical trial"
+  },
+  {
+    "id": "trialStopReasonCategories",
+    "description": "Categories describing reasons why the trial was stopped"
+  },
+  {
+    "id": "trialStudyType",
+    "description": "Type of clinical study (e.g. Interventional, Observational)"
+  },
+  {
+    "id": "trialWhyStopped",
+    "description": "Reason provided for stopping the clinical trial"
+  },
+  {
+    "id": "type",
+    "description": "Type classification of the clinical report"
+  },
+  {
+    "id": "url",
+    "description": "URL linking to the source record"
+  },
+  {
+    "id": "year",
+    "description": "Year the report was registered or published"
+  }
+]

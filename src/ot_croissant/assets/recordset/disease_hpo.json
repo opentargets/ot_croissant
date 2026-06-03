@@ -1,0 +1,27 @@
+[
+  {
+    "id": "dbXRefs",
+    "description": "Database cross-references for the HPO disease"
+  },
+  {
+    "id": "description",
+    "description": "Description of the disease"
+  },
+  {
+    "id": "id",
+    "description": "Unique identifier for the disease in the Human Phenotype Ontology (HPO)",
+    "isPrimaryKey": true
+  },
+  {
+    "id": "name",
+    "description": "Name of the disease (in HPO)"
+  },
+  {
+    "id": "obsoleteTerms",
+    "description": "List of obsolete terms for the disease"
+  },
+  {
+    "id": "parents",
+    "description": "List of parent terms for the disease"
+  }
+]
