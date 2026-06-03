@@ -1,8 +1,9 @@
 """Class to create the croissant distribution metadata for the Open Targets Platform."""
 
-from mlcroissant import FileSet, FileObject
+from mlcroissant import FileObject, FileSet
+from pyspark.sql import SparkSession
+
 from ot_croissant.curation import DistributionCuration
-from pyspark.sql import SparkSession, types as t
 
 
 class PlatformOutputDistribution:
@@ -15,7 +16,7 @@ class PlatformOutputDistribution:
         self.distribution = []
         self.contained_in = []
         self.curation = DistributionCuration()
-        
+
         self.spark = SparkSession.builder.getOrCreate()
         self.spark_context = self.spark.sparkContext
 
@@ -38,15 +39,15 @@ class PlatformOutputDistribution:
         if ftp_location:
             self.distribution.append(
                 FileObject(
-                    id="ftp-location",
-                    name="FTP location",
-                    description="FTP location of the Open Targets Platform data.",
-                    encoding_formats="application/x-ftp-directory",
+                    id='ftp-location',
+                    name='FTP location',
+                    description='FTP location of the Open Targets Platform data.',
+                    encoding_formats='application/x-ftp-directory',
                     content_url=ftp_location,
                     sha256=data_integrity_hash,
                 )
             )
-            self.contained_in.append("ftp-location")
+            self.contained_in.append('ftp-location')
 
         return self
 
@@ -54,15 +55,15 @@ class PlatformOutputDistribution:
         """Add the GCP location of the distribution."""
         self.distribution.append(
             FileObject(
-                id="gcp-location",
-                name="GCP location",
-                description="Location of the Open Targets Platform data in Google Cloud Storage.",
-                encoding_formats="application/x-gcp-directory",
+                id='gcp-location',
+                name='GCP location',
+                description='Location of the Open Targets Platform data in Google Cloud Storage.',
+                encoding_formats='application/x-gcp-directory',
                 content_url=gcp_location,
                 sha256=data_integrity_hash,
             )
         )
-        self.contained_in.append("gcp-location")
+        self.contained_in.append('gcp-location')
         return self
 
     def add_aws_location(self, aws_location: str | None, data_integrity_hash: str):
@@ -78,46 +79,45 @@ class PlatformOutputDistribution:
         if aws_location:
             self.distribution.append(
                 FileObject(
-                    id="aws-location",
-                    name="AWS location",
-                    description="Location of the Open Targets Platform data in Amazon Web Services.",
-                    encoding_formats="application/x-aws-directory",
+                    id='aws-location',
+                    name='AWS location',
+                    description='Location of the Open Targets Platform data in Amazon Web Services.',
+                    encoding_formats='application/x-aws-directory',
                     content_url=aws_location,
                     sha256=data_integrity_hash,
                 )
             )
-            self.contained_in.append("aws-location")
+            self.contained_in.append('aws-location')
 
         return self
 
     def add_assets_from_paths(self, paths: list[str]):
         """Add files from a list to the distribution."""
         for path in paths:
-
             # Extracting dataset name:
-            id = path.split("/")[-1]
+            dataset_id = path.split('/')[-1]
 
             # Get columns the dataset is partitioned by:
             partitioned_by = self._partitioned_by(path)
-            
+
             # The includes depends on if the dataset has hyve partition:
-            includes = f"{id}/**/*.parquet" if len(partitioned_by) > 0 else f"{id}/*.parquet"
+            includes = f'{dataset_id}/**/*.parquet' if len(partitioned_by) > 0 else f'{dataset_id}/*.parquet'
 
             # Description:
-            description = f"Files containing all partitions of the {id} dataset" 
-            
+            description = f'Files containing all partitions of the {dataset_id} dataset'
+
             # If the dataset is partitioned by any field, add to description:
             if len(partitioned_by) > 0:
-                description += f" partitioned by {','.join(partitioned_by)}"
+                description += f' partitioned by {",".join(partitioned_by)}'
 
             # Generating fileset description:
-            ann = self.curation.get(id, log_level="DEBUG")
+            ann = self.curation.get(dataset_id, log_level='DEBUG')
             fileset = FileSet(
-                id=id + "-fileset",
-                name=ann.nice_name if ann else f"Automatic nice_name of the file set/object '{id}'.",
+                id=dataset_id + '-fileset',
+                name=ann.nice_name if ann else f"Automatic nice_name of the file set/object '{dataset_id}'.",
                 description=description,
-                encoding_formats="application/vnd.apache.parquet",
-                includes=includes
+                encoding_formats='application/vnd.apache.parquet',
+                includes=includes,
             )
 
             if len(self.contained_in) > 0:
@@ -126,10 +126,9 @@ class PlatformOutputDistribution:
             self.distribution.append(fileset)
         return self
 
-
     def _partitioned_by(self, path: str) -> list[str]:
         """Checking if the dataset has hyve partition via interacting with spark context.
-        
+
         Args:
             path (str): path to the dataset
 
@@ -148,5 +147,5 @@ class PlatformOutputDistribution:
             if status.isDirectory() and '=' in name:
                 col = name.split('=')[0]
                 partition_cols.append(col)
-        
+
         return list(set(partition_cols))

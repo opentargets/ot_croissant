@@ -1,4 +1,5 @@
 """Pydantic models for OT-Croissant curation assets."""
+
 from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -11,7 +12,7 @@ class RecordsetFieldAnnotation(BaseModel):
 
     id: str
     description: str
-    is_primary_key: bool = Field(default=False, alias="isPrimaryKey")
+    is_primary_key: bool = Field(default=False, alias='isPrimaryKey')
     foreign_key: str | None = None
 
 
