@@ -317,7 +317,7 @@
   },
   {
     "id": "baseline_expression/celltypeBiosampleFromSource",
-    "description": "Tissue reported by study"
+    "description": "Tissue or cell type reported by study"
   },
   {
     "id": "baseline_expression/celltypeBiosampleId",
@@ -357,7 +357,7 @@
   },
   {
     "id": "baseline_expression/qualityControls",
-    "description": "PLACEHOLDER for qualityControls description"
+    "description": "Quality control flags or notes for baseline expression"
   },
   {
     "id": "baseline_expression/q1",
@@ -373,7 +373,7 @@
   },
   {
     "id": "baseline_expression/targetFromSourceId",
-    "description": "PLACEHOLDER for targetFromSourceId description"
+    "description": "Target identifier from the source"
   },
   {
     "id": "baseline_expression/targetId",
@@ -1122,7 +1122,7 @@
   },
   {
     "id": "drug_molecule/molblock",
-    "description": "PLACEHOLDER for molblock description"
+    "description": "Mol Block is a chemical structure file format that serves as a connection table, representing molecules through a list of atoms, bonds, and spatial coordinates"
   },
   {
     "id": "drug_molecule/name",
@@ -3634,11 +3634,11 @@
   },
   {
     "id": "go/ancestors",
-    "description": "PLACEHOLDER for ancestors description"
+    "description": "List of ancestor GO terms"
   },
   {
     "id": "go/descendants",
-    "description": "PLACEHOLDER for descendants description"
+    "description": "List of descendant GO terms"
   },
   {
     "id": "go/altIds",
@@ -4922,7 +4922,7 @@
   },
   {
     "id": "target/subcellularLocations/targetModifier",
-    "description": "PLACEHOLDER for targetModifier description"
+    "description": "Protein isoform or modification that specific for the given subcellular location"
   },
   {
     "id": "target/subcellularLocations/termSL",
@@ -5109,11 +5109,11 @@
   },
   {
     "id": "target_prioritisation/celltypeDistribution",
-    "description": "PLACEHOLDER for celltypeDistribution description"
+    "description": "Describes the distribution pattern of the target's expression in various cell types"
   },
   {
     "id": "target_prioritisation/celltypeSpecificity",
-    "description": "PLACEHOLDER for celltypeSpecificity description"
+    "description": "Describes the specificity of the target's expression across different cell types"
   },
   {
     "id": "target_prioritisation/geneticConstraint",
