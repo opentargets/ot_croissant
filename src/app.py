@@ -1,17 +1,21 @@
-# Create a CLI for the application
-from pathlib import Path
-import json
-from ot_croissant.crumbs.metadata import PlatformOutputMetadata
+"""CLI for the OT-Croissant metadata exporter."""
+
 import argparse
-from datetime import datetime
-from loguru import logger
+import json
 import sys
+from datetime import datetime
+from pathlib import Path
+
+from loguru import logger
+
+from ot_croissant.crumbs.metadata import PlatformOutputMetadata
 
 # Remove default handler
 logger.remove()
 
 # Add a new handler with INFO as minimum level
-logger.add(sys.stderr, level="INFO")
+logger.add(sys.stderr, level='INFO')
+
 
 def list_folders_in_directory(user_path: str) -> list[str]:
     """Generate a list of folders within the given directory with absolute paths.
@@ -36,87 +40,89 @@ def list_folders_in_directory(user_path: str) -> list[str]:
 parser = argparse.ArgumentParser()
 # Output file path
 parser.add_argument(
-    "--output",
+    '--output',
     type=str,
-    help="Output file path",
+    help='Output file path',
     required=True,
 )
 # FTP location
 parser.add_argument(
-    "--ftp_location",
+    '--ftp_location',
     type=str,
-    help="FTP location",
+    help='FTP location',
     required=False,
 )
 parser.add_argument(
-    "--gcp_location",
+    '--gcp_location',
     type=str,
-    help="GCP location",
+    help='GCP location',
     required=True,
 )
 parser.add_argument(
-    "--aws_location",
+    '--aws_location',
     type=str,
-    help="AWS location",
+    help='AWS location',
     required=False,
 )
 # List of datasets to include
 parser.add_argument(
-    "-d",
-    "--dataset",
-    action="append",
+    '-d',
+    '--dataset',
+    action='append',
     type=str,
-    help="Dataset to include",
+    help='Dataset to include',
     required=False,
 )
 # Folder with the datasets:
 parser.add_argument(
-    "--dataset_folder",
+    '--dataset_folder',
     type=str,
-    help="Folder with the datasets",
+    help='Folder with the datasets',
     required=False,
 )
 # Data release version
 parser.add_argument(
-    "--version",
+    '--version',
     type=str,
-    help="Data release version",
+    help='Data release version',
     required=True,
 )
 
 parser.add_argument(
-    "--date_published",
+    '--date_published',
     type=str,
-    help="Data release date in ISO 8601 format (https://en.wikipedia.org/wiki/ISO_8601)",
+    help='Data release date in ISO 8601 format (https://en.wikipedia.org/wiki/ISO_8601)',
     required=True,
 )
 
 parser.add_argument(
-    "--data_integrity_hash",
+    '--data_integrity_hash',
     type=str,
-    help="Data integrity hash using sha256",
+    help='Data integrity hash using sha256',
     required=True,
 )
 
 parser.add_argument(
-    "--instance",
+    '--instance',
     type=str,
-    help="Defining the platform instance",
+    help='Defining the platform instance',
     required=False,
 )
 
+
 def datetime_serializer(obj):
+    """Serialize datetime objects to ISO 8601 strings for JSON output."""
     if isinstance(obj, datetime):
         return obj.isoformat()
-    raise TypeError(f"Type {type(obj)} not serializable")
+    raise TypeError(f'Type {type(obj)} not serializable')
 
 
 def main():
     """CLI for mlcroissant."""
     # Validate some arguments:
     if (parser.parse_args().dataset is None) and (parser.parse_args().dataset_folder is None):
-        raise ValueError("At least one dataset of a folder with datasts must be provided.")
-    
+        raise ValueError('At least one dataset of a folder with datasts must be provided.')
+
     # If no dataset folder provided use the directly specified datasets:
     if parser.parse_args().dataset_folder is None:
         datasets = parser.parse_args().dataset
@@ -132,14 +138,14 @@ def main():
         gcp_location=parser.parse_args().gcp_location,
         aws_location=parser.parse_args().aws_location,
         data_integrity_hash=parser.parse_args().data_integrity_hash,
-        instance=parser.parse_args().instance
+        instance=parser.parse_args().instance,
     )
-    with open(parser.parse_args().output, "w") as f:
+    with open(parser.parse_args().output, 'w', encoding='utf-8') as f:
         content = metadata.to_json()
         content = json.dumps(content, indent=2, default=datetime_serializer)
         f.write(content)
-        f.write("\n")
+        f.write('\n')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

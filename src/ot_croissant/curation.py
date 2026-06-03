@@ -1,4 +1,5 @@
 """Manual curation of OT-Croissant datasets."""
+
 from __future__ import annotations
 
 import json
@@ -11,7 +12,7 @@ from pydantic import BaseModel
 
 from ot_croissant.models import DistributionAnnotation, InstanceAnnotation, RecordsetFieldAnnotation
 
-T = TypeVar("T", bound=BaseModel)
+T = TypeVar('T', bound=BaseModel)
 
 
 class BaseCuration(ABC, Generic[T]):
@@ -24,9 +25,7 @@ class BaseCuration(ABC, Generic[T]):
 
     def __init__(self) -> None:
         data = json.loads(self.curation_path.read_text())
-        self._curation: dict[str, T] = {
-            item["id"]: self._model.model_validate(item) for item in data
-        }
+        self._curation: dict[str, T] = {item['id']: self._model.model_validate(item) for item in data}
 
     @property
     @abstractmethod
@@ -38,7 +37,7 @@ class BaseCuration(ABC, Generic[T]):
     def _model(self) -> type[T]:
         """Pydantic model class used to validate each entry."""
 
-    def get(self, id: str, log_level: str = "WARNING") -> T | None:
+    def get(self, id: str, log_level: str = 'WARNING') -> T | None:
         """Return the curation entry for *id*, or ``None`` if not found."""
         entry = self._curation.get(id)
         if entry is None:
@@ -54,10 +53,12 @@ class DistributionCuration(BaseCuration[DistributionAnnotation]):
 
     @property
     def curation_path(self) -> Path:
-        return Path(__file__).parent / "assets/distribution.json"
+        """Path to the distribution curation file."""
+        return Path(__file__).parent / 'assets/distribution.json'
 
     @property
     def _model(self) -> type[DistributionAnnotation]:
+        """Pydantic model for distribution entries."""
         return DistributionAnnotation
 
 
@@ -66,10 +67,12 @@ class InstanceCuration(BaseCuration[InstanceAnnotation]):
 
     @property
     def curation_path(self) -> Path:
-        return Path(__file__).parent / "assets/instance.json"
+        """Path to the instance curation file."""
+        return Path(__file__).parent / 'assets/instance.json'
 
     @property
     def _model(self) -> type[InstanceAnnotation]:
+        """Pydantic model for instance entries."""
         return InstanceAnnotation
 
 
@@ -81,24 +84,20 @@ class RecordsetCuration:
     process.
     """
 
-    _RECORDSET_DIR = Path(__file__).parent / "assets/recordset"
+    _RECORDSET_DIR = Path(__file__).parent / 'assets/recordset'
     _cache: dict[str, dict[str, RecordsetFieldAnnotation]] = {}
 
     def _load_dataset(self, dataset: str) -> dict[str, RecordsetFieldAnnotation]:
         if dataset not in self._cache:
-            path = self._RECORDSET_DIR / f"{dataset}.json"
+            path = self._RECORDSET_DIR / f'{dataset}.json'
             if not path.exists():
                 self._cache[dataset] = {}
                 return {}
             entries = json.loads(path.read_text())
-            self._cache[dataset] = {
-                e["id"]: RecordsetFieldAnnotation.model_validate(e) for e in entries
-            }
+            self._cache[dataset] = {e['id']: RecordsetFieldAnnotation.model_validate(e) for e in entries}
         return self._cache[dataset]
 
-    def get_field(
-        self, distribution_id: str, log_level: str = "WARNING"
-    ) -> RecordsetFieldAnnotation | None:
+    def get_field(self, distribution_id: str, log_level: str = 'WARNING') -> RecordsetFieldAnnotation | None:
         """Return the annotation for a field, or ``None`` if not found.
 
         Args:
@@ -106,14 +105,14 @@ class RecordsetCuration:
                 ``dataset/parent/field`` for nested fields.
             log_level: Loguru level used when the entry is missing.
         """
-        if "/" not in distribution_id:
+        if '/' not in distribution_id:
             logger.log(
                 log_level,
                 f"[RecordsetCuration]: Unexpected id format '{distribution_id}' — expected 'dataset/field'.",
             )
             return None
 
-        dataset, field_path = distribution_id.split("/", 1)
+        dataset, field_path = distribution_id.split('/', 1)
         entry = self._load_dataset(dataset).get(field_path)
         if entry is None:
             logger.log(

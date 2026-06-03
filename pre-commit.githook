@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+# Pre-commit hook: ruff lint, JSON formatting, and pytest.
+# Install with: cp pre-commit.githook .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+
+set -euo pipefail
+
+RUFF_CMD='uv run ruff check'
+PYTEST_CMD=(uv run pytest -qq)
+
+CYAN=$(echo -e $"\033[0;36m")
+RED=$(echo -e $"\033[1;31m")
+WHITE=$(echo -e $"\033[1;37m")
+RESET=$(echo -e $"\033[0;0m")
+
+STATUS=0
+
+_get_files() {
+    local i=0
+    FILES=()
+    while IFS= read -r -d $'\0' file; do
+        FILES[i++]="$file"
+    done < <(git diff --name-only --diff-filter=ACMR --staged -z "$@")
+}
+
+
+# --- ruff ---
+_get_files '*.py'
+if [[ ${#FILES[@]} -ne 0 ]]; then
+    if ! RESULT=$(CLICOLOR_FORCE=1 $RUFF_CMD "${FILES[@]}" 2>&1); then
+        STATUS=1
+        echo "${RED}ruff found issues:${RESET}"
+        echo
+        echo "$RESULT"
+        echo
+    fi
+fi
+
+
+# --- JSON formatting ---
+# Checks that staged JSON files are valid and consistently formatted (2-space indent, no trailing whitespace).
+_get_files '*.json'
+if [[ ${#FILES[@]} -ne 0 ]]; then
+    JSON_ERRORS=()
+    for f in "${FILES[@]}"; do
+        # Validate and reformat using Python's json module
+        if ! FORMATTED=$(uv run python -c "
+import json, sys
+try:
+    data = json.loads(open('$f').read())
+    print(json.dumps(data, indent=2, ensure_ascii=False))
+except json.JSONDecodeError as e:
+    print(f'Invalid JSON: {e}', file=sys.stderr)
+    sys.exit(1)
+" 2>&1); then
+            STATUS=1
+            JSON_ERRORS+=("$f: $FORMATTED")
+        else
+            ORIGINAL=$(cat "$f")
+            # Normalise trailing newline for comparison
+            if [[ "$FORMATTED" != "${ORIGINAL%$'\n'}" && "$FORMATTED" != "$ORIGINAL" ]]; then
+                STATUS=1
+                JSON_ERRORS+=("$f: not formatted (run: python -m json.tool --indent 2 $f > tmp && mv tmp $f)")
+            fi
+        fi
+    done
+    if [[ ${#JSON_ERRORS[@]} -ne 0 ]]; then
+        echo "${RED}JSON formatting issues:${RESET}"
+        echo
+        for err in "${JSON_ERRORS[@]}"; do
+            echo "  $err"
+        done
+        echo
+    fi
+fi
+
+
+# --- pytest ---
+if ! RESULT=$("${PYTEST_CMD[@]}" 2>&1); then
+    STATUS=1
+    echo "${RED}Tests failed:${RESET}"
+    echo
+    echo "$RESULT"
+    echo
+fi
+
+
+if [[ $STATUS != 0 ]]; then
+    exec < /dev/tty
+    echo
+    read -r -p "${RED}Checks failed. Commit anyway ${CYAN}[${WHITE}y${CYAN}/${WHITE}N${CYAN}]${RESET}? " yn
+    case $yn in
+        [Yy]*) exit 0 ;;
+        *) exit $STATUS ;;
+    esac
+fi
+
+exit 0
