@@ -50,7 +50,13 @@
   {
     "id": "baseline_expression",
     "nice_name": "Baseline expression",
-    "key": ["targetId", "datasourceId", "datatypeId", "tissueBiosampleId", "celltypeBiosampleId"],
+    "key": [
+      "targetId",
+      "datasourceId",
+      "datatypeId",
+      "tissueBiosampleId",
+      "celltypeBiosampleId"
+    ],
     "tags": [
       "Target"
     ],

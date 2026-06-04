@@ -8,7 +8,7 @@ from pydantic import BaseModel, ConfigDict, Field
 class RecordsetFieldAnnotation(BaseModel):
     """Annotation for a single field within a recordset dataset."""
 
-    model_config = ConfigDict(populate_by_name=True)
+    model_config = ConfigDict(populate_by_name=True, extra='forbid')
 
     id: str
     description: str
@@ -19,6 +19,8 @@ class RecordsetFieldAnnotation(BaseModel):
 class DistributionAnnotation(BaseModel):
     """Annotation for a top-level dataset distribution."""
 
+    model_config = ConfigDict(extra='forbid')
+
     id: str
     nice_name: str
     description: str
@@ -28,6 +30,8 @@ class DistributionAnnotation(BaseModel):
 
 class InstanceAnnotation(BaseModel):
     """Annotation for a Platform instance (public / ppp)."""
+
+    model_config = ConfigDict(extra='forbid')
 
     id: str
     name: str

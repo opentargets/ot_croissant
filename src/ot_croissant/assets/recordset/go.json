@@ -13,11 +13,7 @@
   },
   {
     "id": "id",
-    "description": "Gene ontology term identifier [bioregistry:go]"
-  },
-  {
-    "id": "id",
-    "description": "Primary Gene Ontology term identifier",
+    "description": "Primary Gene Ontology term identifier [bioregistry:go]",
     "isPrimaryKey": true
   },
   {

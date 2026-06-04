@@ -11,7 +11,7 @@ jobs:
 
       - uses: astral-sh/setup-uv@v5
         with:
-          python-version: "3.10"
+          python-version: "3.12"
 
       - name: Install dev dependencies
         run: uv sync --dev --frozen --quiet
@@ -21,3 +21,23 @@ jobs:
 
       - name: ruff format
         run: uv run ruff format --check src/ tests/
+
+      - name: JSON formatting (src/ asset files are canonically formatted)
+        run: |
+          python3 -c "
+          import json, sys
+          from pathlib import Path
+          errors = []
+          for path in Path('src').rglob('*.json'):
+              try:
+                  original = path.read_text()
+                  data = json.loads(original)
+                  formatted = json.dumps(data, indent=2, ensure_ascii=True) + '\n'
+                  if original != formatted:
+                      errors.append(str(path))
+              except json.JSONDecodeError as e:
+                  errors.append(f'{path}: {e}')
+          if errors:
+              print('JSON formatting issues:\n' + '\n'.join(errors))
+              sys.exit(1)
+          "

@@ -119,28 +119,27 @@ def datetime_serializer(obj):
 
 def main():
     """CLI for mlcroissant."""
-    # Validate some arguments:
-    if (parser.parse_args().dataset is None) and (parser.parse_args().dataset_folder is None):
+    args = parser.parse_args()
+
+    if args.dataset is None and args.dataset_folder is None:
         raise ValueError('At least one dataset of a folder with datasts must be provided.')
 
-    # If no dataset folder provided use the directly specified datasets:
-    if parser.parse_args().dataset_folder is None:
-        datasets = parser.parse_args().dataset
-    # If dataset folder is given, open folder and get a list of datasets:
+    if args.dataset_folder is None:
+        datasets = args.dataset
     else:
-        datasets = list_folders_in_directory(parser.parse_args().dataset_folder)
+        datasets = list_folders_in_directory(args.dataset_folder)
 
     metadata = PlatformOutputMetadata(
-        ftp_location=parser.parse_args().ftp_location,
+        ftp_location=args.ftp_location,
         datasets=datasets,
-        version=parser.parse_args().version,
-        date_published=datetime.fromisoformat(parser.parse_args().date_published),
-        gcp_location=parser.parse_args().gcp_location,
-        aws_location=parser.parse_args().aws_location,
-        data_integrity_hash=parser.parse_args().data_integrity_hash,
-        instance=parser.parse_args().instance,
+        version=args.version,
+        date_published=datetime.fromisoformat(args.date_published),
+        gcp_location=args.gcp_location,
+        aws_location=args.aws_location,
+        data_integrity_hash=args.data_integrity_hash,
+        instance=args.instance,
     )
-    with open(parser.parse_args().output, 'w', encoding='utf-8') as f:
+    with open(args.output, 'w', encoding='utf-8') as f:
         content = metadata.to_json()
         content = json.dumps(content, indent=2, default=datetime_serializer)
         f.write(content)

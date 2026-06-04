@@ -54,10 +54,6 @@
     "description": "Score of the evidence reflecting the strength of the disease/target relationship"
   },
   {
-    "id": "score",
-    "description": "Score of the evidence reflecting the strength of the disease/target relationship"
-  },
-  {
     "id": "targetFromSourceId",
     "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted"
   },
