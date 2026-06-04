@@ -61,6 +61,17 @@ def test_recordset_entries_conform_to_model():
     assert not errors, 'Recordset entries failed model validation:\n' + '\n'.join(errors)
 
 
+def test_recordset_ids_are_unique_within_file():
+    """Each per-dataset file must not contain duplicate field ids."""
+    violations = []
+    for path in sorted(RECORDSET_DIR.glob('*.json')):
+        ids = [e['id'] for e in json.loads(path.read_text())]
+        dups = sorted({x for x in ids if ids.count(x) > 1})
+        if dups:
+            violations.append(f'{path.name}: {dups}')
+    assert not violations, 'Files with duplicate field ids:\n' + '\n'.join(violations)
+
+
 def test_no_entry_id_contains_dataset_prefix():
     """Ensure the dataset prefix was stripped — ids should never start with '<dataset>/'."""
     violations = [
